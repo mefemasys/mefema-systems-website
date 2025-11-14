@@ -61,5 +61,3 @@ Na extensão máxima permitida pela lei aplicável, a MEFEMA não será respons�
 *   **Integralidade:** Este EULA constitui o acordo integral entre o Utilizador e a MEFEMA em relação à Aplicação.
 
 **MEFEMA Systems, LDA**
-[Inserir Data de Aprovação Interna]
-[Inserir Assinatura Digital ou Nome do Representante Legal]
