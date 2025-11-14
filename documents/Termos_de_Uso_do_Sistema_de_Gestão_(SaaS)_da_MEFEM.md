@@ -72,5 +72,3 @@ Após a rescisão, o Cliente terá um período de tempo limitado (conforme defin
 *   **Integralidade:** Estes Termos, juntamente com o Contrato de Subscrição e a Política de Privacidade, constituem o acordo integral entre o Cliente e a MEFEMA.
 
 **MEFEMA Systems, LDA**
-[Inserir Data de Aprovação Interna]
-[Inserir Assinatura Digital ou Nome do Representante Legal]
