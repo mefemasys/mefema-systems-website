@@ -1,4 +1,3 @@
-/* [Todo o CSS do <style> original aqui] */
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +5,12 @@
 }
 
 :root {
-    --primary: #0066CC;
-    --secondary: #FF8C42;
-    --accent: #4CAF50;
-    --dark: #1a1a1a;
-    --light: #f8f9fa;
-    --muted: #8B7355;
+    --primary: #0066CC;   /* Azul */
+    --secondary: #FF8C42; /* Laranja */
+    --accent: #4CAF50;    /* Verde */
+    --dark: #1a1a1a;      /* Preto escuro */
+    --light: #f8f9fa;     /* Cinza claro */
+    --muted: #8B7355;     /* Castanho */
 }
 
 body {
@@ -52,8 +51,8 @@ nav {
 .logo-img {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    border-radius: 50%;
+    background: var(--primary); /* Cor sólida: azul */
+    border-radius: 4px; /* Pouco border-radius */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,7 +95,7 @@ nav {
 
 .btn {
     padding: 0.6rem 1.5rem;
-    border-radius: 5px;
+    border-radius: 4px; /* Pouco border-radius */
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s;
@@ -106,14 +105,14 @@ nav {
 }
 
 .btn-primary {
-    background: var(--primary);
+    background: var(--primary); /* Azul sólido */
     color: white;
 }
 
 .btn-primary:hover {
     background: #0052a3;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,102,204,0.3);
+    box-shadow: 0 4px 8px rgba(0,102,204,0.4);
 }
 
 .btn-outline {
@@ -138,7 +137,7 @@ nav {
 
 /* Hero */
 .hero {
-    background: linear-gradient(135deg, rgba(0,102,204,0.1) 0%, rgba(255,140,66,0.1) 100%);
+    background: #f0f7ff; /* Fundo claro com toque de azul, sem gradiente */
     padding: 100px 5% 80px;
     text-align: center;
 }
@@ -190,19 +189,19 @@ nav {
 .card, .service-card, .info-card, .value-item, .contact-item {
     background: white;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 4px; /* Pouco border-radius */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover, .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .contact {
     padding: 80px 5%;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: var(--secondary); /* Laranja sólido */
     color: white;
 }
 
@@ -220,8 +219,9 @@ nav {
 }
 
 .contact-item {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.15); /* Leve transparência para destacar */
+    border-radius: 4px;
+    padding: 1.5rem;
 }
 
 footer {
@@ -244,7 +244,7 @@ footer {
 }
 
 .footer-section a:hover {
-    color: var(--primary);
+    color: var(--accent); /* Verde no hover */
 }
 
 .footer-bottom {
@@ -256,11 +256,21 @@ footer {
 
 /* Responsivo */
 @media (max-width: 768px) {
-    .nav-links, .nav-cta { display: none; }
-    .mobile-menu-btn { display: block; }
-    .hero h1 { font-size: 2rem; }
-    .hero p { font-size: 1.1rem; }
-    .section-title { font-size: 2rem; }
+    .nav-links, .nav-cta { 
+        display: none; 
+    }
+    .mobile-menu-btn { 
+        display: block; 
+    }
+    .hero h1 { 
+        font-size: 2rem; 
+    }
+    .hero p { 
+        font-size: 1.1rem; 
+    }
+    .section-title { 
+        font-size: 2rem; 
+    }
 }
 
 .mobile-menu {
