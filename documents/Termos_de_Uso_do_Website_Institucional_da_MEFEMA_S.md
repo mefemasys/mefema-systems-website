@@ -50,6 +50,3 @@ Em nenhuma circunstância a MEFEMA, os seus directores, funcionários ou agentes
 *   **Lei Aplicável e Jurisdição:** Estes Termos são regidos pelas leis da República de Moçambique. As partes elegem o foro da Cidade de Maputo para dirimir quaisquer litígios decorrentes destes Termos.
 *   **Alterações:** A MEFEMA reserva-se o direito de alterar estes Termos a qualquer momento. O uso continuado do Website após a publicação de quaisquer alterações constitui a aceitação dessas alterações.
 
-**MEFEMA Systems, LDA**
-[Inserir Data de Aprovação Interna]
-[Inserir Assinatura Digital ou Nome do Representante Legal]
