@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEFEMA Systems - <?php echo $pageTitle ?? 'Soluções Tecnológicas Inteligentes'; ?></title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
     <header>
@@ -37,3 +37,4 @@
 
 
     <?php include 'mobile-menu.php'; ?>
+
