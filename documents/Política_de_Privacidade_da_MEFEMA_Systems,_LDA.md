@@ -5,7 +5,7 @@
 
 ## 1. Introdução e Âmbito de Aplicação
 
-A **MEFEMA Systems, LDA** (doravante designada por "MEFEMA" ou "Nós"), pessoa colectiva de direito moçambicano, com sede em [Inserir Endereço Completo da Sede], e registada sob o NUIT [Inserir NUIT], assume um compromisso inabalável com a privacidade e a segurança dos dados pessoais dos seus Utilizadores.
+A **MEFEMA Systems, LDA** (doravante designada por "MEFEMA" ou "Nós"), pessoa colectiva de direito moçambicano, com sede em Pemba, assume um compromisso inabalável com a privacidade e a segurança dos dados pessoais dos seus Utilizadores.
 
 A presente Política de Privacidade (doravante designada por "Política") descreve como a MEFEMA recolhe, utiliza, armazena e protege os dados pessoais submetidos pelos Utilizadores através do nosso website institucional e dos sistemas e aplicações de software que desenvolvemos e operamos (doravante designados colectivamente por "Serviços").
 
@@ -27,9 +27,7 @@ O nosso compromisso baseia-se nos seguintes princípios:
 Para efeitos desta Política, a entidade responsável pelo tratamento dos dados pessoais é:
 
 **MEFEMA Systems, LDA**
-*   **Sede:** [Inserir Endereço Completo da Sede]
-*   **Contacto:** [Inserir Endereço de E-mail para Questões de Privacidade]
-*   **NUIT:** [Inserir NUIT]
+
 
 ## 3. Dados Pessoais Recolhidos e Finalidade do Tratamento
 
@@ -125,9 +123,7 @@ Os dados de conteúdo/sistema (cifrados ou não) são mantidos enquanto a conta 
 
 Para quaisquer questões relacionadas com esta Política de Privacidade ou com o tratamento dos seus dados pessoais, o Utilizador pode contactar o nosso Responsável pela Protecção de Dados (RPD), que é o ponto de contacto para os titulares dos dados e para as autoridades de controlo:
 
-**Nome:** [Inserir Nome do RPD/Ponto de Contacto]
-**E-mail:** [Inserir Endereço de E-mail Específico para RPD]
-**Telefone:** [Inserir Contacto Telefónico]
+
 
 ## 9. Alterações a esta Política de Privacidade
 
@@ -141,6 +137,3 @@ Em caso de litígio, e na ausência de legislação específica moçambicana, as
 
 ---
 
-**MEFEMA Systems, LDA**
-[Inserir Data de Aprovação Interna]
-[Inserir Assinatura Digital ou Nome do Representante Legal]
