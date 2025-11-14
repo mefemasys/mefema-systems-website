@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEFEMA Systems - <?php echo $pageTitle ?? 'Soluções Tecnológicas Inteligentes'; ?></title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     <header>
@@ -18,12 +18,12 @@
             </div>
 
             <ul class="nav-links">
-                <li><a href="index.php" <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'class="active"' : ''; ?>>Início</a></li>
-                <li><a href="sobre.php" <?php echo basename($_SERVER['PHP_SELF']) == 'sobre.php' ? 'class="active"' : ''; ?>>Sobre Nós</a></li>
-                <li><a href="servicos.php" <?php echo basename($_SERVER['PHP_SELF']) == 'servicos.php' ? 'class="active"' : ''; ?>>Serviços</a></li>
-                <li><a href="empresa.php" <?php echo basename($_SERVER['PHP_SELF']) == 'empresa.php' ? 'class="active"' : ''; ?>>Empresa</a></li>
-                <li><a href="contacto.php" <?php echo basename($_SERVER['PHP_SELF']) == 'contacto.php' ? 'class="active"' : ''; ?>>Contacto</a></li>
-                <li><a href="legal.php" <?php echo basename($_SERVER['PHP_SELF']) == 'legal.php' ? 'class="active"' : ''; ?>>Legal</a></li>
+                <li><a href="index" <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'class="active"' : ''; ?>>Início</a></li>
+                <li><a href="sobre" <?php echo basename($_SERVER['PHP_SELF']) == 'sobre.php' ? 'class="active"' : ''; ?>>Sobre Nós</a></li>
+                <li><a href="servicos" <?php echo basename($_SERVER['PHP_SELF']) == 'servicos.php' ? 'class="active"' : ''; ?>>Serviços</a></li>
+                <li><a href="empresa" <?php echo basename($_SERVER['PHP_SELF']) == 'empresa.php' ? 'class="active"' : ''; ?>>Empresa</a></li>
+                <li><a href="contacto" <?php echo basename($_SERVER['PHP_SELF']) == 'contacto.php' ? 'class="active"' : ''; ?>>Contacto</a></li>
+                <li><a href="legal" <?php echo basename($_SERVER['PHP_SELF']) == 'legal.php' ? 'class="active"' : ''; ?>>Legal</a></li>
             </ul>
 
             <div class="nav-cta">
@@ -34,5 +34,6 @@
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">Menu</button>
         </nav>
     </header>
+
 
     <?php include 'mobile-menu.php'; ?>
