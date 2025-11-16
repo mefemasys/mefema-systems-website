@@ -120,7 +120,7 @@
           type="button">
           <i class="icon-base ri ri-menu-fill icon-lg align-middle text-heading fw-medium"></i>
         </button>
-        <a class="app-brand-link" href="index.html">
+        <a class="app-brand-link" href="/">
               <span class="app-brand-logo demo">
                 <img
                   alt="Mefema Systems Logo"
