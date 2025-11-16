@@ -57,7 +57,7 @@
                 </li>
               </ul>
               <div class="text-center mt-6 pt-2">
-                <a class="btn btn-outline-primary w-100" href="sobre">Saiba Mais</a>
+                <a class="btn btn-outline-primary w-100" href="servicos">Saiba Mais</a>
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@
                 </li>
               </ul>
               <div class="text-center mt-6 pt-2">
-                <a class="btn btn-outline-primary w-100" href="sobre">Saiba Mais</a>
+                <a class="btn btn-outline-primary w-100" href="servicos">Saiba Mais</a>
               </div>
             </div>
           </div>
@@ -161,7 +161,7 @@
                 </li>
               </ul>
               <div class="text-center mt-6 pt-2">
-                <a class="btn btn-outline-primary w-100" href="#landingContact">Saiba Mais</a>
+                <a class="btn btn-outline-primary w-100" href="servicos">Saiba Mais</a>
               </div>
             </div>
           </div>
@@ -213,7 +213,7 @@
                 </li>
               </ul>
               <div class="text-center mt-6 pt-2">
-                <a class="btn btn-outline-primary w-100" href="#landingContact">Saiba Mais</a>
+                <a class="btn btn-outline-primary w-100" href="servicos">Saiba Mais</a>
               </div>
             </div>
           </div>

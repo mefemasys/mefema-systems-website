@@ -13,7 +13,7 @@ $contact_info = [
         'linkedin' => 'https://linkedin.com/company/mefemasys',
         'instagram' => 'https://instagram.com/mefemasys',
     ],
-    'address' => 'Av. Julius Nyerere, Maputo, Moçambique', // Endereço fictício para exemplo
+    'address' => 'Moçambique', 
 ];
 
 ?>
