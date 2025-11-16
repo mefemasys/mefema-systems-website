@@ -1,6 +1,6 @@
 # Repositório do Website da MEFEMA Systems
 
-## 🚀 Acelere a sua Transformação Digital
+## Acelere a sua Transformação Digital
 
 Bem-vindo ao repositório oficial do website da **MEFEMA Systems** [1], uma empresa moçambicana dedicada a fornecer **Soluções Tecnológicas Inteligentes para Empresas Inteligentes** [2].
 
@@ -8,7 +8,7 @@ Este repositório contém o código-fonte completo do website público da empres
 
 ---
 
-## 🌐 Website em Produção
+##  Website em Produção
 
 O website está atualmente em produção e acessível através do seguinte endereço:
 
@@ -16,7 +16,7 @@ O website está atualmente em produção e acessível através do seguinte ender
 
 ---
 
-## 💡 Sobre a MEFEMA Systems
+## Sobre a MEFEMA Systems
 
 A MEFEMA Systems é uma força motriz na **transformação digital** em Moçambique. A nossa estratégia foca-se em sistemas especializados, multifuncionais e flexíveis, garantindo que a tecnologia de ponta seja acessível e eficiente para Pequenas e Médias Empresas (PMEs) e instituições públicas [2].
 
@@ -44,7 +44,7 @@ Os valores fundamentais que guiam a MEFEMA Systems são [2]:
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 O website é construído com uma arquitetura tradicional e robusta, focada em performance e estabilidade.
 
@@ -56,7 +56,7 @@ O website é construído com uma arquitetura tradicional e robusta, focada em pe
 
 ---
 
-## 📂 Estrutura do Repositório
+## Estrutura do Repositório
 
 A estrutura de pastas e ficheiros segue uma organização modular para facilitar a manutenção e o desenvolvimento:
 
@@ -85,7 +85,7 @@ A estrutura de pastas e ficheiros segue uma organização modular para facilitar
 
 ---
 
-## ⚙️ Como Contribuir (Desenvolvimento Local)
+## Como Contribuir (Desenvolvimento Local)
 
 Para configurar o projeto localmente, siga os passos abaixo.
 
@@ -112,12 +112,6 @@ Para configurar o projeto localmente, siga os passos abaixo.
 *   As páginas principais são ficheiros `.php` na raiz do projeto.
 *   Os componentes de interface (cabeçalho, rodapé) estão em `includes/`.
 *   O conteúdo dinâmico ou modular pode ser encontrado em `pages/`.
-
----
-
-## 📝 Licença
-
-Este projeto está licenciado sob a licença **MIT**. Consulte o ficheiro `LICENSE` (se existir) para mais detalhes.
 
 ---
 
