@@ -11,7 +11,7 @@
             Acelere a sua <span class="text-primary d-block">Transformação Digital.</span>
           </h1>
 
-          <p class="lead text-muted mb-5 pe-lg-5">
+          <p class="lead mb-5 pe-lg-5">
             Soluções Tecnológicas Inteligentes Para Empresas Inteligentes.
           </p>
 
