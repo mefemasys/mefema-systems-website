@@ -7,7 +7,7 @@
             <i class="ri ri-sparkling-fill me-1"></i> Mefema Systems
           </div>
 
-          <h1 class="display-4 fw-bold text-dark mb-4 lh-sm">
+          <h1 class="display-4 fw-bold mb-4 lh-sm">
             Acelere a sua <span class="text-primary d-block">Transformação Digital.</span>
           </h1>
 
