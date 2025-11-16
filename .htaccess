@@ -1,0 +1,47 @@
+# ------------------------------
+# Ativar mod_rewrite
+# ------------------------------
+RewriteEngine On
+
+
+RewriteBase /
+
+# ------------------------------
+# Redirecionar para HTTPS (opcional)
+# ------------------------------
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ------------------------------
+# Remover "index.php" da URL
+# Ex: /index.php → /
+# ------------------------------
+RewriteCond %{THE_REQUEST} \s/+index\.php[\s?]
+RewriteRule ^index\.php$ / [L,R=301]
+
+# ------------------------------
+# Mapeamento de rotas amigáveis
+# Roteia para arquivos PHP sem extensão
+# ------------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(index|sobre|servicos|produtos|portfolio|empresa|contacto|legal)/?$ $1.php [L,QSA]
+
+# ------------------------------
+# Redirecionar raiz para index.php
+# ------------------------------
+RewriteRule ^$ index.php [L]
+
+# ------------------------------
+# Proteger arquivos sensíveis
+# ------------------------------
+<FilesMatch "\.(env|ini|log|md|sql)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Impedir acesso direto a .htaccess
+<Files .htaccess>
+  Order allow,deny
+  Deny from all
+</Files>

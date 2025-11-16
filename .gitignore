@@ -1,0 +1,55 @@
+# -------------------------
+# PASTAS DE EDITORES
+# -------------------------
+.idea/
+.vscode/
+
+# -------------------------
+# ARQUIVOS DO SISTEMA
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# LOGS
+# -------------------------
+*.log
+logs/
+error_log
+
+# -------------------------
+# CACHE E ARQUIVOS TEMPORÁRIOS
+# -------------------------
+cache/
+tmp/
+temp/
+*.tmp
+
+# -------------------------
+# COMPOSER
+# -------------------------
+/composer.lock
+composer.phar
+
+# -------------------------
+# CONFIGURAÇÕES SENSÍVEIS
+# -------------------------
+.env
+.env.*
+*.env.php
+config.php
+settings.php
+
+# -------------------------
+# UPLOADS E ARQUIVOS DE ARMAZENAMENTO
+# -------------------------
+uploads/
+files/
+storage/
+
+# -------------------------
+# BILDS & ARTEFACTOS
+# -------------------------
+/node_modules/
+dist/
+build/

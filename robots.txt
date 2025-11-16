@@ -1,0 +1,20 @@
+User-agent: *
+Disallow: /includes/
+Disallow: /documents/
+Disallow: /pages/
+Disallow: /.git/
+Disallow: /.idea/
+Disallow: /vendor/
+Disallow: /fonts/
+Disallow: /assets/private/
+Disallow: /*.sql$
+Disallow: /*.log$
+Disallow: /composer.phar
+
+# Permitir assets públicos
+Allow: /assets/
+Allow: /fonts/
+Allow: /documents/*.pdf
+
+# Sitemap 
+Sitemap: https://mefemasys.co.mz/sitemap.xml

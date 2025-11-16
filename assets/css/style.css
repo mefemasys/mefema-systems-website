@@ -1,0 +1,228 @@
+/*
+* style.css
+* File include item demo only specific css only
+******************************************************************************/
+
+.menu .app-brand.demo {
+    height: 64px;
+}
+
+.app-brand-logo.demo svg {
+    width: 38px;
+    height: 20px;
+}
+
+.app-brand-text.demo {
+    font-size: 1.25rem;
+    letter-spacing: 0.15px;
+}
+
+.authentication-wrapper .app-brand-text.demo {
+    text-transform: capitalize;
+}
+
+/* ! For .layout-navbar-fixed added fix padding top to .layout-page */
+/* Default navbar */
+.layout-navbar-fixed .layout-wrapper:not(.layout-without-menu) .layout-page {
+    padding-top: 64px !important;
+}
+
+/* Navbar page z-index issue solution */
+.content-wrapper .navbar {
+    z-index: auto;
+}
+
+/*
+* Content
+******************************************************************************/
+
+.demo-blocks > * {
+    display: block !important;
+}
+
+.demo-inline-spacing > * {
+    margin: 1rem 0.375rem 0 0 !important;
+}
+
+/* ? .demo-vertical-spacing class is used to have vertical margins between elements. To remove margin-top from the first-child, use .demo-only-element class with .demo-vertical-spacing class. For example, we have used this class in forms-input-groups.html file. */
+.demo-vertical-spacing > * {
+    margin-top: 1.25rem !important;
+    margin-bottom: 0 !important;
+}
+
+.demo-vertical-spacing.demo-only-element > :first-child {
+    margin-top: 0 !important;
+}
+
+.demo-vertical-spacing-lg > * {
+    margin-top: 1.875rem !important;
+    margin-bottom: 0 !important;
+}
+
+.demo-vertical-spacing-lg.demo-only-element > :first-child {
+    margin-top: 0 !important;
+}
+
+.demo-vertical-spacing-xl > * {
+    margin-top: 5rem !important;
+    margin-bottom: 0 !important;
+}
+
+.demo-vertical-spacing-xl.demo-only-element > :first-child {
+    margin-top: 0 !important;
+}
+
+/* Dropdown buttons going out of small screens */
+@media (max-width: 576px) {
+    #dropdown-variation-demo .btn-group .text-truncate {
+        width: 300px;
+        position: relative;
+    }
+
+    #dropdown-variation-demo .btn-group .text-truncate::after {
+        position: absolute;
+        top: 45%;
+        right: 0.65rem;
+    }
+}
+
+/*
+* Layout demo
+******************************************************************************/
+
+.layout-demo-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 1.25rem;
+}
+
+.layout-demo-placeholder img {
+    width: 900px;
+}
+
+.layout-demo-info {
+    text-align: center;
+    margin-top: 1.25rem;
+}
+
+/* Variáveis de Cores */
+:root {
+    /* Cores para Light Mode */
+    --color-primary: #007bff; /* Azul */
+    --color-secondary: #ff7f00; /* Laranja */
+    --color-success: #28a745; /* Verde */
+    --color-warning: #8b4513; /* Castanho */
+    --color-hero-bg: #e0ffff; /* Ciano Claro (Light Cyan) */
+    --color-hero-text: #212529; /* Texto Escuro */
+    --color-hero-title: var(--color-primary);
+    --color-hero-bg-pattern: rgba(0, 191, 255, 0.1); /* Ciano para o padrão */
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-hero-bg: #343a40; /* Cinza Escuro (Dark Gray) */
+        --color-hero-text: #f8f9fa; /* Texto Claro */
+        --color-hero-title: #00bfff; /* Ciano Claro para o título */
+        --color-hero-bg-pattern: rgba(0, 191, 255, 0.05); /* Ciano mais sutil para o padrão */
+    }
+}
+
+/* Estilos da Seção Hero */
+
+
+/* Fundo Animado de Cristas/Pirâmides Sutis (CSS PURE) */
+.landing-hero::before,
+.landing-hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.landing-hero::before {
+    /* Padrão de Triângulos/Cristas */
+    background:
+            repeating-linear-gradient(
+                    -45deg,
+                    var(--color-hero-bg-pattern),
+                    var(--color-hero-bg-pattern) 10px,
+                    transparent 10px,
+                    transparent 20px
+            );
+    background-size: 40px 40px;
+    opacity: 0.5; /* Sutil */
+    animation: movePattern 60s linear infinite;
+}
+
+.landing-hero::after {
+    /* Camada de Dissolução (opcional, para mais sutileza) */
+    background: radial-gradient(circle at center, transparent 0%, var(--color-hero-bg) 70%);
+    opacity: 0.1;
+    animation: dissolve 120s linear infinite alternate;
+}
+
+@keyframes movePattern {
+    0% { background-position: 0 0; }
+    100% { background-position: 400px 400px; }
+}
+
+@keyframes dissolve {
+    0% { opacity: 0.1; }
+    100% { opacity: 0.05; }
+}
+
+/* Estilos de Botões (Ajustados para usar as variáveis) */
+.btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+}
+
+.btn-outline-primary {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    background-color: transparent;
+}
+
+/* Dark Mode - Ajustes de Botões */
+@media (prefers-color-scheme: dark) {
+    .btn-primary {
+        background-color: var(--color-hero-title); /* Ciano Claro */
+        border-color: var(--color-hero-title);
+        color: var(--color-hero-text);
+    }
+
+    .btn-outline-primary {
+        color: var(--color-hero-title);
+        border-color: var(--color-hero-title);
+    }
+}
+
+
+/* Estilo do botão único */
+#themeToggleBtn {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#themeToggleBtn:hover {
+    transform: scale(1.05);
+}
+
+#themeToggleBtn:active {
+    transform: scale(0.95);
+}
+
+/* Destaque opcional (pode remover se não quiser) */
+#themeToggleBtn.active {
+    background-color: #0d6efd !important;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
