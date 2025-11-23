@@ -1,15 +1,11 @@
 User-agent: *
-# Nenhuma diretiva Disallow: / aqui, garantindo o rastreamento da homepage
+Allow: /*
+
+Disallow: /pages/admin/*
 Disallow: /.git/       # Bloquear repositório Git
 Disallow: /.idea/      # Bloquear configurações de IDE
 Disallow: /assets/private/ # Bloquear ativos que são explicitamente privados
 Disallow: /*.sql$      # Bloquear arquivos de banco de dados
 Disallow: /*.log$      # Bloquear arquivos de log
 
-# Permite ativos públicos
-Allow: /assets/
-Allow: /fonts/
-Allow: /documents/*.pdf
-
-# Sitemap 
-Sitemap: https://mefemasys.co.mz/sitemap.xml
+Sitemap: https://www.mefemasys.co.mz/sitemap.xml
