@@ -1,17 +1,12 @@
 User-agent: *
-Disallow: /includes/
-Disallow: /documents/
-Disallow: /pages/
-Disallow: /.git/
-Disallow: /.idea/
-Disallow: /vendor/
-Disallow: /fonts/
-Disallow: /assets/private/
-Disallow: /*.sql$
-Disallow: /*.log$
-Disallow: /composer.phar
+# Nenhuma diretiva Disallow: / aqui, garantindo o rastreamento da homepage
+Disallow: /.git/       # Bloquear repositório Git
+Disallow: /.idea/      # Bloquear configurações de IDE
+Disallow: /assets/private/ # Bloquear ativos que são explicitamente privados
+Disallow: /*.sql$      # Bloquear arquivos de banco de dados
+Disallow: /*.log$      # Bloquear arquivos de log
 
-# Permitir assets públicos
+# Permite ativos públicos
 Allow: /assets/
 Allow: /fonts/
 Allow: /documents/*.pdf
