@@ -2,7 +2,6 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'pages/contacto/contact_data.php'; ?>
 
-<!-- Hero Section -->
 <section class="section-py landing-hero" id="contactHero">
   <div class="container">
     <div class="row align-items-center">
@@ -16,23 +15,21 @@
   </div>
 </section>
 
-<!-- Contact Information Section -->
 <section class="py-5" id="contactInfo">
   <div class="container">
     <div class="row g-4 mb-5">
       
-      <!-- Email Principal -->
       <div class="col-lg-3 col-md-6">
         <div class="card border-0 shadow-sm h-100 text-center">
           <div class="card-body p-4">
             <div class="mb-3">
-              <span class="badge bg-gradient-dev text-white p-3" style="font-size: 1.5rem;">
+              <span class="badge bg-dev-solid text-white p-3" style="font-size: 1.5rem;">
                 <i class="ri-mail-line"></i>
               </span>
             </div>
             <h5 class="fw-bold mb-2">Email Principal</h5>
             <p class="text-muted mb-0">
-              <a href="mailto:<?php echo $contact_info['main_email']; ?>" class="text-decoration-none text-gradient-dev fw-bold">
+              <a href="mailto:<?php echo $contact_info['main_email']; ?>" class="text-decoration-none text-dev-solid fw-bold">
                 <?php echo $contact_info['main_email']; ?>
               </a>
             </p>
@@ -40,18 +37,17 @@
         </div>
       </div>
 
-      <!-- Telefone -->
       <div class="col-lg-3 col-md-6">
         <div class="card border-0 shadow-sm h-100 text-center">
           <div class="card-body p-4">
             <div class="mb-3">
-              <span class="badge bg-gradient-infra text-white p-3" style="font-size: 1.5rem;">
+              <span class="badge bg-infra-solid text-white p-3" style="font-size: 1.5rem;">
                 <i class="ri-phone-line"></i>
               </span>
             </div>
             <h5 class="fw-bold mb-2">Telefone</h5>
             <p class="text-muted mb-0">
-              <a href="tel:<?php echo str_replace(' ', '', $contact_info['phone']); ?>" class="text-decoration-none text-gradient-infra fw-bold">
+              <a href="tel:<?php echo str_replace(' ', '', $contact_info['phone']); ?>" class="text-decoration-none text-infra-solid fw-bold">
                 <?php echo $contact_info['phone']; ?>
               </a>
             </p>
@@ -59,12 +55,11 @@
         </div>
       </div>
 
-      <!-- Localização -->
       <div class="col-lg-3 col-md-6">
         <div class="card border-0 shadow-sm h-100 text-center">
           <div class="card-body p-4">
             <div class="mb-3">
-              <span class="badge bg-gradient-consult text-white p-3" style="font-size: 1.5rem;">
+              <span class="badge bg-consult-solid text-white p-3" style="font-size: 1.5rem;">
                 <i class="ri-map-pin-line"></i>
               </span>
             </div>
@@ -76,7 +71,6 @@
         </div>
       </div>
 
-      <!-- Horário -->
       <div class="col-lg-3 col-md-6">
         <div class="card border-0 shadow-sm h-100 text-center">
           <div class="card-body p-4">
@@ -98,12 +92,10 @@
   </div>
 </section>
 
-<!-- Contact Form & Additional Info Section -->
 <section class="py-5 bg-light" id="contactForm">
   <div class="container">
     <div class="row g-4">
       
-      <!-- Formulário de Contacto -->
       <div class="col-lg-8">
         <div class="card border-0 shadow-sm">
           <div class="card-body p-4">
@@ -164,21 +156,18 @@
                 </button>
               </div>
 
-              <!-- Mensagem de Sucesso/Erro -->
               <div id="formMessage" class="mt-3"></div>
             </form>
           </div>
         </div>
       </div>
 
-      <!-- Informações Adicionais -->
       <div class="col-lg-4">
         
-        <!-- Emails por Departamento -->
         <div class="card border-0 shadow-sm mb-4">
           <div class="card-body p-4">
             <h5 class="fw-bold mb-3">
-              <i class="ri-mail-line me-2 text-gradient-dev"></i>Emails por Departamento
+              <i class="ri-mail-line me-2 text-dev-solid"></i>Emails por Departamento
             </h5>
             <div class="list-group list-group-flush">
               <?php foreach ($contact_info['emails'] as $dept => $email): ?>
@@ -193,11 +182,10 @@
           </div>
         </div>
 
-        <!-- Redes Sociais -->
         <div class="card border-0 shadow-sm">
           <div class="card-body p-4">
             <h5 class="fw-bold mb-3">
-              <i class="ri-share-2-line me-2 text-gradient-infra"></i>Siga-nos nas Redes Sociais
+              <i class="ri-share-2-line me-2 text-infra-solid"></i>Siga-nos nas Redes Sociais
             </h5>
             <div class="d-flex gap-2">
               <a href="<?php echo $contact_info['social']['facebook']; ?>" target="_blank" class="btn btn-outline-primary btn-sm flex-fill">
@@ -219,7 +207,6 @@
   </div>
 </section>
 
-<!-- Map Section (Opcional) -->
 <section class="py-5" id="contactMap">
   <div class="container">
     <div class="row justify-content-center mb-4">
@@ -231,7 +218,6 @@
     <div class="row">
       <div class="col-12">
         <div class="card border-0 shadow-sm overflow-hidden" style="border-radius: 1rem; height: 400px;">
-          <!-- Placeholder para Mapa (Google Maps) -->
           <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); display: flex; align-items: center; justify-content: center;">
             <div class="text-center">
               <i class="ri-map-line fs-1 mb-3" style="color: rgba(0,0,0,0.1);"></i>
@@ -245,30 +231,34 @@
 </section>
 
 <style>
-  /* Gradientes de cores (reutilizados) */
-  .bg-gradient-dev {
-    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%) !important;
+  /* --- CORES SÓLIDAS EM SUBSTITUIÇÃO AOS GRADIENTES --- */
+
+  /* Cores sólidas (baseadas no início do gradiente original) */
+  .bg-dev-solid {
+    background-color: #4F46E5 !important; /* Base do gradiente dev */
   }
 
-  .text-gradient-dev {
-    color: #4F46E5 !important;
+  .text-dev-solid {
+    color: #4F46E5 !important; /* Base do gradiente dev */
   }
 
-  .bg-gradient-infra {
-    background: linear-gradient(135deg, #0891B2 0%, #06B6D4 100%) !important;
+  .bg-infra-solid {
+    background-color: #0891B2 !important; /* Base do gradiente infra */
   }
 
-  .text-gradient-infra {
-    color: #0891B2 !important;
+  .text-infra-solid {
+    color: #0891B2 !important; /* Base do gradiente infra */
   }
 
-  .bg-gradient-consult {
-    background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%) !important;
+  .bg-consult-solid {
+    background-color: #D97706 !important; /* Base do gradiente consult */
   }
 
-  .text-gradient-consult {
-    color: #D97706 !important;
+  .text-consult-solid {
+    color: #D97706 !important; /* Base do gradiente consult */
   }
+
+  /* --- FIM DAS CORES SÓLIDAS --- */
 
   /* Estilos do Formulário */
   .form-control,
@@ -284,13 +274,15 @@
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    /* GRADIENTE REMOVIDO, SUBSTITUÍDO POR COR SÓLIDA */
+    background-color: #4F46E5; 
     border: none;
     transition: all 0.3s ease;
   }
 
   .btn-primary:hover {
-    background: linear-gradient(135deg, #4338CA 0%, #6D28D9 100%);
+    /* COR DE HOVER AJUSTADA PARA SÓLIDA E MAIS ESCURA */
+    background-color: #4338CA;
     transform: translateY(-2px);
     box-shadow: 0 0.5rem 1.5rem rgba(79, 70, 229, 0.3);
   }
@@ -314,7 +306,7 @@
 </style>
 
 <script>
-  // Validação e Envio do Formulário
+  // Validação e Envio do Formulário (SEM MUDANÇAS)
   document.getElementById('contactFormElement').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -370,7 +362,7 @@
     });
   });
 
-  // Animação de Spin para o Loader
+  // Animação de Spin para o Loader (SEM MUDANÇAS)
   const style = document.createElement('style');
   style.textContent = `
     @keyframes spin {
