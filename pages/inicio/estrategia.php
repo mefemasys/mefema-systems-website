@@ -24,7 +24,7 @@
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title mb-2">Especialização Sob Medida</h5>
-                        <p class="card-text">Soluções <strong>Especializadas</strong> e <strong>Flexíveis</strong>. Escolha um produto *pronto a usar* ou encomende um sistema exclusivo, 100% personalizado aos seus desafios únicos.</p>
+                        <p class="card-text">Soluções <strong>Especializadas</strong> e <strong>Flexíveis</strong>. Escolha um produto <i>pronto a usar</i> ou encomende um sistema exclusivo, 100% personalizado aos seus desafios únicos.</p>
                     </div>
                 </div>
             </div>
