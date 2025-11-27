@@ -24,7 +24,7 @@
                 <div class="card card-hover-border-primary mt-4 mt-lg-0 shadow-none">
                     <div class="bg-label-primary position-relative team-image-box d-flex align-items-center justify-content-center"
                          style="min-height: 200px; overflow: hidden;">
-                        <img src="assets/img/landing-page/especializado.png" alt="Especializado e Flexível" class="img-fluid" style="max-height: 140px;">
+                        <img src="assets/img/landing-page/especializado.png" alt="Especializado e Flexível" class="img-fluid">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title mb-2">Especialização Sob Medida</h5>
@@ -42,7 +42,7 @@
                 <div class="card card-hover-border-success mt-4 mt-lg-0 shadow-none">
                     <div class="bg-label-success position-relative team-image-box d-flex align-items-center justify-content-center"
                          style="min-height: 200px; overflow: hidden;">
-                        <img src="assets/img/landing-page/moderno.png" alt="Moderno e Eficiente" class="img-fluid" style="max-height: 140px;">
+                        <img src="assets/img/landing-page/moderno.png" alt="Moderno e Eficiente" class="img-fluid">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title mb-2">Moderno e Eficiente</h5>
@@ -60,7 +60,7 @@
                 <div class="card card-hover-border-info mt-4 mt-lg-0 shadow-none">
                     <div class="bg-label-info position-relative team-image-box d-flex align-items-center justify-content-center"
                          style="min-height: 200px; overflow: hidden;">
-                        <img src="assets/img/landing-page/acessiveis.png" alt="Multifuncional e Acessível" class="img-fluid" style="max-height: 140px;">
+                        <img src="assets/img/landing-page/acessiveis.png" alt="Multifuncional e Acessível" class="img-fluid">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title mb-2">Multifuncional e Acessível</h5>
@@ -78,7 +78,7 @@
                 <div class="card card-hover-border-warning mt-4 mt-lg-0 shadow-none">
                     <div class="bg-label-warning position-relative team-image-box d-flex align-items-center justify-content-center"
                          style="min-height: 200px; overflow: hidden;">
-                        <img src="assets/img/landing-page/suporte.png" alt="Apoio Completo ao Cliente" class="img-fluid" style="max-height: 140px;">
+                        <img src="assets/img/landing-page/suporte.png" alt="Apoio Completo ao Cliente" class="img-fluid">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title mb-2">Apoio Completo ao Cliente</h5>
