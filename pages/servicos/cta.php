@@ -1,4 +1,4 @@
-<section class="section-py mt-8" id="servicesCTA">
+<section class="section-py bg-body mt-8" id="servicesCTA">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
