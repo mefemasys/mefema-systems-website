@@ -19,14 +19,6 @@
 <section class="py-5 py-lg-7" id="produtos">
   <div class="container">
 
-    <!-- Título principal -->
-    <div class="row justify-content-center mb-5 mb-6">
-      <div class="col-lg-8 text-center">
-        <h2 class="display-5 fw-bold mb-3">Produtos & Soluções Digitais</h2>
-        <p class="lead text-muted">Desenvolvimento à medida para empresas em Moçambique</p>
-      </div>
-    </div>
-
     <!-- Tabs -->
     <ul class="nav nav-tabs nav-tabs-clean justify-content-center mb-6" id="produtosTab" role="tablist">
       <li class="nav-item" role="presentation">
