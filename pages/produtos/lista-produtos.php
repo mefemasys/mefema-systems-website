@@ -14,7 +14,6 @@
   color: var(--bs-primary);
   font-weight: 600;
 }
-.space-y-1 > li + li { margin-top: .5rem; }
 </style>
 <section class="py-5 py-lg-7" id="produtosContent">
   <div class="container">
