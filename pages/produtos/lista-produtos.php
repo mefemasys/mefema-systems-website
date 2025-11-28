@@ -16,7 +16,7 @@
 }
 .space-y-1 > li + li { margin-top: .5rem; }
 </style>
-<section class="py-5 py-lg-7" id="produtos">
+<section class="py-5 py-lg-7" id="produtosContent">
   <div class="container">
 
     <!-- Tabs -->
