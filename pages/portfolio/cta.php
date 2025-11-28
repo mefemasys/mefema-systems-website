@@ -1,4 +1,4 @@
-<section class="section-py bg-body" id="portfolioCTA">
+<section class="section-py" id="portfolioCTA">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
