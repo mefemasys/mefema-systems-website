@@ -1,256 +1,259 @@
-<section class="py-5 py-md-7 bg-light" id="produtos">
+<style>
+  .transition-300 { transition: all 0.3s ease; }
+.hover-shadow-lg:hover { 
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12) !important; 
+}
+.nav-tabs-clean .nav-link {
+  border: none;
+  color: var(--bs-body-color);
+}
+.nav-tabs-clean .nav-link.active {
+  border-bottom: 3px solid var(--bs-primary);
+  background: transparent;
+  color: var(--bs-primary);
+  font-weight: 600;
+}
+.space-y-1 > li + li { margin-top: .5rem; }
+</style>
+<section class="py-5 py-lg-7" id="produtos">
   <div class="container">
-    <div class="row justify-content-center mb-5">
+
+    <!-- Título principal -->
+    <div class="row justify-content-center mb-5 mb-6">
       <div class="col-lg-8 text-center">
-        <h2 class="display-5 fw-bold text-gradient-dev mb-3">Os Nossos Produtos & Serviços </h2>
-        <p class="lead text-muted">Soluções digitais completas para o teu negócio crescer em Moçambique</p>
+        <h2 class="display-5 fw-bold mb-3">Produtos & Soluções Digitais</h2>
+        <p class="lead text-muted">Desenvolvimento à medida para empresas em Moçambique</p>
       </div>
     </div>
 
-    <!-- Tabs principais -->
-    <ul class="nav nav-pills nav-pills-custom justify-content-center mb-5" id="produtosTab" role="tablist">
+    <!-- Tabs -->
+    <ul class="nav nav-tabs nav-tabs-clean justify-content-center mb-6" id="produtosTab" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link active rounded-pill px-4 py-3" id="tab-websites" data-bs-toggle="pill" data-bs-target="#websites">
+        <button class="nav-link active fs-5 px-4 py-3" id="tab-websites" data-bs-toggle="tab" data-bs-target="#websites" type="button">
           <i class="ri-global-line me-2"></i> Websites
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link rounded-pill px-4 py-3" id="tab-sistemas" data-bs-toggle="pill" data-bs-target="#sistemas">
+        <button class="nav-link fs-5 px-4 py-3" id="tab-sistemas" data-bs-toggle="tab" data-bs-target="#sistemas" type="button">
           <i class="ri-database-2-line me-2"></i> Sistemas de Gestão
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link rounded-pill px-4 py-3" id="tab-outros" data-bs-toggle="pill" data-bs-target="#outros">
-          <i class="ri-box-3-line me-2"></i> Outros Produtos
+        <button class="nav-link fs-5 px-4 py-3" id="tab-outros" data-bs-toggle="tab" data-bs-target="#outros" type="button">
+          <i class="ri-apps-2-line me-2"></i> Outros Produtos
         </button>
       </li>
     </ul>
 
     <div class="tab-content">
 
-      <!-- ==================== WEBSITES ==================== -->
+      <!-- ====================== WEBSITES ====================== -->
       <div class="tab-pane fade show active" id="websites">
-        <div class="row g-4 g-xl-5 justify-content-center">
+        <div class="row g-4 g-xl-5">
 
-          <!-- Website Institucional -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <div class="card h-100 border-0 shadow-lg hover-lift rounded-4 overflow-hidden">
-              <div class="card-img-top bg-gradient-dev text-white text-center py-5">
-                <i class="ri-building-4-line" style="font-size: 4.5rem;"></i>
-              </div>
+          <!-- Card 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition-300">
               <div class="card-body p-4">
-                <h4 class="fw-bold">Website Institucional</h4>
-                <p class="text-muted small">Presença digital profissional, moderna e optimizada para Google.</p>
-
-                <ul class="list-unstyled mt-3 small">
-                  <li><i class="ri-check-line text-success me-2"></i>Até 10 páginas + blog</li>
-                  <li><i class="ri-check-line text-success me-2"></i>100% responsivo</li>
-                  <li><i class="ri-check-line text-success me-2"></i>SEO técnico completo</li>
-                  <li><i class="ri-check-line text-success me-2"></i>Hosting + SSL grátis 12 meses</li>
-                  <li><i class="ri-check-line text-success me-2"></i>Painel admin fácil (WordPress ou Laravel)</li>
+                <div class="d-flex align-items-center mb-4">
+                  <div class="bg-primary bg-opacity-10 text-primary rounded p-3 me-3">
+                    <i class="ri-building-4-line fs-3"></i>
+                  </div>
+                  <h4 class="mb-0 fw-bold">Website Institucional</h4>
+                </div>
+                <p class="text-muted small">Site corporativo completo, moderno, rápido e optimizado para o Google.</p>
+                <ul class="list-unstyled small text-muted mt-3 space-y-1">
+                  <li><i class="ri-check-line text-success me-2"></i> Até 10 páginas + blog opcional</li>
+                  <li><i class="ri-check-line text-success me-2"></i> Totalmente responsivo</li>
+                  <li><i class="ri-check-line text-success me-2"></i> SEO técnico incluído</li>
+                  <li><i class="ri-check-line text-success me-2"></i> Hosting + SSL grátis 12 meses</li>
+                  <li><i class="ri-check-line text-success me-2"></i> Painel de administração simples</li>
                 </ul>
-
-                <div class="mt-4">
-                  <span class="h5 fw-bold text-gradient-dev">Desde 18.000 MT</span>
-                  <small class="text-muted d-block">pagamento faseado disponível</small>
+                <div class="mt-4 pt-3 border-top">
+                  <strong class="h5">Desde 18.000 MT</strong>
                 </div>
               </div>
-              <div class="card-footer bg-white border-0 text-center pt-0">
-                <a href="#contacto" class="btn btn-gradient-dev btn-sm px-4 rounded-pill text-white">Pedir Orçamento</a>
-                <a href="#contacto" class="btn btn-outline-dev btn-sm px-4 rounded-pill ms-2">Ver Exemplos</a>
+              <div class="card-footer bg-transparent border-0 text-center pb-4">
+                <a href="#contacto" class="btn btn-primary btn-sm px-4">Pedir Orçamento</a>
               </div>
             </div>
           </div>
 
-          <!-- Landing Page -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card h-100 border-0 shadow-lg hover-lift rounded-4 overflow-hidden">
-              <div class="card-img-top bg-gradient-primary text-white text-center py-5">
-                <i class="ri-rocket-line" style="font-size: 4.5rem;"></i>
-              </div>
+          <!-- Card 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition-300">
               <div class="card-body p-4">
-                <h4 class="fw-bold">Landing Page de Conversão</h4>
-                <p class="text-muted small">Página única focada em captar leads ou vender um produto/serviço.</p>
-
-                <ul class="list-unstyled mt-3 small">
-                  <li><i class="ri-check-line text-success me-2"></i>Design persuasivo</li>
-                  <li><i class="ri-check-line text-success me-2"></i>Formulário + integração WhatsApp/Email</li>
-                  <li><i class="ri-check-line text-success me-2"></i>Google Analytics + Pixel</li>
-                  <li><i class="ri-check-line text-success me-2"></i>Contador regressivo & escassez</li>
+                <div class="d-flex align-items-center mb-4">
+                  <div class="bg-warning bg-opacity-10 text-warning rounded p-3 me-3">
+                    <i class="ri-rocket-line fs-3"></i>
+                  </div>
+                  <h4 class="mb-0 fw-bold">Landing Page de Conversão</h4>
+                </div>
+                <p class="text-muted small">Página única focada em captar contactos ou vender um produto/serviço.</p>
+                <ul class="list-unstyled small text-muted mt-3 space-y-1">
+                  <li><i class="ri-check-line text-success me-2"></i> Design de alta conversão</li>
+                  <li><i class="ri-check-line text-success me-2"></i> Integração WhatsApp / Email</li>
+                  <li><i class="ri-check-line text-success me-2"></i> Google Analytics + Meta Pixel</li>
+                  <li><i class="ri-check-line text-success me-2"></i> Contador, escassez, provas sociais</li>
                 </ul>
-
-                <div class="mt-4">
-                  <span class="h5 fw-bold text-gradient-primary">Desde 9.500 MT</span>
+                <div class="mt-4 pt-3 border-top">
+                  <strong class="h5">Desde 9.500 MT</strong>
                 </div>
               </div>
-              <div class="card-footer bg-white border-0 text-center pt-0">
-                <a href="#contacto" class="btn btn-gradient-primary btn-sm px-4 rounded-pill text-white">Solicitar</a>
+              <div class="card-footer bg-transparent border-0 text-center pb-4">
+                <a href="#contacto" class="btn btn-outline-primary btn-sm px-4">Solicitar</a>
               </div>
             </div>
           </div>
 
-          <!-- Portal Web / Área de Membros -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card h-100 border-0 shadow-lg hover-lift rounded-4 overflow-hidden">
-              <div class="card-img-top bg-gradient-warning text-white text-center py-5">
-                <i class="ri-community-line" style="font-size: 4.5rem;"></i>
-              </div>
+          <!-- Card 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition-300">
               <div class="card-body p-4">
-                <h4 class="fw-bold">Portal Web com Área de Membros</h4>
-                <p class="text-muted small">Ideal para associações, escolas, igrejas ou cursos online.</p>
-
-                <ul class="list-unstyled mt-3 small">
-                  <li><i class="ri-check-line text-success me-2"></i>Login/registo de utilizadores</li>
-                  <li><i class="ri-check-line text-success me-2"></i>Pagamentos M-Pesa & cartões</li>
-                  <li><i class="ri-check-line text-success me-2"></i>Gestão de conteúdos restritos</li>
-                  <li><i class="ri-check-line text-success me-2"></i>Multi-idioma (PT/EN)</li>
+                <div class="d-flex align-items-center mb-4">
+                  <div class="bg-info bg-opacity-10 text-info rounded p-3 me-3">
+                    <i class="ri-community-line fs-3"></i>
+                  </div>
+                  <h4 class="mb-0 fw-bold">Portal com Área de Membros</h4>
+                </div>
+                <p class="text-muted small">Para escolas, associações, igrejas, cursos online, etc.</p>
+                <ul class="list-unstyled small text-muted mt-3 space-y-1">
+                  <li><i class="ri-check-line text-success me-2"></i> Login e registo</li>
+                  <li><i class="ri-check-line text-success me-2"></i> Pagamentos M-Pesa</li>
+                  <li><i class="ri-check-line text-success me-2"></i> Conteúdo restrito por perfil</li>
+                  <li><i class="ri-check-line text-success me-2"></i> Fórum e notificações</li>
                 </ul>
-
-                <div class="mt-4">
-                  <span class="h5 fw-bold text-gradient-warning">Sob orçamento</span>
+                <div class="mt-4 pt-3 border-top">
+                  <strong class="h5">Sob orçamento</strong>
                 </div>
               </div>
-              <div class="card-footer bg-white border-0 text-center pt-0">
-                <a href="#contacto" class="btn btn-gradient-warning btn-sm px-4 rounded-pill text-white">Falar com Especialista</a>
+              <div class="card-footer bg-transparent border-0 text-center pb-4">
+                <a href="#contacto" class="btn btn-info text-white btn-sm px-4">Falar com Especialista</a>
               </div>
             </div>
           </div>
+        </div>
 
+        <!-- Exemplos reais -->
+        <div class="mt-7 text-center">
+          <p class="text-muted mb-3">Alguns websites já entregues recentemente</p>
+          <div class="d-flex flex-wrap justify-content-center gap-4">
+            <a href="https://example1.co.mz" target="_blank" class="text-decoration-none text-muted small">▸ Clínica Médica Beira</a>
+            <a href="https://example2.co.mz" target="_blank" class="text-decoration-none text-muted small">▸ Associação Comercial de Maputo</a>
+            <a href="https://example3.co.mz" target="_blank" class="text-decoration-none text-muted small">▸ Escola Técnica Nampula</a>
+            <a href="https://example4.co.mz" target="_blank" class="text-decoration-none text-muted small">▸ Loja Online Tete</a>
+          </div>
         </div>
       </div>
 
-      <!-- ==================== SISTEMAS DE GESTÃO ==================== -->
+      <!-- ====================== SISTEMAS DE GESTÃO ====================== -->
       <div class="tab-pane fade" id="sistemas">
-        <div class="row g-4 g-xl-5 justify-content-center">
-
-          <!-- Facturação & Gestão -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <div class="card h-100 border-0 shadow-lg hover-lift rounded-4 overflow-hidden position-relative">
-              <div class="ribbon ribbon-top-right"><span>POPULAR</span></div>
-              <div class="card-img-top bg-gradient-infra text-white text-center py-5">
-                <i class="ri-file-list-3-line" style="font-size: 4.5rem;"></i>
+        <div class="row g-4 g-xl-5">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition-300 position-relative overflow-hidden">
+              <div class="position-absolute top-0 end-0 mt-2 me-2">
+                <span class="badge bg-danger text-white small rounded-pill">MAIS PEDIDO</span>
               </div>
               <div class="card-body p-4">
-                <h4 class="fw-bold">Sistema de Facturação Certificado</h4>
-                <p class="text-muted small">100% conforme AT Moçambique + integração M-Pesa.</p>
-                <ul class="list-unstyled mt-3 small">
-                  <li><i class="ri-check-line text-success me-2"></i>Facturas, guias, recibos</li>
-                  <li><i class="ri-check-line text-success me-2"></i>Gestão de stock</li>
-                  <li><i class="ri-check-line text-success me-2"></i>PDV táctil</li>
-                  <li><i class="ri-check-line text-success me-2"></i>Relatórios & dashboard</li>
+                <div class="d-flex align-items-center mb-4">
+                  <div class="bg-danger bg-opacity-10 text-danger rounded p-3 me-3">
+                    <i class="ri-file-list-3-line fs-3"></i>
+                  </div>
+                  <h4 class="mb-0 fw-bold">Sistema de Facturação Certificado AT</h4>
+                </div>
+                <p class="text-muted small">Software completo de facturação, stock e PDV 100% legal em Moçambique.</p>
+                <ul class="list-unstyled small text-muted mt-3 space-y-1">
+                  <li><i class="ri-check-line text-success me-2"></i> Certificado pela Autoridade Tributária</li>
+                  <li><i class="ri-check-line text-success me-2"></i> Integração M-Pesa & EMIS</li>
+                  <li><i class="ri-check-line text-success me-2"></i> Gestão de stock multi-armazém</li>
+                  <li><i class="ri-check-line text-success me-2"></i> Relatórios em tempo real</li>
                 </ul>
-                <div class="mt-4">
-                  <span class="h5 fw-bold text-gradient-infra">Desde 35.000 MT</span>
-                  <small class="text-muted d-block">licença anual incluída</small>
+                <div class="mt-4 pt-3 border-top">
+                  <strong class="h5">Desde 35.000 MT</strong>
                 </div>
               </div>
-              <div class="card-footer bg-white border-0 text-center pt-0">
-                <a href="#contacto" class="btn btn-gradient-infra btn-sm px-4 rounded-pill text-white">Pedir Demo</a>
+              <div class="card-footer bg-transparent border-0 text-center pb-4">
+                <a href="#contacto" class="btn btn-danger text-white btn-sm px-4">Pedir Demo Grátis</a>
               </div>
             </div>
           </div>
 
-          <!-- RH -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card h-100 border-0 shadow-lg hover-lift rounded-4 overflow-hidden">
-              <div class="card-img-top bg-gradient-success text-white text-center py-5">
-                <i class="ri-group-line" style="font-size: 4.5rem;"></i>
-              </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition-300">
               <div class="card-body p-4">
-                <h4 class="fw-bold">Sistema de Recursos Humanos</h4>
-                <p class="text-muted small">Processamento salarial, férias, contratos, avaliações.</p>
-                <div class="mt-4">
-                  <span class="h5 fw-bold text-gradient-success">Sob orçamento</span>
+                <div class="d-flex align-items-center mb-4">
+                  <div class="bg-success bg-opacity-10 text-success rounded p-3 me-3">
+                    <i class="ri-group-line fs-3"></i>
+                  </div>
+                  <h4 class="mb-0 fw-bold">Sistema de Recursos Humanos</h4>
+                </div>
+                <p class="text-muted small">Processamento salarial, contratos, férias, avaliações.</p>
+                <div class="mt-4 pt-3 border-top">
+                  <strong class="h5">Sob orçamento</strong>
                 </div>
               </div>
-              <div class="card-footer bg-white border-0 text-center pt-0">
-                <a href="#contacto" class="btn btn-gradient-success btn-sm px-4 rounded-pill text-white">Solicitar</a>
+              <div class="card-footer bg-transparent border-0 text-center pb-4">
+                <a href="#contacto" class="btn btn-success text-white btn-sm px-4">Mais Informação</a>
               </div>
             </div>
           </div>
+        </div>
 
+        <!-- Exemplos -->
+        <div class="mt-7 text-center">
+          <p class="text-muted mb-3">Empresas que já usam o nosso sistema de facturação</p>
+          <div class="d-flex flex-wrap justify-content-center gap-4">
+            <span class="text-muted small">Minimercado Central • Farmácia Saúde • Restaurante Mar Azul • Loja Moda Jovem • +120 clientes</span>
+          </div>
         </div>
       </div>
 
-      <!-- ==================== OUTROS ==================== -->
+      <!-- ====================== OUTROS PRODUTOS ====================== -->
       <div class="tab-pane fade" id="outros">
-        <div class="row g-4 g-xl-5 justify-content-center">
-
-          <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <div class="card h-100 border-0 shadow-lg hover-lift rounded-4 overflow-hidden">
-              <div class="card-img-top bg-gradient-consult text-white text-center py-5">
-                <i class="ri-dashboard-3-line" style="font-size: 4.5rem;"></i>
-              </div>
+        <div class="row g-4 g-xl-5">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition-300">
               <div class="card-body p-4">
-                <h4 class="fw-bold">ERP Simplificado para PMEs</h4>
-                <p class="text-muted small">Finanças + stocks + vendas numa única plataforma.</p>
-                <div class="mt-4">
-                  <span class="h5 fw-bold text-gradient-consult">Desde 65.000 MT</span>
+                <div class="d-flex align-items-center mb-4">
+                  <div class="bg-dark bg-opacity-10 text-dark rounded p-3 me-3">
+                    <i class="ri-dashboard-3-line fs-3"></i>
+                  </div>
+                  <h4 class="mb-0 fw-bold">ERP Simplificado para PMEs</h4>
+                </div>
+                <p class="text-muted small">Tudo numa única plataforma: finanças, stocks, vendas, relatórios.</p>
+                <div class="mt-4 pt-3 border-top">
+                  <strong class="h5">Desde 65.000 MT</strong>
                 </div>
               </div>
-              <div class="card-footer bg-white border-0 text-center pt-0">
-                <a href="#contacto" class="btn btn-gradient-consult btn-sm px-4 rounded-pill text-white">Mais Info</a>
+              <div class="card-footer bg-transparent border-0 text-center pb-4">
+                <a href="#contacto" class="btn btn-dark text-white btn-sm px-4">Ver Módulos</a>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card h-100 border-0 shadow-lg hover-lift rounded-4 overflow-hidden">
-              <div class="card-img-top bg-gradient-purple text-white text-center py-5">
-                <i class="ri-customer-service-2-line" style="font-size: 4.5rem;"></i>
-              </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition-300">
               <div class="card-body p-4">
-                <h4 class="fw-bold">CRM de Vendas Avançado</h4>
-                <p class="text-muted small">Funil, automação, follow-up por WhatsApp & email.</p>
-                <div class="mt-4">
-                  <span class="h5 fw-bold text-gradient-purple">Desde 25.000 MT</span>
+                <div class="d-flex align-items-center mb-4">
+                  <div class="bg-purple bg-opacity-10 text-purple rounded p-3 me-3">
+                    <i class="ri-customer-service-2-line fs-3"></i>
+                  </div>
+                  <h4 class="mb-0 fw-bold">CRM de Vendas Avançado</h4>
+                </div>
+                <p class="text-muted small">Funil de vendas, automação WhatsApp, follow-up, relatórios.</p>
+                <div class="mt-4 pt-3 border-top">
+                  <strong class="h5">Desde 25.000 MT</strong>
                 </div>
               </div>
-              <div class="card-footer bg-white border-0 text-center pt-0">
-                <a href="#contacto" class="btn btn-gradient-purple btn-sm px-4 rounded-pill text-white">Testar Grátis</a>
+              <div class="card-footer bg-transparent border-0 text-center pb-4">
+                <a href="#contacto" class="btn btn-outline-purple btn-sm px-4">Testar 14 Dias Grátis</a>
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
     </div>
   </div>
 </section>
-<style>
-  .hover-lift {
-  transition: all 0.3s ease;
-}
-.hover-lift:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
-}
-
-.text-gradient-dev { background: linear-gradient(90deg, #6366f1, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.btn-gradient-dev { background: linear-gradient(90deg, #6366f1, #8b5cf6); }
-.bg-gradient-dev { background: linear-gradient(90deg, #6366f1, #8b5cf6); }
-
-.nav-pills-custom .nav-link.active {
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
-  color: white !important;
-}
-
-.ribbon {
-  width: 120px;
-  height: 120px;
-  overflow: hidden;
-  position: absolute;
-  top: -10px; right: -10px;
-}
-.ribbon span {
-  position: absolute;
-  top: 30px; right: -30px;
-  transform: rotate(45deg);
-  background: #f59e0b;
-  color: white;
-  padding: 6px 50px;
-  font-size: 12px;
-  font-weight: bold;
-}
-</style>
