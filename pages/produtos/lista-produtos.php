@@ -3,11 +3,11 @@
     <div class="text-center mb-5">
       <h2 class="display-5 fw-bold text-dark mb-3">Soluções Digitais Completas</h2>
       <p class="lead text-muted col-lg-8 mx-auto">
-        Desenvolvemos websites, sistemas de gestão e aplicações sob medida para todo o tipo de negócio em Moçambique
+        Desenvolvemos websites, aplicações e sistemas de gestão à medida para todo o tipo de negócios e organizações em Moçambique
       </p>
     </div>
 
-    <!-- Tabs Grandes e Limpos -->
+    <!-- Tabs Principais -->
     <ul class="nav nav-pills justify-content-center gap-3 mb-5 flex-wrap" id="produtosTabs" role="tablist">
       <li class="nav-item" role="presentation">
         <button class="nav-link active px-5 py-4 rounded-4 fw-bold fs-5" id="tab-websites" data-bs-toggle="pill" data-bs-target="#websites">
@@ -16,15 +16,15 @@
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link px-5 py-4 rounded-4 fw-bold fs-5" id="tab-sistemas" data-bs-toggle="pill" data-bs-target="#sistemas">
-          <i class="ri-database-2-line fs-3 d-block mb-2"></i>
-          Sistemas de Gestão
+        <button class="nav-link px-5 py-4 rounded-4 fw-bold fs-5" id="tab-apps" data-bs-toggle="pill" data-bs-target="#apps">
+          <i class="ri-apps-2-line fs-3 d-block mb-2"></i>
+          Aplicações Web & Desktop
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link px-5 py-4 rounded-4 fw-bold fs-5" id="tab-apps" data-bs-toggle="pill" data-bs-target="#apps">
-          <i class="ri-app-line fs-3 d-block mb-2"></i>
-          Aplicações Web & Desktop
+        <button class="nav-link px-5 py-4 rounded-4 fw-bold fs-5" id="tab-sistemas" data-bs-toggle="pill" data-bs-target="#sistemas">
+          <i class="ri-database-2-line fs-3 d-block mb-2"></i>
+          Sistemas de Gestão
         </button>
       </li>
     </ul>
@@ -33,89 +33,127 @@
 
       <!-- ==================== WEBSITES ==================== -->
       <div class="tab-pane fade show active" id="websites">
-        <div class="row g-4 justify-content-center">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
 
-          <!-- Website Institucional / Empresarial -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
-              <div class="card-body p-4 text-center">
-                <div class="bg-primary text-white rounded-circle w-70 h-70 d-inline-flex align-items-center justify-content-center mb-3">
-                  <i class="ri-building-4-line fs-2"></i>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
+              <div class="card-body text-center p-4">
+                <div class="bg-primary bg-opacity-10 w-75px h-75px rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3">
+                  <i class="ri-building-4-line text-primary fs-2"></i>
                 </div>
-                <h4 class="fw-bold">Website Empresarial / Institucional</h4>
-                <p class="text-muted small">Empresas, ONGs, associações, clínicas, escritórios de advocacia, consultórios</p>
-                <a href="#landingContact" class="btn btn-primary mt-3 px-4">Solicitar Orçamento</a>
+                <h5 class="fw-bold">Website Institucional / Empresarial</h5>
+                <p class="small text-muted">Empresas, clínicas, escritórios de advocacia, consultoras, ONGs</p>
+                <a href="#landingContact" class="btn btn-primary w-100 mt-3">Solicitar Orçamento</a>
               </div>
             </div>
           </div>
 
-          <!-- Pequenas Lojas & Comércio -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
-              <div class="card-body p-4 text-center">
-                <div class="bg-success text-white rounded-circle w-70 h-70 d-inline-flex align-items-center justify-content-center mb-3">
-                  <i class="ri-store-2-line fs-2"></i>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
+              <div class="card-body text-center p-4">
+                <div class="bg-success bg-opacity-10 w-75px h-75px rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3">
+                  <i class="ri-store-2-line text-success fs-2"></i>
                 </div>
-                <h4 class="fw-bold">Website para Loja / Comércio</h4>
-                <p class="text-muted small">Lojas de roupa, electrónica, materiais de construção, farmácias, supermercados</p>
-                <a href="#landingContact" class="btn btn-success mt-3 px-4 text-white">Solicitar Orçamento</a>
+                <h5 class="fw-bold">Website para Loja / Comércio</h5>
+                <p class="small text-muted">Lojas de roupa, eletrónica, materiais de construção, supermercados</p>
+                <a href="#landingContact" class="btn btn-success w-100 mt-3">Solicitar Orçamento</a>
               </div>
             </div>
           </div>
 
-          <!-- Restaurantes & Alimentação -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
-              <div class="card-body p-4 text-center">
-                <div class="bg-warning text-white rounded-circle w-70 h-70 d-inline-flex align-items-center justify-content-center mb-3">
-                  <i class="ri-restaurant-line fs-2"></i>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
+              <div class="card-body text-center p-4">
+                <div class="bg-warning bg-opacity-10 w-75px h-75px rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3">
+                  <i class="ri-restaurant-line text-warning fs-2"></i>
                 </div>
-                <h4 class="fw-bold">Website para Restaurante / Catering</h4>
-                <p class="text-muted small">Menu digital, reservas online, entrega ao domicílio, galeria de pratos</p>
-                <a href="#landingContact" class="btn btn-warning mt-3 px-4 text-white">Solicitar Orçamento</a>
+                <h5 class="fw-bold">Website de Restaurante / Take Away</h5>
+                <p class="small text-muted">Menu digital, reservas online, pedidos via WhatsApp</p>
+                <a href="#landingContact" class="btn btn-warning w-100 mt-3 text-dark">Solicitar Orçamento</a>
               </div>
             </div>
           </div>
 
-          <!-- Escolas & Formação -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
-              <div class="card-body p-4 text-center">
-                <div class="bg-info text-white rounded-circle w-70 h-70 d-inline-flex align-items-center justify-content-center mb-3">
-                  <i class="ri-school-line fs-2"></i>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
+              <div class="card-body text-center p-4">
+                <div class="bg-info bg-opacity-10 w-75px h-75px rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3">
+                  <i class="ri-truck-line text-info fs-2"></i>
                 </div>
-                <h4 class="fw-bold">Website para Escolas & Centros de Formação</h4>
-                <p class="text-muted small">Inscrições online, portal do aluno, calendário escolar, pagamentos</p>
-                <a href="#landingContact" class="btn btn-info mt-3 px-4 text-white">Solicitar Orçamento</a>
+                <h5 class="fw-bold">Website Catering & Eventos</h5>
+                <p class="small text-muted">Catálogo de serviços, galeria, formulário de pedidos</p>
+                <a href="#landingContact" class="btn btn-info w-100 mt-3 text-white">Solicitar Orçamento</a>
               </div>
             </div>
           </div>
 
-          <!-- Imobiliárias -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
-              <div class="card-body p-4 text-center">
-                <div>
-                <div class="bg-dark text-white rounded-circle w-70 h-70 d-inline-flex align-items-center justify-content-center mb-3">
-                  <i class="ri-home-8-line fs-2"></i>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
+              <div class="card-body text-center p-4">
+                <div class="bg-purple bg-opacity-10 w-75px h-75px rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3">
+                  <i class="ri-hotel-line text-purple fs-2"></i>
                 </div>
-                <h4 class="fw-bold">Website Imobiliário</h4>
-                <p class="text-muted small">Catálogo de imóveis, filtros avançados, visitas virtuais 360°</p>
-                <a href="#landingContact" class="btn btn-dark mt-3 px-4 text-white">Solicitar Orçamento</a>
+                <h5 class="fw-bold">Website para Hotel / Alojamento Local</h5>
+                <p class="small text-muted">Motor de reservas, galeria 360°, integração Booking</p>
+                <a href="#landingContact" class="btn btn-purple w-100 mt-3 text-white">Solicitar Orçamento</a>
               </div>
             </div>
           </div>
 
-          <!-- Landing Pages -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
-              <div class="card-body p-4 text-center">
-                <div class="bg-danger text-white rounded-circle w-70 h-70 d-inline-flex align-items-center justify-content-center mb-3">
-                  <i class="ri-rocket-line fs-2"></i>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
+              <div class="card-body text-center p-4">
+                <div class="bg-danger bg-opacity-10 w-75px h-75px rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3">
+                  <i class="ri-heart-pulse-line text-danger fs-2"></i>
                 </div>
-                <h4 class="fw-bold">Landing Page de Alta Conversão</h4>
-                <p class="text-muted small">Campanhas, lançamentos, captura de leads, eventos</p>
-                <a href="#landingContact" class="btn btn-danger mt-3 px-4 text-white">Solicitar Orçamento</a>
+                <h5 class="fw-bold">Website para Clínica / Laboratório</h5>
+                <p class="small text-muted">Marcação online, resultados digitais, blog de saúde</p>
+                <a href="#landingContact" class="btn btn-danger w-100 mt-3 text-white">Solicitar Orçamento</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+          <p class="text-muted">…e qualquer outro tipo de organização</p>
+          <a href="#landingContact" class="btn btn-outline-primary btn-lg">Quero um website personalizado →</a>
+        </div>
+      </div>
+
+      <!-- ==================== APLICAÇÕES WEB & DESKTOP ==================== -->
+      <div class="tab-pane fade" id="apps">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
+              <div class="card-body p-4">
+                <i class="ri-window-line text-primary fs-1 mb-3"></i>
+                <h5 class="fw-bold">Aplicação Web Personalizada</h5>
+                <p class="small text-muted">Plataformas online, portais de membros, dashboards, sistemas internos</p>
+                <a href="#landingContact" class="btn btn-outline-primary w-100 mt-auto">Solicitar Orçamento</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
+              <div class="card-body p-4">
+                <i class="ri-computer-line text-success fs-1 mb-3"></i>
+                <h5 class="fw-bold">Aplicação Desktop (Windows)</h5>
+                <p class="small text-muted">Programas offline com sincronização na nuvem quando necessário</p>
+                <a href="#landingContact" class="btn btn-outline-success w-100 mt-auto">Solicitar Orçamento</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
+              <div class="card-body p-4">
+                <i class="ri-shopping-cart-line text-warning fs-1 mb-3"></i>
+                <h5 class="fw-bold">Loja Online / E-commerce</h5>
+                <p class="small text-muted">Pagamentos com M-Pesa, cartão, transferência bancária</p>
+                <a href="#landingContact" class="btn btn-outline-warning w-100 mt-auto">Solicitar Orçamento</a>
               </div>
             </div>
           </div>
@@ -125,104 +163,70 @@
 
       <!-- ==================== SISTEMAS DE GESTÃO ==================== -->
       <div class="tab-pane fade" id="sistemas">
-        <div class="row g-4 justify-content-center">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
 
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
               <div class="card-body p-4">
-                <h5 class="fw-bold text-primary mb-3"><i class="ri-file-list-3-line me-2"></i>Sistema de Facturação Certificado (AGT)</h5>
-                <small class="text-muted">Facturação electrónica, stock, orçamentos, PDV, M-Pesa</small>
-                <a href="#landingContact" class="btn btn-outline-primary mt-3">Solicitar Orçamento</a>
+                <i class="ri-file-list-3-line text-primary fs-1 mb-3"></i>
+                <h5 class="fw-bold">Sistema de Facturação Certificado AT</h5>
+                <p class="small text-muted">Facturação electrónica, stock, clientes, relatórios, PDV</p>
+                <a href="#landingContact" class="btn btn-primary w-100 mt-3">Solicitar Orçamento</a>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
               <div class="card-body p-4">
-                <h5 class="fw-bold text-primary mb-3"><i class="ri-building-line me-2"></i>Gestão Empresarial Completa (ERP)</h5>
-                <small class="text-muted">Finanças, stocks, compras, vendas, relatórios, multi-utilizador</small>
-                <a href="#landingContact" class="btn btn-outline-primary mt-3">Solicitar Orçamento</a>
+                <i class="ri-building-line text-success fs-1 mb-3"></i>
+                <h5 class="fw-bold">Sistema de Gestão Empresarial (ERP)</h5>
+                <p class="small text-muted">Finanças, stocks, compras, vendas, RH integrado</p>
+                <a href="#landingContact" class="btn btn-success w-100 mt-3">Solicitar Orçamento</a>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
               <div class="card-body p-4">
-                <h5 class="fw-bold text-primary mb-3"><i class="ri-school-line me-2"></i>Gestão para Instituições de Ensino</h5>
-                <small class="text-muted">Propinas, alunos, professores, exames, certificados, portal do encarregado</small>
-                <a href="#landingContact" class="btn btn-outline-primary mt-3">Solicitar Orçamento</a>
+                <i class="ri-school-line text-info fs-1 mb-3"></i>
+                <h5 class="fw-bold">Sistema para Escolas & Universidades</h5>
+                <p class="small text-muted">Propinas, notas, frequência, portal do aluno e encarregado</p>
+                <a href="#landingContact" class="btn btn-info w-100 mt-3 text-white">Solicitar Orçamento</a>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
               <div class="card-body p-4">
-                <h5 class="fw-bold text-primary mb-3"><i class="ri-hospital-line me-2"></i>Gestão para Clínicas & Consultórios</h5>
-                <small class="text-muted">Marcacoes, pacientes, historial clínico, facturação</small>
-                <a href="#landingContact" class="btn btn-outline-primary mt-3">Solicitar Orçamento</a>
+                <i class="ri-hospital-line text-danger fs-1 mb-3"></i>
+                <h5 class="fw-bold">Sistema para Clínicas & Hospitais</h5>
+                <p class="small text-muted">Gestão de pacientes, consultas, internamentos, farmácia</p>
+                <a href="#landingContact" class="btn btn-danger w-100 mt-3 text-white">Solicitar Orçamento</a>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
               <div class="card-body p-4">
-                <h5 class="fw-bold text-primary mb-3"><i class="ri-group-line me-2"></i>Gestão de Recursos Humanos (RH)</h5>
-                <small class="text-muted">Salários, contratos, assiduidade, férias, INSS</small>
-                <a href="#landingContact" class="btn btn-outline-primary mt-3">Solicitar Orçamento</a>
+                <i class="ri-group-line text-purple fs-1 mb-3"></i>
+                <h5 class="fw-bold">Sistema de Recursos Humanos</h5>
+                <p class="small text-muted">Processamento salarial, contratos, faltas, avaliação</p>
+                <a href="#landingContact" class="btn btn-purple w-100 mt-3 text-white">Solicitar Orçamento</a>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition">
               <div class="card-body p-4">
-                <h5 class="fw-bold text-primary mb-3"><i class="ri-truck-line me-2"></i>Gestão de Logística & Frotas</h5>
-                <small class="text-muted">Veículos, rotas, manutenção, entregas</small>
-                <a href="#landingContact" class="btn btn-outline-primary mt-3">Solicitar Orçamento</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ==================== APLICAÇÕES WEB & DESKTOP ==================== -->
-      <div class="tab-pane fade" id="apps">
-        <div class="row g-4 justify-content-center">
-
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
-              <div class="card-body p-4 text-center">
-                <i class="ri-window-line fs-1 text-secondary mb-3"></i>
-                <h4 class="fw-bold">Aplicação Web Personalizada</h4>
-                <p class="text-muted small">Plataformas online, portais, intranets, sistemas à medida</p>
-                <a href="#landingContact" class="btn btn-secondary mt-3">Solicitar Orçamento</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
-              <div class="card-body p-4 text-center">
-                <i class="ri-computer-line fs-1 text-secondary mb-3"></i>
-                <h4 class="fw-bold">Aplicação Desktop (Windows)</h4>
-                <p class="text-muted small">Programas instalados localmente, alta performance, sem internet</p>
-                <a href="#landingContact" class="btn btn-secondary mt-3">Solicitar Orçamento</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm hover-shadow">
-              <div class="card-body p-4 text-center">
-                <i class="ri-apps-2-line fs-1 text-secondary mb-3"></i>
-                <h4 class="fw-bold">Sistema Híbrido (Web + Desktop)</h4>
-                <p class="text-muted small">Funciona online e offline com sincronização automática</p>
-                <a href="#landingContact" class="btn btn-secondary mt-3">Solicitar Orçamento</a>
+                <i class="ri-shield-user-line text-warning fs-1 mb-3"></i>
+                <h5 class="fw-bold">CRM de Vendas & Follow-up</h5>
+                <p class="small text-muted">Funil de vendas, leads, tarefas, relatórios de performance</p>
+                <a href="#landingContact" class="btn btn-warning w-100 mt-3 text-dark">Solicitar Orçamento</a>
               </div>
             </div>
           </div>
@@ -234,19 +238,31 @@
   </div>
 </section>
 
-<!-- CSS Simples e Limpo (colar no teu CSS ou <style> no head) -->
+<!-- CSS extra (colar no teu ficheiro CSS ou dentro <style> no head) -->
 <style>
-  .hover-shadow {
+  .hover-shadow-lg {
     transition: all 0.3s ease;
   }
-  .hover-shadow:hover {
+  .hover-shadow-lg:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
   }
   .nav-pills .nav-link.active {
     background-color: #0d6efd;
     color: white !important;
   }
-  .w-70 { width: 70px; height: 70px; }
-  .h-70 { height: 70px; }
+  .nav-pills .nav-link {
+    background-color: #f8f9fa;
+    color: #495057;
+  }
+  .btn-purple {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+  }
+  .text-purple {
+    color: #6f42c1;
+  }
+  .bg-purple {
+    background-color: #6f42c1;
+  }
 </style>
