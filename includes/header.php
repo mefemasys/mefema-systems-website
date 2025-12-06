@@ -59,6 +59,16 @@
     ?>" />
   <meta name="twitter:image" content="https://www.mefemasys.co.mz/assets/img/logos/logo.png" />
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KNBJHNCCN1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KNBJHNCCN1');
+</script>
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
