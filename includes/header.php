@@ -107,6 +107,14 @@
   
   <script src="assets/vendor/js/helpers.js"></script>
   <script src="assets/js/config.js"></script>
+
+  <script type="text/javascript">
+var _iub = _iub || [];
+_iub.csConfiguration = {"siteId":4342014,"cookiePolicyId":12188108,"lang":"pt","storage":{"useSiteId":true}};
+</script>
+<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4342014.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
 
 <body>
