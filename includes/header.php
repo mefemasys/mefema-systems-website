@@ -1,4 +1,3 @@
-
 <!doctype html>
 
 <html
@@ -14,61 +13,59 @@
   <meta
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     name="viewport" />
-  <meta content="noindex, nofollow" name="robots" />
-    <title>MEFEMA Systems - <?php echo isset($pageTitle) ? $pageTitle : 'Soluções Tecnológicas Inteligentes'; ?></title>
+    
+  <meta name="robots" content="index, follow" /> 
+
+  <link rel="canonical" href="https://www.mefemasys.co.mz/<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? '' : basename($_SERVER['PHP_SELF'], '.php'); ?>" />
+    
+  <title>MEFEMA Systems - <?php echo isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Soluções Tecnológicas Inteligentes'; ?></title>
 
   <meta
     content="MEFEMA Systems: Soluções Tecnológicas Inteligentes para Empresas Inteligentes. Desenvolvimento de Software, Infraestrutura TI, Consultoria Digital e Formação Corporativa em Moçambique."
     name="description" />
 
-
-    <meta name="description"
+  <meta name="description"
     content="<?php
       echo isset($pageDescription)
-        ? $pageDescription
+        ? htmlspecialchars($pageDescription)
         : 'MEFEMA Systems: Soluções Tecnológicas Inteligentes. Desenvolvimento de Software, Infraestrutura TI, Consultoria Digital e Formação Corporativa em Moçambique.';
     ?>"
   />
 
-  
-  <meta name="robots" content="index, follow" />
-
-
   <meta property="og:title"
-        content="MEFEMA Systems - <?php echo isset($pageTitle) ? $pageTitle : 'Soluções Tecnológicas Inteligentes'; ?>" />
+    content="MEFEMA Systems - <?php echo isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Soluções Tecnológicas Inteligentes'; ?>" />
 
   <meta property="og:description"
-        content="<?php
-          echo isset($pageDescription)
-            ? $pageDescription
-            : 'MEFEMA Systems: Soluções Tecnológicas Inteligentes. Serviços Digitais, TI, Consultoria e Software em Moçambique.';
-        ?>" />
+    content="<?php
+      echo isset($pageDescription)
+        ? htmlspecialchars($pageDescription)
+        : 'MEFEMA Systems: Soluções Tecnológicas Inteligentes. Serviços Digitais, TI, Consultoria e Software em Moçambique.';
+    ?>" />
 
+  <meta property="og:url" content="https://www.mefemasys.co.mz/<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? '' : basename($_SERVER['PHP_SELF'], '.php'); ?>" />
+  <meta property="og:site_name" content="MEFEMA Systems" />
   <meta property="og:type" content="website" />
-  
-  <meta property="og:image" content="https://mefemasys.co.mz/assets/img/logos/logo.png" />
+  <meta property="og:image" content="https://www.mefemasys.co.mz/assets/img/logos/logo.png" />
   <meta property="og:locale" content="pt_MZ" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title"
-        content="MEFEMA Systems - <?php echo isset($pageTitle) ? $pageTitle : 'Soluções Tecnológicas Inteligentes'; ?>" />
+  <meta name="twitter:site" content="@SeuHandleTwitter" /> <meta name="twitter:creator" content="@SeuHandleTwitter" /> <meta name="twitter:title"
+    content="MEFEMA Systems - <?php echo isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Soluções Tecnológicas Inteligentes'; ?>" />
   <meta name="twitter:description"
-        content="<?php
-          echo isset($pageDescription)
-            ? $pageDescription
-            : 'MEFEMA Systems: Soluções Tecnológicas Inteligentes e Desenvolvimento de Sistemas em Moçambique.';
-        ?>" />
-  <meta name="twitter:image" content="https://mefemasys.co.mz/assets/img/logos/logo.png" />
+    content="<?php
+      echo isset($pageDescription)
+        ? htmlspecialchars($pageDescription)
+        : 'MEFEMA Systems: Soluções Tecnológicas Inteligentes e Desenvolvimento de Sistemas em Moçambique.';
+    ?>" />
+  <meta name="twitter:image" content="https://www.mefemasys.co.mz/assets/img/logos/logo.png" />
 
-  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "MEFEMA Systems",
-    "url": "https://mefemasys.co.mz",
-    "logo": "https://mefemasys.co.mz/assets/img/logos/logo.png",
+    "url": "https://www.mefemasys.co.mz",
+    "logo": "https://www.mefemasys.co.mz/assets/img/logos/logo.png",
     "description": "MEFEMA Systems oferece soluções tecnológicas inteligentes: software, redes, consultoria e infraestrutura TI em Moçambique.",
     "contactPoint": [
       {
@@ -82,12 +79,11 @@
   }
   </script>
 
-  
-  <link href="assets/img/logos/logo.png" rel="icon" type="image/x-icon" />
+  <link href="/assets/img/logos/logo.png" rel="icon" type="image/x-icon" />
 
-  
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&ampdisplay=swap" rel="stylesheet" />
   <link href="assets/vendor/fonts/iconify-icons.css" rel="stylesheet" />
   <link href="assets/vendor/libs/node-waves/node-waves.css" rel="stylesheet" />
@@ -98,6 +94,7 @@
   <link href="assets/vendor/libs/nouislider/nouislider.css" rel="stylesheet" />
   <link href="assets/vendor/libs/swiper/swiper.css" rel="stylesheet" />
   <link href="assets/vendor/css/landing.css" rel="stylesheet" />
+  
   <script src="assets/vendor/js/helpers.js"></script>
   <script src="assets/js/config.js"></script>
 </head>
