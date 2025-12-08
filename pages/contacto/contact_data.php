@@ -4,7 +4,7 @@ $contact_info = [
     'main_email' => 'contacto@mefemasys.co.mz',
     'emails' => [
         'Geral' => 'info@mefemasys.co.mz',
-        'Vendas' => 'vendas@mefemasys.co.mz',
+        'Comercial' => 'comercial@mefemasys.co.mz',
         'Suporte' => 'suporte@mefemasys.co.mz',
     ],
     'phone' => '+258879990090',
