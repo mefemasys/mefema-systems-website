@@ -59,8 +59,8 @@
             <h6 class="footer-title mb-4 mb-lg-6">Contacto</h6>
             <ul class="list-unstyled mb-0">
               <li class="mb-4">
-                <a class="footer-link" href="mailto:contacto@mefemasys.co.mz">
-                  <i class="ri-mail-line me-2"></i>contacto@mefemasys.co.mz
+                <a class="footer-link" href="mailto:comercial@mefemasys.co.mz">
+                  <i class="ri-mail-line me-2"></i>comercial@mefemasys.co.mz
                 </a>
               </li>
               <li class="mb-4">
