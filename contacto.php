@@ -81,7 +81,7 @@
             </div>
             <h5 class="fw-bold mb-2">Horário de Funcionamento</h5>
             <p class="text-muted mb-0">
-              Seg-Sex: 08:00 - 17:00<br>
+              Seg-Sex: 09:00 - 16:00<br>
               <small>Sábado: 09:00 - 13:00</small>
             </p>
           </div>
@@ -116,7 +116,7 @@
               <div class="row g-3 mb-4">
                 <div class="col-md-6">
                   <label for="phone" class="form-label fw-bold">Telefone</label>
-                  <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="+258 87 999 0090">
+                  <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="+258 86 192 4050">
                 </div>
                 <div class="col-md-6">
                   <label for="company" class="form-label fw-bold">Empresa</label>
@@ -212,7 +212,7 @@
     <div class="row justify-content-center mb-4">
       <div class="col-lg-8 text-center">
         <h2 class="fw-bold mb-3">Localização</h2>
-        <p class="text-muted">Visite-nos no nosso escritório em Maputo</p>
+        <p class="text-muted">Visite-nos no nosso escritório em Pemba</p>
       </div>
     </div>
     <div class="row">
