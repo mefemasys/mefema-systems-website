@@ -65,7 +65,7 @@
               </li>
               <li class="mb-4">
                 <a class="footer-link" href="tel:+258879990090">
-                  <i class="ri-phone-line me-2"></i>+258 87 999 0090
+                  <i class="ri-phone-line me-2"></i>+258 86 192 4050
                 </a>
               </li>
               <li class="mb-4">
@@ -87,6 +87,9 @@
         </span>
         </div>
         <div>
+<a class="footer-link me-4" href="https://github.com/mefemasys" target="_blank">
+            <i class="icon-base ri ri-github-fill"></i>
+          </a>
           <a class="footer-link me-4" href="https://facebook.com/mefemasys" target="_blank">
             <i class="icon-base ri ri-facebook-circle-fill"></i>
           </a>
