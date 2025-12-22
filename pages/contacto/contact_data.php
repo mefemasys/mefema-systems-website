@@ -7,13 +7,13 @@ $contact_info = [
         'Comercial' => 'comercial@mefemasys.co.mz',
         'Suporte' => 'suporte@mefemasys.co.mz',
     ],
-    'phone' => '+258879990090',
+    'phone' => '+258 86 192 4050',
     'social' => [
         'facebook' => 'https://facebook.com/mefemasys',
         'linkedin' => 'https://linkedin.com/company/mefemasys',
         'instagram' => 'https://instagram.com/mefemasys',
     ],
-    'address' => 'Moçambique', 
+    'address' => 'Pemba, Cabo Delgado, Moçambique', 
 ];
 
 ?>
