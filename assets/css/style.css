@@ -1,5 +1,5 @@
 /*
-* style.css - VERSÃO ATUALIZADA COM ANIMAÇÕES TECNOLÓGICAS
+* style.css
 * File include item demo only specific css only
 ******************************************************************************/
 
@@ -120,60 +120,23 @@
     --color-hero-text: #212529; /* Texto Escuro */
     --color-hero-title: var(--color-primary);
     --color-hero-bg-pattern: rgba(0, 191, 255, 0.1); /* Ciano para o padrão */
-    
-    /* Novas variáveis para animações tecnológicas */
-    --color-tech-primary: #00d4ff;
-    --color-tech-secondary: #0099ff;
-    --color-tech-accent: #ff006e;
-    --color-tech-glow: rgba(0, 212, 255, 0.3);
 }
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-hero-bg: #0a0e27; /* Azul muito escuro (quase preto) */
+        --color-hero-bg: #343a40; /* Cinza Escuro (Dark Gray) */
         --color-hero-text: #f8f9fa; /* Texto Claro */
-        --color-hero-title: #00d4ff; /* Ciano Claro para o título */
-        --color-hero-bg-pattern: rgba(0, 212, 255, 0.05); /* Ciano mais sutil para o padrão */
-        
-        /* Novas variáveis para dark mode */
-        --color-tech-primary: #00d4ff;
-        --color-tech-secondary: #0099ff;
-        --color-tech-accent: #ff006e;
-        --color-tech-glow: rgba(0, 212, 255, 0.2);
+        --color-hero-title: #00bfff; /* Ciano Claro para o título */
+        --color-hero-bg-pattern: rgba(0, 191, 255, 0.05); /* Ciano mais sutil para o padrão */
     }
 }
 
-/* ============================================================================
-   ANIMAÇÕES TECNOLÓGICAS MODERNAS
-   ============================================================================ */
+/* Estilos da Seção Hero */
 
-/* Estilos da Seção Hero com Background Tecnológico */
-.landing-hero {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, var(--color-hero-bg) 0%, rgba(0, 212, 255, 0.05) 100%);
-}
 
-/* Camada 1: Grid de Linhas Animadas (Efeito Cyberpunk) */
-.landing-hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-    background-image: 
-        linear-gradient(0deg, transparent 24%, var(--color-tech-glow) 25%, var(--color-tech-glow) 26%, transparent 27%, transparent 74%, var(--color-tech-glow) 75%, var(--color-tech-glow) 76%, transparent 77%, transparent),
-        linear-gradient(90deg, transparent 24%, var(--color-tech-glow) 25%, var(--color-tech-glow) 26%, transparent 27%, transparent 74%, var(--color-tech-glow) 75%, var(--color-tech-glow) 76%, transparent 77%, transparent);
-    background-size: 50px 50px;
-    animation: gridShift 20s linear infinite;
-    opacity: 0.15;
-}
-
-/* Camada 2: Partículas Flutuantes com Glow */
+/* Fundo Animado de Cristas/Pirâmides Sutis (CSS PURE) */
+.landing-hero::before,
 .landing-hero::after {
     content: "";
     position: absolute;
@@ -183,317 +146,83 @@
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    background: 
-        radial-gradient(circle at 20% 50%, var(--color-tech-glow) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 0, 110, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 20%, rgba(0, 153, 255, 0.1) 0%, transparent 50%);
-    animation: particleFloat 30s ease-in-out infinite;
-}
-
-/* Camada 3: Efeito de Scan Lines (Opcional - mais sutil) */
-.landing-hero {
-    background-attachment: fixed;
 }
 
 .landing-hero::before {
-    background-blend-mode: screen;
+    /* Padrão de Triângulos/Cristas */
+    background:
+            repeating-linear-gradient(
+                    -45deg,
+                    var(--color-hero-bg-pattern),
+                    var(--color-hero-bg-pattern) 10px,
+                    transparent 10px,
+                    transparent 20px
+            );
+    background-size: 40px 40px;
+    opacity: 0.5; /* Sutil */
+    animation: movePattern 60s linear infinite;
 }
 
-/* Animação: Grid Shift - Movimento das linhas do grid */
-@keyframes gridShift {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 50px 50px;
-    }
+.landing-hero::after {
+    /* Camada de Dissolução (opcional, para mais sutileza) */
+    background: radial-gradient(circle at center, transparent 0%, var(--color-hero-bg) 70%);
+    opacity: 0.1;
+    animation: dissolve 120s linear infinite alternate;
 }
 
-/* Animação: Particle Float - Movimento suave das partículas */
-@keyframes particleFloat {
-    0%, 100% {
-        transform: translateY(0px) translateX(0px);
-        opacity: 0.3;
-    }
-    25% {
-        transform: translateY(-20px) translateX(10px);
-        opacity: 0.5;
-    }
-    50% {
-        transform: translateY(-40px) translateX(-10px);
-        opacity: 0.3;
-    }
-    75% {
-        transform: translateY(-20px) translateX(15px);
-        opacity: 0.4;
-    }
+@keyframes movePattern {
+    0% { background-position: 0 0; }
+    100% { background-position: 400px 400px; }
 }
 
-/* Animação: Pulse Glow - Efeito de pulsação de brilho */
-@keyframes pulseGlow {
-    0%, 100% {
-        box-shadow: 0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 153, 255, 0.3);
-    }
-    50% {
-        box-shadow: 0 0 30px rgba(0, 212, 255, 0.8), 0 0 60px rgba(0, 153, 255, 0.5);
-    }
+@keyframes dissolve {
+    0% { opacity: 0.1; }
+    100% { opacity: 0.05; }
 }
 
-/* Animação: Floating - Movimento suave para cima e para baixo */
-@keyframes floating {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-/* Animação: Scan Effect - Efeito de varredura de radar */
-@keyframes scanEffect {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Animação: Shimmer - Efeito de brilho deslizante */
-@keyframes shimmer {
-    0% {
-        background-position: -1000px 0;
-    }
-    100% {
-        background-position: 1000px 0;
-    }
-}
-
-/* Animação: Neon Flicker - Efeito de tremeluzir neon */
-@keyframes neonFlicker {
-    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        text-shadow: 
-            0 0 10px var(--color-tech-primary),
-            0 0 20px var(--color-tech-primary),
-            0 0 30px var(--color-tech-primary),
-            0 0 40px var(--color-tech-secondary);
-    }
-    20%, 24%, 55% {
-        text-shadow: 
-            0 0 5px var(--color-tech-primary),
-            0 0 10px var(--color-tech-primary);
-    }
-}
-
-/* Animação: Cyber Pulse - Pulso cibernético */
-@keyframes cyberPulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 0.8;
-    }
-}
-
-/* ============================================================================
-   ESTILOS DE BOTÕES TECNOLÓGICOS
-   ============================================================================ */
-
+/* Estilos de Botões (Ajustados para usar as variáveis) */
 .btn-primary {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
     color: white;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.btn-primary::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s ease;
-}
-
-.btn-primary:hover::before {
-    left: 100%;
-}
-
-.btn-primary:hover {
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 153, 255, 0.3);
-    transform: translateY(-2px);
 }
 
 .btn-outline-primary {
     color: var(--color-primary);
     border-color: var(--color-primary);
     background-color: transparent;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-primary::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background: var(--color-primary);
-    transition: width 0.3s ease;
-    z-index: -1;
-}
-
-.btn-outline-primary:hover {
-    color: white;
-    border-color: var(--color-tech-primary);
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
-}
-
-.btn-outline-primary:hover::before {
-    width: 100%;
 }
 
 /* Dark Mode - Ajustes de Botões */
 @media (prefers-color-scheme: dark) {
     .btn-primary {
-        background-color: var(--color-tech-primary);
-        border-color: var(--color-tech-primary);
-        color: #0a0e27;
-        box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
-    }
-
-    .btn-primary:hover {
-        box-shadow: 0 0 25px rgba(0, 212, 255, 0.8), 0 0 50px rgba(0, 153, 255, 0.4);
+        background-color: var(--color-hero-title); /* Ciano Claro */
+        border-color: var(--color-hero-title);
+        color: var(--color-hero-text);
     }
 
     .btn-outline-primary {
-        color: var(--color-tech-primary);
-        border-color: var(--color-tech-primary);
-        box-shadow: inset 0 0 10px rgba(0, 212, 255, 0.2);
-    }
-
-    .btn-outline-primary:hover {
-        color: #0a0e27;
-        box-shadow: 0 0 20px rgba(0, 212, 255, 0.8), inset 0 0 10px rgba(0, 212, 255, 0.3);
+        color: var(--color-hero-title);
+        border-color: var(--color-hero-title);
     }
 }
 
-/* ============================================================================
-   ESTILOS ADICIONAIS PARA ELEMENTOS TECNOLÓGICOS
-   ============================================================================ */
 
-/* Estilo do botão único com efeito tecnológico */
+/* Estilo do botão único */
 #themeToggleBtn {
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid var(--color-tech-primary);
-    background-color: transparent;
-    color: var(--color-tech-primary);
-}
-
-#themeToggleBtn::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: var(--color-tech-primary);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-    z-index: -1;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 #themeToggleBtn:hover {
     transform: scale(1.05);
-    color: #0a0e27;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
-}
-
-#themeToggleBtn:hover::after {
-    width: 300px;
-    height: 300px;
 }
 
 #themeToggleBtn:active {
     transform: scale(0.95);
 }
 
-/* Destaque com efeito neon */
+/* Destaque opcional (pode remover se não quiser) */
 #themeToggleBtn.active {
-    background-color: var(--color-tech-primary) !important;
-    color: #0a0e27 !important;
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 153, 255, 0.3);
-    animation: cyberPulse 2s ease-in-out infinite;
-}
-
-/* ============================================================================
-   ELEMENTOS COM ANIMAÇÕES TECNOLÓGICAS
-   ============================================================================ */
-
-/* Classe para elementos que devem flutuar */
-.tech-float {
-    animation: floating 3s ease-in-out infinite;
-}
-
-/* Classe para elementos com glow pulsante */
-.tech-glow {
-    animation: pulseGlow 2s ease-in-out infinite;
-}
-
-/* Classe para elementos com efeito shimmer */
-.tech-shimmer {
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    background-size: 1000px 100%;
-    animation: shimmer 3s infinite;
-}
-
-/* Classe para títulos com efeito neon */
-.tech-neon {
-    animation: neonFlicker 2s ease-in-out infinite;
-}
-
-/* Classe para elementos com scan effect */
-.tech-scan {
-    animation: scanEffect 8s linear infinite;
-}
-
-/* ============================================================================
-   RESPONSIVIDADE
-   ============================================================================ */
-
-@media (max-width: 768px) {
-    .landing-hero::before {
-        background-size: 30px 30px;
-        opacity: 0.1;
-    }
-    
-    .landing-hero::after {
-        animation: particleFloat 40s ease-in-out infinite;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .landing-hero::before,
-    .landing-hero::after,
-    .btn-primary,
-    .btn-outline-primary,
-    #themeToggleBtn,
-    .tech-float,
-    .tech-glow,
-    .tech-shimmer,
-    .tech-neon,
-    .tech-scan {
-        animation: none !important;
-        transition: none !important;
-    }
+    background-color: #0d6efd !important;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
 }
