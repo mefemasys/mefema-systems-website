@@ -83,7 +83,7 @@
       <div class="container d-flex flex-wrap justify-content-between flex-md-row flex-column text-center text-md-start">
         <div class="mb-2 mb-md-0">
         <span class="footer-bottom-text">
-          © <script>document.write(new Date().getFullYear());</script> Mefema Systems. Todos os direitos reservados.
+          © 2025 — <script>document.write(new Date().getFullYear());</script> Mefema Systems. Todos os direitos reservados.
         </span>
         </div>
         <div>
