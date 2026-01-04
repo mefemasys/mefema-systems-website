@@ -1,35 +1,126 @@
 <style>
-/* Cores Personalizadas */
-.bg-orange { background-color: #fd7e14 !important; }
-.border-orange { border-color: #fd7e14 !important; }
-.bg-blue { background-color: #0d6efd !important; }
-.border-blue { border-color: #0d6efd !important; }
-.bg-brown { background-color: #795548 !important; }
-.border-brown { border-color: #795548 !important; }
-.bg-green { background-color: #198754 !important; }
-.border-green { border-color: #198754 !important; }
+/* Variáveis de Cor - Adaptam automaticamente ao Dark Mode */
+:root {
+  --color-primary: #3b82f6;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-accent: #8b5cf6; /* substitui o marrom antigo */
+  
+  --bg-light: #ffffff;
+  --bg-dark: #1a1a1a;
+  --text-light: #212529;
+  --text-dark: #f8f9fa;
+  --border-light: #dee2e6;
+  --border-dark: #495057;
+}
 
-/* Ajuste para Ocupar Toda a Tela */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-light: #212529;
+    --bg-dark: #121212;
+    --text-light: #f8f9fa;
+    --text-dark: #e9ecef;
+    --border-light: #495057;
+    --border-dark: #6c757d;
+  }
+}
+
+/* Classes Personalizadas Atualizadas */
+.bg-primary { background-color: var(--color-primary) !important; }
+.border-primary { border-color: var(--color-primary) !important; }
+.bg-success { background-color: var(--color-success) !important; }
+.border-success { border-color: var(--color-success) !important; }
+.bg-warning { background-color: var(--color-warning) !important; }
+.border-warning { border-color: var(--color-warning) !important; }
+.bg-accent { background-color: var(--color-accent) !important; }
+.border-accent { border-color: var(--color-accent) !important; }
+
+/* Ajustes Gerais para Dark Mode */
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 #portfolioSlider {
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: var(--bg-dark);
 }
 
-/* Customização das Setas (Ajustam ao Tema) */
+/* Indicadores do Carousel */
+.carousel-indicators button {
+  background-color: var(--text-dark) !important;
+  opacity: 0.5;
+}
+.carousel-indicators button.active {
+  opacity: 1;
+}
+
+/* Setas do Carousel - Mais elegantes */
 .carousel-control-prev, .carousel-control-next {
-    width: 5%;
-    filter: invert(1) grayscale(100); /* Torna as setas visíveis em fundos claros/escuros */
+  width: 6%;
+  opacity: 0.8;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-size: 60%;
+}
+@media (prefers-color-scheme: dark) {
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 }
 
-/* Efeito de Vidro/Sombra no Card de Imagem */
+/* Placeholder da Imagem - Efeito vidro no dark mode */
 .img-placeholder {
+  background: linear-gradient(135deg, 
+    rgba(255,255,255,0.05) 0%, 
+    rgba(255,255,255,0.1) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-dark);
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+@media (prefers-color-scheme: light) {
+  .img-placeholder {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  }
 }
 
-/* Responsividade para Full Width */
+/* Badges e Botões */
+.badge {
+  opacity: 0.9;
+}
+.btn-outline-dark {
+  border-color: var(--text-dark);
+  color: var(--text-dark);
+}
+.btn-outline-dark:hover {
+  background-color: var(--text-dark);
+  color: var(--bg-dark);
+}
+
+/* Ajustes de texto */
+.text-muted {
+  color: #adb5bd !important;
+}
+.border-start {
+  border-left-width: 5px !important;
+}
+
+/* Responsividade */
 @media (max-width: 991px) {
-    .carousel-item { padding: 0 40px; }
+  .carousel-item { 
+    padding: 0 30px; 
+  }
+  .carousel-control-prev, .carousel-control-next {
+    width: 10%;
+  }
 }
 </style>
 
