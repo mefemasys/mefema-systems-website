@@ -109,26 +109,29 @@
     margin-top: 1.25rem;
 }
 
-/* Variáveis de Cores */
+/* Variáveis de Cores - Paleta Laranja */
 :root {
     /* Cores para Light Mode */
-    --color-primary: #007bff; /* Azul */
-    --color-secondary: #ff7f00; /* Laranja */
-    --color-success: #28a745; /* Verde */
-    --color-warning: #8b4513; /* Castanho */
-    --color-hero-bg: #e0ffff; /* Ciano Claro (Light Cyan) */
-    --color-hero-text: #212529; /* Texto Escuro */
+    --color-primary: #FF6B35; /* Laranja Vibrante (Cor Principal) */
+    --color-secondary: #004E89; /* Azul Profundo (Contraste) */
+    --color-success: #52B788; /* Verde Suave */
+    --color-warning: #FFB627; /* Amarelo Dourado */
+    --color-hero-bg: #FFF5F0; /* Pêssego Muito Claro */
+    --color-hero-text: #2D3142; /* Cinza Escuro */
     --color-hero-title: var(--color-primary);
-    --color-hero-bg-pattern: rgba(0, 191, 255, 0.1); /* Ciano para o padrão */
+    --color-hero-bg-pattern: rgba(255, 107, 53, 0.08); /* Laranja sutil para o padrão */
 }
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-hero-bg: #343a40; /* Cinza Escuro (Dark Gray) */
-        --color-hero-text: #f8f9fa; /* Texto Claro */
-        --color-hero-title: #00bfff; /* Ciano Claro para o título */
-        --color-hero-bg-pattern: rgba(0, 191, 255, 0.05); /* Ciano mais sutil para o padrão */
+        --color-hero-bg: #1A1B26; /* Cinza Azulado Muito Escuro */
+        --color-hero-text: #E8E9ED; /* Texto Claro */
+        --color-hero-title: #FF8C61; /* Laranja mais claro para melhor contraste */
+        --color-hero-bg-pattern: rgba(255, 107, 53, 0.05); /* Laranja muito sutil para o padrão */
+        --color-primary: #FF8C61; /* Laranja mais claro no dark mode */
+        --color-secondary: #4A9EDD; /* Azul mais claro */
+        --color-success: #6FCF97; /* Verde mais claro */
     }
 }
 
@@ -196,7 +199,7 @@
 /* Dark Mode - Ajustes de Botões */
 @media (prefers-color-scheme: dark) {
     .btn-primary {
-        background-color: var(--color-hero-title); /* Ciano Claro */
+        background-color: var(--color-hero-title); /* Laranja mais claro */
         border-color: var(--color-hero-title);
         color: var(--color-hero-text);
     }
@@ -223,6 +226,6 @@
 
 /* Destaque opcional (pode remover se não quiser) */
 #themeToggleBtn.active {
-    background-color: #0d6efd !important;
-    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    background-color: #FF6B35 !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.25);
 }
