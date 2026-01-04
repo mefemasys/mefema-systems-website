@@ -1,15 +1,15 @@
-  <footer class="landing-footer">
+<footer class="landing-footer">
     <div class="footer-top position-relative overflow-hidden">
-      <img alt="footer bg" class="footer-bg banner-bg-img" src="assets/img/backgrounds/footer-bg.png" />
+      <img alt="footer bg" class="footer-bg banner-bg-img" src="<?php echo asset('assets/img/backgrounds/footer-bg.png'); ?>" />
       <div class="container">
         <div class="row gx-0 gy-6 g-lg-10">
           <div class="col-lg-5">
-            <a class="app-brand-link mb-6" href="index.html">
+            <a class="app-brand-link mb-6" href="<?php echo BASE_URL; ?>">
               <img
                 alt="Mefema Systems Logo"
                 class="navbar-logo-svg"
                 height="40"
-                src="assets/img/logos/logo.svg"
+                src="<?php echo asset('assets/img/logos/logo.svg'); ?>"
                 width="auto"
               > <span class="app-brand-text demo text-white fw-semibold ms-2 ps-1">Mefema Systems</span>
             </a>
@@ -23,16 +23,16 @@
             <h6 class="footer-title mb-4 mb-lg-6">Serviços</h6>
             <ul class="list-unstyled mb-0">
               <li class="mb-4">
-                <a class="footer-link" href="servicos">Desenvolvimento de Software</a>
+                <a class="footer-link" href="<?php echo BASE_URL; ?>servicos">Desenvolvimento de Software</a>
               </li>
               <li class="mb-4">
-                <a class="footer-link" href="servicos">Infraestrutura TI</a>
+                <a class="footer-link" href="<?php echo BASE_URL; ?>servicos">Infraestrutura TI</a>
               </li>
               <li class="mb-4">
-                <a class="footer-link" href="servicos">Consultoria Digital</a>
+                <a class="footer-link" href="<?php echo BASE_URL; ?>servicos">Consultoria Digital</a>
               </li>
               <li class="mb-4">
-                <a class="footer-link" href="servicos">Formação Corporativa</a>
+                <a class="footer-link" href="<?php echo BASE_URL; ?>servicos">Formação Corporativa</a>
               </li>
             </ul>
           </div>
@@ -41,16 +41,16 @@
             <h6 class="footer-title mb-4 mb-lg-6">Empresa</h6>
             <ul class="list-unstyled mb-0">
               <li class="mb-4">
-                <a class="footer-link" href="sobre">Sobre Nós</a>
+                <a class="footer-link" href="<?php echo BASE_URL; ?>sobre">Sobre Nós</a>
               </li>
               <li class="mb-4">
-                <a class="footer-link" href="portfolio">Projectos</a>
+                <a class="footer-link" href="<?php echo BASE_URL; ?>portfolio">Projectos</a>
               </li>
               <li class="mb-4">
-                <a class="footer-link" href="servico">Servicos</a>
+                <a class="footer-link" href="<?php echo BASE_URL; ?>servicos">Serviços</a>
               </li>
               <li class="mb-4">
-                <a class="footer-link" href="contacto">Contacto</a>
+                <a class="footer-link" href="<?php echo BASE_URL; ?>contacto">Contacto</a>
               </li>
             </ul>
           </div>
@@ -64,7 +64,7 @@
                 </a>
               </li>
               <li class="mb-4">
-                <a class="footer-link" href="tel:+258879990090">
+                <a class="footer-link" href="tel:+258861924050">
                   <i class="ri-phone-line me-2"></i>+258 86 192 4050
                 </a>
               </li>
@@ -87,7 +87,7 @@
         </span>
         </div>
         <div>
-<a class="footer-link me-4" href="https://github.com/mefemasys" target="_blank">
+          <a class="footer-link me-4" href="https://github.com/mefemasys" target="_blank">
             <i class="icon-base ri ri-github-fill"></i>
           </a>
           <a class="footer-link me-4" href="https://facebook.com/mefemasys" target="_blank">
@@ -110,17 +110,17 @@
 </div>
 
 
-<script src="assets/vendor/libs/popper/popper.js"></script>
-<script src="assets/vendor/js/bootstrap.js"></script>
-<script src="assets/vendor/libs/node-waves/node-waves.js"></script>
+<script src="<?php echo asset('assets/vendor/libs/popper/popper.js'); ?>"></script>
+<script src="<?php echo asset('assets/vendor/js/bootstrap.js'); ?>"></script>
+<script src="<?php echo asset('assets/vendor/libs/node-waves/node-waves.js'); ?>"></script>
 
-<script src="assets/vendor/libs/@algolia/autocomplete-js.js"></script>
+<script src="<?php echo asset('assets/vendor/libs/@algolia/autocomplete-js.js'); ?>"></script>
 
-<script src="assets/vendor/libs/pickr/pickr.js"></script>
+<script src="<?php echo asset('assets/vendor/libs/pickr/pickr.js'); ?>"></script>
 
-<script src="assets/vendor/libs/nouislider/nouislider.js"></script>
-<script src="assets/vendor/libs/swiper/swiper.js"></script>
-<script src="assets/js/front-main.js"></script>
-<script src="assets/js/page-landing.js"></script>
+<script src="<?php echo asset('assets/vendor/libs/nouislider/nouislider.js'); ?>"></script>
+<script src="<?php echo asset('assets/vendor/libs/swiper/swiper.js'); ?>"></script>
+<script src="<?php echo asset('assets/js/front-main.js'); ?>"></script>
+<script src="<?php echo asset('assets/js/page-landing.js'); ?>"></script>
 </body>
 </html>
