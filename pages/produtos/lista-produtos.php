@@ -293,7 +293,7 @@ MOCK_DATA.all = [
 const state = {
   categoriaAtual: 'all',
   paginaAtual: 1,
-  itensPorPagina: 6, // aumentado para suportar mais cards por linha
+  itensPorPagina: 8, // aumentado para suportar mais cards por linha
   produtosFiltrados: [],
   loading: false
 };
@@ -332,7 +332,7 @@ function aplicarFiltros() {
 // ==================== RENDERIZAÇÃO ====================
 function renderSkeleton() {
   const grid = document.getElementById('produtosGrid');
-  grid.innerHTML = Array(6).fill(0).map(() => `
+  grid.innerHTML = Array(8).fill(0).map(() => `
     <div class="card shadow-sm border-0 skeleton-card">
       <div class="skeleton skeleton-img"></div>
       <div class="card-body p-4">
@@ -385,7 +385,7 @@ function renderProduto(produto) {
         </div>
         <p class="product-description mb-3">${produto.descricao}</p>
         <div class="mb-3">
-          ${produto.caracteristicas.slice(0, 3).map(c => `
+          ${produto.caracteristicas.slice(0, 4).map(c => `
             <span class="badge bg-light text-dark badge-feature me-1 mb-1">
               <i class="ri-check-line"></i> ${c}
             </span>
@@ -471,7 +471,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Botão "Mais itens" - aumenta itens por página
   document.getElementById('moreItemsBtn').addEventListener('click', function() {
-    state.itensPorPagina += 6;
+    state.itensPorPagina += 8;
     renderProdutos();
   });
 
