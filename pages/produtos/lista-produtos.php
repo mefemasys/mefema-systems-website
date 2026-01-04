@@ -10,7 +10,7 @@
   }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: #f8f9fa;
+    /* Removido background: #f8f9fa; para herdar do tema */
   }
   .transition-300 {
     transition: all 0.3s ease;
@@ -23,13 +23,13 @@
     min-height: 580px;
     display: flex;
     flex-direction: column;
-    /* Removido background: white; */
+    /* Fundo removido - herda do tema */
     overflow: hidden;
     height: 100%;
   }
   .product-carousel {
     height: 250px;
-    /* Removido background: #f5f5f5; para herdar do tema */
+    /* Fundo removido - herda do tema */
     position: relative;
   }
   .product-carousel img {
@@ -156,7 +156,7 @@
     margin-bottom: 1rem;
     opacity: 0.3;
   }
-  /* Responsividade dos cards - mínimo 3, máximo mais em telas grandes */
+  /* Responsividade dos cards */
   @media (min-width: 576px) { .grid-cols { --cols: 2; } }
   @media (min-width: 768px) { .grid-cols { --cols: 3; } }
   @media (min-width: 1200px) { .grid-cols { --cols: 4; } }
@@ -292,7 +292,7 @@ MOCK_DATA.all = [
 const state = {
   categoriaAtual: 'all',
   paginaAtual: 1,
-  itensPorPagina: 8, // aumentado para suportar mais cards por linha
+  itensPorPagina: 8,
   produtosFiltrados: [],
   loading: false
 };
@@ -301,7 +301,6 @@ const state = {
 function aplicarFiltros() {
   let produtos = MOCK_DATA[state.categoriaAtual] || [];
 
-  // Filtro de busca
   const termo = document.getElementById('searchInput').value.toLowerCase();
   if (termo) {
     produtos = produtos.filter(p =>
@@ -310,7 +309,6 @@ function aplicarFiltros() {
     );
   }
 
-  // Filtro de preço
   const precoFiltro = document.getElementById('priceFilter').value;
   if (precoFiltro !== 'all') {
     produtos = produtos.filter(p => {
@@ -389,10 +387,10 @@ function renderProduto(produto) {
               <i class="ri-check-line"></i> ${c}
             </span>
           `).join('')}
-          ${produto.caracteristicas.length > 3 ? `<span class="badge bg-light text-dark badge-feature">+${produto.caracteristicas.length - 4}</span>` : ''}
+          ${produto.caracteristicas.length > 4 ? `<span class="badge bg-light text-dark badge-feature">+${produto.caracteristicas.length - 4}</span>` : ''}
         </div>
       </div>
-      <div class="card-footer border-0 bg-white p-3">
+      <div class="card-footer border-0 p-3"> <!-- Removido bg-white -->
         <div class="d-flex gap-2">
           ${produto.demoUrl ? `<a href="${produto.demoUrl}" target="_blank" class="btn btn-outline-${produto.cor} btn-sm flex-fill"><i class="ri-external-link-line"></i> Demo</a>` : ''}
           <a href="#contacto" class="btn btn-${produto.cor} btn-sm flex-fill"><i class="ri-mail-line"></i> Orçamento</a>
@@ -453,7 +451,6 @@ function abrirPreview(imgSrc, titulo) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Tabs
   document.querySelectorAll('#categoriasTab .nav-link').forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
@@ -464,17 +461,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Filtros
   document.getElementById('searchInput').addEventListener('input', aplicarFiltros);
   document.getElementById('priceFilter').addEventListener('change', aplicarFiltros);
 
-  // Botão "Mais itens" - aumenta itens por página
   document.getElementById('moreItemsBtn').addEventListener('click', function() {
     state.itensPorPagina += 8;
     renderProdutos();
   });
 
-  // Paginação
   document.getElementById('paginacao').addEventListener('click', function(e) {
     e.preventDefault();
     if (e.target.closest('.page-link')) {
@@ -487,7 +481,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Inicial
   state.produtosFiltrados = MOCK_DATA.all;
   renderProdutos();
 });
