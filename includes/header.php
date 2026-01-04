@@ -1,8 +1,19 @@
+<?php
+// Configuração da URL base
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+$baseUrl = $protocol . "://" . $_SERVER['HTTP_HOST'] . "/";
+define('BASE_URL', $baseUrl);
+
+// Função helper para assets
+function asset($path) {
+    return BASE_URL . ltrim($path, '/');
+}
+?>
 <!doctype html>
 
 <html
   class="layout-navbar-fixed layout-wide"
-  data-assets-path="assets/"
+  data-assets-path="<?php echo asset('assets/'); ?>"
   data-bs-theme="light"
   data-skin="default"
   data-template="front-pages"
@@ -16,7 +27,7 @@
     
   <meta name="robots" content="index, follow" /> 
 
-  <link rel="canonical" href="https://www.mefemasys.co.mz/<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? '' : basename($_SERVER['PHP_SELF'], '.php'); ?>" />
+  <link rel="canonical" href="<?php echo BASE_URL . (basename($_SERVER['PHP_SELF']) == 'index.php' ? '' : basename($_SERVER['PHP_SELF'], '.php')); ?>" />
     
   <title>MEFEMA Systems - <?php echo isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Soluções Tecnológicas Inteligentes'; ?></title>
 
@@ -42,14 +53,16 @@
         : 'MEFEMA Systems: Soluções Tecnológicas Inteligentes. Serviços Digitais, TI, Consultoria e Software em Moçambique.';
     ?>" />
 
-  <meta property="og:url" content="https://www.mefemasys.co.mz/<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? '' : basename($_SERVER['PHP_SELF'], '.php'); ?>" />
+  <meta property="og:url" content="<?php echo BASE_URL . (basename($_SERVER['PHP_SELF']) == 'index.php' ? '' : basename($_SERVER['PHP_SELF'], '.php')); ?>" />
   <meta property="og:site_name" content="MEFEMA Systems" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.mefemasys.co.mz/assets/img/logos/logo.png" />
+  <meta property="og:image" content="<?php echo asset('assets/img/logos/logo.png'); ?>" />
   <meta property="og:locale" content="pt_MZ" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@SeuHandleTwitter" /> <meta name="twitter:creator" content="@SeuHandleTwitter" /> <meta name="twitter:title"
+  <meta name="twitter:site" content="@SeuHandleTwitter" />
+  <meta name="twitter:creator" content="@SeuHandleTwitter" />
+  <meta name="twitter:title"
     content="MEFEMA Systems - <?php echo isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Soluções Tecnológicas Inteligentes'; ?>" />
   <meta name="twitter:description"
     content="<?php
@@ -57,7 +70,7 @@
         ? htmlspecialchars($pageDescription)
         : 'MEFEMA Systems: Soluções Tecnológicas Inteligentes e Desenvolvimento de Sistemas em Moçambique.';
     ?>" />
-  <meta name="twitter:image" content="https://www.mefemasys.co.mz/assets/img/logos/logo.png" />
+  <meta name="twitter:image" content="<?php echo asset('assets/img/logos/logo.png'); ?>" />
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNBJHNCCN1"></script>
@@ -74,8 +87,8 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "MEFEMA Systems",
-    "url": "https://www.mefemasys.co.mz",
-    "logo": "https://www.mefemasys.co.mz/assets/img/logos/logo.png",
+    "url": "<?php echo rtrim(BASE_URL, '/'); ?>",
+    "logo": "<?php echo asset('assets/img/logos/logo.png'); ?>",
     "description": "MEFEMA Systems oferece soluções tecnológicas inteligentes: software, redes, consultoria e infraestrutura TI em Moçambique.",
     "contactPoint": [
       {
@@ -89,24 +102,24 @@
   }
   </script>
 
-  <link href="/assets/img/logos/logo.png" rel="icon" type="image/x-icon" />
+  <link href="<?php echo asset('assets/img/logos/logo.png'); ?>" rel="icon" type="image/x-icon" />
 
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&ampdisplay=swap" rel="stylesheet" />
-  <link href="assets/vendor/fonts/iconify-icons.css" rel="stylesheet" />
-  <link href="assets/vendor/libs/node-waves/node-waves.css" rel="stylesheet" />
-  <link href="assets/vendor/libs/pickr/pickr-themes.css" rel="stylesheet" />
-  <link href="assets/vendor/css/core.css" rel="stylesheet" />
-  <link href="assets/css/style.css" rel="stylesheet" />
-  <link href="assets/vendor/css/main.css" rel="stylesheet" />
-  <link href="assets/vendor/libs/nouislider/nouislider.css" rel="stylesheet" />
-  <link href="assets/vendor/libs/swiper/swiper.css" rel="stylesheet" />
-  <link href="assets/vendor/css/landing.css" rel="stylesheet" />
+  <link href="<?php echo asset('assets/vendor/fonts/iconify-icons.css'); ?>" rel="stylesheet" />
+  <link href="<?php echo asset('assets/vendor/libs/node-waves/node-waves.css'); ?>" rel="stylesheet" />
+  <link href="<?php echo asset('assets/vendor/libs/pickr/pickr-themes.css'); ?>" rel="stylesheet" />
+  <link href="<?php echo asset('assets/vendor/css/core.css'); ?>" rel="stylesheet" />
+  <link href="<?php echo asset('assets/css/style.css'); ?>" rel="stylesheet" />
+  <link href="<?php echo asset('assets/vendor/css/main.css'); ?>" rel="stylesheet" />
+  <link href="<?php echo asset('assets/vendor/libs/nouislider/nouislider.css'); ?>" rel="stylesheet" />
+  <link href="<?php echo asset('assets/vendor/libs/swiper/swiper.css'); ?>" rel="stylesheet" />
+  <link href="<?php echo asset('assets/vendor/css/landing.css'); ?>" rel="stylesheet" />
   
-  <script src="assets/vendor/js/helpers.js"></script>
-  <script src="assets/js/config.js"></script>
+  <script src="<?php echo asset('assets/vendor/js/helpers.js'); ?>"></script>
+  <script src="<?php echo asset('assets/js/config.js'); ?>"></script>
 
   <script type="text/javascript">
 var _iub = _iub || [];
@@ -118,8 +131,8 @@ _iub.csConfiguration = {"siteId":4342014,"cookiePolicyId":12188108,"lang":"pt","
 </head>
 
 <body>
-<script src="assets/vendor/js/dropdown-hover.js"></script>
-<script src="assets/vendor/js/mega-dropdown.js"></script>
+<script src="<?php echo asset('assets/vendor/js/dropdown-hover.js'); ?>"></script>
+<script src="<?php echo asset('assets/vendor/js/mega-dropdown.js'); ?>"></script>
 
 <nav class="layout-navbar shadow-none py-0">
   <div class="container">
@@ -135,13 +148,13 @@ _iub.csConfiguration = {"siteId":4342014,"cookiePolicyId":12188108,"lang":"pt","
           type="button">
           <i class="icon-base ri ri-menu-fill icon-lg align-middle text-heading fw-medium"></i>
         </button>
-        <a class="app-brand-link" href="/">
+        <a class="app-brand-link" href="<?php echo BASE_URL; ?>">
               <span class="app-brand-logo demo">
                 <img
                   alt="Mefema Systems Logo"
                   class="navbar-logo-svg"
                   height="50"
-                  src="assets/img/logos/logo.svg"
+                  src="<?php echo asset('assets/img/logos/logo.svg'); ?>"
                   width="auto"
                 >
                 </span>
@@ -164,33 +177,33 @@ _iub.csConfiguration = {"siteId":4342014,"cookiePolicyId":12188108,"lang":"pt","
             <a 
               aria-current="page" 
               class="nav-link fw-medium <?php echo $currentPage == 'index.php' || $currentPage == '' ? 'active' : ''; ?>" 
-              href="/">Início</a>
+              href="<?php echo BASE_URL; ?>">Início</a>
           </li>
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'sobre.php' ? 'active' : ''; ?>" 
-              href="sobre">Quem somos</a>
+              href="<?php echo BASE_URL; ?>sobre">Quem somos</a>
           </li>
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'servicos.php' ? 'active' : ''; ?>" 
-              href="servicos">Serviços</a>
+              href="<?php echo BASE_URL; ?>servicos">Serviços</a>
           </li>
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'produtos.php' ? 'active' : ''; ?>" 
-              href="produtos">Produtos</a>
+              href="<?php echo BASE_URL; ?>produtos">Produtos</a>
           </li>
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'portfolio.php' ? 'active' : ''; ?>" 
-              href="portfolio">Portfolio</a>
+              href="<?php echo BASE_URL; ?>portfolio">Portfolio</a>
           </li>
 
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'contacto.php' ? 'active' : ''; ?>" 
-              href="contacto">Contacto</a>
+              href="<?php echo BASE_URL; ?>contacto">Contacto</a>
           </li>
         </ul>
       </div>
