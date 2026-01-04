@@ -38,19 +38,16 @@
   /* Tabs */
   .nav-tabs-clean .nav-link {
     border: none;
-    color: var(--bs-body-color);
     font-size: 1rem;
   }
   .nav-tabs-clean .nav-link.active {
-    border-bottom: 3px solid var(--bs-primary);
+    border-bottom: 3px solid;
     background: transparent;
-    color: var(--bs-primary);
     font-weight: 600;
   }
   /* Paginação */
   .pagination-clean .page-link {
     border: 1px solid #ddd;
-    color: #333;
     border-radius: 0 !important;
     cursor: pointer;
   }
@@ -58,33 +55,8 @@
     background: #f5f5f5;
   }
   .pagination-clean .page-item.active .page-link {
-    background: var(--bs-primary);
-    border-color: var(--bs-primary);
     color: white;
   }
-  /* Cores dos ícones e botões */
-  .icon-orange { color: #ff6b35; }
-  .icon-blue { color: #004e89; }
-  .icon-brown { color: #8b4513; }
-  .icon-green { color: #2d6a4f; }
-  .btn-orange { background-color: #ff6b35; border-color: #ff6b35; color: white; }
-  .btn-orange:hover { background-color: #e55a2b; border-color: #e55a2b; color: white; }
-  .btn-blue { background-color: #004e89; border-color: #004e89; color: white; }
-  .btn-blue:hover { background-color: #003d6e; border-color: #003d6e; color: white; }
-  .btn-brown { background-color: #8b4513; border-color: #8b4513; color: white; }
-  .btn-brown:hover { background-color: #723910; border-color: #723910; color: white; }
-  .btn-green { background-color: #2d6a4f; border-color: #2d6a4f; color: white; }
-  .btn-green:hover { background-color: #245a42; border-color: #245a42; color: white; }
-  /* Botões outline */
-  .btn-outline-orange { border-color: #ff6b35; color: #ff6b35; }
-  .btn-outline-orange:hover { background-color: #ff6b35; color: white; }
-  .btn-outline-blue { border-color: #004e89; color: #004e89; }
-  .btn-outline-blue:hover { background-color: #004e89; color: white; }
-  .btn-outline-brown { border-color: #8b4513; color: #8b4513; }
-  .btn-outline-brown:hover { background-color: #8b4513; color: white; }
-  .btn-outline-green { border-color: #2d6a4f; color: #2d6a4f; }
-  .btn-outline-green:hover { background-color: #2d6a4f; color: white; }
-
   /* Grid responsivo para os cards */
   @media (min-width: 576px) { .services-grid { --cols: 2; } }
   @media (min-width: 768px) { .services-grid { --cols: 3; } }
@@ -95,7 +67,6 @@
     grid-template-columns: repeat(var(--cols), 1fr);
     gap: 1.5rem;
   }
-
   .empty-state {
     grid-column: 1 / -1;
     padding: 4rem 2rem;
