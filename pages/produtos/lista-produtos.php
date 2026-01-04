@@ -1,1116 +1,268 @@
-    <div class="wrapper">
-        <!-- Header -->
-        <header class="header">
-            <div class="container">
-                <div class="header-content">
-                    <h1 class="header-title">
-                        <i class="ri-gallery-line"></i> Cards Gallery
-                    </h1>
-                    <p class="header-subtitle">Portfólio de Soluções Profissionais</p>
-                </div>
-            </div>
-        </header>
+  <style>
+    :root {
+      --cor-orange: #ff6b35;
+      --cor-blue: #004e89;
+      --cor-brown: #8b4513;
+      --cor-green: #2d6a4f;
+    }
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="container">
-                <!-- Filtros de Categorias -->
-                <section class="filters-section">
-                    <div class="filters-header">
-                        <h2>Categorias</h2>
-                    </div>
-                    <ul class="nav nav-tabs nav-tabs-clean" id="categoriasTab">
-                        <li class="nav-item">
-                            <button class="nav-link active" data-categoria="websites">
-                                <i class="ri-global-line"></i>Websites
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" data-categoria="sistemas">
-                                <i class="ri-dashboard-line"></i>Sistemas
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" data-categoria="mobile">
-                                <i class="ri-smartphone-line"></i>Mobile
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" data-categoria="outros">
-                                <i class="ri-apps-line"></i>Outros
-                            </button>
-                        </li>
-                    </ul>
-                </section>
+    * {
+      border-radius: 0 !important;
+    }
 
-                <!-- Grid de Cards -->
-                <section class="cards-section">
-                    <div class="cards-grid" id="produtosGrid">
-                        <!-- Cards serão inseridos aqui -->
-                    </div>
-                </section>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f8f9fa;
+    }
 
-                <!-- Paginação -->
-                <section class="pagination-section" id="paginacaoContainer" style="display: none;">
-                    <nav>
-                        <ul class="pagination justify-content-center pagination-clean" id="paginacao"></ul>
-                    </nav>
-                </section>
+    .transition-300 {
+      transition: all 0.3s ease;
+    }
 
-                <!-- Estado Vazio -->
-                <section class="empty-state" id="emptyState" style="display: none;">
-                    <i class="ri-inbox-line"></i>
-                    <h3>Nenhum produto encontrado</h3>
-                    <p>Não há produtos disponíveis nesta categoria no momento.</p>
-                </section>
-            </div>
-        </main>
+    .hover-shadow-lg:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(0,0,0,0.12) !important;
+    }
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <p>&copy; 2026 Cards Gallery. Todos os direitos reservados.</p>
-            </div>
-        </footer>
+    .product-card {
+      min-height: 550px;
+      display: flex;
+      flex-direction: column;
+      background: white;
+      overflow: hidden;
+    }
+
+    .product-carousel {
+      height: 250px;
+      background: #f5f5f5;
+      position: relative;
+    }
+
+    .product-carousel img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 40px;
+      height: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+    }
+
+    .carousel-indicators {
+      bottom: 10px;
+    }
+
+    .carousel-indicators button {
+      width: 8px;
+      height: 8px;
+      border-radius: 50% !important;
+      margin: 0 4px;
+    }
+
+    .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-description {
+      flex-grow: 1;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    .icon-box {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid;
+    }
+
+    .icon-orange { color: var(--cor-orange); border-color: var(--cor-orange); }
+    .icon-blue { color: var(--cor-blue); border-color: var(--cor-blue); }
+    .icon-brown { color: var(--cor-brown); border-color: var(--cor-brown); }
+    .icon-green { color: var(--cor-green); border-color: var(--cor-green); }
+
+    .btn-orange { background-color: var(--cor-orange); border-color: var(--cor-orange); color: white; }
+    .btn-orange:hover { background-color: #e55a2b; border-color: #e55a2b; color: white; }
+    .btn-blue { background-color: var(--cor-blue); border-color: var(--cor-blue); color: white; }
+    .btn-blue:hover { background-color: #003d6e; border-color: #003d6e; color: white; }
+    .btn-brown { background-color: var(--cor-brown); border-color: var(--cor-brown); color: white; }
+    .btn-brown:hover { background-color: #723910; border-color: #723910; color: white; }
+    .btn-green { background-color: var(--cor-green); border-color: var(--cor-green); color: white; }
+    .btn-green:hover { background-color: #245a42; border-color: #245a42; color: white; }
+
+    .nav-tabs-clean {
+      border-bottom: 2px solid #dee2e6;
+    }
+
+    .nav-tabs-clean .nav-link {
+      border: none;
+      color: #6c757d;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 1rem 2rem;
+      background: transparent;
+    }
+
+    .nav-tabs-clean .nav-link.active {
+      border-bottom: 3px solid var(--cor-blue);
+      background: transparent;
+      color: var(--cor-blue);
+      font-weight: 600;
+    }
+
+    .pagination-clean .page-link {
+      border: 1px solid #ddd;
+      color: #333;
+      padding: 0.5rem 1rem;
+      margin: 0 4px;
+    }
+
+    .pagination-clean .page-link:hover {
+      background: #f5f5f5;
+      border-color: var(--cor-blue);
+    }
+
+    .pagination-clean .page-item.active .page-link {
+      background: var(--cor-blue);
+      border-color: var(--cor-blue);
+      color: white;
+    }
+
+    .badge-feature {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.8rem;
+      font-weight: 500;
+    }
+
+    .skeleton {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .skeleton-card {
+      height: 550px;
+    }
+
+    .skeleton-img {
+      height: 250px;
+    }
+
+    .modal-preview .modal-dialog {
+      max-width: 90vw;
+    }
+
+    .modal-preview img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+    }
+
+    .empty-state {
+      padding: 4rem 2rem;
+      text-align: center;
+      color: #6c757d;
+    }
+
+    .empty-state i {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      opacity: 0.3;
+    }
+  </style>
+
+<section class="py-5">
+  <div class="container">
+
+    <!-- Tabs de Categorias -->
+    <ul class="nav nav-tabs nav-tabs-clean justify-content-center mb-5" id="categoriasTab">
+      <li class="nav-item">
+        <button class="nav-link active" data-categoria="websites">
+          <i class="ri-global-line me-2"></i>Websites
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-categoria="sistemas">
+          <i class="ri-dashboard-line me-2"></i>Sistemas
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-categoria="mobile">
+          <i class="ri-smartphone-line me-2"></i>Mobile
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-categoria="outros">
+          <i class="ri-apps-line me-2"></i>Outros
+        </button>
+      </li>
+    </ul>
+
+    <!-- Conteúdo dos Produtos -->
+    <div id="produtosContainer">
+      <div class="row g-4" id="produtosGrid"></div>
     </div>
 
-    <!-- Modal de Preview -->
-    <div class="modal fade" id="previewModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title" id="previewModalLabel">Preview</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body text-center p-0">
-                    <img id="previewImage" src="" alt="Preview" class="img-fluid">
-                </div>
-            </div>
-        </div>
+    <!-- Paginação -->
+    <nav class="mt-5" id="paginacaoContainer" style="display: none;">
+      <ul class="pagination justify-content-center pagination-clean" id="paginacao"></ul>
+    </nav>
+
+  </div>
+</section>
+
+<!-- Modal de Preview -->
+<div class="modal fade modal-preview" id="previewModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="previewModalLabel">Preview</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center p-0">
+        <img id="previewImage" src="" alt="Preview">
+      </div>
     </div>
+  </div>
+</div>
 
-
-<style>
-
-  /* ==================== VARIÁVEIS CSS ==================== */
-:root {
-  --cor-orange: #ff6b35;
-  --cor-blue: #004e89;
-  --cor-brown: #8b4513;
-  --cor-green: #2d6a4f;
-  --cor-bg: #f8f9fa;
-  --cor-text: #333;
-  --cor-text-muted: #666;
-  --cor-border: #dee2e6;
-  --cor-shadow: rgba(0, 0, 0, 0.08);
-  --cor-shadow-hover: rgba(0, 0, 0, 0.12);
-  --transition: all 0.3s ease;
-}
-
-/* ==================== RESET E BASE ==================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  border-radius: 0 !important;
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color: var(--cor-bg);
-  color: var(--cor-text);
-  line-height: 1.6;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.main-content {
-  flex: 1;
-  padding: 3rem 0;
-}
-
-/* ==================== HEADER ==================== */
-.header {
-  background: linear-gradient(135deg, var(--cor-blue) 0%, #003d6e 100%);
-  color: white;
-  padding: 3rem 0;
-  text-align: center;
-  box-shadow: 0 4px 12px var(--cor-shadow);
-}
-
-.header-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.header-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin: 0;
-}
-
-.header-title i {
-  font-size: 2.8rem;
-}
-
-.header-subtitle {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .header {
-    padding: 2rem 0;
-  }
-
-  .header-title {
-    font-size: 1.8rem;
-  }
-
-  .header-title i {
-    font-size: 2rem;
-  }
-
-  .header-subtitle {
-    font-size: 0.95rem;
-  }
-}
-
-/* ==================== CONTAINER ==================== */
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-@media (min-width: 768px) {
-  .container {
-    padding: 0 1.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    padding: 0 2rem;
-  }
-}
-
-/* ==================== FILTROS ==================== */
-.filters-section {
-  margin-bottom: 3rem;
-}
-
-.filters-header {
-  margin-bottom: 1.5rem;
-}
-
-.filters-header h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--cor-text);
-  margin: 0;
-}
-
-.nav-tabs-clean {
-  border-bottom: 2px solid var(--cor-border);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
-  justify-content: center;
-}
-
-.nav-tabs-clean .nav-item {
-  margin: 0;
-}
-
-.nav-tabs-clean .nav-link {
-  border: none;
-  color: #6c757d;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 1rem 1.5rem;
-  background: transparent;
-  cursor: pointer;
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  white-space: nowrap;
-}
-
-.nav-tabs-clean .nav-link:hover {
-  color: var(--cor-blue);
-}
-
-.nav-tabs-clean .nav-link.active {
-  border-bottom: 3px solid var(--cor-blue);
-  background: transparent;
-  color: var(--cor-blue);
-  font-weight: 600;
-}
-
-@media (max-width: 768px) {
-  .nav-tabs-clean .nav-link {
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* ==================== GRID DE CARDS ==================== */
-.cards-section {
-  margin-bottom: 3rem;
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* Responsividade do grid */
-@media (max-width: 1200px) {
-  .cards-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .cards-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-}
-
-/* ==================== CARDS ==================== */
-.product-card {
-  background: white;
-  border: 1px solid #f0f0f0;
-  box-shadow: 0 2px 8px var(--cor-shadow);
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px var(--cor-shadow-hover);
-}
-
-.product-carousel {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  background: #f5f5f5;
-  overflow: hidden;
-}
-
-.carousel-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.carousel-slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.carousel-slide.active {
-  opacity: 1;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-.carousel-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 0.75rem;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-.carousel-btn {
-  width: 36px;
-  height: 36px;
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-  pointer-events: all;
-  font-size: 1.2rem;
-}
-
-.carousel-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.carousel-indicators {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 6px;
-  z-index: 10;
-}
-
-.carousel-indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.carousel-indicator.active {
-  background: white;
-}
-
-.card-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-}
-
-.card-header-content {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.icon-box {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid;
-  flex-shrink: 0;
-  font-size: 1.5rem;
-}
-
-.icon-orange {
-  color: var(--cor-orange);
-  border-color: var(--cor-orange);
-}
-
-.icon-blue {
-  color: var(--cor-blue);
-  border-color: var(--cor-blue);
-}
-
-.icon-brown {
-  color: var(--cor-brown);
-  border-color: var(--cor-brown);
-}
-
-.icon-green {
-  color: var(--cor-green);
-  border-color: var(--cor-green);
-}
-
-.card-title-group h5 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 0 0 0.25rem 0;
-  color: var(--cor-text);
-}
-
-.card-price {
-  font-size: 0.85rem;
-  color: var(--cor-text-muted);
-}
-
-.product-description {
-  flex: 1;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: var(--cor-text-muted);
-  margin-bottom: 1rem;
-}
-
-.badge-feature {
-  display: inline-block;
-  font-size: 0.75rem;
-  padding: 0.4rem 0.8rem;
-  font-weight: 500;
-  background: #f0f0f0;
-  color: var(--cor-text);
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  border: 1px solid #e0e0e0;
-}
-
-.badge-feature i {
-  margin-right: 0.3rem;
-}
-
-.card-footer {
-  display: flex;
-  gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  border-top: 1px solid #f0f0f0;
-  background: #fafafa;
-}
-
-.btn-demo, .btn-orcamento {
-  flex: 1;
-  padding: 0.6rem 1rem;
-  border: 1px solid;
-  background: white;
-  cursor: pointer;
-  transition: var(--transition);
-  font-size: 0.9rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.btn-demo {
-  border-color: var(--cor-border);
-  color: var(--cor-text);
-}
-
-.btn-demo:hover {
-  background: #f5f5f5;
-}
-
-.btn-orcamento {
-  color: white;
-  border: none;
-}
-
-.btn-orcamento.orange {
-  background: var(--cor-orange);
-}
-
-.btn-orcamento.orange:hover {
-  background: #e55a2b;
-}
-
-.btn-orcamento.blue {
-  background: var(--cor-blue);
-}
-
-.btn-orcamento.blue:hover {
-  background: #003d6e;
-}
-
-.btn-orcamento.brown {
-  background: var(--cor-brown);
-}
-
-.btn-orcamento.brown:hover {
-  background: #723910;
-}
-
-.btn-orcamento.green {
-  background: var(--cor-green);
-}
-
-.btn-orcamento.green:hover {
-  background: #245a42;
-}
-
-/* ==================== PAGINAÇÃO ==================== */
-.pagination-section {
-  margin: 3rem 0;
-}
-
-.pagination-clean {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.pagination-clean .page-link {
-  border: 1px solid var(--cor-border);
-  color: var(--cor-text);
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
-  transition: var(--transition);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 36px;
-  height: 36px;
-  background: white;
-}
-
-.pagination-clean .page-link:hover {
-  background: #f5f5f5;
-  border-color: var(--cor-blue);
-  color: var(--cor-blue);
-}
-
-.pagination-clean .page-item.active .page-link {
-  background: var(--cor-blue);
-  border-color: var(--cor-blue);
-  color: white;
-}
-
-.pagination-clean .page-item.disabled .page-link {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-/* ==================== ESTADO VAZIO ==================== */
-.empty-state {
-  padding: 4rem 2rem;
-  text-align: center;
-  color: var(--cor-text-muted);
-}
-
-.empty-state i {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  opacity: 0.3;
-  display: block;
-}
-
-.empty-state h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--cor-text);
-}
-
-.empty-state p {
-  margin: 0;
-}
-
-/* ==================== LOADING SKELETON ==================== */
-.skeleton {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: loading 1.5s infinite;
-}
-
-@keyframes loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-.skeleton-card {
-  height: 500px;
-}
-
-.skeleton-img {
-  height: 220px;
-}
-
-/* ==================== FOOTER ==================== */
-.footer {
-  background: #f8f9fa;
-  border-top: 1px solid var(--cor-border);
-  padding: 2rem 0;
-  text-align: center;
-  color: var(--cor-text-muted);
-  margin-top: auto;
-}
-
-.footer p {
-  margin: 0;
-}
-
-/* ==================== MODAL ==================== */
-.modal-content {
-  border: none;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-}
-
-.modal-header {
-  border-bottom: 1px solid var(--cor-border);
-  padding: 1.5rem;
-}
-
-.modal-body {
-  padding: 0 !important;
-  background: #f5f5f5;
-}
-
-.modal-body img {
-  max-width: 100%;
-  max-height: 70vh;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-}
-
-/* ==================== UTILITÁRIOS ==================== */
-.transition-300 {
-  transition: var(--transition);
-}
-
-.text-muted {
-  color: var(--cor-text-muted);
-}
-
-.text-center {
-  text-align: center;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.align-items-center {
-  align-items: center;
-}
-
-.align-items-start {
-  align-items: flex-start;
-}
-
-.gap-2 {
-  gap: 0.5rem;
-}
-
-.gap-3 {
-  gap: 1rem;
-}
-
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
-.mb-3 {
-  margin-bottom: 1rem;
-}
-
-.me-3 {
-  margin-right: 1rem;
-}
-
-.fw-bold {
-  font-weight: 600;
-}
-
-.fw-600 {
-  font-weight: 600;
-}
-
-.small {
-  font-size: 0.85rem;
-}
-
-/* ==================== RESPONSIVIDADE GERAL ==================== */
-@media (max-width: 768px) {
-  .main-content {
-    padding: 2rem 0;
-  }
-
-  .filters-section {
-    margin-bottom: 2rem;
-  }
-
-  .cards-section {
-    margin-bottom: 2rem;
-  }
-
-  .pagination-section {
-    margin: 2rem 0;
-  }
-}
-
-  
-</style>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  //app.js
+// ==================== CONFIGURAÇÃO DA API ====================
+const API_CONFIG = {
+  baseURL: 'https://api.vossa-empresa.com',
+  endpoints: {
+    produtos: '/api/produtos',
+    categorias: '/api/categorias'
+  }
+};
 
-  // ==================== ESTADO DA APLICAÇÃO ====================
+// ==================== ESTADO DA APLICAÇÃO ====================
 const state = {
   categoriaAtual: 'websites',
   paginaAtual: 1,
-  itensPorPagina: 9, // 3x3 = 9 itens por página
+  itensPorPagina: 4,
   produtos: [],
   loading: false
 };
 
-// ==================== ELEMENTOS DO DOM ====================
-const produtosGrid = document.getElementById('produtosGrid');
-const categoriasTab = document.getElementById('categoriasTab');
-const paginacaoContainer = document.getElementById('paginacaoContainer');
-const paginacao = document.getElementById('paginacao');
-const emptyState = document.getElementById('emptyState');
-const previewModal = new bootstrap.Modal(document.getElementById('previewModal'));
-
-// ==================== FUNÇÕES DE API ====================
-async function fetchProdutos(categoria, pagina = 1) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const produtos = MOCK_DATA[categoria] || [];
-      const inicio = (pagina - 1) * state.itensPorPagina;
-      const fim = inicio + state.itensPorPagina;
-
-      resolve({
-        produtos: produtos.slice(inicio, fim),
-        total: produtos.length,
-        pagina: pagina,
-        totalPaginas: Math.ceil(produtos.length / state.itensPorPagina)
-      });
-    }, 300);
-  });
-}
-
-// ==================== FUNÇÕES DE RENDERIZAÇÃO ====================
-function renderSkeleton() {
-  const skeletonHTML = Array(state.itensPorPagina)
-    .fill(0)
-    .map(
-      () => `
-    <div class="product-card skeleton-card">
-      <div class="product-carousel">
-        <div class="skeleton skeleton-img"></div>
-      </div>
-      <div class="card-body">
-        <div class="skeleton mb-3" style="height: 20px; width: 60%;"></div>
-        <div class="skeleton mb-2" style="height: 15px; width: 100%;"></div>
-        <div class="skeleton mb-2" style="height: 15px; width: 90%;"></div>
-        <div class="skeleton" style="height: 15px; width: 80%;"></div>
-      </div>
-    </div>
-  `
-    )
-    .join('');
-
-  produtosGrid.innerHTML = skeletonHTML;
-}
-
-function renderProduto(produto) {
-  const carouselId = `carousel-${produto.id}`;
-  const temMultiplosScreenshots = produto.screenshots.length > 1;
-
-  // Gerar slides do carrossel
-  const slides = produto.screenshots
-    .map(
-      (img, i) => `
-    <div class="carousel-slide ${i === 0 ? 'active' : ''}">
-      <img src="${img}" alt="${produto.nome}" onclick="abrirPreview('${img}', '${produto.nome}')">
-    </div>
-  `
-    )
-    .join('');
-
-  // Gerar indicadores
-  const indicators =
-    temMultiplosScreenshots &&
-    produto.screenshots.length > 0
-      ? `
-    <div class="carousel-indicators">
-      ${produto.screenshots.map((_, i) => `<button class="carousel-indicator ${i === 0 ? 'active' : ''}" data-slide="${i}"></button>`).join('')}
-    </div>
-  `
-      : '';
-
-  // Gerar controles
-  const controles =
-    temMultiplosScreenshots &&
-    produto.screenshots.length > 0
-      ? `
-    <div class="carousel-controls">
-      <button class="carousel-btn" onclick="carouselPrev('${carouselId}')">
-        <i class="ri-arrow-left-s-line"></i>
-      </button>
-      <button class="carousel-btn" onclick="carouselNext('${carouselId}')">
-        <i class="ri-arrow-right-s-line"></i>
-      </button>
-    </div>
-  `
-      : '';
-
-  // Gerar características
-  const caracteristicas = produto.caracteristicas
-    .slice(0, 4)
-    .map(
-      (c) => `
-    <span class="badge-feature">
-      <i class="ri-check-line icon-${produto.cor}"></i> ${c}
-    </span>
-  `
-    )
-    .join('');
-
-  const maisCaracteristicas =
-    produto.caracteristicas.length > 4
-      ? `<span class="badge-feature">+${produto.caracteristicas.length - 4}</span>`
-      : '';
-
-  // Botão Demo
-  const botaoDemo = produto.demoUrl
-    ? `
-    <a href="${produto.demoUrl}" target="_blank" class="btn-demo">
-      <i class="ri-external-link-line"></i> Demo
-    </a>
-  `
-    : '';
-
-  return `
-    <div class="product-card">
-      <div class="product-carousel" id="${carouselId}">
-        <div class="carousel-container">
-          ${slides}
-        </div>
-        ${controles}
-        ${indicators}
-      </div>
-
-      <div class="card-body">
-        <div class="card-header-content">
-          <div class="icon-box icon-${produto.cor}">
-            <i class="${produto.icone}"></i>
-          </div>
-          <div class="card-title-group">
-            <h5>${produto.nome}</h5>
-            <p class="card-price">${produto.preco}</p>
-          </div>
-        </div>
-
-        <p class="product-description">
-          ${produto.descricao}
-        </p>
-
-        <div class="mb-3">
-          ${caracteristicas}
-          ${maisCaracteristicas}
-        </div>
-      </div>
-
-      <div class="card-footer">
-        ${botaoDemo}
-        <a href="#contacto" class="btn-orcamento ${produto.cor}">
-          <i class="ri-mail-line"></i> Orçamento
-        </a>
-      </div>
-    </div>
-  `;
-}
-
-function renderProdutos(data) {
-  if (data.produtos.length === 0) {
-    produtosGrid.style.display = 'none';
-    emptyState.style.display = 'block';
-    paginacaoContainer.style.display = 'none';
-    return;
-  }
-
-  produtosGrid.style.display = 'grid';
-  emptyState.style.display = 'none';
-  produtosGrid.innerHTML = data.produtos.map((p) => renderProduto(p)).join('');
-
-  if (data.totalPaginas > 1) {
-    renderPaginacao(data);
-    paginacaoContainer.style.display = 'block';
-  } else {
-    paginacaoContainer.style.display = 'none';
-  }
-}
-
-function renderPaginacao(data) {
-  let html = '';
-
-  // Botão Anterior
-  if (state.paginaAtual > 1) {
-    html += `
-      <li class="page-item">
-        <a class="page-link" href="#" data-pagina="${state.paginaAtual - 1}">
-          <i class="ri-arrow-left-line"></i> Anterior
-        </a>
-      </li>`;
-  }
-
-  // Números de página
-  for (let i = 1; i <= data.totalPaginas; i++) {
-    if (
-      i === 1 ||
-      i === data.totalPaginas ||
-      (i >= state.paginaAtual - 1 && i <= state.paginaAtual + 1)
-    ) {
-      html += `
-        <li class="page-item ${i === state.paginaAtual ? 'active' : ''}">
-          <a class="page-link" href="#" data-pagina="${i}">${i}</a>
-        </li>`;
-    } else if (i === state.paginaAtual - 2 || i === state.paginaAtual + 2) {
-      html += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
-    }
-  }
-
-  // Botão Próximo
-  if (state.paginaAtual < data.totalPaginas) {
-    html += `
-      <li class="page-item">
-        <a class="page-link" href="#" data-pagina="${state.paginaAtual + 1}">
-          Próximo <i class="ri-arrow-right-line"></i>
-        </a>
-      </li>`;
-  }
-
-  paginacao.innerHTML = html;
-}
-
-// ==================== FUNÇÕES DE NAVEGAÇÃO ====================
-async function carregarProdutos(categoria = state.categoriaAtual, pagina = 1) {
-  if (state.loading) return;
-
-  state.loading = true;
-  state.categoriaAtual = categoria;
-  state.paginaAtual = pagina;
-
-  renderSkeleton();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  const data = await fetchProdutos(categoria, pagina);
-  state.produtos = data.produtos;
-
-  renderProdutos(data);
-  state.loading = false;
-}
-
-function mudarCategoria(categoria) {
-  // Atualizar estado ativo dos tabs
-  document.querySelectorAll('#categoriasTab .nav-link').forEach((link) => {
-    link.classList.remove('active');
-    if (link.dataset.categoria === categoria) {
-      link.classList.add('active');
-    }
-  });
-
-  carregarProdutos(categoria, 1);
-}
-
-function mudarPagina(pagina) {
-  carregarProdutos(state.categoriaAtual, pagina);
-}
-
-// ==================== CARROSSEL DE IMAGENS ====================
-function carouselNext(carouselId) {
-  const carousel = document.getElementById(carouselId);
-  const slides = carousel.querySelectorAll('.carousel-slide');
-  const indicators = carousel.querySelectorAll('.carousel-indicator');
-
-  let currentIndex = Array.from(slides).findIndex((s) => s.classList.contains('active'));
-  const nextIndex = (currentIndex + 1) % slides.length;
-
-  slides[currentIndex].classList.remove('active');
-  slides[nextIndex].classList.add('active');
-
-  if (indicators.length > 0) {
-    indicators[currentIndex].classList.remove('active');
-    indicators[nextIndex].classList.add('active');
-  }
-}
-
-function carouselPrev(carouselId) {
-  const carousel = document.getElementById(carouselId);
-  const slides = carousel.querySelectorAll('.carousel-slide');
-  const indicators = carousel.querySelectorAll('.carousel-indicator');
-
-  let currentIndex = Array.from(slides).findIndex((s) => s.classList.contains('active'));
-  const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
-
-  slides[currentIndex].classList.remove('active');
-  slides[prevIndex].classList.add('active');
-
-  if (indicators.length > 0) {
-    indicators[currentIndex].classList.remove('active');
-    indicators[prevIndex].classList.add('active');
-  }
-}
-
-// ==================== MODAL DE PREVIEW ====================
-function abrirPreview(imgSrc, titulo) {
-  document.getElementById('previewImage').src = imgSrc;
-  document.getElementById('previewModalLabel').textContent = titulo || 'Preview';
-  previewModal.show();
-}
-
-// ==================== EVENT LISTENERS ====================
-document.addEventListener('DOMContentLoaded', function () {
-  // Tabs de categorias
-  document.querySelectorAll('#categoriasTab .nav-link').forEach((link) => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      mudarCategoria(this.dataset.categoria);
-    });
-  });
-
-  // Paginação
-  document.addEventListener('click', function (e) {
-    if (e.target.classList.contains('page-link')) {
-      e.preventDefault();
-      const pagina = parseInt(e.target.dataset.pagina);
-      if (pagina) mudarPagina(pagina);
-    }
-  });
-
-  // Carregar produtos iniciais
-  carregarProdutos('websites', 1);
-});
-
-
-
-
-  ///data.js
-
-  // ==================== DADOS DOS PRODUTOS ====================
+// ==================== DADOS MOCK (temporário até API estar pronta) ====================
 const MOCK_DATA = {
   websites: [
     {
@@ -1261,5 +413,286 @@ const MOCK_DATA = {
   ]
 };
 
+// ==================== FUNÇÕES DE API ====================
+async function fetchProdutos(categoria, pagina = 1) {
+  // SIMULAÇÃO: Quando a API estiver pronta, descomentar isto:
+  /*
+  try {
+    const response = await fetch(
+      `${API_CONFIG.baseURL}${API_CONFIG.endpoints.produtos}?categoria=${categoria}&pagina=${pagina}&limite=${state.itensPorPagina}`
+    );
+    
+    if (!response.ok) throw new Error('Erro ao carregar produtos');
+    
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Erro:', error);
+    return { produtos: [], total: 0 };
+  }
+  */
   
+  // MOCK: Simula chamada à API
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const produtos = MOCK_DATA[categoria] || [];
+      const inicio = (pagina - 1) * state.itensPorPagina;
+      const fim = inicio + state.itensPorPagina;
+      
+      resolve({
+        produtos: produtos.slice(inicio, fim),
+        total: produtos.length,
+        pagina: pagina,
+        totalPaginas: Math.ceil(produtos.length / state.itensPorPagina)
+      });
+    }, 800);
+  });
+}
+
+// ==================== FUNÇÕES DE RENDERIZAÇÃO ====================
+function renderSkeleton() {
+  const grid = document.getElementById('produtosGrid');
+  grid.innerHTML = Array(state.itensPorPagina).fill(0).map(() => `
+    <div class="col-md-6 col-lg-3">
+      <div class="card shadow-sm border-0 skeleton-card">
+        <div class="skeleton skeleton-img"></div>
+        <div class="card-body">
+          <div class="skeleton mb-3" style="height: 20px; width: 60%;"></div>
+          <div class="skeleton mb-2" style="height: 15px; width: 100%;"></div>
+          <div class="skeleton mb-2" style="height: 15px; width: 90%;"></div>
+          <div class="skeleton" style="height: 15px; width: 80%;"></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderProduto(produto, index) {
+  const carouselId = `carousel-${produto.id}`;
+  
+  const slides = produto.screenshots.map((img, i) => `
+    <div class="carousel-item ${i === 0 ? 'active' : ''}">
+      <img src="${img}" alt="${produto.nome}" onclick="abrirPreview('${img}', '${produto.nome}')">
+    </div>
+  `).join('');
+
+  const indicators = produto.screenshots.length > 1 ? `
+    <div class="carousel-indicators">
+      ${produto.screenshots.map((_, i) => `
+        <button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${i}" 
+          ${i === 0 ? 'class="active"' : ''}></button>
+      `).join('')}
+    </div>
+  ` : '';
+
+  const controles = produto.screenshots.length > 1 ? `
+    <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  ` : '';
+
+  return `
+    <div class="col-md-6 col-lg-3">
+      <div class="card shadow-sm border-0 hover-shadow-lg transition-300 product-card">
+        
+        <div id="${carouselId}" class="carousel slide product-carousel" data-bs-ride="carousel">
+          ${indicators}
+          <div class="carousel-inner">
+            ${slides}
+          </div>
+          ${controles}
+        </div>
+
+        <div class="card-body p-4">
+          <div class="d-flex align-items-start mb-3">
+            <div class="icon-box icon-${produto.cor} me-3 flex-shrink-0">
+              <i class="${produto.icone} fs-4"></i>
+            </div>
+            <div>
+              <h5 class="mb-1 fw-bold">${produto.nome}</h5>
+              <small class="text-muted">${produto.preco}</small>
+            </div>
+          </div>
+
+          <p class="product-description mb-3">
+            ${produto.descricao}
+          </p>
+
+          <div class="mb-3">
+            ${produto.caracteristicas.slice(0, 4).map(c => `
+              <span class="badge bg-light text-dark badge-feature me-1 mb-1">
+                <i class="ri-check-line icon-${produto.cor}"></i> ${c}
+              </span>
+            `).join('')}
+            ${produto.caracteristicas.length > 4 ? 
+              `<span class="badge bg-light text-dark badge-feature">+${produto.caracteristicas.length - 4}</span>` 
+              : ''}
+          </div>
+        </div>
+
+        <div class="card-footer border-0 bg-white p-3">
+          <div class="d-flex gap-2">
+            ${produto.demoUrl ? `
+              <a href="${produto.demoUrl}" target="_blank" class="btn btn-outline-${produto.cor} btn-sm flex-fill">
+                <i class="ri-external-link-line"></i> Demo
+              </a>
+            ` : ''}
+            <a href="#contacto" class="btn btn-${produto.cor} btn-sm flex-fill">
+              <i class="ri-mail-line"></i> Orçamento
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  `;
+}
+
+function renderProdutos(data) {
+  const grid = document.getElementById('produtosGrid');
+  
+  if (data.produtos.length === 0) {
+    grid.innerHTML = `
+      <div class="col-12">
+        <div class="empty-state">
+          <i class="ri-inbox-line"></i>
+          <h4>Nenhum produto encontrado</h4>
+          <p>Não há produtos disponíveis nesta categoria no momento.</p>
+        </div>
+      </div>
+    `;
+    document.getElementById('paginacaoContainer').style.display = 'none';
+    return;
+  }
+  
+  grid.innerHTML = data.produtos.map((p, i) => renderProduto(p, i)).join('');
+  
+  if (data.totalPaginas > 1) {
+    renderPaginacao(data);
+    document.getElementById('paginacaoContainer').style.display = 'block';
+  } else {
+    document.getElementById('paginacaoContainer').style.display = 'none';
+  }
+}
+
+function renderPaginacao(data) {
+  const paginacao = document.getElementById('paginacao');
+  let html = '';
+  
+  if (state.paginaAtual > 1) {
+    html += `
+      <li class="page-item">
+        <a class="page-link" href="#" data-pagina="${state.paginaAtual - 1}">
+          <i class="ri-arrow-left-line"></i> Anterior
+        </a>
+      </li>`;
+  }
+  
+  for (let i = 1; i <= data.totalPaginas; i++) {
+    if (
+      i === 1 || 
+      i === data.totalPaginas || 
+      (i >= state.paginaAtual - 1 && i <= state.paginaAtual + 1)
+    ) {
+      html += `
+        <li class="page-item ${i === state.paginaAtual ? 'active' : ''}">
+          <a class="page-link" href="#" data-pagina="${i}">${i}</a>
+        </li>`;
+    } else if (i === state.paginaAtual - 2 || i === state.paginaAtual + 2) {
+      html += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+    }
+  }
+  
+  if (state.paginaAtual < data.totalPaginas) {
+    html += `
+      <li class="page-item">
+        <a class="page-link" href="#" data-pagina="${state.paginaAtual + 1}">
+          Próximo <i class="ri-arrow-right-line"></i>
+        </a>
+      </li>`;
+  }
+  
+  paginacao.innerHTML = html;
+}
+
+// ==================== FUNÇÕES DE NAVEGAÇÃO ====================
+async function carregarProdutos(categoria = state.categoriaAtual, pagina = 1) {
+  if (state.loading) return;
+  
+  state.loading = true;
+  state.categoriaAtual = categoria;
+  state.paginaAtual = pagina;
+  
+  renderSkeleton();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  
+  const data = await fetchProdutos(categoria, pagina);
+  state.produtos = data.produtos;
+  
+  renderProdutos(data);
+  state.loading = false;
+}
+
+function mudarCategoria(categoria) {
+  document.querySelectorAll('#categoriasTab .nav-link').forEach(link => {
+    link.classList.remove('active');
+    if (link.dataset.categoria === categoria) {
+      link.classList.add('active');
+    }
+  });
+  
+  carregarProdutos(categoria, 1);
+}
+
+function mudarPagina(pagina) {
+  carregarProdutos(state.categoriaAtual, pagina);
+}
+
+function abrirPreview(imgSrc, titulo) {
+  document.getElementById('previewImage').src = imgSrc;
+  document.getElementById('previewModalLabel').textContent = titulo || 'Preview';
+  const modal = new bootstrap.Modal(document.getElementById('previewModal'));
+  modal.show();
+}
+
+// ==================== EVENT LISTENERS ====================
+document.addEventListener('DOMContentLoaded', function() {
+  // Tabs de categorias
+  document.querySelectorAll('#categoriasTab .nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      mudarCategoria(this.dataset.categoria);
+    });
+  });
+  
+  // Paginação
+  document.getElementById('paginacao').addEventListener('click', function(e) {
+    e.preventDefault();
+    if (e.target.classList.contains('page-link')) {
+      const pagina = parseInt(e.target.dataset.pagina);
+      if (pagina) mudarPagina(pagina);
+    }
+  });
+  
+  // Carregar produtos iniciais
+  carregarProdutos('websites', 1);
+});
+
+// ==================== FUNÇÕES AUXILIARES ====================
+// Função para quando a API estiver pronta - facilita migração
+function configurarAPI(baseURL, token = null) {
+  API_CONFIG.baseURL = baseURL;
+  if (token) {
+    API_CONFIG.token = token;
+  }
+  console.log('API configurada:', baseURL);
+}
+
+// Exportar para uso externo se necessário
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { configurarAPI, carregarProdutos };
+}
 </script>
