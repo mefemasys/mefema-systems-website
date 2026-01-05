@@ -663,3 +663,156 @@
 .hero-animated-bg::after {
     will-change: background-position, opacity;
 }
+
+
+/* ========================================
+   ESTILOS ADICIONAIS PARA SEÇÃO "QUEM SOMOS"
+   Integração com Paleta Laranja
+   ======================================== */
+
+/* ========================================
+   ESTILOS ESPECÍFICOS DA SEÇÃO SERVICES
+   ======================================== */
+
+.services-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--color-hero-bg) 0%, rgba(255, 181, 39, 0.05) 50%, var(--color-hero-bg) 100%);
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ========================================
+   CORES DO TEXTO - LIGHT MODE
+   ======================================== */
+
+@media (prefers-color-scheme: light) {
+    .services-title {
+        color: var(--color-hero-text);
+    }
+
+    .services-title .text-primary {
+        color: var(--color-primary) !important;
+    }
+
+    .services-text {
+        color: var(--color-hero-text);
+        opacity: 0.85;
+    }
+}
+
+/* ========================================
+   CORES DO TEXTO - DARK MODE
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+    .services-title {
+        color: var(--color-hero-text);
+    }
+
+    .services-title .text-primary {
+        color: var(--color-primary) !important;
+    }
+
+    .services-text {
+        color: var(--color-hero-text);
+        opacity: 0.9;
+    }
+}
+
+/* ========================================
+   EFEITOS DE ANIMAÇÃO
+   ======================================== */
+
+.services-title {
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+.services-text {
+    animation: textFade 4s ease-in-out infinite;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+@media (max-width: 992px) {
+    .services-hero {
+        min-height: 70vh;
+    }
+
+    .services-title {
+        font-size: 2.5rem;
+    }
+
+    .services-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-hero {
+        min-height: 60vh;
+    }
+
+    .hero-diamond-line {
+        display: none;
+    }
+
+    .services-title {
+        font-size: 2rem;
+    }
+
+    .services-text {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-hero {
+        min-height: 50vh;
+    }
+
+    .hero-tech-node {
+        display: none;
+    }
+
+    .services-title {
+        font-size: 1.75rem;
+    }
+
+    .services-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   COMPATIBILIDADE COM BOOTSTRAP
+   ======================================== */
+
+.services-hero .container {
+    position: relative;
+    z-index: 5;
+}
+
+.services-hero .display-4 {
+    position: relative;
+    z-index: 5;
+}
+
+.services-hero .lead {
+    position: relative;
+    z-index: 5;
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATION
+   ======================================== */
+
+.services-title,
+.services-text {
+    will-change: text-shadow, opacity;
+}
+
