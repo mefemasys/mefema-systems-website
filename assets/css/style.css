@@ -1,45 +1,27 @@
 /* ========================================
    ESTILOS DA SEÇÃO HERO - INTEGRADO COM BOOTSTRAP
-   Animações de Diamantes Diagonais
-   Paleta Laranja
+   Animações de Diamantes Diagonais - Versão Refinada
    ======================================== */
 
 /* ========================================
-   VARIÁVEIS DE COR - PALETA LARANJA
+   VARIÁVEIS DE COR - PALETA EQUILIBRADA
    ======================================== */
 
 :root {
-    /* Light Mode */
-    --color-primary: #FF6B35; /* Laranja Vibrante (Cor Principal) */
-    --color-secondary: #004E89; /* Azul Profundo (Contraste) */
-    --color-success: #52B788; /* Verde Suave */
-    --color-warning: #FFB627; /* Amarelo Dourado */
-    --color-hero-bg: #FFF5F0; /* Pêssego Muito Claro */
-    --color-hero-text: #2D3142; /* Cinza Escuro */
-    --color-hero-title: var(--color-primary);
-    --color-hero-bg-pattern: rgba(255, 107, 53, 0.08); /* Laranja sutil para o padrão */
-    
-    /* Variáveis para animações */
-    --hero-accent-primary: #FF6B35; /* Laranja */
-    --hero-accent-secondary: #FFB627; /* Amarelo Dourado */
-    --hero-accent-tertiary: #004E89; /* Azul Profundo */
+    --hero-accent-primary: #FF6B35;
+    --hero-accent-secondary: #FFB627;
+    --hero-accent-tertiary: #004E89;
+    --hero-pattern-opacity: 0.04;
+    --hero-glow-opacity: 0.06;
 }
 
-/* Dark Mode */
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-hero-bg: #1A1B26; /* Cinza Azulado Muito Escuro */
-        --color-hero-text: #E8E9ED; /* Texto Claro */
-        --color-hero-title: #FF8C61; /* Laranja mais claro para melhor contraste */
-        --color-hero-bg-pattern: rgba(255, 107, 53, 0.05); /* Laranja muito sutil para o padrão */
-        --color-primary: #FF8C61; /* Laranja mais claro no dark mode */
-        --color-secondary: #4A9EDD; /* Azul mais claro */
-        --color-success: #6FCF97; /* Verde mais claro */
-        
-        /* Variáveis para animações - Dark Mode */
-        --hero-accent-primary: #FF8C61; /* Laranja mais claro */
-        --hero-accent-secondary: #FFD700; /* Amarelo mais vibrante */
-        --hero-accent-tertiary: #4A9EDD; /* Azul mais claro */
+        --hero-accent-primary: #FF8C61;
+        --hero-accent-secondary: #FFD700;
+        --hero-accent-tertiary: #4A9EDD;
+        --hero-pattern-opacity: 0.08;
+        --hero-glow-opacity: 0.12;
     }
 }
 
@@ -49,14 +31,12 @@
 
 .landing-hero {
     position: relative;
-    background: linear-gradient(135deg, var(--color-hero-bg) 0%, rgba(255, 181, 39, 0.05) 50%, var(--color-hero-bg) 100%);
     overflow: hidden;
     min-height: 100vh;
     display: flex;
     align-items: center;
 }
 
-/* Remover padding padrão se necessário */
 .landing-hero.section-py {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -74,9 +54,10 @@
     height: 100%;
     z-index: 1;
     pointer-events: none;
+    opacity: 0.6;
 }
 
-/* Camada 1: Padrão de Diamantes com Laranja */
+/* Padrão de Diamantes Subtil */
 .hero-animated-bg::before {
     content: "";
     position: absolute;
@@ -85,41 +66,40 @@
     width: 100%;
     height: 100%;
     background: 
-        /* Gradiente diagonal 45° - Laranja */
         repeating-linear-gradient(
             45deg,
             transparent,
-            transparent 35px,
-            rgba(255, 107, 53, 0.12) 35px,
-            rgba(255, 107, 53, 0.12) 36px
+            transparent 40px,
+            var(--hero-accent-primary) 40px,
+            var(--hero-accent-primary) 41px
         ),
-        /* Gradiente diagonal -45° - Amarelo Dourado */
         repeating-linear-gradient(
             -45deg,
             transparent,
-            transparent 35px,
-            rgba(255, 182, 39, 0.12) 35px,
-            rgba(255, 182, 39, 0.12) 36px
+            transparent 40px,
+            var(--hero-accent-secondary) 40px,
+            var(--hero-accent-secondary) 41px
         );
-    background-size: 50px 50px;
-    background-position: 0 0, 0 0;
-    animation: diamondFlow 20s linear infinite;
+    opacity: var(--hero-pattern-opacity);
+    animation: diamondFlow 25s linear infinite;
 }
 
-/* Camada 2: Efeito de Brilho Radial - Laranja */
+/* Brilho Radial Discreto */
 .hero-animated-bg::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
     background: radial-gradient(
-        ellipse at center,
-        rgba(255, 107, 53, 0.08) 0%,
-        transparent 70%
+        circle,
+        var(--hero-accent-primary) 0%,
+        transparent 60%
     );
-    animation: pulseGlow 8s ease-in-out infinite;
+    opacity: var(--hero-glow-opacity);
+    animation: pulseGlow 10s ease-in-out infinite;
 }
 
 /* ========================================
@@ -138,61 +118,65 @@
 
 .hero-diamond-line {
     position: absolute;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 107, 53, 0) 0%,
-        rgba(255, 107, 53, 0.6) 50%,
-        rgba(255, 107, 53, 0) 100%
-    );
-    animation: slideDiamond 3s ease-in-out infinite;
+    width: 1px;
+    opacity: 0.4;
+    animation: slideDiamond 4s ease-in-out infinite;
 }
 
 .hero-diamond-line:nth-child(1) {
-    width: 2px;
     height: 80px;
-    top: 10%;
-    left: 15%;
+    top: 15%;
+    left: 20%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--hero-accent-primary),
+        transparent
+    );
     transform: rotate(45deg);
     animation-delay: 0s;
 }
 
 .hero-diamond-line:nth-child(2) {
-    width: 2px;
     height: 100px;
-    top: 20%;
-    right: 20%;
-    transform: rotate(-45deg);
-    animation-delay: 0.5s;
+    top: 25%;
+    right: 25%;
     background: linear-gradient(
-        135deg,
-        rgba(255, 182, 39, 0) 0%,
-        rgba(255, 182, 39, 0.6) 50%,
-        rgba(255, 182, 39, 0) 100%
+        to bottom,
+        transparent,
+        var(--hero-accent-secondary),
+        transparent
     );
-}
-
-.hero-diamond-line:nth-child(3) {
-    width: 2px;
-    height: 70px;
-    bottom: 25%;
-    left: 10%;
     transform: rotate(-45deg);
     animation-delay: 1s;
 }
 
-.hero-diamond-line:nth-child(4) {
-    width: 2px;
-    height: 90px;
-    bottom: 15%;
-    right: 15%;
-    transform: rotate(45deg);
-    animation-delay: 1.5s;
+.hero-diamond-line:nth-child(3) {
+    height: 70px;
+    bottom: 30%;
+    left: 15%;
     background: linear-gradient(
-        135deg,
-        rgba(255, 182, 39, 0) 0%,
-        rgba(255, 182, 39, 0.6) 50%,
-        rgba(255, 182, 39, 0) 100%
+        to bottom,
+        transparent,
+        var(--hero-accent-tertiary),
+        transparent
     );
+    transform: rotate(-45deg);
+    animation-delay: 2s;
+}
+
+.hero-diamond-line:nth-child(4) {
+    height: 90px;
+    bottom: 20%;
+    right: 20%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--hero-accent-primary),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation-delay: 3s;
 }
 
 /* ========================================
@@ -201,23 +185,37 @@
 
 .hero-tech-node {
     position: absolute;
-    width: 8px;
-    height: 8px;
-    background: radial-gradient(circle, rgba(255, 107, 53, 1), rgba(255, 107, 53, 0.3));
+    width: 6px;
+    height: 6px;
+    background: var(--hero-accent-primary);
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(255, 107, 53, 0.8);
-    animation: nodeGlow 2s ease-in-out infinite;
+    box-shadow: 0 0 12px var(--hero-accent-primary);
+    animation: nodeGlow 3s ease-in-out infinite;
     z-index: 3;
+    opacity: 0.7;
 }
 
 .hero-tech-node::before {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 2px solid rgba(255, 107, 53, 0.5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--hero-accent-primary);
     border-radius: 50%;
-    animation: nodeRing 2s ease-out infinite;
+    opacity: 0.3;
+    animation: nodeRing 3s ease-out infinite;
+}
+
+.hero-tech-node:nth-child(odd) {
+    background: var(--hero-accent-secondary);
+    box-shadow: 0 0 12px var(--hero-accent-secondary);
+}
+
+.hero-tech-node:nth-child(odd)::before {
+    border-color: var(--hero-accent-secondary);
 }
 
 /* ========================================
@@ -225,25 +223,23 @@
    ======================================== */
 
 .hero-title-glow {
-    animation: titleGlow 3s ease-in-out infinite;
+    animation: titleGlow 4s ease-in-out infinite;
 }
 
 .hero-text-fade {
-    animation: textFade 4s ease-in-out infinite;
+    animation: textFade 5s ease-in-out infinite;
 }
 
 .hero-image-float {
-    animation: imageFloat 4s ease-in-out infinite;
+    animation: imageFloat 6s ease-in-out infinite;
 }
 
-/* Botões com efeitos */
+/* Botões com efeitos discretos */
 .hero-btn-primary {
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
     z-index: 5;
-    background: linear-gradient(135deg, var(--color-primary), #ff8c42) !important;
-    border-color: var(--color-primary) !important;
 }
 
 .hero-btn-primary::before {
@@ -253,14 +249,12 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transition: left 0.3s ease;
-    z-index: -1;
+    background: rgba(255, 255, 255, 0.15);
+    transition: left 0.4s ease;
 }
 
 .hero-btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4) !important;
+    transform: translateY(-2px);
 }
 
 .hero-btn-primary:hover::before {
@@ -272,32 +266,10 @@
     overflow: hidden;
     transition: all 0.3s ease;
     z-index: 5;
-    border-color: var(--color-secondary) !important;
-    color: var(--color-secondary) !important;
-}
-
-.hero-btn-outline::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 78, 137, 0.1);
-    transition: left 0.3s ease;
-    z-index: -1;
 }
 
 .hero-btn-outline:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0, 78, 137, 0.3) !important;
-    border-color: var(--color-secondary) !important;
-    color: var(--color-secondary) !important;
-    background-color: rgba(0, 78, 137, 0.05) !important;
-}
-
-.hero-btn-outline:hover::before {
-    left: 100%;
+    transform: translateY(-2px);
 }
 
 /* ========================================
@@ -308,69 +280,67 @@
     0% {
         background-position: 0 0, 0 0;
     }
-    50% {
-        background-position: 50px 50px, -50px -50px;
-    }
     100% {
-        background-position: 100px 100px, -100px -100px;
+        background-position: 80px 80px, -80px -80px;
     }
 }
 
 @keyframes pulseGlow {
     0%, 100% {
-        opacity: 0.05;
+        opacity: var(--hero-glow-opacity);
+        transform: translate(-50%, -50%) scale(1);
     }
     50% {
-        opacity: 0.15;
+        opacity: calc(var(--hero-glow-opacity) * 1.5);
+        transform: translate(-50%, -50%) scale(1.1);
     }
 }
 
 @keyframes slideDiamond {
-    0% {
+    0%, 100% {
         opacity: 0;
-        transform: translateY(-20px) rotate(45deg);
+        transform: translateY(-30px) rotate(45deg);
     }
     50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(20px) rotate(45deg);
+        opacity: 0.4;
+        transform: translateY(0) rotate(45deg);
     }
 }
 
 @keyframes nodeGlow {
     0%, 100% {
-        box-shadow: 0 0 15px rgba(255, 107, 53, 0.8);
+        opacity: 0.5;
+        transform: scale(1);
     }
     50% {
-        box-shadow: 0 0 30px rgba(255, 107, 53, 1);
+        opacity: 0.9;
+        transform: scale(1.2);
     }
 }
 
 @keyframes nodeRing {
     0% {
-        transform: scale(1);
-        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
     }
     100% {
-        transform: scale(2.5);
+        transform: translate(-50%, -50%) scale(2);
         opacity: 0;
     }
 }
 
 @keyframes titleGlow {
     0%, 100% {
-        text-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
+        text-shadow: 0 0 15px rgba(255, 107, 53, 0.1);
     }
     50% {
-        text-shadow: 0 0 40px rgba(255, 107, 53, 0.4);
+        text-shadow: 0 0 25px rgba(255, 107, 53, 0.2);
     }
 }
 
 @keyframes textFade {
     0%, 100% {
-        opacity: 0.9;
+        opacity: 0.85;
     }
     50% {
         opacity: 1;
@@ -379,160 +349,10 @@
 
 @keyframes imageFloat {
     0%, 100% {
-        transform: translateY(0px);
+        transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* ========================================
-   MODO CLARO (Light Mode)
-   ======================================== */
-
-@media (prefers-color-scheme: light) {
-    .landing-hero {
-        background: linear-gradient(135deg, var(--color-hero-bg) 0%, rgba(255, 181, 39, 0.05) 50%, var(--color-hero-bg) 100%);
-    }
-
-    .hero-animated-bg::before {
-        background: 
-            repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 35px,
-                rgba(255, 107, 53, 0.1) 35px,
-                rgba(255, 107, 53, 0.1) 36px
-            ),
-            repeating-linear-gradient(
-                -45deg,
-                transparent,
-                transparent 35px,
-                rgba(255, 182, 39, 0.1) 35px,
-                rgba(255, 182, 39, 0.1) 36px
-            );
-    }
-
-    .hero-animated-bg::after {
-        background: radial-gradient(
-            ellipse at center,
-            rgba(255, 107, 53, 0.06) 0%,
-            transparent 70%
-        );
-    }
-
-    .hero-diamond-line {
-        background: linear-gradient(
-            135deg,
-            rgba(255, 107, 53, 0) 0%,
-            rgba(255, 107, 53, 0.5) 50%,
-            rgba(255, 107, 53, 0) 100%
-        );
-    }
-
-    .hero-diamond-line:nth-child(2),
-    .hero-diamond-line:nth-child(4) {
-        background: linear-gradient(
-            135deg,
-            rgba(255, 182, 39, 0) 0%,
-            rgba(255, 182, 39, 0.5) 50%,
-            rgba(255, 182, 39, 0) 100%
-        );
-    }
-
-    .hero-tech-node {
-        background: radial-gradient(circle, rgba(255, 107, 53, 1), rgba(255, 107, 53, 0.3));
-        box-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
-    }
-
-    .hero-tech-node::before {
-        border-color: rgba(255, 107, 53, 0.4);
-    }
-
-    .hero-btn-outline {
-        border-color: var(--color-secondary) !important;
-        color: var(--color-secondary) !important;
-    }
-
-    .hero-btn-outline:hover {
-        background-color: rgba(0, 78, 137, 0.05) !important;
-    }
-}
-
-/* ========================================
-   MODO ESCURO (Dark Mode)
-   ======================================== */
-
-@media (prefers-color-scheme: dark) {
-    .landing-hero {
-        background: linear-gradient(135deg, var(--color-hero-bg) 0%, rgba(255, 140, 97, 0.05) 50%, var(--color-hero-bg) 100%);
-    }
-
-    .hero-animated-bg::before {
-        background: 
-            repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 35px,
-                rgba(255, 140, 97, 0.15) 35px,
-                rgba(255, 140, 97, 0.15) 36px
-            ),
-            repeating-linear-gradient(
-                -45deg,
-                transparent,
-                transparent 35px,
-                rgba(255, 215, 0, 0.15) 35px,
-                rgba(255, 215, 0, 0.15) 36px
-            );
-    }
-
-    .hero-animated-bg::after {
-        background: radial-gradient(
-            ellipse at center,
-            rgba(255, 140, 97, 0.1) 0%,
-            transparent 70%
-        );
-    }
-
-    .hero-diamond-line {
-        background: linear-gradient(
-            135deg,
-            rgba(255, 140, 97, 0) 0%,
-            rgba(255, 140, 97, 0.6) 50%,
-            rgba(255, 140, 97, 0) 100%
-        );
-    }
-
-    .hero-diamond-line:nth-child(2),
-    .hero-diamond-line:nth-child(4) {
-        background: linear-gradient(
-            135deg,
-            rgba(255, 215, 0, 0) 0%,
-            rgba(255, 215, 0, 0.6) 50%,
-            rgba(255, 215, 0, 0) 100%
-        );
-    }
-
-    .hero-tech-node {
-        background: radial-gradient(circle, rgba(255, 140, 97, 1), rgba(255, 140, 97, 0.3));
-        box-shadow: 0 0 15px rgba(255, 140, 97, 0.8);
-    }
-
-    .hero-tech-node::before {
-        border-color: rgba(255, 140, 97, 0.5);
-    }
-
-    .hero-btn-primary {
-        background: linear-gradient(135deg, var(--color-primary), #ff9d6f) !important;
-    }
-
-    .hero-btn-outline {
-        border-color: var(--color-secondary) !important;
-        color: var(--color-secondary) !important;
-    }
-
-    .hero-btn-outline:hover {
-        background-color: rgba(74, 158, 221, 0.1) !important;
+        transform: translateY(-15px);
     }
 }
 
@@ -546,24 +366,28 @@
     }
 
     .hero-diamond-line {
-        display: none;
+        height: 60px;
     }
 
     .hero-tech-node {
-        width: 6px;
-        height: 6px;
+        width: 5px;
+        height: 5px;
     }
 }
 
 @media (max-width: 768px) {
     .landing-hero {
-        min-height: 80vh;
+        min-height: auto;
+        padding: 4rem 0;
     }
 
-    .hero-btn-primary,
-    .hero-btn-outline {
-        font-size: 0.95rem;
-        padding: 0.6rem 1.5rem;
+    .hero-diamond-line,
+    .hero-tech-node {
+        display: none;
+    }
+
+    .hero-animated-bg::before {
+        animation-duration: 30s;
     }
 
     .hero-image-float {
@@ -572,22 +396,12 @@
 }
 
 @media (max-width: 576px) {
-    .landing-hero {
-        min-height: 70vh;
-    }
-
-    .hero-tech-node {
-        display: none;
-    }
-
-    .hero-animated-bg::before {
-        background-size: 40px 40px;
+    .hero-animated-bg {
+        opacity: 0.4;
     }
 
     .hero-btn-primary,
     .hero-btn-outline {
-        font-size: 0.9rem;
-        padding: 0.5rem 1.2rem;
         width: 100%;
     }
 }
@@ -596,7 +410,6 @@
    COMPATIBILIDADE COM BOOTSTRAP
    ======================================== */
 
-/* Garantir que o z-index do conteúdo seja maior que as animações */
 .landing-hero .container {
     position: relative;
     z-index: 5;
@@ -605,9 +418,7 @@
 .landing-hero .badge {
     position: relative;
     z-index: 5;
-    animation: badgeFade 4s ease-in-out infinite;
-    background-color: rgba(255, 107, 53, 0.15) !important;
-    color: var(--color-primary) !important;
+    animation: badgeFade 5s ease-in-out infinite;
 }
 
 @keyframes badgeFade {
@@ -619,47 +430,39 @@
     }
 }
 
-/* Ajustes para compatibilidade com classes Bootstrap */
-.landing-hero .display-4 {
-    position: relative;
-    z-index: 5;
-    color: var(--color-hero-text);
-}
-
-.landing-hero .lead {
-    position: relative;
-    z-index: 5;
-    color: var(--color-hero-text);
-}
-
-.landing-hero .text-primary {
-    color: var(--color-primary) !important;
-}
-
-/* ========================================
-   EFEITOS HOVER ADICIONAIS
-   ======================================== */
-
 .landing-hero .img-fluid {
-    transition: all 0.3s ease;
+    transition: filter 0.3s ease;
 }
 
 .landing-hero .img-fluid:hover {
-    filter: drop-shadow(0 10px 30px rgba(255, 107, 53, 0.3));
+    filter: drop-shadow(0 8px 24px rgba(255, 107, 53, 0.15));
 }
 
 /* ========================================
    PERFORMANCE OPTIMIZATION
    ======================================== */
 
-/* Usar will-change para otimizar animações */
 .hero-diamond-line,
 .hero-tech-node,
-.hero-image-float {
+.hero-image-float,
+.hero-animated-bg::before,
+.hero-animated-bg::after {
     will-change: transform, opacity;
 }
 
-.hero-animated-bg::before,
-.hero-animated-bg::after {
-    will-change: background-position, opacity;
+/* Reduzir animações para usuários que preferem movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .hero-animated-bg::before,
+    .hero-diamond-line,
+    .hero-tech-node,
+    .hero-title-glow,
+    .hero-text-fade,
+    .hero-image-float {
+        animation: none;
+    }
+    
+    .hero-btn-primary:hover,
+    .hero-btn-outline:hover {
+        transform: none;
+    }
 }
