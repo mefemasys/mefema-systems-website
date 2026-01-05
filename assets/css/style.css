@@ -1,117 +1,15 @@
-/*
-* style.css
-* File include item demo only specific css only
-******************************************************************************/
+/* ========================================
+   ESTILOS DA SEÇÃO HERO - INTEGRADO COM BOOTSTRAP
+   Animações de Diamantes Diagonais
+   Paleta Laranja
+   ======================================== */
 
-.menu .app-brand.demo {
-    height: 64px;
-}
+/* ========================================
+   VARIÁVEIS DE COR - PALETA LARANJA
+   ======================================== */
 
-.app-brand-logo.demo svg {
-    width: 38px;
-    height: 20px;
-}
-
-.app-brand-text.demo {
-    font-size: 1.25rem;
-    letter-spacing: 0.15px;
-}
-
-.authentication-wrapper .app-brand-text.demo {
-    text-transform: capitalize;
-}
-
-/* ! For .layout-navbar-fixed added fix padding top to .layout-page */
-/* Default navbar */
-.layout-navbar-fixed .layout-wrapper:not(.layout-without-menu) .layout-page {
-    padding-top: 64px !important;
-}
-
-/* Navbar page z-index issue solution */
-.content-wrapper .navbar {
-    z-index: auto;
-}
-
-/*
-* Content
-******************************************************************************/
-
-.demo-blocks > * {
-    display: block !important;
-}
-
-.demo-inline-spacing > * {
-    margin: 1rem 0.375rem 0 0 !important;
-}
-
-/* ? .demo-vertical-spacing class is used to have vertical margins between elements. To remove margin-top from the first-child, use .demo-only-element class with .demo-vertical-spacing class. For example, we have used this class in forms-input-groups.html file. */
-.demo-vertical-spacing > * {
-    margin-top: 1.25rem !important;
-    margin-bottom: 0 !important;
-}
-
-.demo-vertical-spacing.demo-only-element > :first-child {
-    margin-top: 0 !important;
-}
-
-.demo-vertical-spacing-lg > * {
-    margin-top: 1.875rem !important;
-    margin-bottom: 0 !important;
-}
-
-.demo-vertical-spacing-lg.demo-only-element > :first-child {
-    margin-top: 0 !important;
-}
-
-.demo-vertical-spacing-xl > * {
-    margin-top: 5rem !important;
-    margin-bottom: 0 !important;
-}
-
-.demo-vertical-spacing-xl.demo-only-element > :first-child {
-    margin-top: 0 !important;
-}
-
-/* Dropdown buttons going out of small screens */
-@media (max-width: 576px) {
-    #dropdown-variation-demo .btn-group .text-truncate {
-        width: 300px;
-        position: relative;
-    }
-
-    #dropdown-variation-demo .btn-group .text-truncate::after {
-        position: absolute;
-        top: 45%;
-        right: 0.65rem;
-    }
-}
-
-/*
-* Layout demo
-******************************************************************************/
-
-.layout-demo-wrapper {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin-top: 1.25rem;
-}
-
-.layout-demo-placeholder img {
-    width: 900px;
-}
-
-.layout-demo-info {
-    text-align: center;
-    margin-top: 1.25rem;
-}
-
-/* Variáveis de Cores - Paleta Laranja */
 :root {
-    /* Cores para Light Mode */
+    /* Light Mode */
     --color-primary: #FF6B35; /* Laranja Vibrante (Cor Principal) */
     --color-secondary: #004E89; /* Azul Profundo (Contraste) */
     --color-success: #52B788; /* Verde Suave */
@@ -120,6 +18,11 @@
     --color-hero-text: #2D3142; /* Cinza Escuro */
     --color-hero-title: var(--color-primary);
     --color-hero-bg-pattern: rgba(255, 107, 53, 0.08); /* Laranja sutil para o padrão */
+    
+    /* Variáveis para animações */
+    --hero-accent-primary: #FF6B35; /* Laranja */
+    --hero-accent-secondary: #FFB627; /* Amarelo Dourado */
+    --hero-accent-tertiary: #004E89; /* Azul Profundo */
 }
 
 /* Dark Mode */
@@ -132,28 +35,12 @@
         --color-primary: #FF8C61; /* Laranja mais claro no dark mode */
         --color-secondary: #4A9EDD; /* Azul mais claro */
         --color-success: #6FCF97; /* Verde mais claro */
+        
+        /* Variáveis para animações - Dark Mode */
+        --hero-accent-primary: #FF8C61; /* Laranja mais claro */
+        --hero-accent-secondary: #FFD700; /* Amarelo mais vibrante */
+        --hero-accent-tertiary: #4A9EDD; /* Azul mais claro */
     }
-}
-/* ========================================
-   ESTILOS DA SEÇÃO HERO - DESIGN MODERNO
-   Animações de Diamantes Diagonais
-   ======================================== */
-/* ========================================
-   ESTILOS DA SEÇÃO HERO - INTEGRADO COM BOOTSTRAP
-   Animações de Diamantes Diagonais
-   ======================================== */
-
-/* ========================================
-   VARIÁVEIS DE COR
-   ======================================== */
-
-:root {
-    --hero-bg-primary: #0a0e27;
-    --hero-bg-secondary: #1a1f3a;
-    --hero-bg-tertiary: #0f1729;
-    --hero-accent-cyan: #00d4ff;
-    --hero-accent-purple: #6c5ce7;
-    --hero-text-light: #e0e0e0;
 }
 
 /* ========================================
@@ -162,7 +49,7 @@
 
 .landing-hero {
     position: relative;
-    background: linear-gradient(135deg, var(--hero-bg-primary) 0%, var(--hero-bg-secondary) 50%, var(--hero-bg-tertiary) 100%);
+    background: linear-gradient(135deg, var(--color-hero-bg) 0%, rgba(255, 181, 39, 0.05) 50%, var(--color-hero-bg) 100%);
     overflow: hidden;
     min-height: 100vh;
     display: flex;
@@ -189,7 +76,7 @@
     pointer-events: none;
 }
 
-/* Camada 1: Padrão de Diamantes */
+/* Camada 1: Padrão de Diamantes com Laranja */
 .hero-animated-bg::before {
     content: "";
     position: absolute;
@@ -198,28 +85,28 @@
     width: 100%;
     height: 100%;
     background: 
-        /* Gradiente diagonal 45° */
+        /* Gradiente diagonal 45° - Laranja */
         repeating-linear-gradient(
             45deg,
             transparent,
             transparent 35px,
-            rgba(0, 212, 255, 0.15) 35px,
-            rgba(0, 212, 255, 0.15) 36px
+            rgba(255, 107, 53, 0.12) 35px,
+            rgba(255, 107, 53, 0.12) 36px
         ),
-        /* Gradiente diagonal -45° */
+        /* Gradiente diagonal -45° - Amarelo Dourado */
         repeating-linear-gradient(
             -45deg,
             transparent,
             transparent 35px,
-            rgba(108, 92, 231, 0.15) 35px,
-            rgba(108, 92, 231, 0.15) 36px
+            rgba(255, 182, 39, 0.12) 35px,
+            rgba(255, 182, 39, 0.12) 36px
         );
     background-size: 50px 50px;
     background-position: 0 0, 0 0;
     animation: diamondFlow 20s linear infinite;
 }
 
-/* Camada 2: Efeito de Brilho Radial */
+/* Camada 2: Efeito de Brilho Radial - Laranja */
 .hero-animated-bg::after {
     content: "";
     position: absolute;
@@ -229,7 +116,7 @@
     height: 100%;
     background: radial-gradient(
         ellipse at center,
-        rgba(0, 212, 255, 0.05) 0%,
+        rgba(255, 107, 53, 0.08) 0%,
         transparent 70%
     );
     animation: pulseGlow 8s ease-in-out infinite;
@@ -253,9 +140,9 @@
     position: absolute;
     background: linear-gradient(
         135deg,
-        rgba(0, 212, 255, 0) 0%,
-        rgba(0, 212, 255, 0.6) 50%,
-        rgba(0, 212, 255, 0) 100%
+        rgba(255, 107, 53, 0) 0%,
+        rgba(255, 107, 53, 0.6) 50%,
+        rgba(255, 107, 53, 0) 100%
     );
     animation: slideDiamond 3s ease-in-out infinite;
 }
@@ -276,6 +163,12 @@
     right: 20%;
     transform: rotate(-45deg);
     animation-delay: 0.5s;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 182, 39, 0) 0%,
+        rgba(255, 182, 39, 0.6) 50%,
+        rgba(255, 182, 39, 0) 100%
+    );
 }
 
 .hero-diamond-line:nth-child(3) {
@@ -294,6 +187,12 @@
     right: 15%;
     transform: rotate(45deg);
     animation-delay: 1.5s;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 182, 39, 0) 0%,
+        rgba(255, 182, 39, 0.6) 50%,
+        rgba(255, 182, 39, 0) 100%
+    );
 }
 
 /* ========================================
@@ -304,9 +203,9 @@
     position: absolute;
     width: 8px;
     height: 8px;
-    background: radial-gradient(circle, rgba(0, 212, 255, 1), rgba(0, 212, 255, 0.3));
+    background: radial-gradient(circle, rgba(255, 107, 53, 1), rgba(255, 107, 53, 0.3));
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+    box-shadow: 0 0 15px rgba(255, 107, 53, 0.8);
     animation: nodeGlow 2s ease-in-out infinite;
     z-index: 3;
 }
@@ -316,7 +215,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 2px solid rgba(0, 212, 255, 0.5);
+    border: 2px solid rgba(255, 107, 53, 0.5);
     border-radius: 50%;
     animation: nodeRing 2s ease-out infinite;
 }
@@ -343,6 +242,8 @@
     overflow: hidden;
     transition: all 0.3s ease;
     z-index: 5;
+    background: linear-gradient(135deg, var(--color-primary), #ff8c42) !important;
+    border-color: var(--color-primary) !important;
 }
 
 .hero-btn-primary::before {
@@ -371,6 +272,8 @@
     overflow: hidden;
     transition: all 0.3s ease;
     z-index: 5;
+    border-color: var(--color-secondary) !important;
+    color: var(--color-secondary) !important;
 }
 
 .hero-btn-outline::before {
@@ -380,16 +283,17 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(0, 78, 137, 0.1);
     transition: left 0.3s ease;
     z-index: -1;
 }
 
 .hero-btn-outline:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3) !important;
-    border-color: var(--hero-accent-cyan) !important;
-    color: var(--hero-accent-cyan) !important;
+    box-shadow: 0 15px 40px rgba(0, 78, 137, 0.3) !important;
+    border-color: var(--color-secondary) !important;
+    color: var(--color-secondary) !important;
+    background-color: rgba(0, 78, 137, 0.05) !important;
 }
 
 .hero-btn-outline:hover::before {
@@ -437,10 +341,10 @@
 
 @keyframes nodeGlow {
     0%, 100% {
-        box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+        box-shadow: 0 0 15px rgba(255, 107, 53, 0.8);
     }
     50% {
-        box-shadow: 0 0 30px rgba(0, 212, 255, 1);
+        box-shadow: 0 0 30px rgba(255, 107, 53, 1);
     }
 }
 
@@ -457,10 +361,10 @@
 
 @keyframes titleGlow {
     0%, 100% {
-        text-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        text-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
     }
     50% {
-        text-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+        text-shadow: 0 0 40px rgba(255, 107, 53, 0.4);
     }
 }
 
@@ -487,17 +391,8 @@
    ======================================== */
 
 @media (prefers-color-scheme: light) {
-    :root {
-        --hero-bg-primary: #f5f7fa;
-        --hero-bg-secondary: #e8f0f7;
-        --hero-bg-tertiary: #f0f4f8;
-        --hero-accent-cyan: #0099ff;
-        --hero-accent-purple: #6c5ce7;
-        --hero-text-light: #2c3e50;
-    }
-
     .landing-hero {
-        background: linear-gradient(135deg, var(--hero-bg-primary) 0%, var(--hero-bg-secondary) 50%, var(--hero-bg-tertiary) 100%);
+        background: linear-gradient(135deg, var(--color-hero-bg) 0%, rgba(255, 181, 39, 0.05) 50%, var(--color-hero-bg) 100%);
     }
 
     .hero-animated-bg::before {
@@ -506,22 +401,22 @@
                 45deg,
                 transparent,
                 transparent 35px,
-                rgba(0, 153, 255, 0.1) 35px,
-                rgba(0, 153, 255, 0.1) 36px
+                rgba(255, 107, 53, 0.1) 35px,
+                rgba(255, 107, 53, 0.1) 36px
             ),
             repeating-linear-gradient(
                 -45deg,
                 transparent,
                 transparent 35px,
-                rgba(108, 92, 231, 0.1) 35px,
-                rgba(108, 92, 231, 0.1) 36px
+                rgba(255, 182, 39, 0.1) 35px,
+                rgba(255, 182, 39, 0.1) 36px
             );
     }
 
     .hero-animated-bg::after {
         background: radial-gradient(
             ellipse at center,
-            rgba(0, 153, 255, 0.03) 0%,
+            rgba(255, 107, 53, 0.06) 0%,
             transparent 70%
         );
     }
@@ -529,19 +424,115 @@
     .hero-diamond-line {
         background: linear-gradient(
             135deg,
-            rgba(0, 153, 255, 0) 0%,
-            rgba(0, 153, 255, 0.5) 50%,
-            rgba(0, 153, 255, 0) 100%
+            rgba(255, 107, 53, 0) 0%,
+            rgba(255, 107, 53, 0.5) 50%,
+            rgba(255, 107, 53, 0) 100%
+        );
+    }
+
+    .hero-diamond-line:nth-child(2),
+    .hero-diamond-line:nth-child(4) {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 182, 39, 0) 0%,
+            rgba(255, 182, 39, 0.5) 50%,
+            rgba(255, 182, 39, 0) 100%
         );
     }
 
     .hero-tech-node {
-        background: radial-gradient(circle, rgba(0, 153, 255, 1), rgba(0, 153, 255, 0.3));
-        box-shadow: 0 0 15px rgba(0, 153, 255, 0.6);
+        background: radial-gradient(circle, rgba(255, 107, 53, 1), rgba(255, 107, 53, 0.3));
+        box-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
     }
 
     .hero-tech-node::before {
-        border-color: rgba(0, 153, 255, 0.4);
+        border-color: rgba(255, 107, 53, 0.4);
+    }
+
+    .hero-btn-outline {
+        border-color: var(--color-secondary) !important;
+        color: var(--color-secondary) !important;
+    }
+
+    .hero-btn-outline:hover {
+        background-color: rgba(0, 78, 137, 0.05) !important;
+    }
+}
+
+/* ========================================
+   MODO ESCURO (Dark Mode)
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+    .landing-hero {
+        background: linear-gradient(135deg, var(--color-hero-bg) 0%, rgba(255, 140, 97, 0.05) 50%, var(--color-hero-bg) 100%);
+    }
+
+    .hero-animated-bg::before {
+        background: 
+            repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 35px,
+                rgba(255, 140, 97, 0.15) 35px,
+                rgba(255, 140, 97, 0.15) 36px
+            ),
+            repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 35px,
+                rgba(255, 215, 0, 0.15) 35px,
+                rgba(255, 215, 0, 0.15) 36px
+            );
+    }
+
+    .hero-animated-bg::after {
+        background: radial-gradient(
+            ellipse at center,
+            rgba(255, 140, 97, 0.1) 0%,
+            transparent 70%
+        );
+    }
+
+    .hero-diamond-line {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 140, 97, 0) 0%,
+            rgba(255, 140, 97, 0.6) 50%,
+            rgba(255, 140, 97, 0) 100%
+        );
+    }
+
+    .hero-diamond-line:nth-child(2),
+    .hero-diamond-line:nth-child(4) {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 215, 0, 0) 0%,
+            rgba(255, 215, 0, 0.6) 50%,
+            rgba(255, 215, 0, 0) 100%
+        );
+    }
+
+    .hero-tech-node {
+        background: radial-gradient(circle, rgba(255, 140, 97, 1), rgba(255, 140, 97, 0.3));
+        box-shadow: 0 0 15px rgba(255, 140, 97, 0.8);
+    }
+
+    .hero-tech-node::before {
+        border-color: rgba(255, 140, 97, 0.5);
+    }
+
+    .hero-btn-primary {
+        background: linear-gradient(135deg, var(--color-primary), #ff9d6f) !important;
+    }
+
+    .hero-btn-outline {
+        border-color: var(--color-secondary) !important;
+        color: var(--color-secondary) !important;
+    }
+
+    .hero-btn-outline:hover {
+        background-color: rgba(74, 158, 221, 0.1) !important;
     }
 }
 
@@ -615,6 +606,8 @@
     position: relative;
     z-index: 5;
     animation: badgeFade 4s ease-in-out infinite;
+    background-color: rgba(255, 107, 53, 0.15) !important;
+    color: var(--color-primary) !important;
 }
 
 @keyframes badgeFade {
@@ -630,15 +623,17 @@
 .landing-hero .display-4 {
     position: relative;
     z-index: 5;
+    color: var(--color-hero-text);
 }
 
 .landing-hero .lead {
     position: relative;
     z-index: 5;
+    color: var(--color-hero-text);
 }
 
 .landing-hero .text-primary {
-    color: #FF6B35 !important;
+    color: var(--color-primary) !important;
 }
 
 /* ========================================
@@ -650,7 +645,7 @@
 }
 
 .landing-hero .img-fluid:hover {
-    filter: drop-shadow(0 10px 30px rgba(0, 212, 255, 0.3));
+    filter: drop-shadow(0 10px 30px rgba(255, 107, 53, 0.3));
 }
 
 /* ========================================
