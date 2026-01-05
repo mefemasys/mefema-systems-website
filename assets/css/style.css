@@ -138,34 +138,48 @@
    ESTILOS DA SEÇÃO HERO - DESIGN MODERNO
    Animações de Diamantes Diagonais
    ======================================== */
+/* ========================================
+   ESTILOS DA SEÇÃO HERO - INTEGRADO COM BOOTSTRAP
+   Animações de Diamantes Diagonais
+   ======================================== */
+
+/* ========================================
+   VARIÁVEIS DE COR
+   ======================================== */
 
 :root {
-    --color-hero-bg: #0a0e27;
-    --color-hero-title: #FF6B35;
-    --color-hero-text: #e0e0e0;
-    --color-hero-accent: #00d4ff;
-    --color-hero-secondary: #6c5ce7;
-}
-
-/* Container Principal da Hero */
-.landing-hero {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1729 100%);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    --hero-bg-primary: #0a0e27;
+    --hero-bg-secondary: #1a1f3a;
+    --hero-bg-tertiary: #0f1729;
+    --hero-accent-cyan: #00d4ff;
+    --hero-accent-purple: #6c5ce7;
+    --hero-text-light: #e0e0e0;
 }
 
 /* ========================================
-   CAMADAS DE ANIMAÇÃO - DIAMANTES DIAGONAIS
+   CONTAINER PRINCIPAL DA HERO
    ======================================== */
 
-/* Camada 1: Linha de Diamantes Animados */
-.landing-hero::before {
-    content: "";
+.landing-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--hero-bg-primary) 0%, var(--hero-bg-secondary) 50%, var(--hero-bg-tertiary) 100%);
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Remover padding padrão se necessário */
+.landing-hero.section-py {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* ========================================
+   CAMADAS DE ANIMAÇÃO DE FUNDO
+   ======================================== */
+
+.hero-animated-bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -173,8 +187,18 @@
     height: 100%;
     z-index: 1;
     pointer-events: none;
+}
+
+/* Camada 1: Padrão de Diamantes */
+.hero-animated-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: 
-        /* Padrão de diamantes com traços diagonais */
+        /* Gradiente diagonal 45° */
         repeating-linear-gradient(
             45deg,
             transparent,
@@ -182,6 +206,7 @@
             rgba(0, 212, 255, 0.15) 35px,
             rgba(0, 212, 255, 0.15) 36px
         ),
+        /* Gradiente diagonal -45° */
         repeating-linear-gradient(
             -45deg,
             transparent,
@@ -194,16 +219,14 @@
     animation: diamondFlow 20s linear infinite;
 }
 
-/* Camada 2: Efeito de Dissolução Radial */
-.landing-hero::after {
+/* Camada 2: Efeito de Brilho Radial */
+.hero-animated-bg::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
-    pointer-events: none;
     background: radial-gradient(
         ellipse at center,
         rgba(0, 212, 255, 0.05) 0%,
@@ -213,35 +236,19 @@
 }
 
 /* ========================================
-   ANIMAÇÕES PRINCIPAIS
+   TRAÇOS DECORATIVOS DE DIAMANTES
    ======================================== */
 
-@keyframes diamondFlow {
-    0% {
-        background-position: 0 0, 0 0;
-    }
-    50% {
-        background-position: 50px 50px, -50px -50px;
-    }
-    100% {
-        background-position: 100px 100px, -100px -100px;
-    }
+.hero-decorative-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
 }
 
-@keyframes pulseGlow {
-    0%, 100% {
-        opacity: 0.05;
-    }
-    50% {
-        opacity: 0.15;
-    }
-}
-
-/* ========================================
-   ELEMENTOS INTERATIVOS - TRAÇOS ANIMADOS
-   ======================================== */
-
-/* Traços decorativos que formam diamantes */
 .hero-diamond-line {
     position: absolute;
     background: linear-gradient(
@@ -289,6 +296,131 @@
     animation-delay: 1.5s;
 }
 
+/* ========================================
+   NÓS DE TECNOLOGIA (TECH NODES)
+   ======================================== */
+
+.hero-tech-node {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 1), rgba(0, 212, 255, 0.3));
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+    animation: nodeGlow 2s ease-in-out infinite;
+    z-index: 3;
+}
+
+.hero-tech-node::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(0, 212, 255, 0.5);
+    border-radius: 50%;
+    animation: nodeRing 2s ease-out infinite;
+}
+
+/* ========================================
+   EFEITOS NO CONTEÚDO
+   ======================================== */
+
+.hero-title-glow {
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+.hero-text-fade {
+    animation: textFade 4s ease-in-out infinite;
+}
+
+.hero-image-float {
+    animation: imageFloat 4s ease-in-out infinite;
+}
+
+/* Botões com efeitos */
+.hero-btn-primary {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.hero-btn-primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4) !important;
+}
+
+.hero-btn-primary:hover::before {
+    left: 100%;
+}
+
+.hero-btn-outline {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.hero-btn-outline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 212, 255, 0.1);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.hero-btn-outline:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3) !important;
+    border-color: var(--hero-accent-cyan) !important;
+    color: var(--hero-accent-cyan) !important;
+}
+
+.hero-btn-outline:hover::before {
+    left: 100%;
+}
+
+/* ========================================
+   ANIMAÇÕES PRINCIPAIS
+   ======================================== */
+
+@keyframes diamondFlow {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+    50% {
+        background-position: 50px 50px, -50px -50px;
+    }
+    100% {
+        background-position: 100px 100px, -100px -100px;
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.05;
+    }
+    50% {
+        opacity: 0.15;
+    }
+}
+
 @keyframes slideDiamond {
     0% {
         opacity: 0;
@@ -301,30 +433,6 @@
         opacity: 0;
         transform: translateY(20px) rotate(45deg);
     }
-}
-
-/* ========================================
-   PONTOS DE CONEXÃO (TECH NODES)
-   ======================================== */
-
-.hero-tech-node {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: radial-gradient(circle, rgba(0, 212, 255, 1), rgba(0, 212, 255, 0.3));
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
-    animation: nodeGlow 2s ease-in-out infinite;
-}
-
-.hero-tech-node::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 2px solid rgba(0, 212, 255, 0.5);
-    border-radius: 50%;
-    animation: nodeRing 2s ease-out infinite;
 }
 
 @keyframes nodeGlow {
@@ -347,195 +455,52 @@
     }
 }
 
-/* ========================================
-   ESTILOS DE BOTÕES
-   ======================================== */
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--color-hero-title), #ff8c42);
-    border: 2px solid var(--color-hero-title);
-    color: white;
-    padding: 12px 32px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
-}
-
-.btn-primary::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transition: left 0.3s ease;
-    z-index: -1;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
-}
-
-.btn-primary:hover::before {
-    left: 100%;
-}
-
-.btn-outline-primary {
-    background: transparent;
-    border: 2px solid var(--color-hero-accent);
-    color: var(--color-hero-accent);
-    padding: 12px 32px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2;
-}
-
-.btn-outline-primary::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 212, 255, 0.2);
-    transition: left 0.3s ease;
-    z-index: -1;
-}
-
-.btn-outline-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-    color: white;
-}
-
-.btn-outline-primary:hover::before {
-    left: 100%;
-}
-
-/* ========================================
-   BOTÃO DE TEMA (DARK/LIGHT MODE)
-   ======================================== */
-
-#themeToggleBtn {
-    position: relative;
-    z-index: 10;
-    background-color: rgba(255, 107, 53, 0.9);
-    border: 2px solid var(--color-hero-title);
-    color: white;
-    padding: 10px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-#themeToggleBtn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 20px rgba(255, 107, 53, 0.6);
-    background-color: var(--color-hero-title);
-}
-
-#themeToggleBtn:active {
-    transform: scale(0.95);
-}
-
-#themeToggleBtn.active {
-    background-color: var(--color-hero-accent);
-    border-color: var(--color-hero-accent);
-    box-shadow: 0 0 25px rgba(0, 212, 255, 0.8);
-}
-
-/* ========================================
-   CONTEÚDO DA HERO (Responsivo)
-   ======================================== */
-
-.hero-content {
-    position: relative;
-    z-index: 5;
-    text-align: center;
-    color: var(--color-hero-text);
-    max-width: 800px;
-    padding: 40px 20px;
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-    background: linear-gradient(135deg, var(--color-hero-title), var(--color-hero-accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: titleGlow 3s ease-in-out infinite;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    color: rgba(224, 224, 224, 0.8);
-    line-height: 1.6;
-}
-
 @keyframes titleGlow {
     0%, 100% {
-        text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        text-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
     }
     50% {
-        text-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+        text-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+    }
+}
+
+@keyframes textFade {
+    0%, 100% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes imageFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
     }
 }
 
 /* ========================================
-   DARK MODE - AJUSTES
-   ======================================== */
-
-@media (prefers-color-scheme: dark) {
-    .landing-hero {
-        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1729 100%);
-    }
-
-    .btn-primary {
-        background: linear-gradient(135deg, #FF6B35, #ff8c42);
-    }
-
-    .btn-outline-primary {
-        border-color: var(--color-hero-accent);
-        color: var(--color-hero-accent);
-    }
-}
-
-/* ========================================
-   LIGHT MODE - AJUSTES
+   MODO CLARO (Light Mode)
    ======================================== */
 
 @media (prefers-color-scheme: light) {
     :root {
-        --color-hero-bg: #f5f7fa;
-        --color-hero-title: #FF6B35;
-        --color-hero-text: #2c3e50;
-        --color-hero-accent: #0099ff;
-        --color-hero-secondary: #6c5ce7;
+        --hero-bg-primary: #f5f7fa;
+        --hero-bg-secondary: #e8f0f7;
+        --hero-bg-tertiary: #f0f4f8;
+        --hero-accent-cyan: #0099ff;
+        --hero-accent-purple: #6c5ce7;
+        --hero-text-light: #2c3e50;
     }
 
     .landing-hero {
-        background: linear-gradient(135deg, #f5f7fa 0%, #e8f0f7 50%, #f0f4f8 100%);
+        background: linear-gradient(135deg, var(--hero-bg-primary) 0%, var(--hero-bg-secondary) 50%, var(--hero-bg-tertiary) 100%);
     }
 
-    .landing-hero::before {
+    .hero-animated-bg::before {
         background: 
             repeating-linear-gradient(
                 45deg,
@@ -553,7 +518,7 @@
             );
     }
 
-    .landing-hero::after {
+    .hero-animated-bg::after {
         background: radial-gradient(
             ellipse at center,
             rgba(0, 153, 255, 0.03) 0%,
@@ -561,15 +526,22 @@
         );
     }
 
-    .hero-content h1 {
-        background: linear-gradient(135deg, #FF6B35, #0099ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+    .hero-diamond-line {
+        background: linear-gradient(
+            135deg,
+            rgba(0, 153, 255, 0) 0%,
+            rgba(0, 153, 255, 0.5) 50%,
+            rgba(0, 153, 255, 0) 100%
+        );
     }
 
-    .hero-content p {
-        color: rgba(44, 62, 80, 0.8);
+    .hero-tech-node {
+        background: radial-gradient(circle, rgba(0, 153, 255, 1), rgba(0, 153, 255, 0.3));
+        box-shadow: 0 0 15px rgba(0, 153, 255, 0.6);
+    }
+
+    .hero-tech-node::before {
+        border-color: rgba(0, 153, 255, 0.4);
     }
 }
 
@@ -577,52 +549,122 @@
    RESPONSIVIDADE
    ======================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .landing-hero {
-        min-height: 80vh;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
+        min-height: 90vh;
     }
 
     .hero-diamond-line {
         display: none;
     }
 
-    .btn-primary,
-    .btn-outline-primary {
-        padding: 10px 24px;
-        font-size: 0.95rem;
+    .hero-tech-node {
+        width: 6px;
+        height: 6px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    .landing-hero {
+        min-height: 80vh;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-outline {
+        font-size: 0.95rem;
+        padding: 0.6rem 1.5rem;
+    }
+
+    .hero-image-float {
+        animation: none;
+    }
+}
+
+@media (max-width: 576px) {
     .landing-hero {
         min-height: 70vh;
     }
 
-    .hero-content h1 {
-        font-size: 2rem;
+    .hero-tech-node {
+        display: none;
     }
 
-    .hero-content p {
-        font-size: 0.95rem;
+    .hero-animated-bg::before {
+        background-size: 40px 40px;
     }
 
-    .btn-primary,
-    .btn-outline-primary {
-        padding: 8px 20px;
+    .hero-btn-primary,
+    .hero-btn-outline {
         font-size: 0.9rem;
-    }
-
-    #themeToggleBtn {
-        padding: 8px 12px;
-        font-size: 0.85rem;
+        padding: 0.5rem 1.2rem;
+        width: 100%;
     }
 }
 
+/* ========================================
+   COMPATIBILIDADE COM BOOTSTRAP
+   ======================================== */
+
+/* Garantir que o z-index do conteúdo seja maior que as animações */
+.landing-hero .container {
+    position: relative;
+    z-index: 5;
+}
+
+.landing-hero .badge {
+    position: relative;
+    z-index: 5;
+    animation: badgeFade 4s ease-in-out infinite;
+}
+
+@keyframes badgeFade {
+    0%, 100% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Ajustes para compatibilidade com classes Bootstrap */
+.landing-hero .display-4 {
+    position: relative;
+    z-index: 5;
+}
+
+.landing-hero .lead {
+    position: relative;
+    z-index: 5;
+}
+
+.landing-hero .text-primary {
+    color: #FF6B35 !important;
+}
+
+/* ========================================
+   EFEITOS HOVER ADICIONAIS
+   ======================================== */
+
+.landing-hero .img-fluid {
+    transition: all 0.3s ease;
+}
+
+.landing-hero .img-fluid:hover {
+    filter: drop-shadow(0 10px 30px rgba(0, 212, 255, 0.3));
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATION
+   ======================================== */
+
+/* Usar will-change para otimizar animações */
+.hero-diamond-line,
+.hero-tech-node,
+.hero-image-float {
+    will-change: transform, opacity;
+}
+
+.hero-animated-bg::before,
+.hero-animated-bg::after {
+    will-change: background-position, opacity;
+}
