@@ -1,32 +1,28 @@
 /* ========================================
-   ESTILOS DA SEÇÃO HERO - INTEGRADO COM BOOTSTRAP
-   Animações de Diamantes Diagonais - Versão Refinada
+   ESTILOS DA SEÇÃO HERO
+   Animações Subtis e Modernas
    ======================================== */
 
 /* ========================================
-   VARIÁVEIS DE COR - PALETA EQUILIBRADA
+   VARIÁVEIS DE COR
    ======================================== */
 
 :root {
-    --hero-accent-primary: #FF6B35;
+    --hero-accent: #FF6B35;
     --hero-accent-secondary: #FFB627;
-    --hero-accent-tertiary: #004E89;
-    --hero-pattern-opacity: 0.04;
-    --hero-glow-opacity: 0.06;
+    --hero-accent-subtle: rgba(255, 107, 53, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --hero-accent-primary: #FF8C61;
+        --hero-accent: #FF8C61;
         --hero-accent-secondary: #FFD700;
-        --hero-accent-tertiary: #4A9EDD;
-        --hero-pattern-opacity: 0.08;
-        --hero-glow-opacity: 0.12;
+        --hero-accent-subtle: rgba(255, 140, 97, 0.15);
     }
 }
 
 /* ========================================
-   CONTAINER PRINCIPAL DA HERO
+   CONTAINER PRINCIPAL
    ======================================== */
 
 .landing-hero {
@@ -43,75 +39,58 @@
 }
 
 /* ========================================
-   CAMADAS DE ANIMAÇÃO DE FUNDO
+   ANIMAÇÃO DE FUNDO - PADRÃO DIAMANTES
    ======================================== */
 
 .hero-animated-bg {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     z-index: 1;
     pointer-events: none;
     opacity: 0.6;
 }
 
-/* Padrão de Diamantes Subtil */
 .hero-animated-bg::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: 
         repeating-linear-gradient(
             45deg,
             transparent,
             transparent 40px,
-            var(--hero-accent-primary) 40px,
-            var(--hero-accent-primary) 41px
+            var(--hero-accent-subtle) 40px,
+            var(--hero-accent-subtle) 41px
         ),
         repeating-linear-gradient(
             -45deg,
             transparent,
             transparent 40px,
-            var(--hero-accent-secondary) 40px,
-            var(--hero-accent-secondary) 41px
+            var(--hero-accent-subtle) 40px,
+            var(--hero-accent-subtle) 41px
         );
-    opacity: var(--hero-pattern-opacity);
     animation: diamondFlow 25s linear infinite;
 }
 
-/* Brilho Radial Discreto */
 .hero-animated-bg::after {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 80%;
-    height: 80%;
-    transform: translate(-50%, -50%);
+    inset: 0;
     background: radial-gradient(
-        circle,
-        var(--hero-accent-primary) 0%,
+        ellipse at 30% 50%,
+        var(--hero-accent-subtle) 0%,
         transparent 60%
     );
-    opacity: var(--hero-glow-opacity);
     animation: pulseGlow 10s ease-in-out infinite;
 }
 
 /* ========================================
-   TRAÇOS DECORATIVOS DE DIAMANTES
+   TRAÇOS DECORATIVOS
    ======================================== */
 
 .hero-decorative-lines {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    inset: 0;
     z-index: 2;
     pointer-events: none;
 }
@@ -120,19 +99,19 @@
     position: absolute;
     width: 1px;
     opacity: 0.4;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--hero-accent) 50%,
+        transparent 100%
+    );
     animation: slideDiamond 4s ease-in-out infinite;
 }
 
 .hero-diamond-line:nth-child(1) {
     height: 80px;
     top: 15%;
-    left: 20%;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        var(--hero-accent-primary),
-        transparent
-    );
+    left: 12%;
     transform: rotate(45deg);
     animation-delay: 0s;
 }
@@ -140,13 +119,7 @@
 .hero-diamond-line:nth-child(2) {
     height: 100px;
     top: 25%;
-    right: 25%;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        var(--hero-accent-secondary),
-        transparent
-    );
+    right: 18%;
     transform: rotate(-45deg);
     animation-delay: 1s;
 }
@@ -154,13 +127,7 @@
 .hero-diamond-line:nth-child(3) {
     height: 70px;
     bottom: 30%;
-    left: 15%;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        var(--hero-accent-tertiary),
-        transparent
-    );
+    left: 8%;
     transform: rotate(-45deg);
     animation-delay: 2s;
 }
@@ -168,58 +135,38 @@
 .hero-diamond-line:nth-child(4) {
     height: 90px;
     bottom: 20%;
-    right: 20%;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        var(--hero-accent-primary),
-        transparent
-    );
+    right: 15%;
     transform: rotate(45deg);
     animation-delay: 3s;
 }
 
 /* ========================================
-   NÓS DE TECNOLOGIA (TECH NODES)
+   NÓS DE TECNOLOGIA
    ======================================== */
 
 .hero-tech-node {
     position: absolute;
     width: 6px;
     height: 6px;
-    background: var(--hero-accent-primary);
+    background: var(--hero-accent);
     border-radius: 50%;
-    box-shadow: 0 0 12px var(--hero-accent-primary);
+    box-shadow: 0 0 12px var(--hero-accent);
     animation: nodeGlow 3s ease-in-out infinite;
     z-index: 3;
-    opacity: 0.7;
 }
 
 .hero-tech-node::before {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 16px;
-    height: 16px;
-    border: 1px solid var(--hero-accent-primary);
+    inset: -4px;
+    border: 1px solid var(--hero-accent);
     border-radius: 50%;
-    opacity: 0.3;
+    opacity: 0.5;
     animation: nodeRing 3s ease-out infinite;
 }
 
-.hero-tech-node:nth-child(odd) {
-    background: var(--hero-accent-secondary);
-    box-shadow: 0 0 12px var(--hero-accent-secondary);
-}
-
-.hero-tech-node:nth-child(odd)::before {
-    border-color: var(--hero-accent-secondary);
-}
-
 /* ========================================
-   EFEITOS NO CONTEÚDO
+   EFEITOS DE CONTEÚDO
    ======================================== */
 
 .hero-title-glow {
@@ -231,10 +178,13 @@
 }
 
 .hero-image-float {
-    animation: imageFloat 6s ease-in-out infinite;
+    animation: imageFloat 5s ease-in-out infinite;
 }
 
-/* Botões com efeitos discretos */
+/* ========================================
+   BOTÕES
+   ======================================== */
+
 .hero-btn-primary {
     position: relative;
     overflow: hidden;
@@ -245,20 +195,19 @@
 .hero-btn-primary::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(255, 255, 255, 0.15);
-    transition: left 0.4s ease;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
 }
 
 .hero-btn-primary:hover {
     transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .hero-btn-primary:hover::before {
-    left: 100%;
+    transform: translateX(100%);
 }
 
 .hero-btn-outline {
@@ -268,63 +217,73 @@
     z-index: 5;
 }
 
+.hero-btn-outline::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: currentColor;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
 .hero-btn-outline:hover {
     transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-btn-outline:hover::before {
+    opacity: 0.05;
 }
 
 /* ========================================
-   ANIMAÇÕES PRINCIPAIS
+   ANIMAÇÕES
    ======================================== */
 
 @keyframes diamondFlow {
-    0% {
+    from {
         background-position: 0 0, 0 0;
     }
-    100% {
+    to {
         background-position: 80px 80px, -80px -80px;
     }
 }
 
 @keyframes pulseGlow {
     0%, 100% {
-        opacity: var(--hero-glow-opacity);
-        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
     }
     50% {
-        opacity: calc(var(--hero-glow-opacity) * 1.5);
-        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.6;
     }
 }
 
 @keyframes slideDiamond {
     0%, 100% {
         opacity: 0;
-        transform: translateY(-30px) rotate(45deg);
+        transform: translateY(-30px);
     }
     50% {
         opacity: 0.4;
-        transform: translateY(0) rotate(45deg);
+        transform: translateY(0);
     }
 }
 
 @keyframes nodeGlow {
     0%, 100% {
-        opacity: 0.5;
-        transform: scale(1);
+        box-shadow: 0 0 12px var(--hero-accent);
     }
     50% {
-        opacity: 0.9;
-        transform: scale(1.2);
+        box-shadow: 0 0 20px var(--hero-accent);
     }
 }
 
 @keyframes nodeRing {
     0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.3;
+        transform: scale(1);
+        opacity: 0.5;
     }
     100% {
-        transform: translate(-50%, -50%) scale(2);
+        transform: scale(2.5);
         opacity: 0;
     }
 }
@@ -340,7 +299,7 @@
 
 @keyframes textFade {
     0%, 100% {
-        opacity: 0.85;
+        opacity: 0.95;
     }
     50% {
         opacity: 1;
@@ -352,8 +311,39 @@
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-15px);
+        transform: translateY(-12px);
     }
+}
+
+/* ========================================
+   BADGE PERSONALIZADO
+   ======================================== */
+
+.landing-hero .badge {
+    position: relative;
+    z-index: 5;
+    animation: badgeFade 5s ease-in-out infinite;
+}
+
+@keyframes badgeFade {
+    0%, 100% {
+        opacity: 0.95;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   IMAGEM COM EFEITO HOVER
+   ======================================== */
+
+.landing-hero .img-fluid {
+    transition: filter 0.3s ease;
+}
+
+.landing-hero .img-fluid:hover {
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.12));
 }
 
 /* ========================================
@@ -366,7 +356,7 @@
     }
 
     .hero-diamond-line {
-        height: 60px;
+        display: none;
     }
 
     .hero-tech-node {
@@ -377,17 +367,7 @@
 
 @media (max-width: 768px) {
     .landing-hero {
-        min-height: auto;
-        padding: 4rem 0;
-    }
-
-    .hero-diamond-line,
-    .hero-tech-node {
-        display: none;
-    }
-
-    .hero-animated-bg::before {
-        animation-duration: 30s;
+        min-height: 80vh;
     }
 
     .hero-image-float {
@@ -396,18 +376,36 @@
 }
 
 @media (max-width: 576px) {
-    .hero-animated-bg {
-        opacity: 0.4;
+    .landing-hero {
+        min-height: 70vh;
     }
 
-    .hero-btn-primary,
-    .hero-btn-outline {
-        width: 100%;
+    .hero-tech-node {
+        display: none;
+    }
+
+    .hero-animated-bg::before {
+        background-size: 30px 30px;
     }
 }
 
 /* ========================================
-   COMPATIBILIDADE COM BOOTSTRAP
+   OTIMIZAÇÃO DE PERFORMANCE
+   ======================================== */
+
+.hero-diamond-line,
+.hero-tech-node,
+.hero-image-float {
+    will-change: transform, opacity;
+}
+
+.hero-animated-bg::before,
+.hero-animated-bg::after {
+    will-change: background-position, opacity;
+}
+
+/* ========================================
+   GARANTIR Z-INDEX CORRETO
    ======================================== */
 
 .landing-hero .container {
@@ -415,54 +413,8 @@
     z-index: 5;
 }
 
-.landing-hero .badge {
+.landing-hero .display-4,
+.landing-hero .lead {
     position: relative;
     z-index: 5;
-    animation: badgeFade 5s ease-in-out infinite;
-}
-
-@keyframes badgeFade {
-    0%, 100% {
-        opacity: 0.9;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-.landing-hero .img-fluid {
-    transition: filter 0.3s ease;
-}
-
-.landing-hero .img-fluid:hover {
-    filter: drop-shadow(0 8px 24px rgba(255, 107, 53, 0.15));
-}
-
-/* ========================================
-   PERFORMANCE OPTIMIZATION
-   ======================================== */
-
-.hero-diamond-line,
-.hero-tech-node,
-.hero-image-float,
-.hero-animated-bg::before,
-.hero-animated-bg::after {
-    will-change: transform, opacity;
-}
-
-/* Reduzir animações para usuários que preferem movimento reduzido */
-@media (prefers-reduced-motion: reduce) {
-    .hero-animated-bg::before,
-    .hero-diamond-line,
-    .hero-tech-node,
-    .hero-title-glow,
-    .hero-text-fade,
-    .hero-image-float {
-        animation: none;
-    }
-    
-    .hero-btn-primary:hover,
-    .hero-btn-outline:hover {
-        transform: none;
-    }
 }
