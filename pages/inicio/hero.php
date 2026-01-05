@@ -31,7 +31,7 @@
             alt="Mefema Systems"
             class="img-fluid"
             data-speed="2"
-            src="assets/img/landing-page/team-member-4.png"
+            src="assets/img/landing-page/hero.webp"
           />
         </div>
 
