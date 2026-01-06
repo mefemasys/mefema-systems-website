@@ -1,148 +1,511 @@
-<section class="section-py bg-body landing-team" id="landingStrategy">
-    <div class="container bg-icon-right position-relative">
-        <img alt="section icon" class="position-absolute top-0 end-0"
-             data-app-dark-img="icons/bg-right-icon-dark.png"
-             data-app-light-img="icons/bg-right-icon-light.png" data-speed="1"
-             src="assets/img/icons/bg-right-icon-light.png" />
+<!-- Secção de Estratégia MEFEMA - Design Moderno -->
+<section class="section-py landing-strategy" id="landingStrategy">
+    <div class="container position-relative">
         
-        <h6 class="text-center d-flex justify-content-center align-items-center mb-6">
-            <img alt="section title icon" class="me-3" height="24"
-                 src="assets/img/icons/section-title-icon.png" />
-            <span class="text-uppercase">Nossa Estratégia para Transformação Digital: MEFEMA</span>
-        </h6>
-        
-        <p class="text-center mb-5 lead text-muted">
-            Construímos o futuro digital de Moçambique com base em seis pilares essenciais: 
-            <strong>M</strong>oderno, <strong>E</strong>specializado, <strong>F</strong>lexível, 
-            <strong>E</strong>ficiente, <strong>M</strong>ultifuncional e <strong>A</strong>cessível.
-        </p>
+        <!-- Cabeçalho da Secção -->
+        <div class="text-center mb-5 pb-3">
+            <div class="strategy-badge mx-auto mb-4">
+                <span class="badge-icon">✦</span>
+                <span class="badge-text">ESTRATÉGIA MEFEMA</span>
+            </div>
+            <h2 class="strategy-title mb-4">
+                Transformação Digital<br>
+                <span class="text-gradient">Sob Medida para si</span>
+            </h2>
+            <p class="strategy-subtitle mx-auto">
+                Seis pilares essenciais que definem a nossa abordagem: 
+                <strong>M</strong>oderno, <strong>E</strong>specializado, <strong>F</strong>lexível, 
+                <strong>E</strong>ficiente, <strong>M</strong>ultifuncional e <strong>A</strong>cessível
+            </p>
+        </div>
 
-        <div class="row gy-4 mt-2 justify-content-center">
-
-            <div class="col-lg-3 col-md-6 col-sm-10">
-                <div class="card card-hover-border-primary h-100 shadow-none strategy-card">
-                    <div class="card-img-top-wrapper bg-label-primary">
-                        <img src="assets/img/landing-page/especializado.png" alt="Especializado e Flexível" class="img-fluid floating-img">
+        <!-- Grid de Cards -->
+        <div class="row g-4 justify-content-center">
+            
+            <!-- Card 1: Especialização -->
+            <div class="col-lg-6 col-xl-3">
+                <div class="strategy-card">
+                    <div class="card-icon-wrapper">
+                        <div class="icon-circle primary">
+                            <img src="assets/img/landing-page/especializado.png" 
+                                 alt="Especializado" 
+                                 class="card-icon">
+                        </div>
                     </div>
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title mb-2">Especialização Sob Medida</h5>
-                        <p class="card-text flex-grow-1">
-                            Soluções <strong>Especializadas</strong> e <strong>Flexíveis</strong>. 
-                            Escolha um produto <i>pronto a usar</i> ou encomende um sistema exclusivo, 
-                            100% personalizado aos seus desafios únicos.
+                    <div class="card-content">
+                        <h5 class="card-title">Especialização Sob Medida</h5>
+                        <p class="card-description">
+                            Soluções <strong>especializadas</strong> e <strong>flexíveis</strong>. 
+                            Escolha produtos prontos ou sistemas 100% personalizados.
                         </p>
+                        <div class="card-accent primary"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-10">
-                <div class="card card-hover-border-success h-100 shadow-none strategy-card">
-                    <div class="card-img-top-wrapper bg-label-success">
-                        <img src="assets/img/landing-page/moderno.png" alt="Moderno e Eficiente" class="img-fluid floating-img">
+            <!-- Card 2: Moderno -->
+            <div class="col-lg-6 col-xl-3">
+                <div class="strategy-card">
+                    <div class="card-icon-wrapper">
+                        <div class="icon-circle secondary">
+                            <img src="assets/img/landing-page/moderno.png" 
+                                 alt="Moderno" 
+                                 class="card-icon">
+                        </div>
                     </div>
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title mb-2">Moderno e Eficiente</h5>
-                        <p class="card-text flex-grow-1">
-                            Garantimos a sua <strong>Transformação Digital</strong> com tecnologias de ponta. 
-                            Sistemas <strong>Modernos</strong> que asseguram a máxima performance, 
-                            segurança e <strong>Eficiência</strong> operacional.
+                    <div class="card-content">
+                        <h5 class="card-title">Moderno e Eficiente</h5>
+                        <p class="card-description">
+                            Tecnologias de ponta que garantem máxima performance, 
+                            segurança e <strong>eficiência</strong> operacional.
                         </p>
+                        <div class="card-accent secondary"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-10">
-                <div class="card card-hover-border-info h-100 shadow-none strategy-card">
-                    <div class="card-img-top-wrapper bg-label-info">
-                        <img src="assets/img/landing-page/acessiveis.png" alt="Multifuncional e Acessível" class="img-fluid floating-img">
+            <!-- Card 3: Multifuncional -->
+            <div class="col-lg-6 col-xl-3">
+                <div class="strategy-card">
+                    <div class="card-icon-wrapper">
+                        <div class="icon-circle tertiary">
+                            <img src="assets/img/landing-page/acessiveis.png" 
+                                 alt="Acessível" 
+                                 class="card-icon">
+                        </div>
                     </div>
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title mb-2">Multifuncional e Acessível</h5>
-                        <p class="card-text flex-grow-1">
-                            Entregamos valor com produtos <strong>Multifuncionais</strong> que se adaptam 
-                            ao seu orçamento. Soluções de TI completas (Infraestrutura e Software) 
-                            que são <strong>Acessíveis</strong> para PMEs.
+                    <div class="card-content">
+                        <h5 class="card-title">Multifuncional e Acessível</h5>
+                        <p class="card-description">
+                            Produtos <strong>multifuncionais</strong> que se adaptam ao seu orçamento. 
+                            Soluções completas para PMEs.
                         </p>
+                        <div class="card-accent tertiary"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-10">
-                <div class="card card-hover-border-warning h-100 shadow-none strategy-card">
-                    <div class="card-img-top-wrapper bg-label-warning">
-                        <img src="assets/img/landing-page/suporte.png" alt="Apoio Completo ao Cliente" class="img-fluid floating-img">
+            <!-- Card 4: Apoio -->
+            <div class="col-lg-6 col-xl-3">
+                <div class="strategy-card">
+                    <div class="card-icon-wrapper">
+                        <div class="icon-circle quaternary">
+                            <img src="assets/img/landing-page/suporte.png" 
+                                 alt="Suporte" 
+                                 class="card-icon">
+                        </div>
                     </div>
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title mb-2">Apoio Completo ao Cliente</h5>
-                        <p class="card-text flex-grow-1">
-                            O nosso foco vai além do código. Oferecemos <strong>Consultoria</strong> 
-                            e <strong>Formação</strong> essenciais para garantir a adoção e o sucesso 
-                            duradouro da sua equipa com a nova tecnologia.
+                    <div class="card-content">
+                        <h5 class="card-title">Apoio Completo ao Cliente</h5>
+                        <p class="card-description">
+                            <strong>Consultoria</strong> e <strong>formação</strong> essenciais 
+                            para garantir o sucesso da sua equipa.
                         </p>
+                        <div class="card-accent quaternary"></div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 
 <style>
+/* ========================================
+   VARIÁVEIS DA ESTRATÉGIA
+   ======================================== */
+
+:root {
+    --strategy-primary: #d97638;
+    --strategy-secondary: #c66b3d;
+    --strategy-tertiary: #b85f30;
+    --strategy-quaternary: #8a4a2e;
+    
+    --strategy-bg: #faf8f6;
+    --strategy-card-bg: #ffffff;
+    --strategy-text: #2a1f1a;
+    --strategy-text-muted: #5a4a42;
+    --strategy-border: rgba(217, 118, 56, 0.1);
+    
+    --strategy-shadow: rgba(217, 118, 56, 0.08);
+    --strategy-shadow-hover: rgba(217, 118, 56, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --strategy-primary: #ff8c4a;
+        --strategy-secondary: #ffa366;
+        --strategy-tertiary: #d97638;
+        --strategy-quaternary: #c66b3d;
+        
+        --strategy-bg: #1a1410;
+        --strategy-card-bg: #2a1f1a;
+        --strategy-text: #f5ede6;
+        --strategy-text-muted: #c4b5a8;
+        --strategy-border: rgba(255, 140, 74, 0.15);
+        
+        --strategy-shadow: rgba(0, 0, 0, 0.2);
+        --strategy-shadow-hover: rgba(255, 140, 74, 0.2);
+    }
+}
+
+/* ========================================
+   SECÇÃO PRINCIPAL
+   ======================================== */
+
+.landing-strategy {
+    background: var(--strategy-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.landing-strategy::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(217, 118, 56, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(184, 95, 48, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* ========================================
+   CABEÇALHO
+   ======================================== */
+
+.strategy-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, rgba(217, 118, 56, 0.1), rgba(184, 95, 48, 0.08));
+    border: 1px solid var(--strategy-border);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.badge-icon {
+    color: var(--strategy-primary);
+    font-size: 1.25rem;
+    animation: badgeRotate 3s ease-in-out infinite;
+}
+
+.badge-text {
+    color: var(--strategy-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 1.5px;
+}
+
+.strategy-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--strategy-text);
+    line-height: 1.2;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--strategy-primary), var(--strategy-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.strategy-subtitle {
+    max-width: 700px;
+    font-size: 1.1rem;
+    color: var(--strategy-text-muted);
+    line-height: 1.7;
+}
+
+/* ========================================
+   CARDS
+   ======================================== */
+
+.strategy-card {
+    background: var(--strategy-card-bg);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    height: 100%;
+    border: 1px solid var(--strategy-border);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.strategy-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--strategy-primary), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.strategy-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px var(--strategy-shadow-hover);
+    border-color: var(--strategy-primary);
+}
+
+.strategy-card:hover::before {
+    opacity: 1;
+}
+
+/* ========================================
+   ÍCONES
+   ======================================== */
+
+.card-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.icon-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.icon-circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    opacity: 0.2;
+    transition: all 0.4s ease;
+}
+
+.strategy-card:hover .icon-circle::before {
+    width: 110%;
+    height: 110%;
+    opacity: 0;
+}
+
+.icon-circle.primary {
+    background: linear-gradient(135deg, rgba(217, 118, 56, 0.15), rgba(217, 118, 56, 0.05));
+    color: var(--strategy-primary);
+}
+
+.icon-circle.secondary {
+    background: linear-gradient(135deg, rgba(198, 107, 61, 0.15), rgba(198, 107, 61, 0.05));
+    color: var(--strategy-secondary);
+}
+
+.icon-circle.tertiary {
+    background: linear-gradient(135deg, rgba(184, 95, 48, 0.15), rgba(184, 95, 48, 0.05));
+    color: var(--strategy-tertiary);
+}
+
+.icon-circle.quaternary {
+    background: linear-gradient(135deg, rgba(138, 74, 46, 0.15), rgba(138, 74, 46, 0.05));
+    color: var(--strategy-quaternary);
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.strategy-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ========================================
+   CONTEÚDO DO CARD
+   ======================================== */
+
+.card-content {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--strategy-text);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.strategy-card:hover .card-title {
+    color: var(--strategy-primary);
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: var(--strategy-text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.card-description strong {
+    color: var(--strategy-text);
+    font-weight: 600;
+}
+
+/* ========================================
+   ACENTO INFERIOR
+   ======================================== */
+
+.card-accent {
+    width: 60px;
+    height: 3px;
+    margin: 0 auto;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.card-accent.primary {
+    background: var(--strategy-primary);
+}
+
+.card-accent.secondary {
+    background: var(--strategy-secondary);
+}
+
+.card-accent.tertiary {
+    background: var(--strategy-tertiary);
+}
+
+.card-accent.quaternary {
+    background: var(--strategy-quaternary);
+}
+
+.strategy-card:hover .card-accent {
+    width: 80px;
+}
+
+/* ========================================
+   ANIMAÇÕES
+   ======================================== */
+
+@keyframes badgeRotate {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+@media (max-width: 1199px) {
+    .strategy-title {
+        font-size: 2rem;
+    }
+    
+    .icon-circle {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .card-icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 991px) {
     .strategy-card {
-        border-radius: 10px;
-        overflow: hidden;
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Para manter o espaçamento entre cards */
+        padding: 1.75rem 1.25rem;
     }
+    
+    .card-title {
+        font-size: 1.1rem;
+    }
+    
+    .card-description {
+        font-size: 0.9rem;
+    }
+}
 
+@media (max-width: 767px) {
+    .strategy-title {
+        font-size: 1.75rem;
+    }
+    
+    .strategy-subtitle {
+        font-size: 1rem;
+    }
+    
+    .icon-circle {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .card-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .strategy-card {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .badge-text {
+        font-size: 0.75rem;
+    }
+    
+    .strategy-title {
+        font-size: 1.5rem;
+    }
+    
+    .strategy-subtitle {
+        font-size: 0.95rem;
+    }
+}
+
+/* ========================================
+   MODO DARK - AJUSTES ESPECÍFICOS
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+    .strategy-card {
+        box-shadow: 0 4px 12px var(--strategy-shadow);
+    }
+    
     .strategy-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 20px 40px var(--strategy-shadow-hover);
     }
-
-    .card-img-top-wrapper {
-        min-height: 180px; /* Ajuste conforme a altura desejada para a área da imagem */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 20px; /* Espaço para a imagem "sair" do card */
-        position: relative;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Separador sutil */
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+    
+    .icon-circle.primary {
+        background: linear-gradient(135deg, rgba(255, 140, 74, 0.2), rgba(255, 140, 74, 0.08));
     }
-
-    .floating-img {
-        max-height: 150px; /* Altura máxima da imagem */
-        width: auto;
-        display: block;
-        position: absolute;
-        bottom: -20px; /* Puxa a imagem para baixo para "sair" do card */
-        left: 50%;
-        transform: translateX(-50%) translateY(-10px); /* Ajuste inicial e um pouco para cima */
-        transition: transform 0.3s ease-in-out;
+    
+    .icon-circle.secondary {
+        background: linear-gradient(135deg, rgba(255, 163, 102, 0.2), rgba(255, 163, 102, 0.08));
     }
-
-    .strategy-card:hover .floating-img {
-        transform: translateX(-50%) translateY(-25px); /* Efeito de "sacar" mais a imagem */
+    
+    .icon-circle.tertiary {
+        background: linear-gradient(135deg, rgba(217, 118, 56, 0.2), rgba(217, 118, 56, 0.08));
     }
-
-    .card-body {
-        padding-top: 30px; /* Espaço para a imagem que invadiu o corpo */
+    
+    .icon-circle.quaternary {
+        background: linear-gradient(135deg, rgba(198, 107, 61, 0.2), rgba(198, 107, 61, 0.08));
     }
-
-    /* Cores de fundo para as wrappers das imagens */
-    .card-hover-border-primary .card-img-top-wrapper {
-        background-color: #e0f2f7; /* Um tom mais claro de azul para combinar com o primary */
-    }
-    .card-hover-border-success .card-img-top-wrapper {
-        background-color: #e6faed; /* Um tom mais claro de verde para combinar com o success */
-    }
-    .card-hover-border-info .card-img-top-wrapper {
-        background-color: #e3f7f7; /* Um tom mais claro de ciano para combinar com o info */
-    }
-    .card-hover-border-warning .card-img-top-wrapper {
-        background-color: #fff4e6; /* Um tom mais claro de amarelo para combinar com o warning */
-    }
+}
 </style>
