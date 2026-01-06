@@ -1,7 +1,6 @@
 <footer class="landing-footer">
     <div class="footer-top position-relative overflow-hidden">
-      <img alt="footer bg" class="footer-bg banner-bg-img" src="<?php echo asset('assets/img/backgrounds/footer-bg.png'); ?>" />
-      <div class="container">
+        <div class="container">
         <div class="row gx-0 gy-6 g-lg-10">
           <div class="col-lg-5">
             <a class="app-brand-link mb-6" href="<?php echo BASE_URL; ?>">
