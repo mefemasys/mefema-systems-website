@@ -121,7 +121,8 @@
     --strategy-tertiary: #b85f30;
     --strategy-quaternary: #8a4a2e;
     
-    --strategy-bg: #faf8f6;
+    /* Modo Claro - Fundo muito mais claro */
+    --strategy-bg: #ffffff;
     --strategy-card-bg: #ffffff;
     --strategy-text: #2a1f1a;
     --strategy-text-muted: #5a4a42;
@@ -138,6 +139,7 @@
         --strategy-tertiary: #d97638;
         --strategy-quaternary: #c66b3d;
         
+        /* Modo Escuro - Mantém o fundo atual */
         --strategy-bg: #1a1410;
         --strategy-card-bg: #2a1f1a;
         --strategy-text: #f5ede6;
@@ -234,6 +236,7 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 2px 8px rgba(217, 118, 56, 0.05);
 }
 
 .strategy-card::before {
