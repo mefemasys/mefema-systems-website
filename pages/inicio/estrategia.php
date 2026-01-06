@@ -121,7 +121,6 @@
     --strategy-tertiary: #b85f30;
     --strategy-quaternary: #8a4a2e;
     
-    /* Modo Claro - Fundo muito mais claro */
     --strategy-bg: #ffffff;
     --strategy-card-bg: #ffffff;
     --strategy-text: #2a1f1a;
@@ -139,7 +138,6 @@
         --strategy-tertiary: #d97638;
         --strategy-quaternary: #c66b3d;
         
-        /* Modo Escuro - Mantém o fundo atual */
         --strategy-bg: #1a1410;
         --strategy-card-bg: #2a1f1a;
         --strategy-text: #f5ede6;
@@ -151,6 +149,16 @@
     }
 }
 
+[data-bs-theme="light"] {
+    --strategy-bg: #ffffff;
+    --strategy-card-bg: #ffffff;
+}
+
+[data-bs-theme="dark"] {
+    --strategy-bg: #1a1410;
+    --strategy-card-bg: #2a1f1a;
+}
+
 /* ========================================
    SECÇÃO PRINCIPAL
    ======================================== */
@@ -159,19 +167,6 @@
     background: var(--strategy-bg);
     position: relative;
     overflow: hidden;
-}
-
-.landing-strategy::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 10% 20%, rgba(217, 118, 56, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(184, 95, 48, 0.03) 0%, transparent 50%);
-    pointer-events: none;
 }
 
 /* ========================================
@@ -236,7 +231,6 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(217, 118, 56, 0.05);
 }
 
 .strategy-card::before {
