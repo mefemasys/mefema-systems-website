@@ -1,7 +1,7 @@
 /* ========================================
    ESTILOS DA SEÇÃO HERO - INTEGRADO COM BOOTSTRAP
    Animações de Diamantes Diagonais
-   Paleta Laranja
+   Paleta Laranja - MODO LIGHT AJUSTADO
    ======================================== */
 
 /* ========================================
@@ -9,37 +9,36 @@
    ======================================== */
 
 :root {
-    /* Light Mode */
-    --color-primary: #FF6B35; /* Laranja Vibrante (Cor Principal) */
+    /* Light Mode - AJUSTADO PARA MENOS BRILHO */
+    --color-primary: #E8633D; /* Laranja menos vibrante */
     --color-secondary: #004E89; /* Azul Profundo (Contraste) */
     --color-success: #52B788; /* Verde Suave */
-    --color-warning: #FFB627; /* Amarelo Dourado */
-    --color-hero-bg: #FFF5F0; /* Pêssego Muito Claro */
-    --color-hero-text: #2D3142; /* Cinza Escuro */
+    --color-warning: #F5A623; /* Amarelo mais suave */
+    --color-hero-bg: #F5F1ED; /* Bege suave em vez de branco */
+    --color-hero-text: #3A3D4A; /* Cinza mais escuro para melhor contraste */
     --color-hero-title: var(--color-primary);
-    --color-hero-bg-pattern: rgba(255, 107, 53, 0.08); /* Laranja sutil para o padrão */
+    --color-hero-bg-pattern: rgba(232, 99, 61, 0.06); /* Laranja muito sutil */
     
     /* Variáveis para animações */
-    --hero-accent-primary: #FF6B35; /* Laranja */
-    --hero-accent-secondary: #FFB627; /* Amarelo Dourado */
-    --hero-accent-tertiary: #004E89; /* Azul Profundo */
+    --hero-accent-primary: #E8633D;
+    --hero-accent-secondary: #F5A623;
+    --hero-accent-tertiary: #004E89;
 }
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-hero-bg: #1A1B26; /* Cinza Azulado Muito Escuro */
-        --color-hero-text: #E8E9ED; /* Texto Claro */
-        --color-hero-title: #FF8C61; /* Laranja mais claro para melhor contraste */
-        --color-hero-bg-pattern: rgba(255, 107, 53, 0.05); /* Laranja muito sutil para o padrão */
-        --color-primary: #FF8C61; /* Laranja mais claro no dark mode */
-        --color-secondary: #4A9EDD; /* Azul mais claro */
-        --color-success: #6FCF97; /* Verde mais claro */
+        --color-hero-bg: #1A1B26;
+        --color-hero-text: #E8E9ED;
+        --color-hero-title: #FF8C61;
+        --color-hero-bg-pattern: rgba(255, 107, 53, 0.05);
+        --color-primary: #FF8C61;
+        --color-secondary: #4A9EDD;
+        --color-success: #6FCF97;
         
-        /* Variáveis para animações - Dark Mode */
-        --hero-accent-primary: #FF8C61; /* Laranja mais claro */
-        --hero-accent-secondary: #FFD700; /* Amarelo mais vibrante */
-        --hero-accent-tertiary: #4A9EDD; /* Azul mais claro */
+        --hero-accent-primary: #FF8C61;
+        --hero-accent-secondary: #FFD700;
+        --hero-accent-tertiary: #4A9EDD;
     }
 }
 
@@ -49,14 +48,13 @@
 
 .landing-hero {
     position: relative;
-    background: linear-gradient(135deg, var(--color-hero-bg) 0%, rgba(255, 181, 39, 0.05) 50%, var(--color-hero-bg) 100%);
+    background: linear-gradient(135deg, var(--color-hero-bg) 0%, rgba(245, 166, 35, 0.03) 50%, var(--color-hero-bg) 100%);
     overflow: hidden;
     min-height: 100vh;
     display: flex;
     align-items: center;
 }
 
-/* Remover padding padrão se necessário */
 .landing-hero.section-py {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -76,7 +74,7 @@
     pointer-events: none;
 }
 
-/* Camada 1: Padrão de Diamantes com Laranja */
+/* Camada 1: Padrão de Diamantes - REDUZIDO */
 .hero-animated-bg::before {
     content: "";
     position: absolute;
@@ -85,28 +83,26 @@
     width: 100%;
     height: 100%;
     background: 
-        /* Gradiente diagonal 45° - Laranja */
         repeating-linear-gradient(
             45deg,
             transparent,
             transparent 35px,
-            rgba(255, 107, 53, 0.12) 35px,
-            rgba(255, 107, 53, 0.12) 36px
+            rgba(232, 99, 61, 0.08) 35px,
+            rgba(232, 99, 61, 0.08) 36px
         ),
-        /* Gradiente diagonal -45° - Amarelo Dourado */
         repeating-linear-gradient(
             -45deg,
             transparent,
             transparent 35px,
-            rgba(255, 182, 39, 0.12) 35px,
-            rgba(255, 182, 39, 0.12) 36px
+            rgba(245, 166, 35, 0.08) 35px,
+            rgba(245, 166, 35, 0.08) 36px
         );
     background-size: 50px 50px;
     background-position: 0 0, 0 0;
     animation: diamondFlow 20s linear infinite;
 }
 
-/* Camada 2: Efeito de Brilho Radial - Laranja */
+/* Camada 2: Efeito de Brilho Radial - MUITO REDUZIDO */
 .hero-animated-bg::after {
     content: "";
     position: absolute;
@@ -116,7 +112,7 @@
     height: 100%;
     background: radial-gradient(
         ellipse at center,
-        rgba(255, 107, 53, 0.08) 0%,
+        rgba(232, 99, 61, 0.04) 0%,
         transparent 70%
     );
     animation: pulseGlow 8s ease-in-out infinite;
@@ -140,9 +136,9 @@
     position: absolute;
     background: linear-gradient(
         135deg,
-        rgba(255, 107, 53, 0) 0%,
-        rgba(255, 107, 53, 0.6) 50%,
-        rgba(255, 107, 53, 0) 100%
+        rgba(232, 99, 61, 0) 0%,
+        rgba(232, 99, 61, 0.4) 50%,
+        rgba(232, 99, 61, 0) 100%
     );
     animation: slideDiamond 3s ease-in-out infinite;
 }
@@ -165,9 +161,9 @@
     animation-delay: 0.5s;
     background: linear-gradient(
         135deg,
-        rgba(255, 182, 39, 0) 0%,
-        rgba(255, 182, 39, 0.6) 50%,
-        rgba(255, 182, 39, 0) 100%
+        rgba(245, 166, 35, 0) 0%,
+        rgba(245, 166, 35, 0.4) 50%,
+        rgba(245, 166, 35, 0) 100%
     );
 }
 
@@ -189,9 +185,9 @@
     animation-delay: 1.5s;
     background: linear-gradient(
         135deg,
-        rgba(255, 182, 39, 0) 0%,
-        rgba(255, 182, 39, 0.6) 50%,
-        rgba(255, 182, 39, 0) 100%
+        rgba(245, 166, 35, 0) 0%,
+        rgba(245, 166, 35, 0.4) 50%,
+        rgba(245, 166, 35, 0) 100%
     );
 }
 
@@ -203,9 +199,9 @@
     position: absolute;
     width: 8px;
     height: 8px;
-    background: radial-gradient(circle, rgba(255, 107, 53, 1), rgba(255, 107, 53, 0.3));
+    background: radial-gradient(circle, rgba(232, 99, 61, 0.8), rgba(232, 99, 61, 0.2));
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(255, 107, 53, 0.8);
+    box-shadow: 0 0 12px rgba(232, 99, 61, 0.5);
     animation: nodeGlow 2s ease-in-out infinite;
     z-index: 3;
 }
@@ -215,7 +211,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 2px solid rgba(255, 107, 53, 0.5);
+    border: 2px solid rgba(232, 99, 61, 0.3);
     border-radius: 50%;
     animation: nodeRing 2s ease-out infinite;
 }
@@ -242,7 +238,7 @@
     overflow: hidden;
     transition: all 0.3s ease;
     z-index: 5;
-    background: linear-gradient(135deg, var(--color-primary), #ff8c42) !important;
+    background: linear-gradient(135deg, var(--color-primary), #f07852) !important;
     border-color: var(--color-primary) !important;
 }
 
@@ -253,14 +249,14 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     transition: left 0.3s ease;
     z-index: -1;
 }
 
 .hero-btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4) !important;
+    box-shadow: 0 12px 35px rgba(232, 99, 61, 0.3) !important;
 }
 
 .hero-btn-primary:hover::before {
@@ -283,17 +279,17 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: rgba(0, 78, 137, 0.1);
+    background: rgba(0, 78, 137, 0.08);
     transition: left 0.3s ease;
     z-index: -1;
 }
 
 .hero-btn-outline:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0, 78, 137, 0.3) !important;
+    box-shadow: 0 12px 35px rgba(0, 78, 137, 0.25) !important;
     border-color: var(--color-secondary) !important;
     color: var(--color-secondary) !important;
-    background-color: rgba(0, 78, 137, 0.05) !important;
+    background-color: rgba(0, 78, 137, 0.04) !important;
 }
 
 .hero-btn-outline:hover::before {
@@ -318,10 +314,10 @@
 
 @keyframes pulseGlow {
     0%, 100% {
-        opacity: 0.05;
+        opacity: 0.03;
     }
     50% {
-        opacity: 0.15;
+        opacity: 0.08;
     }
 }
 
@@ -341,10 +337,10 @@
 
 @keyframes nodeGlow {
     0%, 100% {
-        box-shadow: 0 0 15px rgba(255, 107, 53, 0.8);
+        box-shadow: 0 0 12px rgba(232, 99, 61, 0.5);
     }
     50% {
-        box-shadow: 0 0 30px rgba(255, 107, 53, 1);
+        box-shadow: 0 0 20px rgba(232, 99, 61, 0.7);
     }
 }
 
@@ -361,10 +357,10 @@
 
 @keyframes titleGlow {
     0%, 100% {
-        text-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
+        text-shadow: 0 0 15px rgba(232, 99, 61, 0.15);
     }
     50% {
-        text-shadow: 0 0 40px rgba(255, 107, 53, 0.4);
+        text-shadow: 0 0 25px rgba(232, 99, 61, 0.25);
     }
 }
 
@@ -387,12 +383,12 @@
 }
 
 /* ========================================
-   MODO CLARO (Light Mode)
+   MODO CLARO (Light Mode) - AJUSTADO
    ======================================== */
 
 @media (prefers-color-scheme: light) {
     .landing-hero {
-        background: linear-gradient(135deg, var(--color-hero-bg) 0%, rgba(255, 181, 39, 0.05) 50%, var(--color-hero-bg) 100%);
+        background: linear-gradient(135deg, #F5F1ED 0%, rgba(245, 166, 35, 0.02) 50%, #F5F1ED 100%);
     }
 
     .hero-animated-bg::before {
@@ -401,22 +397,22 @@
                 45deg,
                 transparent,
                 transparent 35px,
-                rgba(255, 107, 53, 0.1) 35px,
-                rgba(255, 107, 53, 0.1) 36px
+                rgba(232, 99, 61, 0.06) 35px,
+                rgba(232, 99, 61, 0.06) 36px
             ),
             repeating-linear-gradient(
                 -45deg,
                 transparent,
                 transparent 35px,
-                rgba(255, 182, 39, 0.1) 35px,
-                rgba(255, 182, 39, 0.1) 36px
+                rgba(245, 166, 35, 0.06) 35px,
+                rgba(245, 166, 35, 0.06) 36px
             );
     }
 
     .hero-animated-bg::after {
         background: radial-gradient(
             ellipse at center,
-            rgba(255, 107, 53, 0.06) 0%,
+            rgba(232, 99, 61, 0.03) 0%,
             transparent 70%
         );
     }
@@ -424,9 +420,9 @@
     .hero-diamond-line {
         background: linear-gradient(
             135deg,
-            rgba(255, 107, 53, 0) 0%,
-            rgba(255, 107, 53, 0.5) 50%,
-            rgba(255, 107, 53, 0) 100%
+            rgba(232, 99, 61, 0) 0%,
+            rgba(232, 99, 61, 0.35) 50%,
+            rgba(232, 99, 61, 0) 100%
         );
     }
 
@@ -434,19 +430,19 @@
     .hero-diamond-line:nth-child(4) {
         background: linear-gradient(
             135deg,
-            rgba(255, 182, 39, 0) 0%,
-            rgba(255, 182, 39, 0.5) 50%,
-            rgba(255, 182, 39, 0) 100%
+            rgba(245, 166, 35, 0) 0%,
+            rgba(245, 166, 35, 0.35) 50%,
+            rgba(245, 166, 35, 0) 100%
         );
     }
 
     .hero-tech-node {
-        background: radial-gradient(circle, rgba(255, 107, 53, 1), rgba(255, 107, 53, 0.3));
-        box-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
+        background: radial-gradient(circle, rgba(232, 99, 61, 0.8), rgba(232, 99, 61, 0.2));
+        box-shadow: 0 0 10px rgba(232, 99, 61, 0.4);
     }
 
     .hero-tech-node::before {
-        border-color: rgba(255, 107, 53, 0.4);
+        border-color: rgba(232, 99, 61, 0.25);
     }
 
     .hero-btn-outline {
@@ -455,7 +451,7 @@
     }
 
     .hero-btn-outline:hover {
-        background-color: rgba(0, 78, 137, 0.05) !important;
+        background-color: rgba(0, 78, 137, 0.04) !important;
     }
 }
 
@@ -596,7 +592,6 @@
    COMPATIBILIDADE COM BOOTSTRAP
    ======================================== */
 
-/* Garantir que o z-index do conteúdo seja maior que as animações */
 .landing-hero .container {
     position: relative;
     z-index: 5;
@@ -606,7 +601,7 @@
     position: relative;
     z-index: 5;
     animation: badgeFade 4s ease-in-out infinite;
-    background-color: rgba(255, 107, 53, 0.15) !important;
+    background-color: rgba(232, 99, 61, 0.12) !important;
     color: var(--color-primary) !important;
 }
 
@@ -619,7 +614,6 @@
     }
 }
 
-/* Ajustes para compatibilidade com classes Bootstrap */
 .landing-hero .display-4 {
     position: relative;
     z-index: 5;
@@ -645,14 +639,13 @@
 }
 
 .landing-hero .img-fluid:hover {
-    filter: drop-shadow(0 10px 30px rgba(255, 107, 53, 0.3));
+    filter: drop-shadow(0 8px 25px rgba(232, 99, 61, 0.25));
 }
 
 /* ========================================
    PERFORMANCE OPTIMIZATION
    ======================================== */
 
-/* Usar will-change para otimizar animações */
 .hero-diamond-line,
 .hero-tech-node,
 .hero-image-float {
@@ -664,19 +657,13 @@
     will-change: background-position, opacity;
 }
 
-
-/* ========================================
-   ESTILOS ADICIONAIS PARA SEÇÃO "QUEM SOMOS"
-   Integração com Paleta Laranja
-   ======================================== */
-
 /* ========================================
    ESTILOS ESPECÍFICOS DA SEÇÃO SERVICES
    ======================================== */
 
 .services-hero {
     position: relative;
-    background: linear-gradient(135deg, var(--color-hero-bg) 0%, rgba(255, 181, 39, 0.05) 50%, var(--color-hero-bg) 100%);
+    background: linear-gradient(135deg, var(--color-hero-bg) 0%, rgba(245, 166, 35, 0.03) 50%, var(--color-hero-bg) 100%);
     overflow: hidden;
     min-height: 80vh;
     display: flex;
@@ -735,7 +722,7 @@
 }
 
 /* ========================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE SERVICES
    ======================================== */
 
 @media (max-width: 992px) {
@@ -757,10 +744,6 @@
         min-height: 60vh;
     }
 
-    .hero-diamond-line {
-        display: none;
-    }
-
     .services-title {
         font-size: 2rem;
     }
@@ -775,10 +758,6 @@
         min-height: 50vh;
     }
 
-    .hero-tech-node {
-        display: none;
-    }
-
     .services-title {
         font-size: 1.75rem;
     }
@@ -789,7 +768,7 @@
 }
 
 /* ========================================
-   COMPATIBILIDADE COM BOOTSTRAP
+   COMPATIBILIDADE COM BOOTSTRAP - SERVICES
    ======================================== */
 
 .services-hero .container {
@@ -807,12 +786,7 @@
     z-index: 5;
 }
 
-/* ========================================
-   PERFORMANCE OPTIMIZATION
-   ======================================== */
-
 .services-title,
 .services-text {
     will-change: text-shadow, opacity;
 }
-
