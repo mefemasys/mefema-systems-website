@@ -170,7 +170,7 @@ $dados_api = buscarDadosNumeros();
     padding: 0.75rem 1.75rem;
     background: linear-gradient(135deg, rgba(217, 118, 56, 0.12), rgba(184, 95, 48, 0.08));
     border: 1px solid var(--stats-border);
-    border-radius: 50px;
+    border-radius: 10px;
     backdrop-filter: blur(10px);
 }
 
@@ -214,7 +214,7 @@ $dados_api = buscarDadosNumeros();
 
 .stat-card {
     background: var(--stats-card-bg);
-    border-radius: 24px;
+    border-radius: 6px;
     padding: 2.5rem 1.5rem;
     text-align: center;
     border: 1px solid var(--stats-border);
@@ -261,7 +261,7 @@ $dados_api = buscarDadosNumeros();
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 5%;
     font-size: 2.5rem;
     position: relative;
     z-index: 2;
@@ -275,7 +275,7 @@ $dados_api = buscarDadosNumeros();
     transform: translate(-50%, -50%);
     width: 80px;
     height: 80px;
-    border-radius: 50%;
+    border-radius: 5%;
     border: 2px solid currentColor;
     opacity: 0.2;
     transition: all 0.4s ease;
@@ -384,7 +384,7 @@ $dados_api = buscarDadosNumeros();
     transform: translateX(-50%);
     width: 150%;
     height: 150%;
-    border-radius: 50%;
+    border-radius: 5%;
     opacity: 0;
     transition: all 0.5s ease;
 }
