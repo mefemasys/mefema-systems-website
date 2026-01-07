@@ -1,47 +1,38 @@
 # ------------------------------
-# Ativar mod_rewrite
+# Ativar mod_rewrite e Opções
 # ------------------------------
+Options -MultiViews -Indexes
 RewriteEngine On
-
-
 RewriteBase /
 
-# ------------------------------
-# Redirecionar para HTTPS (opcional)
-# ------------------------------
-# RewriteCond %{HTTPS} off
-# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# 1. Impedir que o Apache adicione barra em pastas (Resolve o conflito)
+DirectorySlash Off
 
-# ------------------------------
-# Remover "index.php" da URL
-# Ex: /index.php → /
-# ------------------------------
+# 2. Remover "index.php" da URL (Redirecionamento 301)
 RewriteCond %{THE_REQUEST} \s/+index\.php[\s?]
 RewriteRule ^index\.php$ / [L,R=301]
 
-# ------------------------------
-# Mapeamento de rotas amigáveis
-# Roteia para arquivos PHP sem extensão
-# ------------------------------
-RewriteCond %{REQUEST_FILENAME} !-f
+# 3. Forçar a remoção da barra final (Ex: /produtos/ -> /produtos)
+# Isso é importante para SEO e para o funcionamento do mapeamento
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(index|sobre|servicos|produtos|portfolio|empresa|contacto|legal)/?$ $1.php [L,QSA]
+RewriteRule ^(.*)/$ /$1 [L,R=301]
 
-# ------------------------------
-# Redirecionar raiz para index.php
-# ------------------------------
+# 4. Mapeamento de rotas amigáveis (Arquivo .php)
+# Esta regra verifica se existe um arquivo .php com o nome solicitado
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+RewriteRule ^([^/]+)$ $1.php [L,QSA]
+
+# 5. Redirecionar raiz para index.php
 RewriteRule ^$ index.php [L]
 
 # ------------------------------
-# Proteger arquivos sensíveis
+# Proteção de arquivos
 # ------------------------------
 <FilesMatch "\.(env|ini|log|md|sql)$">
-  Order allow,deny
-  Deny from all
+    Require all denied
 </FilesMatch>
 
-# Impedir acesso direto a .htaccess
 <Files .htaccess>
-  Order allow,deny
-  Deny from all
+    Require all denied
 </Files>
