@@ -218,7 +218,7 @@
     padding: 0.75rem 1.75rem;
     background: linear-gradient(135deg, rgba(217, 118, 56, 0.12), rgba(184, 95, 48, 0.08));
     border: 1px solid var(--services-border);
-    border-radius: 50px;
+    border-radius: 10px;
     backdrop-filter: blur(10px);
 }
 
@@ -262,7 +262,7 @@
 
 .service-card {
     background: var(--services-card-bg);
-    border-radius: 24px;
+    border-radius: 6px;
     padding: 2.5rem;
     height: 100%;
     border: 1px solid var(--services-border);
@@ -318,7 +318,7 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, rgba(217, 118, 56, 0.15), rgba(217, 118, 56, 0.05));
-    border-radius: 16px;
+    border-radius: 4px;
     color: var(--services-primary);
     transition: all 0.4s ease;
 }
@@ -376,7 +376,7 @@
     min-width: 24px;
     background: linear-gradient(135deg, var(--services-primary), var(--services-secondary));
     color: white;
-    border-radius: 50%;
+    border-radius: 5%;
     font-size: 0.75rem;
     font-weight: bold;
     transition: transform 0.3s ease;
@@ -398,7 +398,7 @@
     padding: 1rem 2rem;
     background: transparent;
     border: 2px solid var(--services-primary);
-    border-radius: 12px;
+    border-radius: 3px;
     color: var(--services-primary);
     font-weight: 600;
     text-decoration: none;
