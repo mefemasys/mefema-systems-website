@@ -23,9 +23,7 @@
                 <div class="strategy-card">
                     <div class="card-icon-wrapper">
                         <div class="icon-circle primary">
-                            <img src="assets/img/landing-page/especializado.png" 
-                                 alt="Especializado" 
-                                 class="card-icon">
+                            <img src="assets/img/landing-page/especializado.png" alt="Especializado" class="card-icon">
                         </div>
                     </div>
                     <div class="card-content">
@@ -43,9 +41,7 @@
                 <div class="strategy-card">
                     <div class="card-icon-wrapper">
                         <div class="icon-circle secondary">
-                            <img src="assets/img/landing-page/moderno.png" 
-                                 alt="Moderno" 
-                                 class="card-icon">
+                            <img src="assets/img/landing-page/moderno.png" alt="Moderno" class="card-icon">
                         </div>
                     </div>
                     <div class="card-content">
@@ -63,9 +59,7 @@
                 <div class="strategy-card">
                     <div class="card-icon-wrapper">
                         <div class="icon-circle tertiary">
-                            <img src="assets/img/landing-page/acessiveis.png" 
-                                 alt="Acessível" 
-                                 class="card-icon">
+                            <img src="assets/img/landing-page/acessiveis.png" alt="Acessível" class="card-icon">
                         </div>
                     </div>
                     <div class="card-content">
@@ -83,9 +77,7 @@
                 <div class="strategy-card">
                     <div class="card-icon-wrapper">
                         <div class="icon-circle quaternary">
-                            <img src="assets/img/landing-page/suporte.png" 
-                                 alt="Suporte" 
-                                 class="card-icon">
+                            <img src="assets/img/landing-page/suporte.png" alt="Suporte" class="card-icon">
                         </div>
                     </div>
                     <div class="card-content">
@@ -105,7 +97,7 @@
 
 <style>
 /* ========================================
-   VARIÁVEIS DA ESTRATÉGIA
+   VARIÁVEIS DA ESTRATÉGIA - TONS QUENTES
    ======================================== */
 
 :root {
@@ -114,18 +106,31 @@
     --strategy-tertiary: #b85f30;
     --strategy-quaternary: #8a4a2e;
     
-    --strategy-bg: #ffffff;
+    /* Fundo: Um branco levemente castanho/alaranjado (Champagne/Creme) */
+    --strategy-bg: #fffbf7; 
     --strategy-card-bg: #ffffff;
     
-    /* AJUSTE: Cores mais escuras para Modo Claro (Acessibilidade + Conforto) */
-    --strategy-text: #1a110a; 
-    --strategy-text-muted: #453328;
-    --strategy-border: rgba(217, 118, 56, 0.15);
+    /* Texto: Castanho profundo com subtom laranja (mais visível e elegante que preto) */
+    --strategy-text: #4a2c1a; 
+    --strategy-text-muted: #705240;
     
-    --strategy-shadow: rgba(217, 118, 56, 0.08);
+    /* Border: Mais visível no modo claro usando um tom terra suave */
+    --strategy-border: #e8dcd0;
+    
+    --strategy-shadow: rgba(74, 44, 26, 0.05);
     --strategy-shadow-hover: rgba(217, 118, 56, 0.15);
 }
 
+/* Suporte para seletores de tema via atributo */
+[data-bs-theme="light"] {
+    --strategy-bg: #fffbf7;
+    --strategy-card-bg: #ffffff;
+    --strategy-text: #4a2c1a;
+    --strategy-text-muted: #705240;
+    --strategy-border: #e8dcd0;
+}
+
+/* MODO DARK - Mantido original conforme solicitado */
 @media (prefers-color-scheme: dark) {
     :root {
         --strategy-primary: #ff8c4a;
@@ -135,21 +140,13 @@
         
         --strategy-bg: #1a1410;
         --strategy-card-bg: #2a1f1a;
-        --strategy-text: #f5ede6; /* Mantido original conforme pedido */
-        --strategy-text-muted: #c4b5a8; /* Mantido original conforme pedido */
+        --strategy-text: #f5ede6;
+        --strategy-text-muted: #c4b5a8;
         --strategy-border: rgba(255, 140, 74, 0.15);
         
         --strategy-shadow: rgba(0, 0, 0, 0.2);
         --strategy-shadow-hover: rgba(255, 140, 74, 0.2);
     }
-}
-
-/* Suporte para seletores de tema via atributo (Bootstrap 5.3+) */
-[data-bs-theme="light"] {
-    --strategy-bg: #ffffff;
-    --strategy-card-bg: #ffffff;
-    --strategy-text: #1a110a;
-    --strategy-text-muted: #453328;
 }
 
 [data-bs-theme="dark"] {
@@ -160,39 +157,24 @@
 }
 
 /* ========================================
-   SECÇÃO PRINCIPAL
+   ESTILIZAÇÃO GERAL
    ======================================== */
 
 .landing-strategy {
     background: var(--strategy-bg);
     position: relative;
-    overflow: hidden;
+    padding: 100px 0;
 }
-
-/* ... (Resto do seu CSS permanece o mesmo) ... */
 
 .strategy-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, rgba(217, 118, 56, 0.1), rgba(184, 95, 48, 0.08));
+    /* Badge com fundo creme quente */
+    background: rgba(217, 118, 56, 0.08);
     border: 1px solid var(--strategy-border);
     border-radius: 10px;
-    backdrop-filter: blur(10px);
-}
-
-.badge-icon {
-    color: var(--strategy-primary);
-    font-size: 1.25rem;
-    animation: badgeRotate 3s ease-in-out infinite;
-}
-
-.badge-text {
-    color: var(--strategy-primary);
-    font-weight: 600;
-    font-size: 0.875rem;
-    letter-spacing: 1.5px;
 }
 
 .strategy-title {
@@ -218,25 +200,12 @@
 
 .strategy-card {
     background: var(--strategy-card-bg);
-    border-radius: 5px;
-    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
     height: 100%;
     border: 1px solid var(--strategy-border);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.strategy-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--strategy-primary), transparent);
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: all 0.4s ease;
+    text-align: center;
 }
 
 .strategy-card:hover {
@@ -245,112 +214,44 @@
     border-color: var(--strategy-primary);
 }
 
-.strategy-card:hover::before {
-    opacity: 1;
-}
-
-.card-icon-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
-
-.icon-circle {
-    width: 120px;
-    height: 120px;
-    border-radius: 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    transition: all 0.4s ease;
-}
-
-.icon-circle::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    border-radius: 5%;
-    border: 2px solid currentColor;
-    opacity: 0.2;
-    transition: all 0.4s ease;
-}
-
-.strategy-card:hover .icon-circle::before {
-    width: 110%;
-    height: 110%;
-    opacity: 0;
-}
-
-.icon-circle.primary {
-    background: linear-gradient(135deg, rgba(217, 118, 56, 0.15), rgba(217, 118, 56, 0.05));
-    color: var(--strategy-primary);
-}
-
-.icon-circle.secondary {
-    background: linear-gradient(135deg, rgba(198, 107, 61, 0.15), rgba(198, 107, 61, 0.05));
-    color: var(--strategy-secondary);
-}
-
-.icon-circle.tertiary {
-    background: linear-gradient(135deg, rgba(184, 95, 48, 0.15), rgba(184, 95, 48, 0.05));
-    color: var(--strategy-tertiary);
-}
-
-.icon-circle.quaternary {
-    background: linear-gradient(135deg, rgba(138, 74, 46, 0.15), rgba(138, 74, 46, 0.05));
-    color: var(--strategy-quaternary);
-}
-
-.card-icon {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-    transition: transform 0.4s ease;
-}
-
-.strategy-card:hover .card-icon {
-    transform: scale(1.1) rotate(5deg);
-}
-
-.card-content {
-    text-align: center;
-}
-
 .card-title {
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--strategy-text);
     margin-bottom: 1rem;
-    transition: color 0.3s ease;
-}
-
-.strategy-card:hover .card-title {
-    color: var(--strategy-primary);
 }
 
 .card-description {
     font-size: 0.95rem;
     color: var(--strategy-text-muted);
     line-height: 1.6;
-    margin-bottom: 1.5rem;
 }
 
 .card-description strong {
-    color: var(--strategy-text);
-    font-weight: 600;
+    color: var(--strategy-primary); /* Destaque em laranja para os strongs */
+}
+
+.icon-circle {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(217, 118, 56, 0.05);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
 }
 
 .card-accent {
-    width: 60px;
-    height: 3px;
-    margin: 0 auto;
-    border-radius: 2px;
-    transition: width 0.4s ease;
+    width: 40px;
+    height: 4px;
+    margin: 1.5rem auto 0;
+    border-radius: 10px;
 }
 
 .card-accent.primary { background: var(--strategy-primary); }
@@ -358,19 +259,13 @@
 .card-accent.tertiary { background: var(--strategy-tertiary); }
 .card-accent.quaternary { background: var(--strategy-quaternary); }
 
-.strategy-card:hover .card-accent {
-    width: 80px;
-}
-
 @keyframes badgeRotate {
     0%, 100% { transform: rotate(0deg); }
     50% { transform: rotate(180deg); }
 }
 
-/* Responsividade e ajustes Dark Mode específicos já inclusos no seu código original */
-@media (max-width: 1199px) {
-    .strategy-title { font-size: 2rem; }
-    .icon-circle { width: 100px; height: 100px; }
-    .card-icon { width: 60px; height: 60px; }
+.badge-icon {
+    color: var(--strategy-primary);
+    animation: badgeRotate 4s linear infinite;
 }
 </style>
