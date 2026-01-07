@@ -109,12 +109,12 @@ $dados_api = buscarDadosNumeros();
     --stats-tertiary: #b85f30;
     --stats-quaternary: #8a4a2e;
     
-    --stats-bg: #f9f7f5;
-    --stats-card-bg: #ffffff;
-    --stats-text: #2a1f1a;
-    --stats-text-secondary: #5a4a42;
-    --stats-text-muted: #8a7d72;
-    --stats-border: rgba(217, 118, 56, 0.12);
+    --stats-bg: #fdf8f4;
+    --stats-card-bg: #fffdfb;
+    --stats-text: #5a3a28;
+    --stats-text-secondary: #74523d;
+    --stats-text-muted: #8a6850;
+    --stats-border: rgba(217, 118, 56, 0.35);
     
     --stats-shadow: rgba(217, 118, 56, 0.08);
     --stats-shadow-hover: rgba(217, 118, 56, 0.2);
@@ -140,8 +140,12 @@ $dados_api = buscarDadosNumeros();
 }
 
 [data-bs-theme="light"] {
-    --stats-bg: #f9f7f5;
-    --stats-card-bg: #ffffff;
+    --stats-bg: #fdf8f4;
+    --stats-card-bg: #fffdfb;
+    --stats-text: #5a3a28;
+    --stats-text-secondary: #74523d;
+    --stats-text-muted: #8a6850;
+    --stats-border: rgba(217, 118, 56, 0.35);
 }
 
 [data-bs-theme="dark"] {
