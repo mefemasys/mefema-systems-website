@@ -116,14 +116,14 @@
    ======================================== */
 
 :root {
-    --strategy-primary: #d97638;
+   --strategy-primary: #d97638;
     --strategy-secondary: #c66b3d;
     --strategy-tertiary: #b85f30;
     --strategy-quaternary: #8a4a2e;
     
     --strategy-bg: #ffffff;
     --strategy-card-bg: #ffffff;
-   --strategy-text: #3d2817;
+    --strategy-text: #3d2817;
     --strategy-text-muted: #5a3d2a;
     --strategy-border: rgba(217, 118, 56, 0.1);
     
