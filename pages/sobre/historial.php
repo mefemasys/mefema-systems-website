@@ -21,7 +21,7 @@
     <div class="row g-4 justify-content-center">
       
       <!-- Card Principal de Descrição -->
-      <div class="col-lg-10">
+      <div class="col-lg-12">
         <div class="about-main-card">
           <div class="card-decoration-left"></div>
           <div class="card-decoration-right"></div>
@@ -59,7 +59,7 @@
       </div>
 
       <!-- Cards de Destaques -->
-      <div class="col-lg-10">
+      <div class="col-lg-12">
         <div class="row g-4">
           
           <!-- Destaque 1 -->
