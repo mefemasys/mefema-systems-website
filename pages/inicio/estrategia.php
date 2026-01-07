@@ -123,8 +123,8 @@
     
     --strategy-bg: #ffffff;
     --strategy-card-bg: #ffffff;
-    --strategy-text: #3d2817;
-    --strategy-text-muted: #5a3e2b;
+   --strategy-text: #3d2817;
+    --strategy-text-muted: #5a3d2a;
     --strategy-border: rgba(217, 118, 56, 0.1);
     
     --strategy-shadow: rgba(217, 118, 56, 0.08);
