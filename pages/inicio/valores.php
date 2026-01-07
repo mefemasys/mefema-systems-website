@@ -136,12 +136,12 @@
     --values-tertiary: #b85f30;
     --values-accent: #8a4a2e;
     
-    --values-bg: #ffffff;
-    --values-card-bg: #fafaf9;
-    --values-text: #2a1f1a;
-    --values-text-secondary: #5a4a42;
-    --values-text-muted: #8a7d72;
-    --values-border: rgba(217, 118, 56, 0.1);
+    --values-bg: #fdf9f6;
+    --values-card-bg: #fffdfb;
+    --values-text: #5a3a28;
+    --values-text-secondary: #74523d;
+    --values-text-muted: #8a6850;
+    --values-border: rgba(217, 118, 56, 0.35);
     
     --values-shadow: rgba(217, 118, 56, 0.06);
     --values-shadow-hover: rgba(217, 118, 56, 0.15);
@@ -167,8 +167,12 @@
 }
 
 [data-bs-theme="light"] {
-    --values-bg: #ffffff;
-    --values-card-bg: #fafaf9;
+    --values-bg: #fdf9f6;
+    --values-card-bg: #fffdfb;
+    --values-text: #5a3a28;
+    --values-text-secondary: #74523d;
+    --values-text-muted: #8a6850;
+    --values-border: rgba(217, 118, 56, 0.35);
 }
 
 [data-bs-theme="dark"] {
