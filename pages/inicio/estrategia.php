@@ -180,7 +180,7 @@
     padding: 0.75rem 1.5rem;
     background: linear-gradient(135deg, rgba(217, 118, 56, 0.1), rgba(184, 95, 48, 0.08));
     border: 1px solid var(--strategy-border);
-    border-radius: 50px;
+    border-radius: 10px;
     backdrop-filter: blur(10px);
 }
 
@@ -224,7 +224,7 @@
 
 .strategy-card {
     background: var(--strategy-card-bg);
-    border-radius: 20px;
+    border-radius: 5px;
     padding: 2rem 1.5rem;
     height: 100%;
     border: 1px solid var(--strategy-border);
@@ -268,7 +268,7 @@
 .icon-circle {
     width: 120px;
     height: 120px;
-    border-radius: 50%;
+    border-radius: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -284,7 +284,7 @@
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 5%;
     border: 2px solid currentColor;
     opacity: 0.2;
     transition: all 0.4s ease;
