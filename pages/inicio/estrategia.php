@@ -123,8 +123,8 @@
     
     --strategy-bg: #ffffff;
     --strategy-card-bg: #ffffff;
-    --strategy-text: #2a1f1a;
-    --strategy-text-muted: #2b190f;
+    --strategy-text: #3d2817;
+    --strategy-text-muted: #5a3e2b;
     --strategy-border: rgba(217, 118, 56, 0.1);
     
     --strategy-shadow: rgba(217, 118, 56, 0.08);
@@ -140,8 +140,8 @@
         
         --strategy-bg: #1a1410;
         --strategy-card-bg: #2a1f1a;
-       --strategy-text: #3d2817;
-    --strategy-text-muted: #5a3d2a;
+        --strategy-text: #f5ede6;
+        --strategy-text-muted: #c4b5a8;
         --strategy-border: rgba(255, 140, 74, 0.15);
         
         --strategy-shadow: rgba(0, 0, 0, 0.2);
