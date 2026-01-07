@@ -124,7 +124,7 @@
     --strategy-bg: #ffffff;
     --strategy-card-bg: #ffffff;
     --strategy-text: #2a1f1a;
-    --strategy-text-muted: #5a4a42;
+    --strategy-text-muted: #2b190f;
     --strategy-border: rgba(217, 118, 56, 0.1);
     
     --strategy-shadow: rgba(217, 118, 56, 0.08);
