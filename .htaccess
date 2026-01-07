@@ -1,29 +1,30 @@
 # ------------------------------
-# Ativar mod_rewrite e Opções
+# Configurações de Servidor
 # ------------------------------
 Options -MultiViews -Indexes
 RewriteEngine On
 RewriteBase /
 
-# 1. Impedir que o Apache adicione barra em pastas (Resolve o conflito)
+# Impede que o Apache force a barra / em pastas físicas
 DirectorySlash Off
 
-# 2. Remover "index.php" da URL (Redirecionamento 301)
+# 1. Remover "index.php" da URL (Redirecionamento Limpo)
 RewriteCond %{THE_REQUEST} \s/+index\.php[\s?]
 RewriteRule ^index\.php$ / [L,R=301]
 
-# 3. Forçar a remoção da barra final (Ex: /produtos/ -> /produtos)
-# Isso é importante para SEO e para o funcionamento do mapeamento
+# 2. Remover barra final de qualquer URL (Ex: /produtos/ -> /produtos)
+# Isso evita duplicidade de conteúdo e conflitos com pastas
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)/$ /$1 [L,R=301]
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [L,R=301]
 
-# 4. Mapeamento de rotas amigáveis (Arquivo .php)
-# Esta regra verifica se existe um arquivo .php com o nome solicitado
+# 3. REGRA MÁGICA: Mapear qualquer URL para arquivo .php correspondente
+# Funciona para /produtos, /produtos/websites, /empresa/historia, etc.
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{DOCUMENT_ROOT}/$1.php -f
-RewriteRule ^([^/]+)$ $1.php [L,QSA]
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L,QSA]
 
-# 5. Redirecionar raiz para index.php
+# 4. Redirecionar raiz para index.php (interno)
 RewriteRule ^$ index.php [L]
 
 # ------------------------------
