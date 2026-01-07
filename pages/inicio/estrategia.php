@@ -114,13 +114,13 @@
     --strategy-tertiary: #b85f30;
     --strategy-quaternary: #8a4a2e;
     
-    --strategy-bg: #ffffff;
-    --strategy-card-bg: #ffffff;
+    --strategy-bg: #fdf9f6;
+    --strategy-card-bg: #fffdfb;
     
-    /* AJUSTE: Cores mais escuras para Modo Claro (Acessibilidade + Conforto) */
-    --strategy-text: #1a110a; 
-    --strategy-text-muted: #453328;
-    --strategy-border: rgba(217, 118, 56, 0.15);
+    /* Cores castanho-laranja para texto no modo claro */
+    --strategy-text: #5a3a28; 
+    --strategy-text-muted: #8a6850;
+    --strategy-border: rgba(217, 118, 56, 0.35);
     
     --strategy-shadow: rgba(217, 118, 56, 0.08);
     --strategy-shadow-hover: rgba(217, 118, 56, 0.15);
@@ -135,8 +135,8 @@
         
         --strategy-bg: #1a1410;
         --strategy-card-bg: #2a1f1a;
-        --strategy-text: #f5ede6; /* Mantido original conforme pedido */
-        --strategy-text-muted: #c4b5a8; /* Mantido original conforme pedido */
+        --strategy-text: #f5ede6;
+        --strategy-text-muted: #c4b5a8;
         --strategy-border: rgba(255, 140, 74, 0.15);
         
         --strategy-shadow: rgba(0, 0, 0, 0.2);
@@ -146,10 +146,11 @@
 
 /* Suporte para seletores de tema via atributo (Bootstrap 5.3+) */
 [data-bs-theme="light"] {
-    --strategy-bg: #ffffff;
-    --strategy-card-bg: #ffffff;
-    --strategy-text: #1a110a;
-    --strategy-text-muted: #453328;
+    --strategy-bg: #fdf9f6;
+    --strategy-card-bg: #fffdfb;
+    --strategy-text: #5a3a28;
+    --strategy-text-muted: #8a6850;
+    --strategy-border: rgba(217, 118, 56, 0.35);
 }
 
 [data-bs-theme="dark"] {
@@ -168,8 +169,6 @@
     position: relative;
     overflow: hidden;
 }
-
-/* ... (Resto do seu CSS permanece o mesmo) ... */
 
 .strategy-badge {
     display: inline-flex;
@@ -367,7 +366,6 @@
     50% { transform: rotate(180deg); }
 }
 
-/* Responsividade e ajustes Dark Mode específicos já inclusos no seu código original */
 @media (max-width: 1199px) {
     .strategy-title { font-size: 2rem; }
     .icon-circle { width: 100px; height: 100px; }
