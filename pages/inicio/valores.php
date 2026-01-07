@@ -196,7 +196,7 @@
     padding: 0.75rem 1.75rem;
     background: linear-gradient(135deg, rgba(217, 118, 56, 0.12), rgba(184, 95, 48, 0.08));
     border: 1px solid var(--values-border);
-    border-radius: 50px;
+    border-radius: 10px;
     backdrop-filter: blur(10px);
 }
 
@@ -240,7 +240,7 @@
 
 .value-card {
     background: var(--values-card-bg);
-    border-radius: 20px;
+    border-radius: 5px;
     padding: 2.5rem 2rem;
     height: 100%;
     border: 1px solid var(--values-border);
@@ -290,7 +290,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 5%;
     position: relative;
     transition: all 0.4s ease;
 }
@@ -303,7 +303,7 @@
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 5%;
     border: 2px solid currentColor;
     opacity: 0.15;
     transition: all 0.4s ease;
@@ -381,7 +381,7 @@
 .value-accent {
     width: 50px;
     height: 3px;
-    border-radius: 2px;
+    border-radius: 1px;
     transition: all 0.4s ease;
 }
 
