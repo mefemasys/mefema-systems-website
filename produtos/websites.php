@@ -617,8 +617,8 @@ function showWebsiteDetails(id) {
     --shadow-sm: 0 2px 8px rgba(217, 118, 56, 0.08);
     --shadow-md: 0 4px 16px rgba(217, 118, 56, 0.12);
     --shadow-lg: 0 8px 32px rgba(217, 118, 56, 0.16);
-    --radius: 12px;
-    --radius-lg: 16px;
+    --radius: 8px;
+    --radius-lg: 11px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -815,7 +815,7 @@ function showWebsiteDetails(id) {
     background: linear-gradient(135deg, #FFD700, #FFA500);
     color: #000;
     padding: 0.5rem 1rem;
-    border-radius: 25px;
+    border-radius: 5px;
     font-size: 0.75rem;
     font-weight: 700;
     display: flex;
@@ -902,7 +902,7 @@ function showWebsiteDetails(id) {
 .category-badge {
     display: inline-block;
     padding: 0.35rem 1rem;
-    border-radius: 20px;
+    border-radius: 4px;
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -991,7 +991,7 @@ function showWebsiteDetails(id) {
     font-size: 0.9rem;
     background: var(--bg-card);
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 4px;
 }
 
 .pricing-detail i {
@@ -1130,7 +1130,7 @@ function showWebsiteDetails(id) {
 .pagination-info {
     background: var(--bg-card);
     padding: 1rem 2rem;
-    border-radius: 10px;
+    border-radius: 3px;
     border: 2px solid var(--border-color);
 }
 
