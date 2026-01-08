@@ -1,3 +1,4 @@
+
   <style>
     /* ========================================
        RESET E BASE
@@ -12,6 +13,45 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
       background: #f8f9fa;
+    }
+
+    /* ========================================
+       VARIÁVEIS DOS PRODUTOS
+       ======================================== */
+    :root {
+      --products-primary: #d97638;
+      --products-primary-light: #ff8c4a;
+      --products-secondary: #c66b3d;
+      --products-accent: #b85f30;
+      
+      --products-bg: #fdf8f4;
+      --products-card-bg: #fffdfb;
+      --products-text: #5a3a28;
+      --products-text-secondary: #74523d;
+      --products-text-muted: #8a6850;
+      --products-border: rgba(217, 118, 56, 0.35);
+      
+      --products-shadow: rgba(217, 118, 56, 0.08);
+      --products-shadow-hover: rgba(217, 118, 56, 0.2);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --products-primary: #ff8c4a;
+        --products-primary-light: #ffa366;
+        --products-secondary: #d97638;
+        --products-accent: #c66b3d;
+        
+        --products-bg: #12100d;
+        --products-card-bg: #1f1814;
+        --products-text: #f5ede6;
+        --products-text-secondary: #d4c5b8;
+        --products-text-muted: #9a8d82;
+        --products-border: rgba(255, 140, 74, 0.15);
+        
+        --products-shadow: rgba(0, 0, 0, 0.3);
+        --products-shadow-hover: rgba(255, 140, 74, 0.25);
+      }
     }
 
     /* ========================================
