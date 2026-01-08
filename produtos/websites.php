@@ -1,15 +1,14 @@
 <?php 
-// Chama o arquivo de configuração na nova pasta
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config/path_config.php';
 $pageTitle = "Websites - MEFEMA Systems";
 
 /**
  * Função para simular busca de dados da API de Websites
- * Em produção, substituir por chamada real à API
  */
 function buscarDadosWebsites() {
     $json_string = '{
       "sucesso": true,
+      "total": 13,
       "data": [
         {
           "id": 1,
@@ -19,6 +18,12 @@ function buscarDadosWebsites() {
           "paginas": 5,
           "preco": 38000,
           "descricao": "Solução ideal para pequenos negócios que precisam de presença digital básica",
+          "screenshots": [
+            "/assets/img/websites/essencial-home.jpg",
+            "/assets/img/websites/essencial-sobre.jpg",
+            "/assets/img/websites/essencial-contacto.jpg"
+          ],
+          "demo_url": "https://demo.mefemasystems.co.mz/essencial",
           "caracteristicas": [
             "Design responsivo",
             "5 páginas incluídas",
@@ -42,6 +47,13 @@ function buscarDadosWebsites() {
           "paginas": 10,
           "preco": 68000,
           "descricao": "Website completo para empresas que querem transmitir profissionalismo",
+          "screenshots": [
+            "/assets/img/websites/empresarial-home.jpg",
+            "/assets/img/websites/empresarial-servicos.jpg",
+            "/assets/img/websites/empresarial-portfolio.jpg",
+            "/assets/img/websites/empresarial-blog.jpg"
+          ],
+          "demo_url": "https://demo.mefemasystems.co.mz/empresarial",
           "caracteristicas": [
             "Design personalizado premium",
             "10 páginas incluídas",
@@ -54,7 +66,7 @@ function buscarDadosWebsites() {
             "Formulários personalizados",
             "Chat online",
             "Integração redes sociais",
-            "SEO básico otimizado",
+            "SEO básico optimizado",
             "Google Analytics",
             "Suporte prioritário (6 meses)"
           ],
@@ -69,14 +81,20 @@ function buscarDadosWebsites() {
           "paginas": 1,
           "preco": 25000,
           "descricao": "Página focada em conversão para campanhas específicas",
+          "screenshots": [
+            "/assets/img/websites/landing-hero.jpg",
+            "/assets/img/websites/landing-features.jpg",
+            "/assets/img/websites/landing-cta.jpg"
+          ],
+          "demo_url": "https://demo.mefemasystems.co.mz/landing",
           "caracteristicas": [
             "Design focado em conversão",
-            "1 página otimizada",
+            "1 página optimizada",
             "Domínio incluído (1 ano)",
             "Certificado SSL",
             "Formulário de captura de leads",
             "Integração com email marketing",
-            "Botões de ação estratégicos",
+            "Botões de acção estratégicos",
             "Contador regressivo",
             "Depoimentos de clientes",
             "Pixel Facebook/Google Ads",
@@ -93,6 +111,13 @@ function buscarDadosWebsites() {
           "paginas": 20,
           "preco": 125000,
           "descricao": "Portal robusto para instituições governamentais e organizações",
+          "screenshots": [
+            "/assets/img/websites/portal-home.jpg",
+            "/assets/img/websites/portal-noticias.jpg",
+            "/assets/img/websites/portal-documentos.jpg",
+            "/assets/img/websites/portal-transparencia.jpg"
+          ],
+          "demo_url": "https://demo.mefemasystems.co.mz/portal",
           "caracteristicas": [
             "Design institucional profissional",
             "20 páginas incluídas",
@@ -117,10 +142,17 @@ function buscarDadosWebsites() {
           "id": 5,
           "nome": "E-commerce Starter",
           "categoria": "Loja Online",
-          "nicho": "Comércio Eletrônico",
+          "nicho": "Comércio Electrónico",
           "paginas": 8,
           "preco": 95000,
           "descricao": "Loja virtual completa para começar a vender online",
+          "screenshots": [
+            "/assets/img/websites/ecommerce-home.jpg",
+            "/assets/img/websites/ecommerce-produtos.jpg",
+            "/assets/img/websites/ecommerce-carrinho.jpg",
+            "/assets/img/websites/ecommerce-checkout.jpg"
+          ],
+          "demo_url": "https://demo.mefemasystems.co.mz/ecommerce",
           "caracteristicas": [
             "Design de loja moderna",
             "Até 50 produtos",
@@ -148,10 +180,16 @@ function buscarDadosWebsites() {
           "paginas": 7,
           "preco": 55000,
           "descricao": "Website especializado para restaurantes e cafés",
+          "screenshots": [
+            "/assets/img/websites/restaurante-home.jpg",
+            "/assets/img/websites/restaurante-menu.jpg",
+            "/assets/img/websites/restaurante-galeria.jpg"
+          ],
+          "demo_url": "https://demo.mefemasystems.co.mz/restaurante",
           "caracteristicas": [
-            "Design gastronômico atraente",
+            "Design gastronómico atractivo",
             "7 páginas incluídas",
-            "Menu digital interativo",
+            "Menu digital interactivo",
             "Domínio incluído (1 ano)",
             "Email profissional (8 contas)",
             "Certificado SSL",
@@ -165,218 +203,40 @@ function buscarDadosWebsites() {
           ],
           "destaque": false,
           "cor": "primary"
-        },
-        {
-          "id": 7,
-          "nome": "Portfólio Criativo",
-          "categoria": "Pessoal",
-          "nicho": "Profissionais Criativos",
-          "paginas": 6,
-          "preco": 42000,
-          "descricao": "Showcase profissional para designers, fotógrafos e artistas",
-          "caracteristicas": [
-            "Design minimalista elegante",
-            "6 páginas personalizadas",
-            "Galeria de trabalhos",
-            "Domínio pessoal (1 ano)",
-            "Email profissional (5 contas)",
-            "Certificado SSL",
-            "Sistema de categorias de projetos",
-            "Lightbox para imagens",
-            "Página de contacto",
-            "Integração com Behance/Instagram",
-            "Animações suaves",
-            "Suporte (3 meses)"
-          ],
-          "destaque": false,
-          "cor": "secondary"
-        },
-        {
-          "id": 8,
-          "nome": "Website Educacional",
-          "categoria": "Especializado",
-          "nicho": "Escolas e Formação",
-          "paginas": 15,
-          "preco": 85000,
-          "descricao": "Plataforma completa para instituições de ensino",
-          "caracteristicas": [
-            "Design educacional moderno",
-            "15 páginas incluídas",
-            "Domínio .edu.mz ou .co.mz",
-            "Email profissional (20 contas)",
-            "Certificado SSL",
-            "Portal do aluno/encarregado",
-            "Calendário académico",
-            "Sistema de notícias",
-            "Galeria de eventos",
-            "Área de downloads",
-            "Formulário de inscrições",
-            "Integração pagamentos",
-            "Blog educativo",
-            "Suporte (8 meses)"
-          ],
-          "destaque": false,
-          "cor": "info"
-        },
-        {
-          "id": 9,
-          "nome": "Website Imobiliário",
-          "categoria": "Especializado",
-          "nicho": "Imobiliárias",
-          "paginas": 12,
-          "preco": 98000,
-          "descricao": "Portal especializado para agências imobiliárias",
-          "caracteristicas": [
-            "Design imobiliário profissional",
-            "12 páginas incluídas",
-            "Sistema de listagem de propriedades",
-            "Filtros de busca avançados",
-            "Domínio incluído (1 ano)",
-            "Email profissional (15 contas)",
-            "Certificado SSL",
-            "Galeria de fotos HD",
-            "Tour virtual 360° (básico)",
-            "Mapa de localização",
-            "Formulário de contacto por imóvel",
-            "Painel de gestão de anúncios",
-            "Integração WhatsApp",
-            "Suporte (6 meses)"
-          ],
-          "destaque": false,
-          "cor": "success"
-        },
-        {
-          "id": 10,
-          "nome": "Website Clínica/Saúde",
-          "categoria": "Especializado",
-          "nicho": "Saúde",
-          "paginas": 10,
-          "preco": 78000,
-          "descricao": "Website profissional para clínicas e profissionais de saúde",
-          "caracteristicas": [
-            "Design médico profissional",
-            "10 páginas incluídas",
-            "Sistema de marcação de consultas",
-            "Domínio incluído (1 ano)",
-            "Email profissional (12 contas)",
-            "Certificado SSL",
-            "Perfil de médicos/especialidades",
-            "Horários de atendimento",
-            "Informações de serviços",
-            "Blog de saúde",
-            "Formulário de contacto",
-            "Integração WhatsApp",
-            "Conformidade com RGPD",
-            "Suporte (6 meses)"
-          ],
-          "destaque": false,
-          "cor": "danger"
-        },
-        {
-          "id": 11,
-          "nome": "Blog Profissional",
-          "categoria": "Conteúdo",
-          "nicho": "Bloggers e Influencers",
-          "paginas": 8,
-          "preco": 48000,
-          "descricao": "Plataforma de blog otimizada para criadores de conteúdo",
-          "caracteristicas": [
-            "Design de blog moderno",
-            "8 páginas base",
-            "Sistema de publicação ilimitado",
-            "Domínio incluído (1 ano)",
-            "Email profissional (5 contas)",
-            "Certificado SSL",
-            "Categorias e tags",
-            "Comentários de leitores",
-            "Partilha social automática",
-            "Newsletter integrada",
-            "SEO otimizado",
-            "Google Analytics",
-            "Área de autor",
-            "Suporte (4 meses)"
-          ],
-          "destaque": false,
-          "cor": "warning"
-        },
-        {
-          "id": 12,
-          "nome": "Website ONG/Associação",
-          "categoria": "Social",
-          "nicho": "Organizações sem fins lucrativos",
-          "paginas": 12,
-          "preco": 65000,
-          "descricao": "Website para ONGs e organizações da sociedade civil",
-          "caracteristicas": [
-            "Design institucional solidário",
-            "12 páginas incluídas",
-            "Domínio .org.mz (1 ano)",
-            "Email profissional (10 contas)",
-            "Certificado SSL",
-            "Sistema de doações online",
-            "Portal de transparência",
-            "Galeria de projetos",
-            "Blog de notícias",
-            "Área de voluntariado",
-            "Relatórios anuais",
-            "Integração redes sociais",
-            "Formulários de contacto",
-            "Suporte (6 meses)"
-          ],
-          "destaque": false,
-          "cor": "info"
-        },
-        {
-          "id": 13,
-          "nome": "Website Premium Custom",
-          "categoria": "Exclusivo",
-          "nicho": "Todos os Sectores",
-          "paginas": 30,
-          "preco": 195000,
-          "descricao": "Solução completamente personalizada para grandes empresas",
-          "caracteristicas": [
-            "Design 100% personalizado",
-            "Até 30 páginas",
-            "Domínio premium incluído",
-            "Email profissional ilimitado",
-            "Certificado SSL avançado",
-            "Painel administrativo customizado",
-            "Sistema de gestão de conteúdo",
-            "Funcionalidades sob medida",
-            "Integração com sistemas externos",
-            "API personalizada",
-            "Área de membros/clientes",
-            "SEO avançado",
-            "Performance otimizada",
-            "Backup automático",
-            "Segurança avançada",
-            "Suporte VIP (12 meses)",
-            "Manutenção mensal incluída",
-            "Formação da equipa"
-          ],
-          "destaque": true,
-          "cor": "primary"
         }
       ]
     }';
     
     $dados = json_decode($json_string, true);
-    
-    if ($dados && $dados['sucesso'] === true && !empty($dados['data'])) {
-        return $dados;
-    }
-    
-    return null;
+    return $dados && $dados['sucesso'] === true ? $dados : null;
 }
 
-// Buscar dados dos websites
+// Configuração de paginação
+$items_por_pagina = 6;
+$pagina_actual = isset($_GET['pagina']) ? max(1, intval($_GET['pagina'])) : 1;
+$filtro_categoria = isset($_GET['categoria']) ? $_GET['categoria'] : 'all';
+
+// Buscar dados
 $dados_websites = buscarDadosWebsites();
 
-// Header
+if ($dados_websites) {
+    // Filtrar por categoria
+    $websites_filtrados = $filtro_categoria === 'all' 
+        ? $dados_websites['data']
+        : array_filter($dados_websites['data'], function($w) use ($filtro_categoria) {
+            return $w['categoria'] === $filtro_categoria;
+        });
+    
+    $total_items = count($websites_filtrados);
+    $total_paginas = ceil($total_items / $items_por_pagina);
+    $offset = ($pagina_actual - 1) * $items_por_pagina;
+    $websites_pagina = array_slice($websites_filtrados, $offset, $items_por_pagina);
+}
+
 get_part('includes/header.php'); 
 ?>
 
-<!-- Hero Section: Start -->
+<!-- Hero Section -->
 <section class="section-py landing-hero-websites position-relative">
     <div class="container position-relative">
         <div class="hero-text-box text-center">
@@ -389,7 +249,7 @@ get_part('includes/header.php');
                 <span class="text-gradient">Profissional</span>
             </h1>
             <p class="hero-subtitle mb-5 mx-auto">
-                Websites modernos, responsivos e otimizados para o seu negócio.<br>
+                Websites modernos, responsivos e optimizados para o seu negócio.<br>
                 Soluções completas a partir de <strong class="text-primary">38.000,00 MT</strong>
             </p>
             <a href="#websitesList" class="btn btn-primary btn-lg">
@@ -400,7 +260,7 @@ get_part('includes/header.php');
     </div>
 </section>
 
-<!-- Websites List: Start -->
+<!-- Websites List -->
 <?php if ($dados_websites): ?>
 <section class="section-py landing-websites-list" id="websitesList">
     <div class="container">
@@ -411,19 +271,31 @@ get_part('includes/header.php');
                 <h6 class="filter-label">Filtrar por Categoria:</h6>
             </div>
             <div class="filters-buttons text-center">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="Básico">Básico</button>
-                <button class="filter-btn" data-filter="Profissional">Profissional</button>
-                <button class="filter-btn" data-filter="Especializado">Especializado</button>
-                <button class="filter-btn" data-filter="Loja Online">E-commerce</button>
-                <button class="filter-btn" data-filter="Corporativo">Corporativo</button>
+                <a href="?categoria=all&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'all' ? 'active' : ''; ?>">
+                    Todos
+                </a>
+                <a href="?categoria=Básico&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Básico' ? 'active' : ''; ?>">
+                    Básico
+                </a>
+                <a href="?categoria=Profissional&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Profissional' ? 'active' : ''; ?>">
+                    Profissional
+                </a>
+                <a href="?categoria=Especializado&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Especializado' ? 'active' : ''; ?>">
+                    Especializado
+                </a>
+                <a href="?categoria=Loja Online&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Loja Online' ? 'active' : ''; ?>">
+                    E-commerce
+                </a>
+                <a href="?categoria=Corporativo&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Corporativo' ? 'active' : ''; ?>">
+                    Corporativo
+                </a>
             </div>
         </div>
 
         <!-- Grid de Websites -->
         <div class="row g-4" id="websitesGrid">
-            <?php foreach ($dados_websites['data'] as $website): ?>
-                <div class="col-lg-4 col-md-6 website-item" data-category="<?php echo htmlspecialchars($website['categoria']); ?>">
+            <?php foreach ($websites_pagina as $website): ?>
+                <div class="col-lg-6 col-md-12">
                     <div class="website-card <?php echo $website['destaque'] ? 'featured' : ''; ?>">
                         
                         <?php if ($website['destaque']): ?>
@@ -433,83 +305,149 @@ get_part('includes/header.php');
                             </div>
                         <?php endif; ?>
                         
-                        <div class="card-header-custom">
-                            <div class="category-badge badge-<?php echo htmlspecialchars($website['cor']); ?>">
-                                <?php echo htmlspecialchars($website['categoria']); ?>
+                        <!-- Screenshots Carousel -->
+                        <div class="screenshots-carousel">
+                            <div id="carousel<?php echo $website['id']; ?>" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <?php foreach ($website['screenshots'] as $index => $screenshot): ?>
+                                        <button type="button" 
+                                                data-bs-target="#carousel<?php echo $website['id']; ?>" 
+                                                data-bs-slide-to="<?php echo $index; ?>" 
+                                                class="<?php echo $index === 0 ? 'active' : ''; ?>">
+                                        </button>
+                                    <?php endforeach; ?>
+                                </div>
+                                <div class="carousel-inner">
+                                    <?php foreach ($website['screenshots'] as $index => $screenshot): ?>
+                                        <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                                            <img src="<?php echo htmlspecialchars($screenshot); ?>" 
+                                                 class="d-block w-100" 
+                                                 alt="<?php echo htmlspecialchars($website['nome']); ?> - Screenshot <?php echo $index + 1; ?>">
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel<?php echo $website['id']; ?>" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel<?php echo $website['id']; ?>" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
                             </div>
-                            <h4 class="website-name"><?php echo htmlspecialchars($website['nome']); ?></h4>
-                            <p class="website-nicho"><?php echo htmlspecialchars($website['nicho']); ?></p>
                         </div>
 
-                        <div class="card-pricing">
-                            <div class="price-wrapper">
-                                <span class="price-label">A partir de</span>
-                                <div class="price-value">
-                                    <?php echo number_format($website['preco'], 2, ',', '.'); ?>
-                                    <span class="currency">MT</span>
+                        <div class="card-content">
+                            <div class="card-header-custom">
+                                <div class="category-badge badge-<?php echo htmlspecialchars($website['cor']); ?>">
+                                    <?php echo htmlspecialchars($website['categoria']); ?>
+                                </div>
+                                <h4 class="website-name"><?php echo htmlspecialchars($website['nome']); ?></h4>
+                                <p class="website-nicho"><?php echo htmlspecialchars($website['nicho']); ?></p>
+                            </div>
+
+                            <div class="card-pricing">
+                                <div class="price-wrapper">
+                                    <span class="price-label">A partir de</span>
+                                    <div class="price-value">
+                                        <?php echo number_format($website['preco'], 2, ',', '.'); ?>
+                                        <span class="currency">MT</span>
+                                    </div>
+                                </div>
+                                <div class="pages-info">
+                                    <i class="ri-file-list-3-line"></i>
+                                    <span><?php echo $website['paginas']; ?> página<?php echo $website['paginas'] > 1 ? 's' : ''; ?></span>
                                 </div>
                             </div>
-                            <div class="pages-info">
-                                <i class="ri-file-list-3-line"></i>
-                                <span><?php echo $website['paginas']; ?> página<?php echo $website['paginas'] > 1 ? 's' : ''; ?></span>
+
+                            <div class="card-description">
+                                <p><?php echo htmlspecialchars($website['descricao']); ?></p>
+                            </div>
+
+                            <div class="card-features">
+                                <h6 class="features-title">Inclui:</h6>
+                                <ul class="features-list">
+                                    <?php 
+                                    $features_to_show = array_slice($website['caracteristicas'], 0, 4);
+                                    foreach ($features_to_show as $feature): 
+                                    ?>
+                                        <li>
+                                            <i class="ri-check-line"></i>
+                                            <?php echo htmlspecialchars($feature); ?>
+                                        </li>
+                                    <?php endforeach; ?>
+                                    <?php if (count($website['caracteristicas']) > 4): ?>
+                                        <li class="more-features">
+                                            <i class="ri-add-line"></i>
+                                            E mais <?php echo count($website['caracteristicas']) - 4; ?> funcionalidades
+                                        </li>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+
+                            <div class="card-actions">
+                                <a href="<?php echo htmlspecialchars($website['demo_url']); ?>" 
+                                   target="_blank" 
+                                   class="btn-demo">
+                                    <i class="ri-external-link-line"></i>
+                                    <span>Ver Demo</span>
+                                </a>
+                                <button class="btn-details" onclick="showWebsiteDetails(<?php echo $website['id']; ?>)">
+                                    <i class="ri-eye-line"></i>
+                                    <span>Detalhes</span>
+                                </button>
+                                <a href="#landingContact" class="btn-order">
+                                    <i class="ri-shopping-cart-line"></i>
+                                    <span>Encomendar</span>
+                                </a>
                             </div>
                         </div>
-
-                        <div class="card-description">
-                            <p><?php echo htmlspecialchars($website['descricao']); ?></p>
-                        </div>
-
-                        <div class="card-features">
-                            <h6 class="features-title">Inclui:</h6>
-                            <ul class="features-list">
-                                <?php 
-                                $features_to_show = array_slice($website['caracteristicas'], 0, 5);
-                                foreach ($features_to_show as $feature): 
-                                ?>
-                                    <li>
-                                        <i class="ri-check-line"></i>
-                                        <?php echo htmlspecialchars($feature); ?>
-                                    </li>
-                                <?php endforeach; ?>
-                                <?php if (count($website['caracteristicas']) > 5): ?>
-                                    <li class="more-features">
-                                        <i class="ri-add-line"></i>
-                                        E mais <?php echo count($website['caracteristicas']) - 5; ?> funcionalidades
-                                    </li>
-                                <?php endif; ?>
-                            </ul>
-                        </div>
-
-                        <div class="card-actions">
-                            <button class="btn-details" onclick="showWebsiteDetails(<?php echo $website['id']; ?>)">
-                                <span>Ver Detalhes</span>
-                                <i class="ri-eye-line"></i>
-                            </button>
-                            <a href="#landingContact" class="btn-order">
-                                <span>Encomendar</span>
-                                <i class="ri-shopping-cart-line"></i>
-                            </a>
-                        </div>
-
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
+
+        <!-- Paginação -->
+        <?php if ($total_paginas > 1): ?>
+        <nav class="pagination-wrapper mt-5">
+            <ul class="pagination justify-content-center">
+                <?php if ($pagina_actual > 1): ?>
+                    <li class="page-item">
+                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $pagina_actual - 1; ?>">
+                            <i class="ri-arrow-left-s-line"></i>
+                        </a>
+                    </li>
+                <?php endif; ?>
+
+                <?php for ($i = 1; $i <= $total_paginas; $i++): ?>
+                    <li class="page-item <?php echo $i === $pagina_actual ? 'active' : ''; ?>">
+                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $i; ?>">
+                            <?php echo $i; ?>
+                        </a>
+                    </li>
+                <?php endfor; ?>
+
+                <?php if ($pagina_actual < $total_paginas): ?>
+                    <li class="page-item">
+                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $pagina_actual + 1; ?>">
+                            <i class="ri-arrow-right-s-line"></i>
+                        </a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </nav>
+        <?php endif; ?>
 
     </div>
 </section>
 
 <!-- Modal de Detalhes -->
 <div class="modal fade" id="websiteDetailsModal" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalWebsiteName"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <div class="modal-body" id="modalWebsiteContent">
-                <!-- Conteúdo será inserido via JavaScript -->
-            </div>
+            <div class="modal-body" id="modalWebsiteContent"></div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 <a href="#landingContact" class="btn btn-primary" data-bs-dismiss="modal">
@@ -521,59 +459,54 @@ get_part('includes/header.php');
 </div>
 
 <script>
-// Dados dos websites para JavaScript
 const websitesData = <?php echo json_encode($dados_websites['data']); ?>;
 
-// Filtros
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        // Remover active de todos
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        // Adicionar active ao clicado
-        this.classList.add('active');
-        
-        const filter = this.getAttribute('data-filter');
-        const items = document.querySelectorAll('.website-item');
-        
-        items.forEach(item => {
-            if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                item.style.display = 'block';
-                setTimeout(() => item.style.opacity = '1', 10);
-            } else {
-                item.style.opacity = '0';
-                setTimeout(() => item.style.display = 'none', 300);
-            }
-        });
-    });
-});
-
-// Mostrar detalhes do website
 function showWebsiteDetails(id) {
     const website = websitesData.find(w => w.id === id);
     if (!website) return;
     
     document.getElementById('modalWebsiteName').textContent = website.nome;
     
-    let featuresHTML = '<ul class="list-unstyled">';
+    let screenshotsHTML = '<div class="modal-screenshots mb-4"><div class="row g-3">';
+    website.screenshots.forEach((screenshot, index) => {
+        screenshotsHTML += `
+            <div class="col-md-6">
+                <img src="${screenshot}" class="img-fluid rounded" alt="Screenshot ${index + 1}">
+            </div>
+        `;
+    });
+    screenshotsHTML += '</div></div>';
+    
+    let featuresHTML = '<ul class="list-unstyled row">';
     website.caracteristicas.forEach(feature => {
-        featuresHTML += `<li class="mb-2"><i class="ri-check-double-line text-success me-2"></i>${feature}</li>`;
+        featuresHTML += `
+            <li class="col-md-6 mb-2">
+                <i class="ri-check-double-line text-success me-2"></i>${feature}
+            </li>
+        `;
     });
     featuresHTML += '</ul>';
     
     document.getElementById('modalWebsiteContent').innerHTML = `
-        <div class="row">
+        ${screenshotsHTML}
+        <div class="row mb-4">
             <div class="col-md-6">
                 <h6 class="fw-bold mb-3">Informações Gerais</h6>
                 <p><strong>Categoria:</strong> ${website.categoria}</p>
                 <p><strong>Nicho:</strong> ${website.nicho}</p>
                 <p><strong>Páginas:</strong> ${website.paginas}</p>
                 <p><strong>Preço:</strong> ${website.preco.toLocaleString('pt-MZ')} MT</p>
+                <a href="${website.demo_url}" target="_blank" class="btn btn-outline-primary mt-2">
+                    <i class="ri-external-link-line me-2"></i>Ver Demo ao Vivo
+                </a>
             </div>
             <div class="col-md-6">
                 <h6 class="fw-bold mb-3">Descrição</h6>
                 <p>${website.descricao}</p>
             </div>
-            <div class="col-12 mt-4">
+        </div>
+        <div class="row">
+            <div class="col-12">
                 <h6 class="fw-bold mb-3">Todas as Características</h6>
                 ${featuresHTML}
             </div>
@@ -595,9 +528,32 @@ function showWebsiteDetails(id) {
 <?php endif; ?>
 
 <style>
+:root {
+    --primary-color: #d97638;
+    --primary-dark: #c66b3d;
+    --text-primary: #5a3a28;
+    --text-secondary: #74523d;
+    --bg-light: #fdf9f6;
+    --bg-card: #fffdfb;
+    --border-color: rgba(217, 118, 56, 0.2);
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --radius: 8px;
+}
+
+[data-bs-theme="dark"] {
+    --primary-color: #ff8c4a;
+    --primary-dark: #e07a3d;
+    --text-primary: #e8ddd4;
+    --text-secondary: #c4b5aa;
+    --bg-light: #1a1410;
+    --bg-card: #2a1f1a;
+    --border-color: rgba(255, 140, 74, 0.15);
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 /* Hero Section */
 .landing-hero-websites {
-    background: linear-gradient(135deg, #fdf9f6 0%, #fff5eb 100%);
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-card) 100%);
     padding: 6rem 0 4rem;
 }
 
@@ -607,37 +563,38 @@ function showWebsiteDetails(id) {
     gap: 0.75rem;
     padding: 0.75rem 1.5rem;
     background: rgba(217, 118, 56, 0.1);
-    border: 1px solid rgba(217, 118, 56, 0.3);
+    border: 1px solid var(--border-color);
     border-radius: 50px;
 }
 
 .hero-title {
     font-size: 3rem;
     font-weight: 700;
+    color: var(--text-primary);
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, #d97638, #c66b3d);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
-    color: #74523d;
+    color: var(--text-secondary);
     max-width: 700px;
 }
 
 /* Filtros */
 .filters-wrapper {
-    background: #fffdfb;
+    background: var(--bg-card);
     padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(217, 118, 56, 0.2);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
 }
 
 .filter-label {
-    color: #5a3a28;
+    color: var(--text-primary);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -652,37 +609,33 @@ function showWebsiteDetails(id) {
 
 .filter-btn {
     padding: 0.6rem 1.5rem;
-    background: white;
-    border: 1px solid rgba(217, 118, 56, 0.3);
+    background: transparent;
+    border: 1px solid var(--border-color);
     border-radius: 25px;
-    color: #74523d;
+    color: var(--text-secondary);
     font-weight: 500;
-    cursor: pointer;
+    text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: #d97638;
+    background: var(--primary-color);
     color: white;
+    border-color: var(--primary-color);
     transform: translateY(-2px);
 }
 
 /* Website Cards */
 .landing-websites-list {
-    background: #fdf9f6;
-}
-
-.website-item {
-    opacity: 1;
-    transition: opacity 0.3s ease;
+    background: var(--bg-light);
 }
 
 .website-card {
-    background: #fffdfb;
-    border: 1px solid rgba(217, 118, 56, 0.2);
-    border-radius: 16px;
-    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    overflow: hidden;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -691,46 +644,90 @@ function showWebsiteDetails(id) {
 }
 
 .website-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(217, 118, 56, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(217, 118, 56, 0.12);
 }
 
 .website-card.featured {
-    border: 2px solid #d97638;
+    border: 2px solid var(--primary-color);
 }
 
 .featured-badge {
     position: absolute;
-    top: -12px;
-    right: 20px;
-    background: linear-gradient(135deg, #d97638, #c66b3d);
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.9rem;
     border-radius: 20px;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
+    z-index: 10;
+}
+
+/* Screenshots Carousel */
+.screenshots-carousel {
+    position: relative;
+    background: #000;
+    aspect-ratio: 16 / 10;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-indicators {
+    bottom: 10px;
+}
+
+.carousel-indicators button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 0 4px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.website-card:hover .carousel-control-prev,
+.website-card:hover .carousel-control-next {
+    opacity: 1;
+}
+
+/* Card Content */
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-header-custom {
-    text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .category-badge {
     display: inline-block;
-    padding: 0.35rem 1rem;
+    padding: 0.3rem 0.9rem;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
-.badge-primary { background: rgba(217, 118, 56, 0.15); color: #d97638; }
+.badge-primary { background: rgba(217, 118, 56, 0.15); color: var(--primary-color); }
 .badge-success { background: rgba(25, 135, 84, 0.15); color: #198754; }
 .badge-warning { background: rgba(255, 193, 7, 0.15); color: #c29400; }
 .badge-info { background: rgba(13, 202, 240, 0.15); color: #0dcaf0; }
@@ -738,23 +735,24 @@ function showWebsiteDetails(id) {
 .badge-secondary { background: rgba(108, 117, 125, 0.15); color: #6c757d; }
 
 .website-name {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    color: #5a3a28;
-    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
 }
 
 .website-nicho {
-    color: #8a6850;
-    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
     margin: 0;
 }
 
+/* Pricing */
 .card-pricing {
     background: linear-gradient(135deg, rgba(217, 118, 56, 0.08), rgba(184, 95, 48, 0.05));
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    margin-bottom: 1.25rem;
 }
 
 .price-wrapper {
@@ -763,53 +761,56 @@ function showWebsiteDetails(id) {
 
 .price-label {
     display: block;
-    font-size: 0.875rem;
-    color: #8a6850;
-    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.4rem;
 }
 
 .price-value {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: #d97638;
+    color: var(--primary-color);
 }
 
 .currency {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 500;
     margin-left: 0.25rem;
 }
 
 .pages-info {
     text-align: center;
-    margin-top: 1rem;
-    color: #74523d;
+    margin-top: 0.75rem;
+    color: var(--text-secondary);
     font-weight: 500;
+    font-size: 0.9rem;
 }
 
 .pages-info i {
-    color: #d97638;
-    margin-right: 0.5rem;
+    color: var(--primary-color);
+    margin-right: 0.4rem;
 }
 
+/* Description & Features */
 .card-description {
-    margin-bottom: 1.5rem;
-    color: #74523d;
+    margin-bottom: 1.25rem;
+    color: var(--text-secondary);
     line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 .card-features {
     flex-grow: 1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .features-title {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    color: #5a3a28;
+    color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .features-list {
@@ -819,83 +820,133 @@ function showWebsiteDetails(id) {
 }
 
 .features-list li {
-    padding: 0.5rem 0;
-    color: #74523d;
-    font-size: 0.9rem;
+    padding: 0.4rem 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
     display: flex;
     align-items: flex-start;
-    gap: 0.75rem;
+    gap: 0.6rem;
 }
 
 .features-list i {
-    color: #d97638;
-    font-size: 1.1rem;
-    margin-top: 0.15rem;
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-top: 0.1rem;
 }
 
 .more-features {
-    color: #d97638 !important;
+    color: var(--primary-color) !important;
     font-weight: 600;
 }
 
+/* Actions */
 .card-actions {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.5rem;
 }
 
+.btn-demo,
 .btn-details,
 .btn-order {
     flex: 1;
-    padding: 0.875rem 1.5rem;
-    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
     font-weight: 600;
+    font-size: 0.85rem;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
 }
 
+.btn-demo {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-demo:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
 .btn-details {
-    background: white;
-    color: #d97638;
-    border: 2px solid #d97638;
+    background: var(--bg-light);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
 }
 
 .btn-details:hover {
-    background: #d97638;
+    background: var(--text-primary);
     color: white;
-    transform: translateY(-2px);
 }
 
 .btn-order {
-    background: linear-gradient(135deg, #d97638, #c66b3d);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: white;
 }
 
 .btn-order:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(217, 118, 56, 0.3);
+    box-shadow: 0 6px 16px rgba(217, 118, 56, 0.25);
+}
+
+/* Paginação */
+.pagination-wrapper {
+    margin-top: 3rem;
+}
+
+.pagination {
+    gap: 0.5rem;
+}
+
+.page-link {
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border-radius: var(--radius);
+    padding: 0.5rem 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.page-link:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.page-item.active .page-link {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
 }
 
 /* Modal */
 .modal-content {
-    border-radius: 16px;
-    border: 1px solid rgba(217, 118, 56, 0.2);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
 }
 
 .modal-header {
     background: linear-gradient(135deg, rgba(217, 118, 56, 0.08), rgba(184, 95, 48, 0.05));
-    border-bottom: 1px solid rgba(217, 118, 56, 0.2);
-    border-radius: 16px 16px 0 0;
+    border-bottom: 1px solid var(--border-color);
+    border-radius: var(--radius) var(--radius) 0 0;
 }
 
 .modal-title {
-    color: #5a3a28;
+    color: var(--text-primary);
     font-weight: 700;
+}
+
+.modal-screenshots img {
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
 }
 
 /* Responsivo */
@@ -913,32 +964,17 @@ function showWebsiteDetails(id) {
     }
     
     .card-actions {
-        flex-direction: column;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    .landing-hero-websites {
-        background: linear-gradient(135deg, #1a1410 0%, #2a1f1a 100%);
+        flex-wrap: wrap;
     }
     
-    .filters-wrapper {
-        background: #2a1f1a;
-        border-color: rgba(255, 140, 74, 0.15);
-    }
-    
-    .website-card {
-        background: #2a1f1a;
-        border-color: rgba(255, 140, 74, 0.15);
-    }
-    
-    .landing-websites-list {
-        background: #1a1410;
+    .btn-demo,
+    .btn-details,
+    .btn-order {
+        flex: 1 1 calc(50% - 0.25rem);
     }
 }
 </style>
 
 <?php 
-// Footer
 get_part('includes/footer.php'); 
 ?>
