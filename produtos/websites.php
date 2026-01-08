@@ -319,7 +319,7 @@ get_part('includes/header.php');
         <!-- Grid de Websites -->
         <div class="row g-4 mb-5" id="websitesGrid">
             <?php foreach ($websites_pagina as $index => $website): ?>
-                <div class="col-xl-6 col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
+                <div class="col-xl-12 col-lg-12 col-md-12" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
                     <div class="website-card <?php echo $website['destaque'] ? 'featured' : ''; ?>">
                         
                         <?php if ($website['destaque']): ?>
@@ -414,12 +414,6 @@ get_part('includes/header.php');
                                 </div>
 
                                 <div class="card-actions">
-                                    <a href="<?php echo htmlspecialchars($website['demo_url']); ?>" 
-                                       target="_blank" 
-                                       class="btn-action btn-demo">
-                                        <i class="ri-external-link-line"></i>
-                                        <span>Ver Demo</span>
-                                    </a>
                                     <button class="btn-action btn-details" onclick="showWebsiteDetails(<?php echo $website['id']; ?>)">
                                         <i class="ri-information-line"></i>
                                         <span>Detalhes</span>
