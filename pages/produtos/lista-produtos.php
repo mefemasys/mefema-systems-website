@@ -1,233 +1,596 @@
-<style>
-  :root {
-    --cor-orange: #ff6b35;
-    --cor-blue: #004e89;
-    --cor-brown: #8b4513;
-    --cor-green: #2d6a4f;
-  }
-  * {
-    border-radius: 0 !important;
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    /* Removido background: #f8f9fa; para herdar do tema */
-  }
-  .transition-300 {
-    transition: all 0.3s ease;
-  }
-  .hover-shadow-lg:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 35px rgba(0,0,0,0.12) !important;
-  }
-  .product-card {
-    min-height: 580px;
-    display: flex;
-    flex-direction: column;
-    /* Fundo removido - herda do tema */
-    overflow: hidden;
-    height: 100%;
-  }
-  .product-carousel {
-    height: 250px;
-    /* Fundo removido - herda do tema */
-    position: relative;
-  }
-  .product-carousel img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    cursor: pointer;
-  }
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 40px;
-    height: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-  }
-  .carousel-indicators {
-    bottom: 10px;
-  }
-  .carousel-indicators button {
-    width: 8px;
-    height: 8px;
-    border-radius: 50% !important;
-    margin: 0 4px;
-  }
-  .card-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .product-description {
-    flex-grow: 1;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #666;
-  }
-  .icon-box {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid;
-  }
-  .icon-orange { color: var(--cor-orange); border-color: var(--cor-orange); }
-  .icon-blue { color: var(--cor-blue); border-color: var(--cor-blue); }
-  .icon-brown { color: var(--cor-brown); border-color: var(--cor-brown); }
-  .icon-green { color: var(--cor-green); border-color: var(--cor-green); }
-  .btn-orange { background-color: var(--cor-orange); border-color: var(--cor-orange); color: white; }
-  .btn-orange:hover { background-color: #e55a2b; border-color: #e55a2b; color: white; }
-  .btn-blue { background-color: var(--cor-blue); border-color: var(--cor-blue); color: white; }
-  .btn-blue:hover { background-color: #003d6e; border-color: #003d6e; color: white; }
-  .btn-brown { background-color: var(--cor-brown); border-color: var(--cor-brown); color: white; }
-  .btn-brown:hover { background-color: #723910; border-color: #723910; color: white; }
-  .btn-green { background-color: var(--cor-green); border-color: var(--cor-green); color: white; }
-  .btn-green:hover { background-color: #245a42; border-color: #245a42; color: white; }
-  .nav-tabs-clean {
-    border-bottom: 2px solid #dee2e6;
-  }
-  .nav-tabs-clean .nav-link {
-    border: none;
-    color: #6c757d;
-    font-size: 1.1rem;
-    font-weight: 500;
-    padding: 1rem 2rem;
-    background: transparent;
-  }
-  .nav-tabs-clean .nav-link.active {
-    border-bottom: 3px solid var(--cor-blue);
-    background: transparent;
-    color: var(--cor-blue);
-    font-weight: 600;
-  }
-  .pagination-clean .page-link {
-    border: 1px solid #ddd;
-    color: #333;
-    padding: 0.5rem 1rem;
-    margin: 0 4px;
-  }
-  .pagination-clean .page-link:hover {
-    background: #f5f5f5;
-    border-color: var(--cor-blue);
-  }
-  .pagination-clean .page-item.active .page-link {
-    background: var(--cor-blue);
-    border-color: var(--cor-blue);
-    color: white;
-  }
-  .badge-feature {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.8rem;
-    font-weight: 500;
-  }
-  .skeleton {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: loading 1.5s infinite;
-  }
-  @keyframes loading {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
-  .skeleton-card {
-    height: 580px;
-  }
-  .skeleton-img {
-    height: 250px;
-  }
-  .modal-preview .modal-dialog {
-    max-width: 90vw;
-  }
-  .modal-preview img {
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-  }
-  .empty-state {
-    padding: 4rem 2rem;
-    text-align: center;
-    color: #6c757d;
-  }
-  .empty-state i {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    opacity: 0.3;
-  }
-  /* Responsividade dos cards */
-  @media (min-width: 576px) { .grid-cols { --cols: 2; } }
-  @media (min-width: 768px) { .grid-cols { --cols: 3; } }
-  @media (min-width: 1200px) { .grid-cols { --cols: 4; } }
-  @media (min-width: 1400px) { .grid-cols { --cols: 5; } }
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(var(--cols), 1fr);
-    gap: 1.5rem;
-  }
-</style>
 
+  <style>
+    :root {
+      --primary-color: #d97638;
+      --primary-dark: #c66b3d;
+      --primary-light: #fef5ef;
+      --text-primary: #2c1810;
+      --text-secondary: #74523d;
+      --bg-light: #fdfbf9;
+      --bg-card: #ffffff;
+      --border-color: #e8ddd4;
+      --shadow-sm: 0 2px 8px rgba(217, 118, 56, 0.08);
+      --shadow-md: 0 4px 16px rgba(217, 118, 56, 0.12);
+      --shadow-lg: 0 8px 32px rgba(217, 118, 56, 0.16);
+      --radius: 12px;
+      --radius-lg: 16px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      
+      /* Cores por categoria */
+      --cor-orange: #ff6b35;
+      --cor-blue: #004e89;
+      --cor-brown: #8b4513;
+      --cor-green: #2d6a4f;
+    }
+
+    [data-bs-theme="dark"] {
+      --primary-color: #ff8c4a;
+      --primary-dark: #e07a3d;
+      --primary-light: #2a1f1a;
+      --text-primary: #f5ebe3;
+      --text-secondary: #c4b5aa;
+      --bg-light: #1a1410;
+      --bg-card: #241a15;
+      --border-color: rgba(255, 140, 74, 0.15);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      border-radius: 0 !important;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-primary);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, var(--bg-light) 0%, var(--primary-light) 100%);
+      padding: 5rem 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(217, 118, 56, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Filtros e Busca */
+    .filters-section {
+      background: var(--bg-card);
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2rem;
+    }
+
+    .search-input,
+    .filter-select {
+      border: 2px solid var(--border-color);
+      padding: 0.875rem 1.25rem;
+      font-size: 0.95rem;
+      background: var(--bg-light);
+      color: var(--text-primary);
+      transition: var(--transition);
+    }
+
+    .search-input:focus,
+    .filter-select:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(217, 118, 56, 0.1);
+      background: var(--bg-card);
+    }
+
+    .btn-more {
+      padding: 0.875rem 1.5rem;
+      border: 2px solid var(--border-color);
+      background: var(--bg-light);
+      color: var(--text-primary);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .btn-more:hover {
+      background: var(--primary-color);
+      border-color: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Tabs de Categorias */
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .category-tab {
+      padding: 0.875rem 1.75rem;
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      color: var(--text-secondary);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .category-tab:hover {
+      background: var(--primary-light);
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    .category-tab.active {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      border-color: var(--primary-color);
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Grid de Produtos */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* Product Card */
+    .product-card {
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-color);
+    }
+
+    /* Carousel */
+    .product-carousel {
+      height: 240px;
+      background: #000;
+      position: relative;
+    }
+
+    .product-carousel img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .product-carousel img:hover {
+      opacity: 0.9;
+    }
+
+    .carousel-indicators {
+      bottom: 10px;
+      margin: 0;
+    }
+
+    .carousel-indicators button {
+      width: 8px;
+      height: 8px;
+      border-radius: 50% !important;
+      margin: 0 4px;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .carousel-indicators button.active {
+      background-color: var(--primary-color);
+      width: 24px;
+      border-radius: 4px !important;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 40px;
+      height: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .product-card:hover .carousel-control-prev,
+    .product-card:hover .carousel-control-next {
+      opacity: 1;
+    }
+
+    /* Card Body */
+    .card-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .icon-box {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid;
+      flex-shrink: 0;
+    }
+
+    .icon-orange { color: var(--cor-orange); border-color: var(--cor-orange); }
+    .icon-blue { color: var(--cor-blue); border-color: var(--cor-blue); }
+    .icon-brown { color: var(--cor-brown); border-color: var(--cor-brown); }
+    .icon-green { color: var(--cor-green); border-color: var(--cor-green); }
+
+    .product-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+      line-height: 1.3;
+    }
+
+    .product-price {
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .product-description {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 1rem 0;
+      flex-grow: 1;
+    }
+
+    /* Features Badges */
+    .features-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-badge {
+      padding: 0.4rem 0.75rem;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .feature-badge i {
+      color: var(--primary-color);
+    }
+
+    /* Card Footer */
+    .card-footer {
+      padding: 1rem 1.5rem;
+      border-top: 2px solid var(--border-color);
+      background: transparent;
+    }
+
+    .btn-demo,
+    .btn-quote {
+      padding: 0.75rem 1.25rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-outline-orange { border: 2px solid var(--cor-orange); color: var(--cor-orange); }
+    .btn-outline-orange:hover { background: var(--cor-orange); color: white; }
+    .btn-orange { background: var(--cor-orange); border-color: var(--cor-orange); color: white; }
+    .btn-orange:hover { background: #e55a2b; transform: translateY(-2px); }
+
+    .btn-outline-blue { border: 2px solid var(--cor-blue); color: var(--cor-blue); }
+    .btn-outline-blue:hover { background: var(--cor-blue); color: white; }
+    .btn-blue { background: var(--cor-blue); border-color: var(--cor-blue); color: white; }
+    .btn-blue:hover { background: #003d6e; transform: translateY(-2px); }
+
+    .btn-outline-brown { border: 2px solid var(--cor-brown); color: var(--cor-brown); }
+    .btn-outline-brown:hover { background: var(--cor-brown); color: white; }
+    .btn-brown { background: var(--cor-brown); border-color: var(--cor-brown); color: white; }
+    .btn-brown:hover { background: #723910; transform: translateY(-2px); }
+
+    .btn-outline-green { border: 2px solid var(--cor-green); color: var(--cor-green); }
+    .btn-outline-green:hover { background: var(--cor-green); color: white; }
+    .btn-green { background: var(--cor-green); border-color: var(--cor-green); color: white; }
+    .btn-green:hover { background: #245a42; transform: translateY(-2px); }
+
+    /* Paginação */
+    .pagination-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+
+    .pagination {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .page-link {
+      padding: 0.75rem 1.25rem;
+      border: 2px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-weight: 600;
+      transition: var(--transition);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .page-link:hover {
+      background: var(--primary-color);
+      border-color: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .page-item.active .page-link {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      border-color: var(--primary-color);
+      color: white;
+    }
+
+    .page-item.disabled .page-link {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      grid-column: 1 / -1;
+    }
+
+    .empty-state i {
+      font-size: 4rem;
+      color: var(--text-secondary);
+      opacity: 0.3;
+      margin-bottom: 1rem;
+    }
+
+    .empty-state h4 {
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .empty-state p {
+      color: var(--text-secondary);
+    }
+
+    /* Skeleton Loading */
+    .skeleton {
+      background: linear-gradient(90deg, var(--bg-light) 25%, var(--border-color) 50%, var(--bg-light) 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .skeleton-card {
+      height: 580px;
+    }
+
+    .skeleton-img {
+      height: 240px;
+    }
+
+    /* Modal Preview */
+    .modal-preview .modal-dialog {
+      max-width: 90vw;
+    }
+
+    .modal-preview img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+    }
+
+    .modal-content {
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+    }
+
+    .modal-header {
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .modal-title {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .category-tabs {
+        flex-direction: column;
+      }
+
+      .category-tab {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .filters-section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="text-center">
+      <h1 class="hero-title">
+        Nossos <span class="text-gradient">Produtos</span>
+      </h1>
+      <p class="hero-subtitle">
+        Soluções digitais completas para transformar o seu negócio
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Main Section -->
 <section class="py-5">
   <div class="container">
     <!-- Filtros e Busca -->
-    <div class="row mb-4">
-      <div class="col-lg-6">
-        <input type="text" class="form-control" id="searchInput" placeholder="Pesquisar por nome ou descrição...">
-      </div>
-      <div class="col-lg-3 mt-3 mt-lg-0">
-        <select class="form-select" id="priceFilter">
-          <option value="all">Todos os preços</option>
-          <option value="consulta">Sob consulta</option>
-          <option value="baixo">Até 30.000 MT</option>
-          <option value="medio">30.000 - 50.000 MT</option>
-          <option value="alto">Acima de 50.000 MT</option>
-        </select>
-      </div>
-      <div class="col-lg-3 mt-3 mt-lg-0 text-end">
-        <button class="btn btn-outline-secondary" id="moreItemsBtn">
-          <i class="ri-add-line"></i> Mais itens
-        </button>
+    <div class="filters-section">
+      <div class="row g-3 align-items-center">
+        <div class="col-lg-5">
+          <div class="input-group">
+            <span class="input-group-text bg-transparent border-0">
+              <i class="ri-search-line"></i>
+            </span>
+            <input type="text" class="form-control search-input border-start-0" 
+                   id="searchInput" 
+                   placeholder="Pesquisar por nome ou descrição...">
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <select class="form-select filter-select" id="priceFilter">
+            <option value="all">Todos os preços</option>
+            <option value="consulta">Sob consulta</option>
+            <option value="baixo">Até 30.000 MT</option>
+            <option value="medio">30.000 - 50.000 MT</option>
+            <option value="alto">Acima de 50.000 MT</option>
+          </select>
+        </div>
+        <div class="col-lg-3 text-end">
+          <button class="btn btn-more w-100" id="moreItemsBtn">
+            <i class="ri-add-line"></i> Carregar mais
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- Tabs de Categorias -->
-    <ul class="nav nav-tabs nav-tabs-clean justify-content-center mb-5" id="categoriasTab">
-      <li class="nav-item">
-        <button class="nav-link active" data-categoria="all">
-          <i class="ri-apps-2-line me-2"></i>Todos
+    <ul class="category-tabs" id="categoriasTab">
+      <li>
+        <button class="category-tab active" data-categoria="all">
+          <i class="ri-apps-2-line"></i>
+          <span>Todos</span>
         </button>
       </li>
-      <li class="nav-item">
-        <button class="nav-link" data-categoria="websites">
-          <i class="ri-global-line me-2"></i>Websites
+      <li>
+        <button class="category-tab" data-categoria="websites">
+          <i class="ri-global-line"></i>
+          <span>Websites</span>
         </button>
       </li>
-      <li class="nav-item">
-        <button class="nav-link" data-categoria="sistemas">
-          <i class="ri-dashboard-line me-2"></i>Sistemas
+      <li>
+        <button class="category-tab" data-categoria="sistemas">
+          <i class="ri-dashboard-line"></i>
+          <span>Sistemas</span>
         </button>
       </li>
-      <li class="nav-item">
-        <button class="nav-link" data-categoria="mobile">
-          <i class="ri-smartphone-line me-2"></i>Mobile
+      <li>
+        <button class="category-tab" data-categoria="mobile">
+          <i class="ri-smartphone-line"></i>
+          <span>Mobile</span>
         </button>
       </li>
-      <li class="nav-item">
-        <button class="nav-link" data-categoria="outros">
-          <i class="ri-apps-line me-2"></i>Outros
+      <li>
+        <button class="category-tab" data-categoria="outros">
+          <i class="ri-apps-line"></i>
+          <span>Outros</span>
         </button>
       </li>
     </ul>
 
-    <!-- Conteúdo dos Produtos -->
-    <div id="produtosContainer">
-      <div class="products-grid grid-cols" id="produtosGrid"></div>
-    </div>
+    <!-- Grid de Produtos -->
+    <div class="products-grid" id="produtosGrid"></div>
 
     <!-- Paginação -->
-    <nav class="mt-5" id="paginacaoContainer" style="display: none;">
-      <ul class="pagination justify-content-center pagination-clean" id="paginacao"></ul>
+    <nav class="pagination-wrapper" id="paginacaoContainer" style="display: none;">
+      <ul class="pagination" id="paginacao"></ul>
     </nav>
   </div>
 </section>
@@ -236,8 +599,11 @@
 <div class="modal fade modal-preview" id="previewModal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header border-0">
-        <h5 class="modal-title" id="previewModalLabel">Preview</h5>
+      <div class="modal-header">
+        <h5 class="modal-title" id="previewModalLabel">
+          <i class="ri-image-line me-2"></i>
+          Preview
+        </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body text-center p-0">
@@ -249,9 +615,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-// ==================== DADOS MOCK COM 18 PRODUTOS ====================
+// ==================== DADOS MOCK ====================
 const MOCK_DATA = {
-  all: [], // será preenchido com todos os produtos
+  all: [],
   websites: [
     {id:1,nome:"Website Institucional Premium",descricao:"Website profissional completo, optimizado para SEO e totalmente responsivo.",categoria:"websites",icone:"ri-global-line",cor:"orange",caracteristicas:["Até 15 páginas","SEO avançado","Google Analytics","Formulários personalizados","Chat online","Blog integrado"],screenshots:["https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800","https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800","https://images.unsplash.com/photo-1547658719-da2b51169166?w=800"],demoUrl:"https://demo.exemplo.com/institucional",preco:"Sob consulta"},
     {id:2,nome:"Landing Page de Conversão",descricao:"Página única focada em conversão máxima de visitantes.",categoria:"websites",icone:"ri-rocket-line",cor:"blue",caracteristicas:["Alta taxa de conversão","A/B Testing","Pixel Facebook/Google","WhatsApp Business"],screenshots:["https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800","https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"],demoUrl:"https://demo.exemplo.com/landing",preco:"A partir de 15.000 MT"},
@@ -293,15 +659,16 @@ const state = {
   categoriaAtual: 'all',
   paginaAtual: 1,
   itensPorPagina: 8,
-  produtosFiltrados: [],
+  produtosFiltrados: MOCK_DATA.all,
   loading: false
 };
 
-// ==================== FUNÇÕES DE FILTRAGEM ====================
+// ==================== FUNÇÕES AUXILIARES ====================
 function aplicarFiltros() {
   let produtos = MOCK_DATA[state.categoriaAtual] || [];
 
-  const termo = document.getElementById('searchInput').value.toLowerCase();
+  // Filtro por pesquisa
+  const termo = document.getElementById('searchInput').value.trim().toLowerCase();
   if (termo) {
     produtos = produtos.filter(p =>
       p.nome.toLowerCase().includes(termo) ||
@@ -309,11 +676,12 @@ function aplicarFiltros() {
     );
   }
 
+  // Filtro por preço
   const precoFiltro = document.getElementById('priceFilter').value;
   if (precoFiltro !== 'all') {
     produtos = produtos.filter(p => {
-      if (precoFiltro === 'consulta') return p.preco.includes('consulta');
-      const valor = parseInt(p.preco.replace(/\D/g,'')) || 999999;
+      if (precoFiltro === 'consulta') return p.preco.toLowerCase().includes('consulta') || p.preco.toLowerCase().includes('sob');
+      const valor = parseFloat(p.preco.replace(/\D/g, '')) || 999999;
       if (precoFiltro === 'baixo') return valor <= 30000;
       if (precoFiltro === 'medio') return valor > 30000 && valor <= 50000;
       if (precoFiltro === 'alto') return valor > 50000;
@@ -326,74 +694,76 @@ function aplicarFiltros() {
   renderProdutos();
 }
 
-// ==================== RENDERIZAÇÃO ====================
-function renderSkeleton() {
-  const grid = document.getElementById('produtosGrid');
-  grid.innerHTML = Array(8).fill(0).map(() => `
-    <div class="card shadow-sm border-0 skeleton-card">
-      <div class="skeleton skeleton-img"></div>
-      <div class="card-body p-4">
-        <div class="skeleton mb-3" style="height: 20px; width: 60%;"></div>
-        <div class="skeleton mb-2" style="height: 15px; width: 100%;"></div>
-        <div class="skeleton mb-2" style="height: 15px; width: 90%;"></div>
-        <div class="skeleton" style="height: 15px; width: 80%;"></div>
-      </div>
-    </div>
-  `).join('');
-}
-
 function renderProduto(produto) {
   const carouselId = `carousel-${produto.id}`;
+
+  // Slides do carousel
   const slides = produto.screenshots.map((img, i) => `
     <div class="carousel-item ${i === 0 ? 'active' : ''}">
-      <img src="${img}" alt="${produto.nome}" onclick="abrirPreview('${img}', '${produto.nome}')">
+      <img src="${img}" class="d-block w-100" alt="${produto.nome}" onclick="abrirPreview('${img}', '${produto.nome}')">
     </div>
   `).join('');
 
+  // Indicadores
   const indicators = produto.screenshots.length > 1 ? `
     <div class="carousel-indicators">
-      ${produto.screenshots.map((_, i) => `<button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${i}" ${i === 0 ? 'class="active"' : ''}></button>`).join('')}
+      ${produto.screenshots.map((_, i) => `
+        <button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${i}" ${i === 0 ? 'class="active"' : ''}></button>
+      `).join('')}
     </div>` : '';
 
-  const controles = produto.screenshots.length > 1 ? `
+  // Controles
+  const controls = produto.screenshots.length > 1 ? `
     <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
     </button>` : '';
 
+  // Botões de ação
+  const btnDemo = produto.demoUrl ? `
+    <a href="${produto.demoUrl}" target="_blank" class="btn-demo btn-outline-${produto.cor}">
+      <i class="ri-external-link-line"></i> Ver Demo
+    </a>` : '';
+
   return `
-    <div class="card shadow-sm border-0 hover-shadow-lg transition-300 product-card">
-      <div id="${carouselId}" class="carousel slide product-carousel" data-bs-ride="carousel">
+    <div class="product-card">
+      <div id="${carouselId}" class="carousel slide product-carousel" data-bs-ride="${produto.screenshots.length > 1 ? 'carousel' : 'false'}">
         ${indicators}
         <div class="carousel-inner">${slides}</div>
-        ${controles}
+        ${controls}
       </div>
-      <div class="card-body p-4">
+      <div class="card-body">
         <div class="d-flex align-items-start mb-3">
-          <div class="icon-box icon-${produto.cor} me-3 flex-shrink-0">
+          <div class="icon-box icon-${produto.cor} me-3">
             <i class="${produto.icone} fs-4"></i>
           </div>
           <div>
-            <h5 class="mb-1 fw-bold">${produto.nome}</h5>
-            <small class="text-muted">${produto.preco}</small>
+            <h5 class="product-title">${produto.nome}</h5>
+            <div class="product-price">${produto.preco}</div>
           </div>
         </div>
-        <p class="product-description mb-3">${produto.descricao}</p>
-        <div class="mb-3">
-          ${produto.caracteristicas.slice(0, 4).map(c => `
-            <span class="badge bg-light text-dark badge-feature me-1 mb-1">
+        <p class="product-description">${produto.descricao}</p>
+        <div class="features-container">
+          ${produto.caracteristicas.slice(0, 5).map(c => `
+            <span class="feature-badge">
               <i class="ri-check-line"></i> ${c}
             </span>
           `).join('')}
-          ${produto.caracteristicas.length > 4 ? `<span class="badge bg-light text-dark badge-feature">+${produto.caracteristicas.length - 4}</span>` : ''}
+          ${produto.caracteristicas.length > 5 ? `
+            <span class="feature-badge">+${produto.caracteristicas.length - 5}</span>
+          ` : ''}
         </div>
       </div>
-      <div class="card-footer border-0 p-3"> <!-- Removido bg-white -->
-        <div class="d-flex gap-2">
-          ${produto.demoUrl ? `<a href="${produto.demoUrl}" target="_blank" class="btn btn-outline-${produto.cor} btn-sm flex-fill"><i class="ri-external-link-line"></i> Demo</a>` : ''}
-          <a href="#contacto" class="btn btn-${produto.cor} btn-sm flex-fill"><i class="ri-mail-line"></i> Orçamento</a>
+      <div class="card-footer">
+        <div class="d-grid gap-2 d-md-flex">
+          ${btnDemo}
+          <a href="#contacto" class="btn-quote btn-${produto.cor} flex-fill">
+            <i class="ri-mail-send-line"></i> Pedir Orçamento
+          </a>
         </div>
       </div>
     </div>
@@ -406,8 +776,14 @@ function renderProdutos() {
   const fim = inicio + state.itensPorPagina;
   const produtosPagina = state.produtosFiltrados.slice(inicio, fim);
 
-  if (state.produtosFiltrados.length === 0) {
-    grid.innerHTML = `<div class="col-12 empty-state"><i class="ri-inbox-line"></i><h4>Nenhum produto encontrado</h4><p>Tente ajustar os filtros.</p></div>`;
+  if (produtosPagina.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-state">
+        <i class="ri-inbox-line"></i>
+        <h4>Nenhum produto encontrado</h4>
+        <p>Tente ajustar os filtros ou a categoria selecionada.</p>
+      </div>
+    `;
     document.getElementById('paginacaoContainer').style.display = 'none';
     return;
   }
@@ -418,70 +794,88 @@ function renderProdutos() {
 
 function renderPaginacao() {
   const totalPaginas = Math.ceil(state.produtosFiltrados.length / state.itensPorPagina);
-  const paginacao = document.getElementById('paginacao');
+  const container = document.getElementById('paginacaoContainer');
+  const ul = document.getElementById('paginacao');
+
   if (totalPaginas <= 1) {
-    document.getElementById('paginacaoContainer').style.display = 'none';
+    container.style.display = 'none';
     return;
   }
-  document.getElementById('paginacaoContainer').style.display = 'block';
+
+  container.style.display = 'block';
 
   let html = '';
   if (state.paginaAtual > 1) {
-    html += `<li class="page-item"><a class="page-link" href="#" data-pagina="${state.paginaAtual - 1}"><i class="ri-arrow-left-line"></i> Anterior</a></li>`;
+    html += `<li class="page-item"><a class="page-link" href="#" data-pagina="${state.paginaAtual - 1}"><i class="ri-arrow-left-s-line"></i> Anterior</a></li>`;
   }
-  for (let i = 1; i <= totalPaginas; i++) {
-    if (i === 1 || i === totalPaginas || Math.abs(i - state.paginaAtual) <= 1) {
-      html += `<li class="page-item ${i === state.paginaAtual ? 'active' : ''}"><a class="page-link" href="#" data-pagina="${i}">${i}</a></li>`;
-    } else if (i === state.paginaAtual - 2 || i === state.paginaAtual + 2) {
-      html += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
-    }
+
+  const inicioPag = Math.max(1, state.paginaAtual - 2);
+  const fimPag = Math.min(totalPaginas, state.paginaAtual + 2);
+
+  if (inicioPag > 1) {
+    html += `<li class="page-item"><a class="page-link" href="#" data-pagina="1">1</a></li>`;
+    if (inicioPag > 2) html += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
   }
+
+  for (let i = inicioPag; i <= fimPag; i++) {
+    html += `<li class="page-item ${i === state.paginaAtual ? 'active' : ''}">
+      <a class="page-link" href="#" data-pagina="${i}">${i}</a>
+    </li>`;
+  }
+
+  if (fimPag < totalPaginas) {
+    if (fimPag < totalPaginas - 1) html += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+    html += `<li class="page-item"><a class="page-link" href="#" data-pagina="${totalPaginas}">${totalPaginas}</a></li>`;
+  }
+
   if (state.paginaAtual < totalPaginas) {
-    html += `<li class="page-item"><a class="page-link" href="#" data-pagina="${state.paginaAtual + 1}">Próximo <i class="ri-arrow-right-line"></i></a></li>`;
+    html += `<li class="page-item"><a class="page-link" href="#" data-pagina="${state.paginaAtual + 1}">Próxima <i class="ri-arrow-right-s-line"></i></a></li>`;
   }
-  paginacao.innerHTML = html;
+
+  ul.innerHTML = html;
 }
 
-// ==================== EVENTOS ====================
-function abrirPreview(imgSrc, titulo) {
-  document.getElementById('previewImage').src = imgSrc;
-  document.getElementById('previewModalLabel').textContent = titulo;
+function abrirPreview(src, titulo) {
+  document.getElementById('previewImage').src = src;
+  document.getElementById('previewModalLabel').innerHTML = `<i class="ri-image-line me-2"></i>${titulo}`;
   const modal = new bootstrap.Modal(document.getElementById('previewModal'));
   modal.show();
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('#categoriasTab .nav-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelectorAll('#categoriasTab .nav-link').forEach(l => l.classList.remove('active'));
+// ==================== EVENT LISTENERS ====================
+document.addEventListener('DOMContentLoaded', function () {
+  // Tabs de categoria
+  document.querySelectorAll('.category-tab').forEach(tab => {
+    tab.addEventListener('click', function () {
+      document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
       this.classList.add('active');
       state.categoriaAtual = this.dataset.categoria;
       aplicarFiltros();
     });
   });
 
+  // Filtros
   document.getElementById('searchInput').addEventListener('input', aplicarFiltros);
   document.getElementById('priceFilter').addEventListener('change', aplicarFiltros);
 
-  document.getElementById('moreItemsBtn').addEventListener('click', function() {
+  // Botão carregar mais
+  document.getElementById('moreItemsBtn').addEventListener('click', function () {
     state.itensPorPagina += 8;
     renderProdutos();
   });
 
-  document.getElementById('paginacao').addEventListener('click', function(e) {
+  // Paginação
+  document.getElementById('paginacao').addEventListener('click', function (e) {
     e.preventDefault();
-    if (e.target.closest('.page-link')) {
-      const link = e.target.closest('.page-link');
-      if (link.dataset.pagina) {
-        state.paginaAtual = parseInt(link.dataset.pagina);
-        renderProdutos();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+    const link = e.target.closest('.page-link');
+    if (link && link.dataset.pagina) {
+      state.paginaAtual = parseInt(link.dataset.pagina);
+      renderProdutos();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   });
 
-  state.produtosFiltrados = MOCK_DATA.all;
+  // Render inicial
   renderProdutos();
 });
 </script>
