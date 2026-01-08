@@ -1,11 +1,15 @@
-<!-- Hero Simples e Direto -->
-<section class="hero-section text-center py-5">
-  <div class="container">
-    <h1 class="hero-title display-4 fw-bold mb-4">
-      Os Nossos <span class="text-gradient">Produtos</span>
+<section class="landing-hero-websites py-5">
+  <div class="container text-center">
+    <div class="hero-badge mb-4">
+      <i class="ri-boxing-line text-primary"></i>
+      <span class="badge-text">Produtos Prontos para o Seu Negócio</span>
+    </div>
+    <h1 class="hero-title mb-4">
+      Escolha o Seu <span class="text-gradient">Produto Digital</span>
     </h1>
-    <p class="hero-subtitle lead col-lg-8 mx-auto text-muted">
-      Soluções digitais prontas para implementar no seu negócio. Escolha a categoria e veja os pacotes disponíveis.
+    <p class="hero-subtitle col-lg-8 mx-auto mb-5">
+      Soluções já desenvolvidas, testadas e prontas para implementação rápida.<br>
+      Personalizáveis conforme a sua necessidade.
     </p>
   </div>
 </section>
