@@ -236,30 +236,6 @@ if ($dados_websites) {
 get_part('includes/header.php'); 
 ?>
 
-<!-- Hero Section -->
-<section class="section-py landing-hero-websites position-relative">
-    <div class="container position-relative">
-        <div class="hero-text-box text-center">
-            <div class="hero-badge mx-auto mb-4">
-                <span class="badge-icon">🌐</span>
-                <span class="badge-text">CRIAÇÃO DE WEBSITES</span>
-            </div>
-            <h1 class="hero-title text-primary mb-3">
-                Presença Digital<br>
-                <span class="text-gradient">Profissional</span>
-            </h1>
-            <p class="hero-subtitle mb-5 mx-auto">
-                Websites modernos, responsivos e optimizados para o seu negócio.<br>
-                Soluções completas a partir de <strong class="text-primary">38.000,00 MT</strong>
-            </p>
-            <a href="#websitesList" class="btn btn-primary btn-lg">
-                <span>Ver Pacotes</span>
-                <i class="ri-arrow-down-line ms-2"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
 <!-- Websites List -->
 <?php if ($dados_websites): ?>
 <section class="section-py landing-websites-list" id="websitesList">
