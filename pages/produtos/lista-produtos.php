@@ -1,331 +1,334 @@
-<style>
-  /* ========================================
-     RESET E BASE
-     ======================================== */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-  }
 
-  /* ========================================
-     VARIÁVEIS DOS PRODUTOS - FINAL
-     ======================================== */
-  :root {
-    /* Cores principais (mesmas nos dois modos, só invertidas no dark) */
-    --products-primary: #d97638;
-    --products-primary-light: #ff8c4a;
-    --products-secondary: #c66b3d;
-    --products-accent: #b85f30;
+  <style>
 
-    /* MODO CLARO - quente e acolhedor */
-    --products-bg: #fdf8f4;           /* Fundo da página */
-    --products-card-bg: #fffdfb;       /* Fundo dos cards */
-    --products-text: #5a3a28;          /* Texto principal */
-    --products-text-secondary: #74523d;
-    --products-text-muted: #8a6850;
-    --products-border: rgba(217, 118, 56, 0.35);
 
-    --products-shadow: rgba(217, 118, 56, 0.08);
-    --products-shadow-hover: rgba(217, 118, 56, 0.2);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      /* Cores principais invertidas para mais vivacidade no dark */
-      --products-primary: #ff8c4a;
-      --products-primary-light: #ffa366;
-      --products-secondary: #d97638;
-      --products-accent: #e07a3d;
-
-      /* MODO ESCURO - quente e profundo */
-      --products-bg: #12100d;           /* Fundo da página - preto quente */
-      --products-card-bg: #1f1814;       /* Fundo dos cards - marrom escuro quente */
-      --products-text: #f5ede6;          /* Texto principal - bege claro */
-      --products-text-secondary: #d4c5b8;
-      --products-text-muted: #9a8d82;
-      --products-border: rgba(255, 140, 74, 0.15);
-
-      --products-shadow: rgba(0, 0, 0, 0.4);
-      --products-shadow-hover: rgba(255, 140, 74, 0.25);
+    /* ========================================
+       CONTAINER E GRID
+       ======================================== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-  }
 
-  /* ========================================
-     CONTAINER E GRID
-     ======================================== */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  .section-py {
-    padding: 80px 0;
-  }
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -15px;
-  }
-  .col-lg-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding: 15px;
-  }
+    .section-py {
+      padding: 80px 0;
+    }
 
-  /* ========================================
-     SECÇÃO PRINCIPAL
-     ======================================== */
-  .landing-products {
-    background: var(--products-bg);
-  }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -15px;
+    }
 
-  /* ========================================
-     CARD DE PRODUTO
-     ======================================== */
-  .product-card {
-    background: var(--products-card-bg);
-    border-radius: 6px;
-    padding: 2.5rem;
-    height: 100%;
-    border: 1px solid var(--products-border);
-    box-shadow: 0 4px 20px var(--products-shadow);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
+    .col-lg-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 15px;
+    }
 
-  .product-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--products-primary), var(--products-primary-light));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
+    /* ========================================
+       SECÇÃO PRINCIPAL
+       ======================================== */
+    .landing-products {
+      background: var(--products-bg);
+      position: relative;
+    }
 
-  .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px var(--products-shadow-hover);
-    border-color: var(--products-primary);
-  }
+    /* ========================================
+       CARD DE PRODUTO
+       ======================================== */
+    .product-card {
+      border-radius: 6px;
+      padding: 2.5rem;
+      height: 100%;
+      border: 1px solid var(--products-border);
+      box-shadow: 0 4px 20px var(--products-shadow);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
 
-  .product-card:hover::before {
-    transform: scaleX(1);
-  }
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
 
-  /* ========================================
-     CABEÇALHO DO CARD
-     ======================================== */
-  .product-header {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--products-border);
-  }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px var(--products-shadow-hover);
+      border-color: var(--products-primary);
+    }
 
-  .product-icon {
-    width: 64px;
-    height: 64px;
-    min-width: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(217, 118, 56, 0.15), rgba(217, 118, 56, 0.05));
-    border-radius: 4px;
-    color: var(--products-primary);
-    transition: all 0.4s ease;
-  }
+    .product-card:hover::before {
+      transform: scaleX(1);
+    }
 
-  .product-card:hover .product-icon {
-    transform: scale(1.1) rotate(5deg);
-    background: linear-gradient(135deg, rgba(217, 118, 56, 0.25), rgba(217, 118, 56, 0.1));
-  }
+    /* ========================================
+       CABEÇALHO DO CARD
+       ======================================== */
+    .product-header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--products-border);
+    }
 
-  .product-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--products-text);
-    margin: 0;
-    transition: color 0.3s ease;
-  }
-
-  .product-card:hover .product-title {
-    color: var(--products-primary);
-  }
-
-  /* ========================================
-     DESCRIÇÃO DO PRODUTO
-     ======================================== */
-  .product-description {
-    color: var(--products-text-muted);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-  }
-
-  /* ========================================
-     LISTA DE CARACTERÍSTICAS
-     ======================================== */
-  .product-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 2rem 0;
-    flex-grow: 1;
-  }
-
-  .product-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 0.75rem 0;
-    color: var(--products-text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    transition: all 0.3s ease;
-  }
-
-  .product-list li:hover {
-    color: var(--products-text);
-    transform: translateX(5px);
-  }
-
-  .check-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
-    background: linear-gradient(135deg, var(--products-primary), var(--products-secondary));
-    color: white;
-    border-radius: 5%;
-    font-size: 0.75rem;
-    font-weight: bold;
-    transition: transform 0.3s ease;
-  }
-
-  .product-list li:hover .check-icon {
-    transform: scale(1.15);
-  }
-
-  /* ========================================
-     FOOTER DO CARD (PREÇO E BOTÃO)
-     ======================================== */
-  .product-footer {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: auto;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--products-border);
-  }
-
-  .product-price {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--products-primary);
-    text-align: center;
-  }
-
-  .product-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    background: transparent;
-    border: 2px solid var(--products-primary);
-    border-radius: 3px;
-    color: var(--products-primary);
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .product-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: var(--products-primary);
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: -1;
-  }
-
-  .product-btn:hover {
-    color: white;
-    transform: translateX(5px);
-  }
-
-  .product-btn:hover::before {
-    width: 100%;
-  }
-
-  .product-btn svg {
-    transition: transform 0.3s ease;
-  }
-
-  .product-btn:hover svg {
-    transform: translateX(5px);
-  }
-
-  /* ========================================
-     RESPONSIVIDADE
-     ======================================== */
-  @media (max-width: 1199px) {
-    .product-card { padding: 2rem; }
-    .product-icon { width: 56px; height: 56px; min-width: 56px; }
-    .product-title { font-size: 1.35rem; }
-  }
-
-  @media (max-width: 991px) {
-    .col-lg-6 { flex: 0 0 100%; max-width: 100%; }
-    .product-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-    .product-icon { width: 48px; height: 48px; min-width: 48px; }
-  }
-
-  @media (max-width: 767px) {
-    .section-py { padding: 50px 0; }
-    .product-card { padding: 1.75rem; }
-    .product-title { font-size: 1.25rem; }
-    .product-list li { font-size: 0.9rem; }
-    .product-btn { width: 100%; padding: 0.875rem 1.5rem; }
-  }
-
-  @media (max-width: 575px) {
-    .product-card { padding: 1.5rem; }
-    .product-price { font-size: 1.25rem; }
-  }
-
-  /* ========================================
-     AJUSTES FINAIS PARA DARK MODE (ícones)
-     ======================================== */
-  @media (prefers-color-scheme: dark) {
     .product-icon {
-      background: linear-gradient(135deg, rgba(255, 140, 74, 0.2), rgba(255, 140, 74, 0.08));
+      width: 64px;
+      height: 64px;
+      min-width: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(217, 118, 56, 0.15), rgba(217, 118, 56, 0.05));
+      border-radius: 4px;
+      color: var(--products-primary);
+      transition: all 0.4s ease;
     }
+
     .product-card:hover .product-icon {
-      background: linear-gradient(135deg, rgba(255, 140, 74, 0.3), rgba(255, 140, 74, 0.12));
+      transform: scale(1.1) rotate(5deg);
+      background: linear-gradient(135deg, rgba(217, 118, 56, 0.25), rgba(217, 118, 56, 0.1));
     }
-  }
-</style>
+
+    .product-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--products-text);
+      margin: 0;
+      transition: color 0.3s ease;
+    }
+
+    .product-card:hover .product-title {
+      color: var(--products-primary);
+    }
+
+    /* ========================================
+       DESCRIÇÃO DO PRODUTO
+       ======================================== */
+    .product-description {
+      color: var(--products-text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    /* ========================================
+       LISTA DE CARACTERÍSTICAS
+       ======================================== */
+    .product-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+      flex-grow: 1;
+    }
+
+    .product-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      color: var(--products-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+
+    .product-list li:hover {
+      color: var(--products-text);
+      transform: translateX(5px);
+    }
+
+    .check-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      background: linear-gradient(135deg, var(--products-primary), var(--products-secondary));
+      color: white;
+      border-radius: 5%;
+      font-size: 0.75rem;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .product-list li:hover .check-icon {
+      transform: scale(1.15);
+    }
+
+    /* ========================================
+       FOOTER DO CARD (PREÇO E BOTÃO)
+       ======================================== */
+    .product-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--products-border);
+    }
+
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--products-primary);
+      text-align: center;
+    }
+
+    .product-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background: transparent;
+      border: 2px solid var(--products-primary);
+      border-radius: 3px;
+      color: var(--products-primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: var(--products-primary);
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+    }
+
+    .product-btn:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .product-btn:hover::before {
+      width: 100%;
+    }
+
+    .product-btn svg {
+      transition: transform 0.3s ease;
+    }
+
+    .product-btn:hover svg {
+      transform: translateX(5px);
+    }
+
+    /* ========================================
+       RESPONSIVIDADE
+       ======================================== */
+    @media (max-width: 1199px) {
+      .product-card {
+        padding: 2rem;
+      }
+      
+      .product-icon {
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+      }
+      
+      .product-title {
+        font-size: 1.35rem;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .product-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      
+      .product-icon {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .section-py {
+        padding: 50px 0;
+      }
+
+      .product-card {
+        padding: 1.75rem;
+      }
+      
+      .product-title {
+        font-size: 1.25rem;
+      }
+      
+      .product-list li {
+        font-size: 0.9rem;
+      }
+      
+      .product-btn {
+        width: 100%;
+        padding: 0.875rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .product-card {
+        padding: 1.5rem;
+      }
+
+      .product-price {
+        font-size: 1.25rem;
+      }
+    }
+
+    /* ========================================
+       MODO DARK - AJUSTES ESPECÍFICOS
+       ======================================== */
+    @media (prefers-color-scheme: dark) {
+      .product-card {
+        box-shadow: 0 4px 20px var(--products-shadow);
+      }
+      
+      .product-card:hover {
+        box-shadow: 0 12px 40px var(--products-shadow-hover);
+      }
+      
+      .product-icon {
+        background: linear-gradient(135deg, rgba(255, 140, 74, 0.2), rgba(255, 140, 74, 0.08));
+      }
+      
+      .product-card:hover .product-icon {
+        background: linear-gradient(135deg, rgba(255, 140, 74, 0.3), rgba(255, 140, 74, 0.12));
+      }
+    }
+  </style>
+</head>
+<body>
 
   <!-- Secção de Produtos - Design Moderno e Fluido -->
   <section class="section-py landing-products" id="landingProducts">
