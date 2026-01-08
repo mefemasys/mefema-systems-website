@@ -1,6 +1,18 @@
-
   <style>
+    /* ========================================
+       RESET E BASE
+       ======================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      background: #f8f9fa;
+    }
 
     /* ========================================
        CONTAINER E GRID
@@ -39,6 +51,7 @@
        CARD DE PRODUTO
        ======================================== */
     .product-card {
+      background: var(--products-card-bg);
       border-radius: 6px;
       padding: 2.5rem;
       height: 100%;
@@ -58,6 +71,7 @@
       left: 0;
       width: 100%;
       height: 4px;
+      background: linear-gradient(90deg, var(--products-primary), var(--products-primary-light));
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.4s ease;
