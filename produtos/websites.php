@@ -534,7 +534,7 @@ function showWebsiteDetails(id) {
     let screenshotsHTML = '<div class="modal-screenshots mb-4"><div class="row g-3">';
     website.screenshots.forEach((screenshot, index) => {
         screenshotsHTML += `
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <img src="${screenshot}" class="img-fluid rounded shadow-sm" alt="Screenshot ${index + 1}">
             </div>
         `;
@@ -544,7 +544,7 @@ function showWebsiteDetails(id) {
     let featuresHTML = '<ul class="list-unstyled row g-2">';
     website.caracteristicas.forEach(feature => {
         featuresHTML += `
-            <li class="col-md-6 mb-2">
+            <li class="col-md-12 mb-2">
                 <i class="ri-checkbox-circle-fill text-success me-2"></i>${feature}
             </li>
         `;
@@ -554,7 +554,7 @@ function showWebsiteDetails(id) {
     document.getElementById('modalWebsiteContent').innerHTML = `
         ${screenshotsHTML}
         <div class="row mb-4">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="info-box">
                     <h6 class="fw-bold mb-3"><i class="ri-information-line me-2"></i>Informações Gerais</h6>
                     <div class="info-item">
@@ -578,7 +578,7 @@ function showWebsiteDetails(id) {
                     </a>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="info-box">
                     <h6 class="fw-bold mb-3"><i class="ri-file-text-line me-2"></i>Descrição</h6>
                     <p>${website.descricao}</p>
@@ -657,7 +657,7 @@ function showWebsiteDetails(id) {
     width: 600px;
     height: 600px;
     background: radial-gradient(circle, rgba(217, 118, 56, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
+    border-radius: 5%;
 }
 
 .hero-badge {
@@ -667,7 +667,7 @@ function showWebsiteDetails(id) {
     padding: 0.75rem 1.75rem;
     background: var(--bg-card);
     border: 2px solid var(--border-color);
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: var(--shadow-sm);
 }
 
@@ -763,7 +763,7 @@ function showWebsiteDetails(id) {
     padding: 0.75rem 1.5rem;
     background: var(--bg-light);
     border: 2px solid var(--border-color);
-    border-radius: 50px;
+    border-radius: 10px;
     color: var(--text-secondary);
     font-weight: 600;
     text-decoration: none;
@@ -820,7 +820,7 @@ function showWebsiteDetails(id) {
     background: linear-gradient(135deg, #FFD700, #FFA500);
     color: #000;
     padding: 0.5rem 1rem;
-    border-radius: 25px;
+    border-radius: 5px;
     font-size: 0.75rem;
     font-weight: 700;
     display: flex;
@@ -861,7 +861,7 @@ function showWebsiteDetails(id) {
 .carousel-indicators button {
     width: 10px;
     height: 10px;
-    border-radius: 50%;
+    border-radius: 5%;
     margin: 0 5px;
     background-color: rgba(255, 255, 255, 0.5);
 }
@@ -880,7 +880,7 @@ function showWebsiteDetails(id) {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
+    border-radius: 5%;
     width: 35px;
     height: 35px;
 }
@@ -907,7 +907,7 @@ function showWebsiteDetails(id) {
 .category-badge {
     display: inline-block;
     padding: 0.35rem 1rem;
-    border-radius: 20px;
+    border-radius: 4px;
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -996,7 +996,7 @@ function showWebsiteDetails(id) {
     font-size: 0.9rem;
     background: var(--bg-card);
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 4px;
 }
 
 .pricing-detail i {
@@ -1135,7 +1135,7 @@ function showWebsiteDetails(id) {
 .pagination-info {
     background: var(--bg-card);
     padding: 1rem 2rem;
-    border-radius: 50px;
+    border-radius: 10px;
     border: 2px solid var(--border-color);
 }
 
