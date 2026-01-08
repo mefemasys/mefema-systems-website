@@ -327,8 +327,6 @@
       }
     }
   </style>
-</head>
-<body>
 
   <!-- Secção de Produtos - Design Moderno e Fluido -->
   <section class="section-py landing-products" id="landingProducts">
