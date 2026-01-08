@@ -414,7 +414,10 @@ get_part('includes/header.php');
                                 </div>
 
                                 <div class="card-actions">
-                                    
+                                    <a href="<?php echo htmlspecialchars($website['demo_url']); ?>" target="_blank" class="btn-action btn-demo">
+    <i class="ri-external-link-line"></i>
+    <span>Ver Demo</span>
+</a>
                                     <button class="btn-action btn-details" onclick="showWebsiteDetails(<?php echo $website['id']; ?>)">
                                         <i class="ri-information-line"></i>
                                         <span>Detalhes</span>
