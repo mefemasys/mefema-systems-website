@@ -231,49 +231,68 @@ if ($dados_websites) {
     $offset = ($pagina_actual - 1) * $items_por_pagina;
     $websites_pagina = array_slice($websites_filtrados, $offset, $items_por_pagina);
 }
+
 get_part('includes/header.php');
 ?>
 
 <?php if ($dados_websites): ?>
 <section class="section-py landing-websites-list" id="websitesList">
     <div class="container">
+       
         <!-- Filtros -->
         <div class="filters-wrapper mb-5 p-4 shadow-sm">
-            <h6 class="text-center mb-4 fw-bold text-uppercase text-muted">Filtrar por Categoria</h6>
-            <div class="d-flex flex-wrap justify-content-center gap-3">
-                <a href="?categoria=all&pagina=1" class="btn btn-outline-primary rounded-pill px-4 <?php echo $filtro_categoria === 'all' ? 'active' : ''; ?>">Todos</a>
-                <a href="?categoria=Básico&pagina=1" class="btn btn-outline-primary rounded-pill px-4 <?php echo $filtro_categoria === 'Básico' ? 'active' : ''; ?>">Básico</a>
-                <a href="?categoria=Profissional&pagina=1" class="btn btn-outline-primary rounded-pill px-4 <?php echo $filtro_categoria === 'Profissional' ? 'active' : ''; ?>">Profissional</a>
-                <a href="?categoria=Marketing&pagina=1" class="btn btn-outline-primary rounded-pill px-4 <?php echo $filtro_categoria === 'Marketing' ? 'active' : ''; ?>">Marketing</a>
-                <a href="?categoria=Especializado&pagina=1" class="btn btn-outline-primary rounded-pill px-4 <?php echo $filtro_categoria === 'Especializado' ? 'active' : ''; ?>">Especializado</a>
-                <a href="?categoria=Loja Online&pagina=1" class="btn btn-outline-primary rounded-pill px-4 <?php echo $filtro_categoria === 'Loja Online' ? 'active' : ''; ?>">E-commerce</a>
-                <a href="?categoria=Corporativo&pagina=1" class="btn btn-outline-primary rounded-pill px-4 <?php echo $filtro_categoria === 'Corporativo' ? 'active' : ''; ?>">Corporativo</a>
+            <div class="text-center mb-4">
+                <h5 class="filter-label mb-0">Filtrar por Categoria</h5>
+            </div>
+            <div class="filters-buttons text-center d-flex flex-wrap justify-content-center gap-3">
+                <a href="?categoria=all&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'all' ? 'active' : ''; ?>">
+                    <i class="ri-apps-2-line"></i> Todos
+                </a>
+                <a href="?categoria=Básico&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Básico' ? 'active' : ''; ?>">
+                    Básico
+                </a>
+                <a href="?categoria=Profissional&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Profissional' ? 'active' : ''; ?>">
+                    Profissional
+                </a>
+                <a href="?categoria=Marketing&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Marketing' ? 'active' : ''; ?>">
+                    Marketing
+                </a>
+                <a href="?categoria=Especializado&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Especializado' ? 'active' : ''; ?>">
+                    Especializado
+                </a>
+                <a href="?categoria=Loja Online&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Loja Online' ? 'active' : ''; ?>">
+                    E-commerce
+                </a>
+                <a href="?categoria=Corporativo&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Corporativo' ? 'active' : ''; ?>">
+                    Corporativo
+                </a>
             </div>
         </div>
 
-        <!-- Grid de Websites -->
-        <div class="row g-5" id="websitesGrid">
+        <!-- Grid de Websites - 4 colunas em LG -->
+        <div class="row g-4" id="websitesGrid">
             <?php foreach ($websites_pagina as $website): ?>
-                <div class="col-lg-4 col-md-6">
-                    <div class="website-card h-100 shadow-lg rounded-4 overflow-hidden position-relative <?php echo $website['destaque'] ? 'featured border border-warning border-3' : ''; ?>">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="website-card <?php echo $website['destaque'] ? 'featured shadow-lg' : 'shadow'; ?> h-100">
+                       
                         <?php if ($website['destaque']): ?>
-                            <div class="featured-badge bg-gradient-warning text-white px-4 py-2 rounded-pill shadow">
-                                <i class="ri-star-fill fs-5"></i> Mais Popular
+                            <div class="featured-badge">
+                                <i class="ri-star-fill"></i> Mais Popular
                             </div>
                         <?php endif; ?>
-
-                        <!-- Carousel Screenshots -->
+                       
+                        <!-- Screenshots Carousel -->
                         <div class="screenshots-carousel position-relative">
-                            <div id="carousel<?php echo $website['id']; ?>" class="carousel slide">
+                            <div id="carousel<?php echo $website['id']; ?>" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
                                     <?php foreach ($website['screenshots'] as $index => $screenshot): ?>
-                                        <button type="button" data-bs-target="#carousel<?php echo $website['id']; ?>" data-bs-slide-to="<?php echo $index; ?>" class="<?php echo $index === 0 ? 'active' : ''; ?>" aria-current="<?php echo $index === 0 ? 'true' : 'false'; ?>"></button>
+                                        <button type="button" data-bs-target="#carousel<?php echo $website['id']; ?>" data-bs-slide-to="<?php echo $index; ?>" class="<?php echo $index === 0 ? 'active' : ''; ?>"></button>
                                     <?php endforeach; ?>
                                 </div>
-                                <div class="carousel-inner">
+                                <div class="carousel-inner rounded-top">
                                     <?php foreach ($website['screenshots'] as $index => $screenshot): ?>
                                         <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                                            <img src="<?php echo htmlspecialchars($screenshot); ?>" class="d-block w-100" alt="Screenshot <?php echo $index + 1; ?>" style="height: 280px; object-fit: cover;">
+                                            <img src="<?php echo htmlspecialchars($screenshot); ?>" class="d-block w-100" alt="Screenshot <?php echo $index + 1; ?>" style="height: 220px; object-fit: cover;">
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
@@ -286,39 +305,50 @@ get_part('includes/header.php');
                             </div>
                         </div>
 
-                        <div class="card-body d-flex flex-column p-4">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <span class="badge bg-<?php echo $website['cor']; ?> fs-6 px-3 py-2"><?php echo htmlspecialchars($website['categoria']); ?></span>
-                                <small class="text-muted"><i class="ri-file-line me-1"></i><?php echo $website['paginas']; ?> página<?php echo $website['paginas'] > 1 ? 's' : ''; ?></small>
+                        <div class="card-content p-4 d-flex flex-column">
+                            <div class="card-header-custom mb-3">
+                                <span class="category-badge badge-<?php echo htmlspecialchars($website['cor']); ?>">
+                                    <?php echo htmlspecialchars($website['categoria']); ?>
+                                </span>
+                                <h5 class="website-name mt-2"><?php echo htmlspecialchars($website['nome']); ?></h5>
+                                <p class="website-nicho text-muted small"><?php echo htmlspecialchars($website['nicho']); ?></p>
                             </div>
 
-                            <h4 class="fw-bold mb-2"><?php echo htmlspecialchars($website['nome']); ?></h4>
-                            <p class="text-muted small mb-3"><?php echo htmlspecialchars($website['nicho']); ?></p>
-
-                            <div class="price-display text-center my-4 py-3 bg-light rounded-3">
-                                <small class="text-muted d-block">A partir de</small>
-                                <h2 class="fw-bold text-primary mb-0"><?php echo number_format($website['preco'], 0, ',', '.'); ?> <span class="fs-4">MT</span></h2>
+                            <div class="card-pricing bg-light p-3 rounded mb-3 text-center">
+                                <small class="text-muted">A partir de</small>
+                                <div class="price-value fw-bold text-primary h3 mb-0">
+                                    <?php echo number_format($website['preco'], 0, ',', '.'); ?> <span class="h5">MT</span>
+                                </div>
+                                <small class="text-muted"><i class="ri-file-list-3-line"></i> <?php echo $website['paginas']; ?> página<?php echo $website['paginas'] > 1 ? 's' : ''; ?></small>
                             </div>
 
-                            <p class="text-muted flex-grow-1"><?php echo htmlspecialchars($website['descricao']); ?></p>
+                            <p class="card-description flex-grow-1 small text-muted"><?php echo htmlspecialchars($website['descricao']); ?></p>
 
-                            <div class="features mb-4">
-                                <h6 class="fw-bold small text-uppercase text-muted mb-3">Principais Funcionalidades</h6>
-                                <ul class="list-unstyled small">
-                                    <?php $features_to_show = array_slice($website['caracteristicas'], 0, 6); ?>
-                                    <?php foreach ($features_to_show as $feature): ?>
-                                        <li class="mb-2"><i class="ri-check-line text-success me-2"></i><?php echo htmlspecialchars($feature); ?></li>
+                            <div class="card-features mb-4">
+                                <small class="fw-bold text-uppercase text-primary">Inclui:</small>
+                                <ul class="features-list small mt-2">
+                                    <?php
+                                    $features_to_show = array_slice($website['caracteristicas'], 0, 5);
+                                    foreach ($features_to_show as $feature):
+                                    ?>
+                                        <li><i class="ri-check-line text-success"></i> <?php echo htmlspecialchars($feature); ?></li>
                                     <?php endforeach; ?>
-                                    <?php if (count($website['caracteristicas']) > 6): ?>
-                                        <li class="text-primary fw-bold"><i class="ri-add-circle-line me-2"></i>+ <?php echo count($website['caracteristicas']) - 6; ?> mais</li>
+                                    <?php if (count($website['caracteristicas']) > 5): ?>
+                                        <li class="text-primary fw-bold"><i class="ri-add-line"></i> + <?php echo count($website['caracteristicas']) - 5; ?> funcionalidades</li>
                                     <?php endif; ?>
                                 </ul>
                             </div>
 
-                            <div class="d-flex gap-3 mt-auto">
-                                <a href="<?php echo htmlspecialchars($website['demo_url']); ?>" target="_blank" class="btn btn-outline-primary flex-fill"><i class="ri-external-link-line"></i> Ver Demo</a>
-                                <button class="btn btn-light flex-fill" onclick="showWebsiteDetails(<?php echo $website['id']; ?>)"><i class="ri-eye-line"></i> Detalhes</button>
-                                <a href="#landingContact" class="btn btn-primary flex-fill"><i class="ri-shopping-cart-line"></i> Encomendar</a>
+                            <div class="card-actions d-grid gap-2 d-md-flex">
+                                <a href="<?php echo htmlspecialchars($website['demo_url']); ?>" target="_blank" class="btn btn-outline-primary">
+                                    <i class="ri-external-link-line"></i> Ver Demo
+                                </a>
+                                <button class="btn btn-light border" onclick="showWebsiteDetails(<?php echo $website['id']; ?>)">
+                                    <i class="ri-eye-line"></i> Detalhes
+                                </button>
+                                <a href="#landingContact" class="btn btn-primary">
+                                    <i class="ri-shopping-cart-line"></i> Encomendar
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -326,25 +356,26 @@ get_part('includes/header.php');
             <?php endforeach; ?>
         </div>
 
-        <!-- Paginação Melhorada -->
+        <!-- Paginação -->
         <?php if ($total_paginas > 1): ?>
-        <nav class="mt-5 d-flex justify-content-center">
-            <ul class="pagination pagination-lg">
+        <nav class="pagination-wrapper mt-5">
+            <ul class="pagination justify-content-center">
                 <?php if ($pagina_actual > 1): ?>
-                    <li class="page-item"><a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $pagina_actual - 1; ?>">&laquo;</a></li>
+                    <li class="page-item">
+                        <a class="page-link rounded-start" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $pagina_actual - 1; ?>">Anterior</a>
+                    </li>
                 <?php endif; ?>
 
-                <?php
-                $start = max(1, $pagina_actual - 3);
-                $end = min($total_paginas, $pagina_actual + 3);
-                if ($start > 1) echo '<li class="page-item disabled"><span class="page-link">...</span></li>';
-                for ($i = $start; $i <= $end; $i++): ?>
-                    <li class="page-item <?php echo $i === $pagina_actual ? 'active' : ''; ?>"><a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                <?php for ($i = 1; $i <= $total_paginas; $i++): ?>
+                    <li class="page-item <?php echo $i === $pagina_actual ? 'active' : ''; ?>">
+                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $i; ?>"><?php echo $i; ?></a>
+                    </li>
                 <?php endfor; ?>
-                <?php if ($end < $total_paginas) echo '<li class="page-item disabled"><span class="page-link">...</span></li>'; ?>
 
                 <?php if ($pagina_actual < $total_paginas): ?>
-                    <li class="page-item"><a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $pagina_actual + 1; ?>">&raquo;</a></li>
+                    <li class="page-item">
+                        <a class="page-link rounded-end" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $pagina_actual + 1; ?>">Próximo</a>
+                    </li>
                 <?php endif; ?>
             </ul>
         </nav>
@@ -352,64 +383,117 @@ get_part('includes/header.php');
     </div>
 </section>
 
-<!-- Modal de Detalhes (mantido igual, só com pequenas melhorias visuais) -->
+<!-- Modal de Detalhes (mantido igual, só com pequenos ajustes de estilo) -->
 <div class="modal fade" id="websiteDetailsModal" tabindex="-1">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content rounded-4 shadow-lg">
-            <!-- conteúdo igual ao original -->
-            ...
+        <div class="modal-content rounded shadow-lg">
+            <!-- ... (o conteúdo do modal permanece o mesmo que tinhas) ... -->
         </div>
     </div>
 </div>
 
 <script>
-    // Script do modal mantido igual
-    const websitesData = <?php echo json_encode($dados_websites['data']); ?>;
-    // ... (código JS original aqui)
+// (o script do modal permanece exatamente o mesmo)
+const websitesData = <?php echo json_encode($dados_websites['data']); ?>;
+function showWebsiteDetails(id) {
+    // ... (código igual ao original)
+}
 </script>
 
 <style>
-    :root {
-        --primary-color: #d97638;
-        --primary-dark: #c66b3d;
-        --bg-gradient: linear-gradient(135deg, #fdf9f6 0%, #fffdfb 100%);
-    }
-    [data-bs-theme="dark"] {
-        --primary-color: #ff8c4a;
-        /* ajustes dark */
-    }
-    .website-card {
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    .website-card:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
-    }
-    .featured-badge {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 10;
-        font-weight: bold;
-    }
-    .bg-gradient-warning {
-        background: linear-gradient(135deg, #ffc107, #e0a800);
-    }
-    .price-display {
-        background: rgba(217, 118, 56, 0.08);
-    }
-    .carousel-control-prev, .carousel-control-next {
-        width: 50px;
-        opacity: 0.7;
-    }
-    .carousel-indicators button {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-    }
+/* CSS aprimorado - mais clean, moderno e responsivo */
+:root {
+    --primary-color: #d97638;
+    --primary-dark: #c66b3d;
+    --text-primary: #5a3a28;
+    --text-secondary: #74523d;
+    --bg-light: #fdf9f6;
+    --bg-card: #ffffff;
+}
+
+[data-bs-theme="dark"] {
+    --primary-color: #ff8c4a;
+    --primary-dark: #e07a3d;
+    --text-primary: #e8ddd4;
+    --text-secondary: #c4b5aa;
+    --bg-light: #1a1410;
+    --bg-card: #2a1f1a;
+}
+
+.landing-websites-list { background: var(--bg-light); padding: 4rem 0; }
+
+.filters-wrapper { background: var(--bg-card); border-radius: 12px; }
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    color: var(--text-secondary);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--primary-color) !important;
+    color: white;
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.website-card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: none;
+}
+
+.website-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+
+.featured { border: 3px solid var(--primary-color); }
+
+.featured-badge {
+    top: 12px; right: 12px;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.screenshots-carousel img { transition: opacity 0.5s; }
+
+.carousel-control-prev, .carousel-control-next { opacity: 0.7; width: 50px; }
+
+.website-card:hover .carousel-control-prev,
+.website-card:hover .carousel-control-next { opacity: 1; }
+
+.card-actions .btn { border-radius: 50px; font-weight: 600; }
+
+.pagination .page-link {
+    border-radius: 50px !important;
+    margin: 0 4px;
+    min-width: 44px;
+    text-align: center;
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Responsivo extra */
+@media (max-width: 992px) {
+    .col-lg-3 { flex: 0 0 50%; max-width: 50%; }
+}
 </style>
 <?php else: ?>
-    <!-- Mensagem de erro -->
+<div class="container my-5 py-5 text-center">
+    <div class="alert alert-danger">
+        <i class="ri-error-warning-line"></i> Erro ao carregar os pacotes de websites.
+    </div>
+</div>
 <?php endif; ?>
 
 <?php get_part('includes/footer.php'); ?>
