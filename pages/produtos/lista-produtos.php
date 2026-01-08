@@ -1,8 +1,3 @@
-<?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/config/path_config.php';
-$pageTitle = "Nossos Produtos - MEFEMA Systems";
-get_part('includes/header.php');
-?>
 
 <!-- Carregar CSS específico apenas nesta seção -->
 <link rel="stylesheet" href="/assets/css/produtos.css">
@@ -277,5 +272,3 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProdutos();
 });
 </script>
-
-<?php get_part('includes/footer.php'); ?>
