@@ -1,5 +1,7 @@
-<?php
+<?php 
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config/path_config.php';
+
 $pageTitle = "Websites - MEFEMA Systems";
 
 /**
@@ -206,149 +208,227 @@ function buscarDadosWebsites() {
         }
       ]
     }';
-   
+    
     $dados = json_decode($json_string, true);
     return $dados && $dados['sucesso'] === true ? $dados : null;
 }
 
-// Configuração de paginação - 4 itens por página
+// Configuração de paginação - AGORA 4 ITENS POR PÁGINA
 $items_por_pagina = 4;
 $pagina_actual = isset($_GET['pagina']) ? max(1, intval($_GET['pagina'])) : 1;
 $filtro_categoria = isset($_GET['categoria']) ? $_GET['categoria'] : 'all';
 
 // Buscar dados
 $dados_websites = buscarDadosWebsites();
+
 if ($dados_websites) {
     // Filtrar por categoria
-    $websites_filtrados = $filtro_categoria === 'all'
+    $websites_filtrados = $filtro_categoria === 'all' 
         ? $dados_websites['data']
         : array_filter($dados_websites['data'], function($w) use ($filtro_categoria) {
             return $w['categoria'] === $filtro_categoria;
         });
-   
+    
     $total_items = count($websites_filtrados);
     $total_paginas = ceil($total_items / $items_por_pagina);
     $offset = ($pagina_actual - 1) * $items_por_pagina;
     $websites_pagina = array_slice($websites_filtrados, $offset, $items_por_pagina);
 }
 
-get_part('includes/header.php');
+get_part('includes/header.php'); 
 ?>
 
+<!-- Hero Section -->
+<section class="landing-hero-websites">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-10">
+                <div class="hero-badge mb-4" data-aos="fade-up">
+                    <i class="ri-sparkling-2-fill text-primary"></i>
+                    <span class="badge-text">Soluções Web Profissionais</span>
+                </div>
+                <h1 class="hero-title mb-4" data-aos="fade-up" data-aos-delay="100">
+                    Pacotes de <span class="text-gradient">Websites</span>
+                </h1>
+                <p class="hero-subtitle mx-auto mb-4" data-aos="fade-up" data-aos-delay="200">
+                    Escolha o pacote perfeito para o seu negócio. Designs modernos, funcionalidades completas e suporte dedicado.
+                </p>
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-item">
+                        <i class="ri-code-s-slash-line"></i>
+                        <strong>6+</strong>
+                        <span>Pacotes</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="ri-palette-line"></i>
+                        <strong>100%</strong>
+                        <span>Personalizável</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="ri-customer-service-2-line"></i>
+                        <strong>24/7</strong>
+                        <span>Suporte</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Websites List -->
 <?php if ($dados_websites): ?>
 <section class="section-py landing-websites-list" id="websitesList">
     <div class="container">
-       
+        
         <!-- Filtros -->
-        <div class="filters-wrapper mb-5 p-4 shadow-sm">
+        <div class="filters-wrapper mb-5" data-aos="fade-up">
             <div class="text-center mb-4">
-                <h5 class="filter-label mb-0">Filtrar por Categoria</h5>
+                <h6 class="filter-label">
+                    <i class="ri-filter-3-line me-2"></i>
+                    Filtrar por Categoria
+                </h6>
             </div>
-            <div class="filters-buttons text-center d-flex flex-wrap justify-content-center gap-3">
+            <div class="filters-buttons">
                 <a href="?categoria=all&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'all' ? 'active' : ''; ?>">
-                    <i class="ri-apps-2-line"></i> Todos
+                    <i class="ri-layout-grid-line"></i>
+                    <span>Todos</span>
                 </a>
                 <a href="?categoria=Básico&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Básico' ? 'active' : ''; ?>">
-                    Básico
+                    <i class="ri-file-text-line"></i>
+                    <span>Básico</span>
                 </a>
                 <a href="?categoria=Profissional&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Profissional' ? 'active' : ''; ?>">
-                    Profissional
-                </a>
-                <a href="?categoria=Marketing&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Marketing' ? 'active' : ''; ?>">
-                    Marketing
+                    <i class="ri-briefcase-line"></i>
+                    <span>Profissional</span>
                 </a>
                 <a href="?categoria=Especializado&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Especializado' ? 'active' : ''; ?>">
-                    Especializado
+                    <i class="ri-star-line"></i>
+                    <span>Especializado</span>
                 </a>
                 <a href="?categoria=Loja Online&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Loja Online' ? 'active' : ''; ?>">
-                    E-commerce
+                    <i class="ri-shopping-cart-line"></i>
+                    <span>E-commerce</span>
                 </a>
                 <a href="?categoria=Corporativo&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Corporativo' ? 'active' : ''; ?>">
-                    Corporativo
+                    <i class="ri-building-line"></i>
+                    <span>Corporativo</span>
                 </a>
             </div>
         </div>
 
-        <!-- Grid de Websites - 4 colunas em LG -->
-        <div class="row g-4" id="websitesGrid">
-            <?php foreach ($websites_pagina as $website): ?>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="website-card <?php echo $website['destaque'] ? 'featured shadow-lg' : 'shadow'; ?> h-100">
-                       
+        <!-- Grid de Websites -->
+        <div class="row g-4 mb-5" id="websitesGrid">
+            <?php foreach ($websites_pagina as $index => $website): ?>
+                <div class="col-xl-6 col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
+                    <div class="website-card <?php echo $website['destaque'] ? 'featured' : ''; ?>">
+                        
                         <?php if ($website['destaque']): ?>
                             <div class="featured-badge">
-                                <i class="ri-star-fill"></i> Mais Popular
+                                <i class="ri-vip-crown-fill"></i>
+                                <span>Mais Popular</span>
                             </div>
                         <?php endif; ?>
-                       
-                        <!-- Screenshots Carousel -->
-                        <div class="screenshots-carousel position-relative">
-                            <div id="carousel<?php echo $website['id']; ?>" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-indicators">
-                                    <?php foreach ($website['screenshots'] as $index => $screenshot): ?>
-                                        <button type="button" data-bs-target="#carousel<?php echo $website['id']; ?>" data-bs-slide-to="<?php echo $index; ?>" class="<?php echo $index === 0 ? 'active' : ''; ?>"></button>
-                                    <?php endforeach; ?>
+                        
+                        <div class="card-layout">
+                            <!-- Screenshots Carousel -->
+                            <div class="screenshots-section">
+                                <div id="carousel<?php echo $website['id']; ?>" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        <?php foreach ($website['screenshots'] as $i => $screenshot): ?>
+                                            <button type="button" 
+                                                    data-bs-target="#carousel<?php echo $website['id']; ?>" 
+                                                    data-bs-slide-to="<?php echo $i; ?>" 
+                                                    class="<?php echo $i === 0 ? 'active' : ''; ?>">
+                                            </button>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <div class="carousel-inner">
+                                        <?php foreach ($website['screenshots'] as $i => $screenshot): ?>
+                                            <div class="carousel-item <?php echo $i === 0 ? 'active' : ''; ?>">
+                                                <img src="<?php echo htmlspecialchars($screenshot); ?>" 
+                                                     class="d-block w-100" 
+                                                     alt="<?php echo htmlspecialchars($website['nome']); ?>">
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel<?php echo $website['id']; ?>" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon"></span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carousel<?php echo $website['id']; ?>" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon"></span>
+                                    </button>
                                 </div>
-                                <div class="carousel-inner rounded-top">
-                                    <?php foreach ($website['screenshots'] as $index => $screenshot): ?>
-                                        <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                                            <img src="<?php echo htmlspecialchars($screenshot); ?>" class="d-block w-100" alt="Screenshot <?php echo $index + 1; ?>" style="height: 220px; object-fit: cover;">
+                            </div>
+
+                            <!-- Card Content -->
+                            <div class="card-content">
+                                <div class="card-header-section">
+                                    <div class="category-badge badge-<?php echo htmlspecialchars($website['cor']); ?>">
+                                        <?php echo htmlspecialchars($website['categoria']); ?>
+                                    </div>
+                                    <h3 class="website-name"><?php echo htmlspecialchars($website['nome']); ?></h3>
+                                    <p class="website-nicho">
+                                        <i class="ri-focus-3-line"></i>
+                                        <?php echo htmlspecialchars($website['nicho']); ?>
+                                    </p>
+                                </div>
+
+                                <div class="card-pricing">
+                                    <div class="pricing-main">
+                                        <span class="price-label">A partir de</span>
+                                        <div class="price-amount">
+                                            <span class="price-value"><?php echo number_format($website['preco'], 0, ',', '.'); ?></span>
+                                            <span class="price-currency">MT</span>
                                         </div>
-                                    <?php endforeach; ?>
+                                    </div>
+                                    <div class="pricing-detail">
+                                        <i class="ri-file-list-3-line"></i>
+                                        <span><?php echo $website['paginas']; ?> página<?php echo $website['paginas'] > 1 ? 's' : ''; ?></span>
+                                    </div>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel<?php echo $website['id']; ?>" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon"></span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carousel<?php echo $website['id']; ?>" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon"></span>
-                                </button>
-                            </div>
-                        </div>
 
-                        <div class="card-content p-4 d-flex flex-column">
-                            <div class="card-header-custom mb-3">
-                                <span class="category-badge badge-<?php echo htmlspecialchars($website['cor']); ?>">
-                                    <?php echo htmlspecialchars($website['categoria']); ?>
-                                </span>
-                                <h5 class="website-name mt-2"><?php echo htmlspecialchars($website['nome']); ?></h5>
-                                <p class="website-nicho text-muted small"><?php echo htmlspecialchars($website['nicho']); ?></p>
-                            </div>
+                                <p class="card-description"><?php echo htmlspecialchars($website['descricao']); ?></p>
 
-                            <div class="card-pricing bg-light p-3 rounded mb-3 text-center">
-                                <small class="text-muted">A partir de</small>
-                                <div class="price-value fw-bold text-primary h3 mb-0">
-                                    <?php echo number_format($website['preco'], 0, ',', '.'); ?> <span class="h5">MT</span>
+                                <div class="card-features">
+                                    <h6 class="features-title">
+                                        <i class="ri-checkbox-circle-line"></i>
+                                        Características principais
+                                    </h6>
+                                    <ul class="features-list">
+                                        <?php 
+                                        $features_show = array_slice($website['caracteristicas'], 0, 5);
+                                        foreach ($features_show as $feature): 
+                                        ?>
+                                            <li>
+                                                <i class="ri-check-line"></i>
+                                                <span><?php echo htmlspecialchars($feature); ?></span>
+                                            </li>
+                                        <?php endforeach; ?>
+                                        <?php if (count($website['caracteristicas']) > 5): ?>
+                                            <li class="more-features">
+                                                <i class="ri-add-circle-line"></i>
+                                                <span>Mais <?php echo count($website['caracteristicas']) - 5; ?> funcionalidades</span>
+                                            </li>
+                                        <?php endif; ?>
+                                    </ul>
                                 </div>
-                                <small class="text-muted"><i class="ri-file-list-3-line"></i> <?php echo $website['paginas']; ?> página<?php echo $website['paginas'] > 1 ? 's' : ''; ?></small>
-                            </div>
 
-                            <p class="card-description flex-grow-1 small text-muted"><?php echo htmlspecialchars($website['descricao']); ?></p>
-
-                            <div class="card-features mb-4">
-                                <small class="fw-bold text-uppercase text-primary">Inclui:</small>
-                                <ul class="features-list small mt-2">
-                                    <?php
-                                    $features_to_show = array_slice($website['caracteristicas'], 0, 5);
-                                    foreach ($features_to_show as $feature):
-                                    ?>
-                                        <li><i class="ri-check-line text-success"></i> <?php echo htmlspecialchars($feature); ?></li>
-                                    <?php endforeach; ?>
-                                    <?php if (count($website['caracteristicas']) > 5): ?>
-                                        <li class="text-primary fw-bold"><i class="ri-add-line"></i> + <?php echo count($website['caracteristicas']) - 5; ?> funcionalidades</li>
-                                    <?php endif; ?>
-                                </ul>
-                            </div>
-
-                            <div class="card-actions d-grid gap-2 d-md-flex">
-                                <a href="<?php echo htmlspecialchars($website['demo_url']); ?>" target="_blank" class="btn btn-outline-primary">
-                                    <i class="ri-external-link-line"></i> Ver Demo
-                                </a>
-                                <button class="btn btn-light border" onclick="showWebsiteDetails(<?php echo $website['id']; ?>)">
-                                    <i class="ri-eye-line"></i> Detalhes
-                                </button>
-                                <a href="#landingContact" class="btn btn-primary">
-                                    <i class="ri-shopping-cart-line"></i> Encomendar
-                                </a>
+                                <div class="card-actions">
+                                    <a href="<?php echo htmlspecialchars($website['demo_url']); ?>" 
+                                       target="_blank" 
+                                       class="btn-action btn-demo">
+                                        <i class="ri-external-link-line"></i>
+                                        <span>Ver Demo</span>
+                                    </a>
+                                    <button class="btn-action btn-details" onclick="showWebsiteDetails(<?php echo $website['id']; ?>)">
+                                        <i class="ri-information-line"></i>
+                                        <span>Detalhes</span>
+                                    </button>
+                                    <a href="#landingContact" class="btn-action btn-order">
+                                        <i class="ri-shopping-bag-line"></i>
+                                        <span>Encomendar</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -356,144 +436,894 @@ get_part('includes/header.php');
             <?php endforeach; ?>
         </div>
 
-        <!-- Paginação -->
+        <!-- Paginação Melhorada -->
         <?php if ($total_paginas > 1): ?>
-        <nav class="pagination-wrapper mt-5">
-            <ul class="pagination justify-content-center">
+        <nav class="pagination-wrapper" data-aos="fade-up">
+            <div class="pagination-info">
+                <span class="pagination-text">
+                    Página <strong><?php echo $pagina_actual; ?></strong> de <strong><?php echo $total_paginas; ?></strong>
+                    <span class="separator">•</span>
+                    <strong><?php echo $total_items; ?></strong> <?php echo $total_items === 1 ? 'resultado' : 'resultados'; ?>
+                </span>
+            </div>
+            <ul class="pagination">
                 <?php if ($pagina_actual > 1): ?>
                     <li class="page-item">
-                        <a class="page-link rounded-start" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $pagina_actual - 1; ?>">Anterior</a>
+                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $pagina_actual - 1; ?>">
+                            <i class="ri-arrow-left-s-line"></i>
+                            <span class="d-none d-sm-inline">Anterior</span>
+                        </a>
                     </li>
                 <?php endif; ?>
 
-                <?php for ($i = 1; $i <= $total_paginas; $i++): ?>
+                <?php
+                $start = max(1, $pagina_actual - 2);
+                $end = min($total_paginas, $pagina_actual + 2);
+                
+                if ($start > 1): ?>
+                    <li class="page-item">
+                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=1">1</a>
+                    </li>
+                    <?php if ($start > 2): ?>
+                        <li class="page-item disabled"><span class="page-link">...</span></li>
+                    <?php endif; ?>
+                <?php endif; ?>
+
+                <?php for ($i = $start; $i <= $end; $i++): ?>
                     <li class="page-item <?php echo $i === $pagina_actual ? 'active' : ''; ?>">
-                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $i; ?>"><?php echo $i; ?></a>
+                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $i; ?>">
+                            <?php echo $i; ?>
+                        </a>
                     </li>
                 <?php endfor; ?>
 
+                <?php if ($end < $total_paginas): ?>
+                    <?php if ($end < $total_paginas - 1): ?>
+                        <li class="page-item disabled"><span class="page-link">...</span></li>
+                    <?php endif; ?>
+                    <li class="page-item">
+                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $total_paginas; ?>"><?php echo $total_paginas; ?></a>
+                    </li>
+                <?php endif; ?>
+
                 <?php if ($pagina_actual < $total_paginas): ?>
                     <li class="page-item">
-                        <a class="page-link rounded-end" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $pagina_actual + 1; ?>">Próximo</a>
+                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $pagina_actual + 1; ?>">
+                            <span class="d-none d-sm-inline">Próxima</span>
+                            <i class="ri-arrow-right-s-line"></i>
+                        </a>
                     </li>
                 <?php endif; ?>
             </ul>
         </nav>
         <?php endif; ?>
+
     </div>
 </section>
 
-<!-- Modal de Detalhes (mantido igual, só com pequenos ajustes de estilo) -->
+<!-- Modal de Detalhes -->
 <div class="modal fade" id="websiteDetailsModal" tabindex="-1">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content rounded shadow-lg">
-            <!-- ... (o conteúdo do modal permanece o mesmo que tinhas) ... -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalWebsiteName"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="modalWebsiteContent"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <a href="#landingContact" class="btn btn-primary" data-bs-dismiss="modal">
+                    <i class="ri-mail-send-line me-2"></i>Solicitar Orçamento
+                </a>
+            </div>
         </div>
     </div>
 </div>
 
 <script>
-// (o script do modal permanece exatamente o mesmo)
 const websitesData = <?php echo json_encode($dados_websites['data']); ?>;
+
 function showWebsiteDetails(id) {
-    // ... (código igual ao original)
+    const website = websitesData.find(w => w.id === id);
+    if (!website) return;
+    
+    document.getElementById('modalWebsiteName').innerHTML = `
+        <i class="ri-window-line me-2"></i>${website.nome}
+    `;
+    
+    let screenshotsHTML = '<div class="modal-screenshots mb-4"><div class="row g-3">';
+    website.screenshots.forEach((screenshot, index) => {
+        screenshotsHTML += `
+            <div class="col-md-6">
+                <img src="${screenshot}" class="img-fluid rounded shadow-sm" alt="Screenshot ${index + 1}">
+            </div>
+        `;
+    });
+    screenshotsHTML += '</div></div>';
+    
+    let featuresHTML = '<ul class="list-unstyled row g-2">';
+    website.caracteristicas.forEach(feature => {
+        featuresHTML += `
+            <li class="col-md-6 mb-2">
+                <i class="ri-checkbox-circle-fill text-success me-2"></i>${feature}
+            </li>
+        `;
+    });
+    featuresHTML += '</ul>';
+    
+    document.getElementById('modalWebsiteContent').innerHTML = `
+        ${screenshotsHTML}
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="info-box">
+                    <h6 class="fw-bold mb-3"><i class="ri-information-line me-2"></i>Informações Gerais</h6>
+                    <div class="info-item">
+                        <span class="info-label">Categoria:</span>
+                        <span class="info-value">${website.categoria}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Nicho:</span>
+                        <span class="info-value">${website.nicho}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Páginas:</span>
+                        <span class="info-value">${website.paginas}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Preço:</span>
+                        <span class="info-value text-primary fw-bold">${website.preco.toLocaleString('pt-MZ')} MT</span>
+                    </div>
+                    <a href="${website.demo_url}" target="_blank" class="btn btn-outline-primary mt-3 w-100">
+                        <i class="ri-external-link-line me-2"></i>Ver Demo ao Vivo
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="info-box">
+                    <h6 class="fw-bold mb-3"><i class="ri-file-text-line me-2"></i>Descrição</h6>
+                    <p>${website.descricao}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="info-box">
+                    <h6 class="fw-bold mb-3"><i class="ri-list-check-2 me-2"></i>Todas as Características</h6>
+                    ${featuresHTML}
+                </div>
+            </div>
+        </div>
+    `;
+    
+    const modal = new bootstrap.Modal(document.getElementById('websiteDetailsModal'));
+    modal.show();
 }
 </script>
 
+<?php else: ?>
+<div class="container my-5 py-5">
+    <div class="alert alert-danger text-center">
+        <i class="ri-error-warning-line me-2"></i>
+        Erro ao carregar os pacotes de websites.
+    </div>
+</div>
+<?php endif; ?>
+
 <style>
-/* CSS aprimorado - mais clean, moderno e responsivo */
 :root {
     --primary-color: #d97638;
     --primary-dark: #c66b3d;
-    --text-primary: #5a3a28;
+    --primary-light: #fef5ef;
+    --text-primary: #2c1810;
     --text-secondary: #74523d;
-    --bg-light: #fdf9f6;
+    --bg-light: #fdfbf9;
     --bg-card: #ffffff;
+    --border-color: #e8ddd4;
+    --shadow-sm: 0 2px 8px rgba(217, 118, 56, 0.08);
+    --shadow-md: 0 4px 16px rgba(217, 118, 56, 0.12);
+    --shadow-lg: 0 8px 32px rgba(217, 118, 56, 0.16);
+    --radius: 12px;
+    --radius-lg: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-bs-theme="dark"] {
     --primary-color: #ff8c4a;
     --primary-dark: #e07a3d;
-    --text-primary: #e8ddd4;
+    --primary-light: #2a1f1a;
+    --text-primary: #f5ebe3;
     --text-secondary: #c4b5aa;
     --bg-light: #1a1410;
-    --bg-card: #2a1f1a;
+    --bg-card: #241a15;
+    --border-color: rgba(255, 140, 74, 0.15);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
-.landing-websites-list { background: var(--bg-light); padding: 4rem 0; }
+/* Hero Section */
+.landing-hero-websites {
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--primary-light) 100%);
+    padding: 6rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+}
 
-.filters-wrapper { background: var(--bg-card); border-radius: 12px; }
+.landing-hero-websites::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(217, 118, 56, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
 
-.filter-btn {
-    padding: 0.75rem 1.5rem;
-    border: 2px solid transparent;
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.75rem;
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
     border-radius: 50px;
+    box-shadow: var(--shadow-sm);
+}
+
+.badge-text {
     font-weight: 600;
-    transition: all 0.4s ease;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.stat-item strong {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.stat-item span {
+    font-size: 0.9rem;
     color: var(--text-secondary);
 }
 
-.filter-btn:hover, .filter-btn.active {
-    background: var(--primary-color) !important;
-    color: white;
-    border-color: var(--primary-color);
-    transform: scale(1.05);
+/* Filtros */
+.landing-websites-list {
+    background: var(--bg-light);
 }
 
+.filters-wrapper {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.filter-label {
+    color: var(--text-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+}
+
+.filters-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-light);
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.filter-btn i {
+    font-size: 1.1rem;
+}
+
+.filter-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+}
+
+/* Website Cards */
 .website-card {
-    border-radius: 16px;
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    transition: all 0.4s ease;
-    border: none;
+    height: 100%;
+    position: relative;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
 }
 
 .website-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
-}
-
-.featured { border: 3px solid var(--primary-color); }
-
-.featured-badge {
-    top: 12px; right: 12px;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.screenshots-carousel img { transition: opacity 0.5s; }
-
-.carousel-control-prev, .carousel-control-next { opacity: 0.7; width: 50px; }
-
-.website-card:hover .carousel-control-prev,
-.website-card:hover .carousel-control-next { opacity: 1; }
-
-.card-actions .btn { border-radius: 50px; font-weight: 600; }
-
-.pagination .page-link {
-    border-radius: 50px !important;
-    margin: 0 4px;
-    min-width: 44px;
-    text-align: center;
-}
-
-.pagination .page-item.active .page-link {
-    background: var(--primary-color);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
     border-color: var(--primary-color);
 }
 
-/* Responsivo extra */
-@media (max-width: 992px) {
-    .col-lg-3 { flex: 0 0 50%; max-width: 50%; }
+.website-card.featured {
+    border: 3px solid var(--primary-color);
+    box-shadow: var(--shadow-md);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+.featured-badge i {
+    font-size: 1rem;
+}
+
+/* Card Layout */
+.card-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.screenshots-section {
+    flex: 0 0 45%;
+    background: #000;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-indicators {
+    bottom: 15px;
+    margin: 0;
+}
+
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-indicators button.active {
+    background-color: var(--primary-color);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+.website-card:hover .carousel-control-prev,
+.website-card:hover .carousel-control-next {
+    opacity: 1;
+}
+
+/* Card Content */
+.card-content {
+    flex: 1;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.card-header-section {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.category-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+}
+
+.badge-primary { background: rgba(217, 118, 56, 0.15); color: var(--primary-color); }
+.badge-success { background: rgba(25, 135, 84, 0.15); color: #198754; }
+.badge-warning { background: rgba(255, 193, 7, 0.15); color: #c29400; }
+.badge-info { background: rgba(13, 202, 240, 0.15); color: #0dcaf0; }
+.badge-danger { background: rgba(220, 53, 69, 0.15); color: #dc3545; }
+.badge-secondary { background: rgba(108, 117, 125, 0.15); color: #6c757d; }
+
+.website-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.website-nicho {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.website-nicho i {
+    color: var(--primary-color);
+}
+
+/* Pricing */
+.card-pricing {
+    background: linear-gradient(135deg, var(--primary-light), transparent);
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    border: 2px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pricing-main {
+    text-align: left;
+}
+
+.price-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.price-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.price-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.price-currency {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.pricing-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: var(--bg-card);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.pricing-detail i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* Description */
+.card-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* Features */
+.card-features {
+    flex-grow: 1;
+}
+
+.features-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.features-title i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.features-list i {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+}
+
+.more-features {
+    color: var(--primary-color) !important;
+    font-weight: 700;
+}
+
+/* Actions */
+.card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.btn-action {
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-demo {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-demo:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-details {
+    background: var(--bg-light);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+}
+
+.btn-details:hover {
+    background: var(--text-primary);
+    color: white;
+    border-color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.btn-order {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    border: 2px solid var(--primary-color);
+}
+
+.btn-order:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(217, 118, 56, 0.3);
+}
+
+/* Paginação */
+.pagination-wrapper {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.pagination-info {
+    background: var(--bg-card);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    border: 2px solid var(--border-color);
+}
+
+.pagination-text {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.pagination-text strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.separator {
+    margin: 0 0.75rem;
+    color: var(--border-color);
+}
+
+.pagination {
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.page-item.disabled .page-link {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+}
+
+.page-link {
+    border: 2px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    transition: var(--transition);
+    min-width: 45px;
+    text-align: center;
+}
+
+.page-link:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.page-item.active .page-link {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+/* Modal */
+.modal-content {
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border-color);
+    background: var(--bg-card);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-light), transparent);
+    border-bottom: 2px solid var(--border-color);
+    padding: 1.5rem;
+}
+
+.modal-title {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.modal-title i {
+    color: var(--primary-color);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-screenshots img {
+    border-radius: var(--radius);
+    border: 2px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.modal-screenshots img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+.info-box {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 2px solid var(--border-color);
+    height: 100%;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-item:last-of-type {
+    border-bottom: none;
+}
+
+.info-label {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.info-value {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.modal-footer {
+    border-top: 2px solid var(--border-color);
+    padding: 1.5rem;
+}
+
+/* Responsivo */
+@media (max-width: 1200px) {
+    .card-layout {
+        flex-direction: column;
+    }
+    
+    .screenshots-section {
+        flex: 0 0 auto;
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+        gap: 1.5rem;
+    }
+    
+    .filters-buttons {
+        flex-direction: column;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .card-actions {
+        grid-template-columns: 1fr;
+    }
+    
+    .pagination {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .card-content {
+        padding: 1.25rem;
+    }
+    
+    .website-name {
+        font-size: 1.25rem;
+    }
+    
+    .price-value {
+        font-size: 1.5rem;
+    }
 }
 </style>
-<?php else: ?>
-<div class="container my-5 py-5 text-center">
-    <div class="alert alert-danger">
-        <i class="ri-error-warning-line"></i> Erro ao carregar os pacotes de websites.
-    </div>
-</div>
-<?php endif; ?>
 
-<?php get_part('includes/footer.php'); ?>
+<?php 
+get_part('includes/footer.php'); 
+?>
