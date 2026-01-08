@@ -1,16 +1,3 @@
-
-<!-- Hero Simples e Direto -->
-<section class="hero-section text-center py-5">
-  <div class="container">
-    <h1 class="hero-title display-4 fw-bold mb-4">
-      Os Nossos <span class="text-gradient">Produtos</span>
-    </h1>
-    <p class="hero-subtitle lead col-lg-8 mx-auto text-muted">
-      Soluções digitais prontas para implementar no seu negócio. Escolha a categoria e veja os pacotes disponíveis.
-    </p>
-  </div>
-</section>
-
 <!-- 4 Cards de Categorias -->
 <section class="py-5">
   <div class="container">
@@ -97,18 +84,5 @@
       </div>
 
     </div>
-  </div>
-</section>
-
-<!-- CTA Final (opcional, mas recomendado) -->
-<section class="py-5 text-center bg-light">
-  <div class="container">
-    <h3 class="mb-4">Precisa de algo mais personalizado?</h3>
-    <p class="text-muted col-lg-8 mx-auto mb-4">
-      Desenvolvemos soluções sob medida de acordo com a sua necessidade.
-    </p>
-    <a href="/servicos/" class="btn btn-outline-primary btn-lg">
-      Conhecer os Nossos Serviços <i class="ri-arrow-right-line ms-2"></i>
-    </a>
   </div>
 </section>
