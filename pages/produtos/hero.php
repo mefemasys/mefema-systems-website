@@ -27,24 +27,6 @@
 Soluções já desenvolvidas e testadas para implementar rapidamente no seu negócio. Escolha, personalize e comece a usar.        </p>
       </div>
     </div>
-
-     <div class="stat-item">
-                        <i class="ri-boxing-line"></i>
-                        <strong>4</strong>
-                        <span>Categorias</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="ri-speed-line"></i>
-                        <strong>Rápida</strong>
-                        <span>Implementação</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="ri-customer-service-2-line"></i>
-                        <strong>Incluído</strong>
-                        <span>Suporte</span>
-                    </div>
-                </div>
-    
   </div>
           
 </section>
