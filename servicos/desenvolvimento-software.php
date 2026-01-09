@@ -827,27 +827,66 @@ get_part('includes/header.php');
         </div>
     </div>
 </section>
-
 <style>
+    /* 
+   MEFEMA Systems - Desenvolvimento de Software
+   Modified Original CSS with Brand Identity & Dark Mode Support
+*/
+
+:root {
+    /* Brand Colors - Light Mode */
+    --primary-color: #d97638;
+    --primary-dark: #c66b3d;
+    --primary-light: #fef5ef;
+    --text-primary: #2c1810;
+    --text-secondary: #74523d;
+    --bg-light: #fdfbf9;
+    --bg-card: #ffffff;
+    --border-color: #e8ddd4;
+    --shadow-sm: 0 2px 8px rgba(217, 118, 56, 0.08);
+    --shadow-md: 0 4px 16px rgba(217, 118, 56, 0.12);
+    --shadow-lg: 0 8px 32px rgba(217, 118, 56, 0.16);
+    --radius: 8px;
+    --radius-lg: 11px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-bs-theme="dark"] {
+    /* Brand Colors - Dark Mode */
+    --primary-color: #ff8c4a;
+    --primary-dark: #e07a3d;
+    --primary-light: #2a1f1a;
+    --text-primary: #f5ebe3;
+    --text-secondary: #c4b5aa;
+    --bg-light: #1a1410;
+    --bg-card: #241a15;
+    --border-color: rgba(255, 140, 74, 0.15);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
 /* Service Boxes */
 .service-box {
-    background: white;
-    border-radius: 16px;
+    background: var(--bg-card);
+    border-radius: var(--radius);
     padding: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
 }
 
 .service-box:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
 }
 
 .service-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 16px;
+    background: var(--primary-light);
+    border-radius: var(--radius);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -856,18 +895,18 @@ get_part('includes/header.php');
 
 .service-icon i {
     font-size: 32px;
-    color: white;
+    color: var(--primary-color);
 }
 
 .service-title {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .service-description {
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.7;
 }
@@ -880,13 +919,13 @@ get_part('includes/header.php');
 
 .service-features li {
     padding: 0.5rem 0;
-    color: #444;
+    color: var(--text-secondary);
     display: flex;
     align-items: center;
 }
 
 .service-features i {
-    color: #10b981;
+    color: var(--primary-color);
     margin-right: 0.75rem;
     font-size: 1.1rem;
 }
@@ -904,8 +943,9 @@ get_part('includes/header.php');
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    background: var(--primary-color);
     transform: translateX(-50%);
+    opacity: 0.3;
 }
 
 @media (max-width: 991px) {
@@ -948,7 +988,7 @@ get_part('includes/header.php');
 .timeline-number {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -956,16 +996,23 @@ get_part('includes/header.php');
     color: white;
     font-size: 1.5rem;
     font-weight: 700;
-    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+    box-shadow: var(--shadow-sm);
 }
 
 .timeline-content {
-    background: white;
-    border-radius: 16px;
+    background: var(--bg-card);
+    border-radius: var(--radius);
     padding: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
     width: calc(50% - 60px);
     margin-left: auto;
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
 }
 
 .timeline-item:nth-child(even) .timeline-content {
@@ -985,8 +1032,8 @@ get_part('includes/header.php');
 .timeline-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    border-radius: 12px;
+    background: var(--primary-light);
+    border-radius: var(--radius);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -995,18 +1042,18 @@ get_part('includes/header.php');
 
 .timeline-icon i {
     font-size: 28px;
-    color: white;
+    color: var(--primary-color);
 }
 
 .timeline-title {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .timeline-description {
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.7;
 }
@@ -1015,7 +1062,7 @@ get_part('includes/header.php');
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .timeline-details ul {
@@ -1028,11 +1075,11 @@ get_part('includes/header.php');
     padding: 0.5rem 0;
     display: flex;
     align-items: flex-start;
-    color: #555;
+    color: var(--text-secondary);
 }
 
 .timeline-details ul li i {
-    color: #10b981;
+    color: var(--primary-color);
     margin-right: 0.75rem;
     margin-top: 0.25rem;
     font-size: 1.1rem;
@@ -1048,28 +1095,33 @@ get_part('includes/header.php');
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
     font-weight: 600;
+    background-color: var(--primary-light) !important;
+    color: var(--primary-color) !important;
+    border: 1px solid var(--border-color);
 }
 
 /* Philosophy Cards */
 .philosophy-card {
-    background: white;
-    border-radius: 16px;
+    background: var(--bg-card);
+    border-radius: var(--radius);
     padding: 2rem;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
     height: 100%;
 }
 
 .philosophy-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
 }
 
 .philosophy-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--primary-light);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1079,34 +1131,35 @@ get_part('includes/header.php');
 
 .philosophy-icon i {
     font-size: 36px;
-    color: white;
+    color: var(--primary-color);
 }
 
 .philosophy-card h4 {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .philosophy-card p {
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.7;
     margin: 0;
 }
 
 /* MEFEMA Values */
 .mefema-values-box {
-    background: white;
-    border-radius: 20px;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
     padding: 3rem;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
 }
 
 .mefema-values-box h3 {
     font-size: 1.75rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .value-item {
@@ -1114,21 +1167,21 @@ get_part('includes/header.php');
     align-items: flex-start;
     gap: 1.5rem;
     padding: 1.5rem;
-    background: #f8f9fa;
-    border-radius: 12px;
-    transition: all 0.3s ease;
+    background: var(--bg-light);
+    border-radius: var(--radius);
+    transition: var(--transition);
 }
 
 .value-item:hover {
-    background: #e9ecef;
+    background: var(--primary-light);
     transform: translateX(5px);
 }
 
 .value-letter {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 12px;
+    background: var(--primary-color);
+    border-radius: var(--radius);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1142,21 +1195,22 @@ get_part('includes/header.php');
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .value-content p {
-    color: #666;
+    color: var(--text-secondary);
     margin: 0;
     line-height: 1.6;
 }
 
 /* Tech Category */
 .tech-category {
-    background: white;
-    border-radius: 16px;
+    background: var(--bg-card);
+    border-radius: var(--radius);
     padding: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
     height: 100%;
 }
 
@@ -1164,7 +1218,7 @@ get_part('includes/header.php');
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .tech-tags {
@@ -1174,34 +1228,37 @@ get_part('includes/header.php');
 }
 
 .tech-tag {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: var(--primary-light);
+    color: var(--primary-color);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 600;
+    border: 1px solid var(--border-color);
 }
 
 /* Why Cards */
 .why-card {
-    background: white;
-    border-radius: 16px;
+    background: var(--bg-card);
+    border-radius: var(--radius);
     padding: 2rem;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
     height: 100%;
 }
 
 .why-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
 }
 
 .why-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: var(--primary-light);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1211,18 +1268,18 @@ get_part('includes/header.php');
 
 .why-icon i {
     font-size: 32px;
-    color: white;
+    color: var(--primary-color);
 }
 
 .why-card h4 {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .why-card p {
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.7;
     margin: 0;
 }
@@ -1231,21 +1288,22 @@ get_part('includes/header.php');
 .accordion-item {
     border: none;
     margin-bottom: 1rem;
-    border-radius: 12px;
+    border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
+    background: var(--bg-card);
 }
 
 .accordion-button {
-    background: white;
-    color: #1a1a1a;
+    background: var(--bg-card);
+    color: var(--text-primary);
     font-weight: 600;
     padding: 1.5rem;
     font-size: 1.1rem;
 }
 
 .accordion-button:not(.collapsed) {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--primary-color);
     color: white;
 }
 
@@ -1255,32 +1313,32 @@ get_part('includes/header.php');
 
 .accordion-body {
     padding: 1.5rem;
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.8;
 }
 
 /* CTA Section */
 .bg-gradient-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--primary-color) !important;
 }
 
 /* Utility Classes */
 .text-gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    color: var(--primary-color);
 }
 
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .section-subtitle {
     font-size: 1.1rem;
-    color: #666;
+    color: var(--text-secondary);
     max-width: 700px;
 }
 
@@ -1298,6 +1356,7 @@ get_part('includes/header.php');
         padding: 2rem 1.5rem;
     }
 }
+
 </style>
 
 <?php get_part('includes/footer.php'); ?>
