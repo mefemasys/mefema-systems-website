@@ -1,304 +1,381 @@
 <style>
-  :root {
-    --color-bronze: #CD7F32;
-    --color-brown: #8B5A2B;
-    --color-orange: #FF8C00;
-    --bg-light: #ffffff;
-    --bg-gallery: #f8f5f0;
-    --text-dark: #2d2d2d;
-    --border-light: #e5e5e5;
-  }
+/* Galeria de Projectos - Design Moderno Minimalista */
+#portfolioGallery {
+  padding: 80px 0;
+  background-color: #fafafa;
+}
 
+@media (prefers-color-scheme: dark) {
   #portfolioGallery {
-    padding: 80px 0;
-    background-color: var(--bg-gallery);
+    background-color: #0a0a0a;
   }
+}
 
-  .section-header h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 0.5rem;
+#portfolioGallery .section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  #portfolioGallery .section-header h2 {
+    color: #ffffff;
   }
+}
 
-  .section-header p {
-    font-size: 1.1rem;
-    color: #666;
+#portfolioGallery .section-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  #portfolioGallery .section-header p {
+    color: #999;
   }
+}
 
-  /* Filtros */
-  .filter-controls {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-bottom: 3rem;
-  }
+/* Filtros */
+.filter-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
 
+.filter-btn {
+  background: transparent;
+  border: 2px solid #e0e0e0;
+  color: #666;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
   .filter-btn {
-    padding: 0.6rem 1.5rem;
-    border: 2px solid var(--border-light);
-    background: var(--bg-light);
-    color: var(--text-dark);
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    border-color: #2a2a2a;
+    color: #999;
   }
+}
 
-  .filter-btn:hover {
-    border-color: var(--color-bronze);
-    color: var(--color-bronze);
-    background: rgba(205, 127, 50, 0.05);
-  }
+.filter-btn:hover {
+  border-color: #CD7F32;
+  color: #CD7F32;
+  background: rgba(205, 127, 50, 0.05);
+}
 
-  .filter-btn.active {
-    background-color: var(--color-bronze);
-    color: white;
-    border-color: var(--color-bronze);
-  }
+.filter-btn.active {
+  background: linear-gradient(135deg, #CD7F32, #FF8C00);
+  border-color: transparent;
+  color: white;
+}
 
-  /* Cards */
+/* Cards de Projecto */
+.portfolio-card {
+  background: white;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (prefers-color-scheme: dark) {
   .portfolio-card {
-    background: var(--bg-light);
-    border: 1px solid var(--border-light);
-    overflow: hidden;
-    transition: all 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    background: #151515;
+    border-color: #2a2a2a;
   }
+}
 
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: #CD7F32;
+}
+
+@media (prefers-color-scheme: dark) {
   .portfolio-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-    border-color: var(--color-bronze);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
   }
+}
 
-  .card-image {
-    height: 220px;
-    background: #f5f5f5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+/* Imagem do Projecto */
+.portfolio-image {
+  height: 220px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+@media (prefers-color-scheme: dark) {
+  .portfolio-image {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    border-bottom-color: #2a2a2a;
   }
+}
 
-  .card-image i {
-    font-size: 4rem;
-    color: var(--color-bronze);
-    opacity: 0.15;
+.portfolio-image i {
+  font-size: 4rem;
+  opacity: 0.15;
+  color: #CD7F32;
+}
+
+.portfolio-badges {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.badge-custom {
+  background: white;
+  color: #1a1a1a;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .badge-custom {
+    background: #1a1a1a;
+    color: #fff;
   }
+}
 
-  .card-badges {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+.badge-rating {
+  background: #FF8C00;
+  color: white;
+}
+
+/* Conteúdo do Card */
+.portfolio-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-body h5 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .portfolio-body h5 {
+    color: #ffffff;
   }
+}
 
-  .badge-category {
-    background-color: var(--color-bronze);
-    color: white;
-    padding: 0.4rem 0.9rem;
-    font-size: 0.85rem;
-    font-weight: 600;
+.portfolio-body .description {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .portfolio-body .description {
+    color: #999;
   }
+}
 
-  .badge-rating {
-    background: white;
-    color: var(--color-orange);
-    padding: 0.4rem 0.9rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.portfolio-info {
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .info-item {
+    color: #999;
   }
+}
 
-  .card-body {
-    padding: 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+.info-item i {
+  color: #CD7F32;
+  font-size: 1.1rem;
+}
+
+.info-item strong {
+  color: #1a1a1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  .info-item strong {
+    color: #fff;
   }
+}
 
-  .card-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 0.75rem;
+/* Tags */
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tag-item {
+  background: #f5f5f5;
+  color: #666;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  border: 1px solid #e8e8e8;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tag-item {
+    background: #1a1a1a;
+    color: #999;
+    border-color: #2a2a2a;
   }
+}
 
-  .card-description {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
-    flex: 1;
+/* Botão Ver Detalhes */
+.btn-details {
+  background: linear-gradient(135deg, #CD7F32, #FF8C00);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin-top: auto;
+}
+
+.btn-details:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(205, 127, 50, 0.3);
+  color: white;
+}
+
+/* Paginação */
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 50px;
+}
+
+.pagination-btn {
+  background: white;
+  border: 1px solid #e8e8e8;
+  color: #666;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 44px;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .pagination-btn {
+    background: #151515;
+    border-color: #2a2a2a;
+    color: #999;
   }
+}
 
-  .card-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-light);
+.pagination-btn:hover:not(:disabled) {
+  border-color: #CD7F32;
+  color: #CD7F32;
+  background: rgba(205, 127, 50, 0.05);
+}
+
+.pagination-btn.active {
+  background: linear-gradient(135deg, #CD7F32, #FF8C00);
+  border-color: transparent;
+  color: white;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Animações */
+.portfolio-item {
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  .meta-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+/* Responsivo */
+@media (max-width: 768px) {
+  #portfolioGallery {
+    padding: 60px 0;
+  }
+  
+  #portfolioGallery .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .filter-wrapper {
+    gap: 8px;
+  }
+  
+  .filter-btn {
+    padding: 8px 16px;
     font-size: 0.9rem;
-    color: #666;
   }
-
-  .meta-item i {
-    color: var(--color-bronze);
+  
+  .portfolio-image {
+    height: 180px;
   }
-
-  .card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .tag {
-    background: #f5f5f5;
-    color: var(--text-dark);
-    padding: 0.3rem 0.7rem;
-    font-size: 0.8rem;
-    border: 1px solid var(--border-light);
-  }
-
-  .card-action {
-    background-color: var(--color-bronze);
-    color: white;
-    padding: 0.75rem;
-    border: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    width: 100%;
-  }
-
-  .card-action:hover {
-    background-color: #b36b2a;
-    box-shadow: 0 4px 12px rgba(205, 127, 50, 0.3);
-  }
-
-  /* Paginação */
-  .pagination-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 3rem;
-  }
-
-  .pagination-info {
-    color: #666;
-    font-size: 0.95rem;
-  }
-
-  .page-btn {
-    width: 40px;
-    height: 40px;
-    border: 2px solid var(--border-light);
-    background: var(--bg-light);
-    color: var(--text-dark);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .page-btn:hover:not(:disabled) {
-    border-color: var(--color-bronze);
-    color: var(--color-bronze);
-  }
-
-  .page-btn.active {
-    background-color: var(--color-bronze);
-    color: white;
-    border-color: var(--color-bronze);
-  }
-
-  .page-btn:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-  }
-
-  /* Animações */
-  .portfolio-item {
-    animation: fadeIn 0.5s ease;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Responsivo */
-  @media (max-width: 768px) {
-    .section-header h2 {
-      font-size: 2rem;
-    }
-
-    .filter-controls {
-      gap: 0.5rem;
-    }
-
-    .filter-btn {
-      padding: 0.5rem 1rem;
-      font-size: 0.9rem;
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg-gallery: var(--bg-dark);
-      --bg-light: #2d2d2d;
-      --text-dark: #f5f5f5;
-      --border-light: #404040;
-    }
-
-    .card-image {
-      background: #252525;
-    }
-
-    .tag {
-      background: #353535;
-      border-color: #404040;
-    }
-  }
+}
 </style>
 
 <section id="portfolioGallery">
   <div class="container">
     <!-- Cabeçalho -->
-    <div class="row justify-content-center mb-5">
-      <div class="col-lg-8 text-center section-header">
-        <h2>Galeria de Projectos</h2>
-        <p>Visualize todos os nossos trabalhos organizados por categoria</p>
-      </div>
+    <div class="section-header text-center mb-5">
+      <h2>Galeria de Projectos</h2>
+      <p>Visualize todos os nossos trabalhos organizados por categoria</p>
     </div>
 
     <!-- Filtros -->
-    <div class="filter-controls">
+    <div class="filter-wrapper">
       <button class="filter-btn active" data-filter="all">
         <i class="ri-layout-grid-line me-2"></i>Todos
       </button>
@@ -314,19 +391,67 @@
     </div>
 
     <!-- Grid de Projectos -->
-    <div class="row g-4" id="portfolioGrid"></div>
+    <div class="row g-4" id="portfolioGrid">
+      <?php foreach ($portfolio_data as $project): 
+        $cat = $category_map[$project['category']];
+      ?>
+        <div class="col-lg-4 col-md-6 portfolio-item" data-category="<?php echo $project['category']; ?>">
+          <div class="portfolio-card">
+            <!-- Imagem -->
+            <div class="portfolio-image">
+              <i class="<?php echo $cat['icon']; ?>"></i>
+              <div class="portfolio-badges">
+                <span class="badge-custom"><?php echo $project['type']; ?></span>
+                <span class="badge-custom badge-rating">
+                  <i class="ri-star-fill"></i> <?php echo $project['rating']; ?>
+                </span>
+              </div>
+            </div>
+
+            <!-- Conteúdo -->
+            <div class="portfolio-body">
+              <h5><?php echo $project['title']; ?></h5>
+              <p class="description"><?php echo substr($project['description'], 0, 90) . '...'; ?></p>
+
+              <!-- Informações -->
+              <div class="portfolio-info">
+                <div class="info-item">
+                  <i class="ri-building-line"></i>
+                  <span><strong><?php echo $project['client']; ?></strong></span>
+                </div>
+                <div class="info-item">
+                  <i class="ri-calendar-line"></i>
+                  <span><?php echo date('d/m/Y', strtotime($project['date'])); ?></span>
+                </div>
+              </div>
+
+              <!-- Tags -->
+              <div class="portfolio-tags">
+                <?php foreach (array_slice($project['tags'], 0, 3) as $tag): ?>
+                  <span class="tag-item"><?php echo $tag; ?></span>
+                <?php endforeach; ?>
+                <?php if (count($project['tags']) > 3): ?>
+                  <span class="tag-item">+<?php echo count($project['tags']) - 3; ?></span>
+                <?php endif; ?>
+              </div>
+
+              <!-- Botão -->
+              <a href="#" class="btn-details">
+                <i class="ri-arrow-right-line me-2"></i>Ver Detalhes
+              </a>
+            </div>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
 
     <!-- Paginação -->
-    <div class="pagination-wrapper">
-      <button class="page-btn" id="prevBtn" disabled>
+    <div class="pagination-wrapper" id="paginationControls">
+      <button class="pagination-btn" id="prevPage" disabled>
         <i class="ri-arrow-left-line"></i>
       </button>
-
-      <div class="pagination-info">
-        <span id="currentPage">1</span> de <span id="totalPages">1</span>
-      </div>
-
-      <button class="page-btn" id="nextBtn">
+      <div id="pageNumbers"></div>
+      <button class="pagination-btn" id="nextPage">
         <i class="ri-arrow-right-line"></i>
       </button>
     </div>
@@ -334,213 +459,98 @@
 </section>
 
 <script>
-  // Dados de exemplo – substitui por PHP real no teu projeto
-  const portfolioData = [
-    {
-      title: 'Sistema de Gestão Empresarial',
-      description: 'Plataforma web completa para gestão de recursos empresariais com módulos integrados',
-      category: 'dev',
-      type: 'Desenvolvimento Web',
-      client: 'Empresa XYZ',
-      date: '2024-01-15',
-      rating: '4.8',
-      tags: ['Laravel', 'Vue.js', 'MySQL'],
-      icon: 'ri-code-box-line'
-    },
-    {
-      title: 'Infraestrutura Cloud AWS',
-      description: 'Migração e configuração de infraestrutura empresarial para ambiente cloud',
-      category: 'infra',
-      type: 'Infraestrutura',
-      client: 'Tech Corp',
-      date: '2024-02-20',
-      rating: '5.0',
-      tags: ['AWS', 'Docker', 'Kubernetes'],
-      icon: 'ri-server-line'
-    },
-    {
-      title: 'Consultoria em Transformação Digital',
-      description: 'Análise e implementação de estratégias de transformação digital',
-      category: 'consult',
-      type: 'Consultoria',
-      client: 'Business Inc',
-      date: '2024-03-10',
-      rating: '4.9',
-      tags: ['Estratégia', 'Inovação', 'Processos'],
-      icon: 'ri-lightbulb-line'
-    },
-    {
-      title: 'App Mobile E-commerce',
-      description: 'Aplicação mobile nativa para plataforma de comércio electrónico',
-      category: 'dev',
-      type: 'Desenvolvimento Mobile',
-      client: 'Shop Online',
-      date: '2024-04-05',
-      rating: '4.7',
-      tags: ['React Native', 'Node.js', 'MongoDB'],
-      icon: 'ri-smartphone-line'
-    },
-    {
-      title: 'Rede Empresarial Segura',
-      description: 'Implementação de rede empresarial com segurança avançada',
-      category: 'infra',
-      type: 'Infraestrutura',
-      client: 'Secure Corp',
-      date: '2024-05-12',
-      rating: '4.9',
-      tags: ['Networking', 'Security', 'Firewall'],
-      icon: 'ri-shield-line'
-    },
-    {
-      title: 'Auditoria de Sistemas',
-      description: 'Auditoria completa de sistemas e processos de TI',
-      category: 'consult',
-      type: 'Consultoria',
-      client: 'Audit Plus',
-      date: '2024-06-18',
-      rating: '5.0',
-      tags: ['Auditoria', 'Compliance', 'ISO'],
-      icon: 'ri-file-list-line'
-    },
-    {
-      title: 'Portal Institucional',
-      description: 'Website institucional com design moderno e CMS personalizado',
-      category: 'dev',
-      type: 'Desenvolvimento Web',
-      client: 'Instituição ABC',
-      date: '2024-07-22',
-      rating: '4.8',
-      tags: ['WordPress', 'PHP', 'JavaScript'],
-      icon: 'ri-global-line'
-    },
-    {
-      title: 'Backup e Disaster Recovery',
-      description: 'Solução completa de backup e recuperação de desastres',
-      category: 'infra',
-      type: 'Infraestrutura',
-      client: 'Data Safe',
-      date: '2024-08-30',
-      rating: '4.9',
-      tags: ['Backup', 'Cloud', 'Recovery'],
-      icon: 'ri-hard-drive-line'
-    },
-    {
-      title: 'Optimização de Processos',
-      description: 'Consultoria para optimização de processos de negócio',
-      category: 'consult',
-      type: 'Consultoria',
-      client: 'Process Pro',
-      date: '2024-09-14',
-      rating: '4.7',
-      tags: ['BPM', 'Lean', 'Automação'],
-      icon: 'ri-settings-line'
-    }
-  ];
-
-  let currentFilter = 'all';
-  let currentPage = 1;
+document.addEventListener('DOMContentLoaded', () => {
   const itemsPerPage = 6;
+  let currentPage = 1;
+  let currentFilter = 'all';
+  
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const allItems = document.querySelectorAll('.portfolio-item');
+  const portfolioGrid = document.getElementById('portfolioGrid');
+  const prevBtn = document.getElementById('prevPage');
+  const nextBtn = document.getElementById('nextPage');
+  const pageNumbersContainer = document.getElementById('pageNumbers');
 
-  function getFilteredData() {
-    if (currentFilter === 'all') return portfolioData;
-    return portfolioData.filter(item => item.category === currentFilter);
+  // Função para obter itens filtrados
+  function getFilteredItems() {
+    return Array.from(allItems).filter(item => {
+      return currentFilter === 'all' || item.dataset.category === currentFilter;
+    });
   }
 
-  function renderProjects() {
-    const filteredData = getFilteredData();
-    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+  // Função para renderizar página
+  function renderPage() {
+    const filteredItems = getFilteredItems();
+    const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const pageData = filteredData.slice(startIndex, endIndex);
 
-    const grid = document.getElementById('portfolioGrid');
-    grid.innerHTML = '';
-
-    pageData.forEach((project, index) => {
-      const col = document.createElement('div');
-      col.className = 'col-lg-4 col-md-6 portfolio-item';
-      col.style.animationDelay = `${index * 0.1}s`;
-
-      col.innerHTML = `
-        <div class="portfolio-card">
-          <div class="card-image">
-            <i class="${project.icon}"></i>
-            <div class="card-badges">
-              <span class="badge-category">
-                <i class="${project.icon} me-1"></i>${project.type}
-              </span>
-              <span class="badge-rating">
-                <i class="ri-star-fill"></i> ${project.rating}
-              </span>
-            </div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">${project.title}</h5>
-            <p class="card-description">${project.description}</p>
-
-            <div class="card-meta">
-              <div class="meta-item">
-                <i class="ri-building-line"></i>
-                <span><strong>${project.client}</strong></span>
-              </div>
-              <div class="meta-item">
-                <i class="ri-calendar-line"></i>
-                <span>${new Date(project.date).toLocaleDateString('pt-PT')}</span>
-              </div>
-            </div>
-
-            <div class="card-tags">
-              ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-            </div>
-
-            <button class="card-action">
-              <i class="ri-arrow-right-line me-2"></i>Ver Detalhes
-            </button>
-          </div>
-        </div>
-      `;
-
-      grid.appendChild(col);
+    // Esconder todos os itens
+    allItems.forEach(item => {
+      item.style.display = 'none';
     });
 
-    updatePagination(totalPages);
+    // Mostrar apenas os itens da página actual
+    filteredItems.slice(startIndex, endIndex).forEach(item => {
+      item.style.display = 'block';
+    });
+
+    // Actualizar botões de navegação
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+
+    // Renderizar números de página
+    renderPageNumbers(totalPages);
   }
 
-  function updatePagination(totalPages) {
-    document.getElementById('currentPage').textContent = currentPage;
-    document.getElementById('totalPages').textContent = totalPages;
-    document.getElementById('prevBtn').disabled = currentPage === 1;
-    document.getElementById('nextBtn').disabled = currentPage === totalPages || totalPages === 0;
+  // Função para renderizar números de página
+  function renderPageNumbers(totalPages) {
+    pageNumbersContainer.innerHTML = '';
+    
+    for (let i = 1; i <= totalPages; i++) {
+      const pageBtn = document.createElement('button');
+      pageBtn.className = 'pagination-btn' + (i === currentPage ? ' active' : '');
+      pageBtn.textContent = i;
+      pageBtn.addEventListener('click', () => {
+        currentPage = i;
+        renderPage();
+        window.scrollTo({ top: document.getElementById('portfolioGallery').offsetTop - 100, behavior: 'smooth' });
+      });
+      pageNumbersContainer.appendChild(pageBtn);
+    }
   }
 
-  // Eventos
-  document.querySelectorAll('.filter-btn').forEach(btn => {
+  // Filtros
+  filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      filterButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentFilter = btn.dataset.filter;
       currentPage = 1;
-      renderProjects();
+      renderPage();
     });
   });
 
-  document.getElementById('prevBtn').addEventListener('click', () => {
+  // Navegação
+  prevBtn.addEventListener('click', () => {
     if (currentPage > 1) {
       currentPage--;
-      renderProjects();
+      renderPage();
       window.scrollTo({ top: document.getElementById('portfolioGallery').offsetTop - 100, behavior: 'smooth' });
     }
   });
 
-  document.getElementById('nextBtn').addEventListener('click', () => {
-    const totalPages = Math.ceil(getFilteredData().length / itemsPerPage);
+  nextBtn.addEventListener('click', () => {
+    const filteredItems = getFilteredItems();
+    const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
     if (currentPage < totalPages) {
       currentPage++;
-      renderProjects();
+      renderPage();
       window.scrollTo({ top: document.getElementById('portfolioGallery').offsetTop - 100, behavior: 'smooth' });
     }
   });
 
   // Inicializar
-  renderProjects();
+  renderPage();
+});
 </script>
