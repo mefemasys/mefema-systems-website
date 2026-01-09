@@ -1,10 +1,34 @@
-<section class="section-py landing-hero" id="portfolioHero">
-  <div class="container">
-    <div class="row align-items-center">
+<section class="section-py landing-hero services-hero position-relative d-flex align-items-center" 
+         id="portfolioHero" 
+         style="min-height: 400px; max-height: 60vh; overflow: hidden;">
+  
+  <!-- Camadas de Animação de Fundo -->
+  <div class="hero-animated-bg position-absolute w-100 h-100 top-0 start-0"></div>
+ 
+  <!-- Traços Decorativos de Diamantes -->
+  <div class="hero-decorative-lines position-absolute w-100 h-100 top-0 start-0">
+    <div class="hero-diamond-line"></div>
+    <div class="hero-diamond-line"></div>
+    <div class="hero-diamond-line"></div>
+    <div class="hero-diamond-line"></div>
+  </div>
+  
+  <!-- Nós de Tecnologia (Tech Nodes) -->
+  <div class="hero-tech-node position-absolute" style="top: 15%; left: 10%;"></div>
+  <div class="hero-tech-node position-absolute" style="top: 30%; right: 15%;"></div>
+  <div class="hero-tech-node position-absolute" style="bottom: 20%; left: 8%;"></div>
+  <div class="hero-tech-node position-absolute" style="bottom: 15%; right: 12%;"></div>
+  
+  <!-- Conteúdo Principal -->
+  <div class="container position-relative" style="z-index: 5;">
+    <div class="row justify-content-center align-items-center h-100">
       <div class="col-lg-8 mx-auto text-center">
-        <h1 class="display-4 fw-bold mb-4">Nosso Portfólio</h1>
-        <p class="lead mb-0">
-          Conheça os projetos que desenvolvemos para empresas de diferentes sectores, desde software até infraestrutura de IT e formação especializada.
+        <h1 class="display-4 fw-bold mb-4 lh-sm hero-title-glow services-title">
+          Nosso
+          <span class="text-primary d-block">Portfólio</span>
+        </h1>
+        <p class="lead mb-5 pe-lg-5 hero-text-fade services-text">
+          Conheça os projetos que desenvolvemos para empresas de diferentes setores, desde software até infraestrutura de IT e formação especializada.
         </p>
       </div>
     </div>
