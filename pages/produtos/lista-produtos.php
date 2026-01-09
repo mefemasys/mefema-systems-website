@@ -1,136 +1,136 @@
-<!-- Secção de Serviços - Design Moderno e Fluido -->
 <section class="section-py landing-services" id="landingServices">
     <div class="container position-relative">
-    <!-- Grid de Serviços -->
         <div class="row g-4">
             
-            <!-- Serviço 1: Desenvolvimento -->
             <div class="col-lg-6">
                 <div class="service-card">
                     <div class="service-header">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 6L4 10L8 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16 6L20 10L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M14 4L10 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M3 9H21M9 21V9M12 3H4C2.89543 3 2 3.89543 2 5V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9M12 3L14 5M12 3L10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h4 class="service-title">Desenvolvimento de Software</h4>
+                        <h4 class="service-title">Websites Prontos</h4>
                     </div>
+                    <p class="mb-3 text-muted">Pacotes completos com design moderno, responsivo e funcionalidades essenciais para sua presença online.</p>
                     <ul class="service-list">
-                        <li><span class="check-icon">✓</span> Aplicações web e móveis personalizadas</li>
-                        <li><span class="check-icon">✓</span> Sistemas ERP simplificados</li>
-                        <li><span class="check-icon">✓</span> Plataformas de e-commerce</li>
-                        <li><span class="check-icon">✓</span> Integração de APIs e sistemas legados</li>
-                        <li><span class="check-icon">✓</span> Modernização de software</li>
-                        <li><span class="check-icon">✓</span> Testes e Garantia de Qualidade (QA)</li>
+                        <li><span class="check-icon">✓</span> Domínio (.co.mz/.com) e hospedagem incluídos</li>
+                        <li><span class="check-icon">✓</span> Certificado SSL e e-mails profissionais ilimitados</li>
+                        <li><span class="check-icon">✓</span> Otimização SEO básica para motores de busca (Google)</li>
+                        <li><span class="check-icon">✓</span> Design 100% responsivo (Tablet e Mobile)</li>
+                        <li><span class="check-icon">✓</span> Painel administrativo intuitivo para gestão de conteúdo</li>
+                        <li><span class="check-icon">✓</span> Botão WhatsApp flutuante e formulários de contacto</li>
                     </ul>
-                    <a href="servicos" class="service-btn">
-                        <span>Saiba Mais</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    <div class="mt-auto">
+                        <p class="fw-bold mb-2">A partir de 25.000 MT</p>
+                        <a href="#" class="service-btn">
+                            <span>Ver todos os pacotes</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Serviço 2: Infraestrutura -->
             <div class="col-lg-6">
                 <div class="service-card">
                     <div class="service-header">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="3" width="20" height="5" rx="2" stroke="currentColor" stroke-width="2"/>
-                                <rect x="2" y="10" width="20" height="5" rx="2" stroke="currentColor" stroke-width="2"/>
-                                <rect x="2" y="17" width="20" height="5" rx="2" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="6" cy="5.5" r="0.5" fill="currentColor"/>
-                                <circle cx="6" cy="12.5" r="0.5" fill="currentColor"/>
-                                <circle cx="6" cy="19.5" r="0.5" fill="currentColor"/>
+                                <path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M16 21V5C16 4.46957 15.7893 3.96086 15.4142 3.58579C15.0391 3.21071 14.5304 3 14 3H10C9.46957 3 8.96086 3.21071 8.58579 3.58579C8.21071 3.96086 8 4.46957 8 5V21" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h4 class="service-title">Infraestrutura e Manutenção</h4>
+                        <h4 class="service-title">Sistemas de Gestão</h4>
                     </div>
+                    <p class="mb-3 text-muted">Softwares robustos e modulares para automatizar processos e aumentar o controlo sobre o seu negócio.</p>
                     <ul class="service-list">
-                        <li><span class="check-icon">✓</span> Implementação de redes</li>
-                        <li><span class="check-icon">✓</span> Serviços em nuvem (IaaS)</li>
-                        <li><span class="check-icon">✓</span> Suporte técnico remoto e presencial</li>
-                        <li><span class="check-icon">✓</span> Backup e recuperação de dados</li>
-                        <li><span class="check-icon">✓</span> Gestão de servidores e bases de dados</li>
-                        <li><span class="check-icon">✓</span> Monitorização e otimização de sistemas</li>
+                        <li><span class="check-icon">✓</span> Facturação AT e gestão de stocks em tempo real</li>
+                        <li><span class="check-icon">✓</span> Multi-utilizador com níveis de acesso personalizados</li>
+                        <li><span class="check-icon">✓</span> Relatórios financeiros e gráficos de desempenho</li>
+                        <li><span class="check-icon">✓</span> Integração com pagamentos locais (M-Pesa, e-Mola)</li>
+                        <li><span class="check-icon">✓</span> Backups diários automáticos na nuvem</li>
+                        <li><span class="check-icon">✓</span> Exportação de dados para contabilidade (Excel/PDF)</li>
                     </ul>
-                    <a href="servicos" class="service-btn">
-                        <span>Saiba Mais</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    <div class="mt-auto">
+                        <p class="fw-bold mb-2">A partir de 45.000 MT</p>
+                        <a href="#" class="service-btn">
+                            <span>Explorar sistemas</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Serviço 3: Consultoria -->
             <div class="col-lg-6">
                 <div class="service-card">
                     <div class="service-header">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 18H12.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <h4 class="service-title">Consultoria Digital</h4>
+                        <h4 class="service-title">Apps Móveis</h4>
                     </div>
+                    <p class="mb-3 text-muted">Soluções mobile nativas ou híbridas com alta performance para Android e iOS.</p>
                     <ul class="service-list">
-                        <li><span class="check-icon">✓</span> Estratégia de transformação digital</li>
-                        <li><span class="check-icon">✓</span> Auditoria de sistemas</li>
-                        <li><span class="check-icon">✓</span> Planeamento de TI</li>
-                        <li><span class="check-icon">✓</span> Gestão de projectos tecnológicos</li>
-                        <li><span class="check-icon">✓</span> Análise de requisitos e viabilidade</li>
-                        <li><span class="check-icon">✓</span> Otimização de processos com tecnologia</li>
+                        <li><span class="check-icon">✓</span> Publicação e gestão nas lojas (Play Store / App Store)</li>
+                        <li><span class="check-icon">✓</span> Notificações Push para fidelização de usuários</li>
+                        <li><span class="check-icon">✓</span> Geolocalização e mapas em tempo real</li>
+                        <li><span class="check-icon">✓</span> Autenticação social (Google, Facebook, Apple ID)</li>
+                        <li><span class="check-icon">✓</span> Funcionalidades Offline com sincronização posterior</li>
+                        <li><span class="check-icon">✓</span> Interface UI/UX moderna e ultra-rápida</li>
                     </ul>
-                    <a href="servicos" class="service-btn">
-                        <span>Saiba Mais</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    <div class="mt-auto">
+                        <p class="fw-bold mb-2">A partir de 80.000 MT</p>
+                        <a href="#" class="service-btn">
+                            <span>Ver aplicações</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Serviço 4: Formação -->
             <div class="col-lg-6">
                 <div class="service-card">
                     <div class="service-header">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22 10V16C22 17.1046 21.1046 18 20 18H4C2.89543 18 2 17.1046 2 16V10" stroke="currentColor" stroke-width="2"/>
-                                <path d="M12 14C14.2091 14 16 12.2091 16 10C16 7.79086 14.2091 6 12 6C9.79086 6 8 7.79086 8 10C8 12.2091 9.79086 14 12 14Z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M2 10L12 2L22 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 16V22M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM12 8V2M12 8L18 5M12 8L6 5M12 16L18 19M12 16L6 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <h4 class="service-title">Formação Corporativa</h4>
+                        <h4 class="service-title">Soluções IA + IoT</h4>
                     </div>
+                    <p class="mb-3 text-muted">Inovação com Inteligência Artificial e sensores inteligentes para automação e análise preditiva.</p>
                     <ul class="service-list">
-                        <li><span class="check-icon">✓</span> Literacia digital</li>
-                        <li><span class="check-icon">✓</span> Ferramentas de produtividade</li>
-                        <li><span class="check-icon">✓</span> Cibersegurança</li>
-                        <li><span class="check-icon">✓</span> Sistemas específicos</li>
-                        <li><span class="check-icon">✓</span> Workshops de novas tecnologias</li>
-                        <li><span class="check-icon">✓</span> Treinamento em software de gestão</li>
+                        <li><span class="check-icon">✓</span> Chatbots inteligentes treinados com sua base de dados</li>
+                        <li><span class="check-icon">✓</span> Monitorização de sensores remotos (temperatura, humidade, etc.)</li>
+                        <li><span class="check-icon">✓</span> Dashboards BI para análise de tendências de mercado</li>
+                        <li><span class="check-icon">✓</span> Automação de tarefas repetitivas via IA</li>
+                        <li><span class="check-icon">✓</span> Reconhecimento facial ou de imagem para segurança</li>
+                        <li><span class="check-icon">✓</span> Manutenção preditiva de hardware e ativos</li>
                     </ul>
-                    <a href="servicos" class="service-btn">
-                        <span>Saiba Mais</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    <div class="mt-auto">
+                        <p class="fw-bold mb-2">Preço: Sob consulta</p>
+                        <a href="#" class="service-btn">
+                            <span>Saber mais</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
 </section>
-
 <style>
 /* ========================================
    VARIÁVEIS DOS SERVIÇOS
