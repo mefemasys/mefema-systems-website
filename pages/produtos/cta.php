@@ -24,13 +24,14 @@
 
 <style>
   /* ========================================
-     CTA - APENAS LARANJA + BORDER RADIUS MÍNIMO
+     CTA - LARANJA DOMINANTE + CASTANHO QUENTE + BORDER RADIUS MÍNIMO
      ======================================== */
   #produtosCTA {
     padding: 120px 0;
+    text-align: center;
   }
 
-  /* Botão principal - Laranja cheio */
+  /* Botão principal - Laranja forte com gradiente */
   .btn-cta-primary {
     display: inline-flex;
     align-items: center;
@@ -39,7 +40,7 @@
     padding: 1.1rem 2.8rem;
     font-size: 1.15rem;
     font-weight: 700;
-    background: var(--products-primary);
+    background: linear-gradient(135deg, #d97638, #c66b3d);
     color: white !important;
     border: none;
     border-radius: 4px !important;
@@ -49,7 +50,7 @@
   }
 
   .btn-cta-primary:hover {
-    background: var(--products-secondary);
+    background: linear-gradient(135deg, #c66b3d, #b85f30);
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(217, 118, 56, 0.45);
   }
@@ -58,7 +59,7 @@
     font-size: 1.4rem;
   }
 
-  /* Botão outline - Contorno laranja */
+  /* Botão outline - Contorno laranja + texto laranja */
   .btn-cta-outline {
     display: inline-flex;
     align-items: center;
@@ -68,15 +69,15 @@
     font-size: 1.15rem;
     font-weight: 700;
     background: transparent;
-    color: var(--products-primary) !important;
-    border: 2.5px solid var(--products-primary);
+    color: #d97638 !important;
+    border: 2.5px solid #d97638;
     border-radius: 4px !important;
     transition: all 0.4s ease;
     text-decoration: none;
   }
 
   .btn-cta-outline:hover {
-    background: var(--products-primary);
+    background: #d97638;
     color: white !important;
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(217, 118, 56, 0.3);
@@ -87,26 +88,38 @@
   }
 
   /* ========================================
-     MODO ESCURO - LARANJA VIVO + TEXTO CASTANHO CLARO
+     MODO ESCURO - FUNDO CASTANHO ESCURO + TEXTO CASTANHO CLARO
      ======================================== */
   @media (prefers-color-scheme: dark) {
+    #produtosCTA {
+      background: #1f1814 !important; /* Castanho escuro quente */
+    }
+
+    #produtosCTA h2 {
+      color: #f5ede6 !important; /* Castanho claro quente */
+    }
+
+    #produtosCTA p {
+      color: #d4c5b8 !important; /* Castanho médio claro */
+    }
+
     .btn-cta-primary {
-      background: var(--products-primary-light); /* #ff8c4a */
+      background: linear-gradient(135deg, #ff8c4a, #e07a3d);
       box-shadow: 0 8px 25px rgba(255, 140, 74, 0.4);
     }
 
     .btn-cta-primary:hover {
-      background: var(--products-primary);
+      background: linear-gradient(135deg, #e07a3d, #c66b3d);
       box-shadow: 0 12px 30px rgba(255, 140, 74, 0.5);
     }
 
     .btn-cta-outline {
-      color: var(--products-primary-light) !important;
-      border-color: var(--products-primary-light);
+      color: #ff8c4a !important;
+      border-color: #ff8c4a;
     }
 
     .btn-cta-outline:hover {
-      background: var(--products-primary-light);
+      background: #ff8c4a;
       box-shadow: 0 12px 30px rgba(255, 140, 74, 0.35);
     }
   }
@@ -128,6 +141,20 @@
       width: 100%;
       padding: 1rem 2rem;
       font-size: 1.1rem;
+    }
+
+    .d-flex.gap-4 {
+      gap: 1rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #produtosCTA h2 {
+      font-size: 1.8rem;
+    }
+
+    #produtosCTA p {
+      font-size: 1rem;
     }
   }
 </style>
