@@ -1,4 +1,4 @@
-<section class="section-py landing-hero services-hero position-relative" id="servicesHero">
+<section class="section-py landing-hero services-hero position-relative min-vh-100 min-vh-md-60 vh-100 vh-md-auto" id="servicesHero" style="max-height: 60vh; overflow: hidden;"> 
   <!-- Camadas de Animação de Fundo -->
   <div class="hero-animated-bg"></div>
   
