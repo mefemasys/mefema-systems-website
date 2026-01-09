@@ -3,27 +3,30 @@
         <div class="row g-4">
             
             <div class="col-lg-6">
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">
+                <div class="service-card h-100 d-flex flex-column border-0 shadow-sm p-4" style="transition: transform 0.3s ease; border-radius: 16px;">
+                    <div class="service-header mb-3">
+                        <div class="service-icon mb-3" style="color: #0d6efd;">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 9H21M9 21V9M12 3H4C2.89543 3 2 3.89543 2 5V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9M12 3L14 5M12 3L10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h4 class="service-title">Websites Prontos</h4>
+                        <h4 class="service-title fw-bold">Websites Prontos</h4>
                     </div>
-                    <p class="mb-3 text-muted">Pacotes completos com design moderno, responsivo e funcionalidades essenciais para sua presença online.</p>
-                    <ul class="service-list">
-                        <li><span class="check-icon">✓</span> Domínio (.co.mz/.com) e hospedagem incluídos</li>
-                        <li><span class="check-icon">✓</span> Certificado SSL e e-mails profissionais ilimitados</li>
-                        <li><span class="check-icon">✓</span> Otimização SEO básica para motores de busca (Google)</li>
-                        <li><span class="check-icon">✓</span> Design 100% responsivo (Tablet e Mobile)</li>
-                        <li><span class="check-icon">✓</span> Painel administrativo intuitivo para gestão de conteúdo</li>
-                        <li><span class="check-icon">✓</span> Botão WhatsApp flutuante e formulários de contacto</li>
+                    <p class="text-muted">Presença digital profissional com entrega rápida e design otimizado para conversão.</p>
+                    <ul class="service-list list-unstyled flex-grow-1">
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Domínio (.co.mz) e Hospedagem SSD</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> SSL e E-mails Profissionais ilimitados</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> SEO otimizado para Google</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Design Responsivo (Mobile First)</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Gestão de conteúdos via Painel Administrativo</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Integração WhatsApp e Redes Sociais</li>
                     </ul>
-                    <div class="mt-auto">
-                        <p class="fw-bold mb-2">A partir de 25.000 MT</p>
-                        <a href="#" class="service-btn">
+                    <div class="service-footer mt-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-muted small">Investimento inicial</span>
+                            <span class="badge bg-light text-primary fs-6 py-2 px-3" style="border: 1px solid #0d6efd40;">25.000 MT</span>
+                        </div>
+                        <a href="#" class="service-btn btn btn-primary w-100 py-3 d-flex justify-content-between align-items-center" style="border-radius: 12px; font-weight: 600;">
                             <span>Ver todos os pacotes</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -34,28 +37,31 @@
             </div>
 
             <div class="col-lg-6">
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">
+                <div class="service-card h-100 d-flex flex-column border-0 shadow-sm p-4" style="transition: transform 0.3s ease; border-radius: 16px;">
+                    <div class="service-header mb-3">
+                        <div class="service-icon mb-3" style="color: #0d6efd;">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                                 <path d="M16 21V5C16 4.46957 15.7893 3.96086 15.4142 3.58579C15.0391 3.21071 14.5304 3 14 3H10C9.46957 3 8.96086 3.21071 8.58579 3.58579C8.21071 3.96086 8 4.46957 8 5V21" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h4 class="service-title">Sistemas de Gestão</h4>
+                        <h4 class="service-title fw-bold">Sistemas de Gestão</h4>
                     </div>
-                    <p class="mb-3 text-muted">Softwares robustos e modulares para automatizar processos e aumentar o controlo sobre o seu negócio.</p>
-                    <ul class="service-list">
-                        <li><span class="check-icon">✓</span> Facturação AT e gestão de stocks em tempo real</li>
-                        <li><span class="check-icon">✓</span> Multi-utilizador com níveis de acesso personalizados</li>
-                        <li><span class="check-icon">✓</span> Relatórios financeiros e gráficos de desempenho</li>
-                        <li><span class="check-icon">✓</span> Integração com pagamentos locais (M-Pesa, e-Mola)</li>
-                        <li><span class="check-icon">✓</span> Backups diários automáticos na nuvem</li>
-                        <li><span class="check-icon">✓</span> Exportação de dados para contabilidade (Excel/PDF)</li>
+                    <p class="text-muted">Controlo total do seu negócio com ferramentas modulares e relatórios inteligentes.</p>
+                    <ul class="service-list list-unstyled flex-grow-1">
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Facturação AT e Gestão de Stocks</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Multi-utilizador com Permissões por Perfil</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Integração M-Pesa, e-Mola e Bancos</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Backups Automáticos e Segurança de Dados</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Relatórios Financeiros e de Vendas</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Acesso Cloud (Web) ou Local</li>
                     </ul>
-                    <div class="mt-auto">
-                        <p class="fw-bold mb-2">A partir de 45.000 MT</p>
-                        <a href="#" class="service-btn">
+                    <div class="service-footer mt-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-muted small">Investimento inicial</span>
+                            <span class="badge bg-light text-primary fs-6 py-2 px-3" style="border: 1px solid #0d6efd40;">45.000 MT</span>
+                        </div>
+                        <a href="#" class="service-btn btn btn-primary w-100 py-3 d-flex justify-content-between align-items-center" style="border-radius: 12px; font-weight: 600;">
                             <span>Explorar sistemas</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -66,28 +72,31 @@
             </div>
 
             <div class="col-lg-6">
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">
+                <div class="service-card h-100 d-flex flex-column border-0 shadow-sm p-4" style="transition: transform 0.3s ease; border-radius: 16px;">
+                    <div class="service-header mb-3">
+                        <div class="service-icon mb-3" style="color: #0d6efd;">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2"/>
                                 <path d="M12 18H12.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <h4 class="service-title">Apps Móveis</h4>
+                        <h4 class="service-title fw-bold">Apps Móveis</h4>
                     </div>
-                    <p class="mb-3 text-muted">Soluções mobile nativas ou híbridas com alta performance para Android e iOS.</p>
-                    <ul class="service-list">
-                        <li><span class="check-icon">✓</span> Publicação e gestão nas lojas (Play Store / App Store)</li>
-                        <li><span class="check-icon">✓</span> Notificações Push para fidelização de usuários</li>
-                        <li><span class="check-icon">✓</span> Geolocalização e mapas em tempo real</li>
-                        <li><span class="check-icon">✓</span> Autenticação social (Google, Facebook, Apple ID)</li>
-                        <li><span class="check-icon">✓</span> Funcionalidades Offline com sincronização posterior</li>
-                        <li><span class="check-icon">✓</span> Interface UI/UX moderna e ultra-rápida</li>
+                    <p class="text-muted">Sua marca no bolso dos seus clientes com alta performance Android e iOS.</p>
+                    <ul class="service-list list-unstyled flex-grow-1">
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Publicação na Play Store e App Store</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Notificações Push ilimitadas</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> GPS e Mapas em Tempo Real</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Pagamentos móveis integrados</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Modo Offline e Sincronização Cloud</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> UI/UX focada na experiência do usuário</li>
                     </ul>
-                    <div class="mt-auto">
-                        <p class="fw-bold mb-2">A partir de 80.000 MT</p>
-                        <a href="#" class="service-btn">
+                    <div class="service-footer mt-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-muted small">Investimento inicial</span>
+                            <span class="badge bg-light text-primary fs-6 py-2 px-3" style="border: 1px solid #0d6efd40;">80.000 MT</span>
+                        </div>
+                        <a href="#" class="service-btn btn btn-primary w-100 py-3 d-flex justify-content-between align-items-center" style="border-radius: 12px; font-weight: 600;">
                             <span>Ver aplicações</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -98,27 +107,30 @@
             </div>
 
             <div class="col-lg-6">
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">
+                <div class="service-card h-100 d-flex flex-column border-0 shadow-sm p-4" style="transition: transform 0.3s ease; border-radius: 16px;">
+                    <div class="service-header mb-3">
+                        <div class="service-icon mb-3" style="color: #0d6efd;">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 16V22M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM12 8V2M12 8L18 5M12 8L6 5M12 16L18 19M12 16L6 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <h4 class="service-title">Soluções IA + IoT</h4>
+                        <h4 class="service-title fw-bold">Soluções IA + IoT</h4>
                     </div>
-                    <p class="mb-3 text-muted">Inovação com Inteligência Artificial e sensores inteligentes para automação e análise preditiva.</p>
-                    <ul class="service-list">
-                        <li><span class="check-icon">✓</span> Chatbots inteligentes treinados com sua base de dados</li>
-                        <li><span class="check-icon">✓</span> Monitorização de sensores remotos (temperatura, humidade, etc.)</li>
-                        <li><span class="check-icon">✓</span> Dashboards BI para análise de tendências de mercado</li>
-                        <li><span class="check-icon">✓</span> Automação de tarefas repetitivas via IA</li>
-                        <li><span class="check-icon">✓</span> Reconhecimento facial ou de imagem para segurança</li>
-                        <li><span class="check-icon">✓</span> Manutenção preditiva de hardware e ativos</li>
+                    <p class="text-muted">A última fronteira da tecnologia para automatizar e prever resultados reais.</p>
+                    <ul class="service-list list-unstyled flex-grow-1">
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Chatbots IA para Atendimento Automático</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Automação de Processos (RPA)</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Monitorização de Sensores de Hardware</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Análise Preditiva de Dados</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Dashboards BI de alta performance</li>
+                        <li class="mb-2"><span class="text-primary me-2">✓</span> Projetos Personalizados de Engenharia</li>
                     </ul>
-                    <div class="mt-auto">
-                        <p class="fw-bold mb-2">Preço: Sob consulta</p>
-                        <a href="#" class="service-btn">
+                    <div class="service-footer mt-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-muted small">Custo do projeto</span>
+                            <span class="badge bg-light text-secondary fs-6 py-2 px-3" style="border: 1px solid #6c757d40;">Sob consulta</span>
+                        </div>
+                        <a href="#" class="service-btn btn btn-outline-primary w-100 py-3 d-flex justify-content-between align-items-center" style="border-radius: 12px; font-weight: 600;">
                             <span>Saber mais</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -131,6 +143,7 @@
         </div>
     </div>
 </section>
+
 <style>
 /* ========================================
    VARIÁVEIS DOS SERVIÇOS
