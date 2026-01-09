@@ -1,7 +1,6 @@
 <style>
-/* Variáveis já definidas no teu CSS anterior – mantidas e usadas aqui */
+/* Estilos Específicos do Portfolio Slider - Versão Limpa e Minimalista */
 
-/* Estilos Específicos do Portfolio Slider - Modernizado */
 #portfolioSlider {
   padding: 80px 0;
   background-color: #f8f5f0; /* bege claro para light mode */
@@ -15,7 +14,6 @@
 }
 
 #portfolioCarousel .carousel-inner {
-  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
@@ -24,14 +22,11 @@
   transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
-/* Imagem Placeholder - Efeito Vidro Moderno */
+/* Imagem Placeholder - Simples e elegante */
 .portfolio-img-placeholder {
   height: 100%;
   min-height: 500px;
-  background: linear-gradient(135deg, 
-    rgba(205, 127, 50, 0.12) 0%,   /* castanho claro */
-    rgba(255, 140, 0, 0.15) 50%,   /* laranja */
-    rgba(139, 90, 43, 0.1) 100%);  /* castanho */
+  background: rgba(205, 127, 50, 0.08); /* fundo castanho muito claro */
   backdrop-filter: blur(12px);
   border-right: 1px solid rgba(205, 127, 50, 0.2);
   display: flex;
@@ -43,22 +38,15 @@
 
 @media (prefers-color-scheme: dark) {
   .portfolio-img-placeholder {
+    background: rgba(255, 255, 255, 0.05);
     border-right: 1px solid var(--border-dark);
   }
-}
-
-.portfolio-img-placeholder::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 140, 0, 0.25), transparent 70%);
-  opacity: 0.6;
 }
 
 .portfolio-img-placeholder i {
   font-size: 8rem;
   opacity: 0.2;
-  color: #CD7F32; /* castanho bronze */
+  color: #CD7F32; /* bronze */
 }
 
 .portfolio-img-placeholder p {
@@ -66,7 +54,7 @@
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  color: #D2691E; /* castanho chocolate */
+  color: #D2691E;
   font-weight: 600;
   letter-spacing: 2px;
   font-size: 0.9rem;
@@ -76,7 +64,7 @@
 /* Conteúdo do Texto */
 .portfolio-content {
   padding: 60px 50px;
-  background: #ffffff; /* branco para light mode */
+  background: #ffffff;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -90,28 +78,30 @@
 }
 
 .portfolio-content .badge {
-  background: linear-gradient(135deg, #CD7F32, #FF8C00); /* castanho para laranja */
+  background-color: #CD7F32; /* cor sólida bronze */
   color: white;
   font-size: 0.95rem;
   padding: 0.6em 1.2em;
-  border-radius: 50px;
   box-shadow: 0 4px 15px rgba(205, 127, 50, 0.3);
 }
 
 .portfolio-content h2 {
   font-size: 2.8rem;
   font-weight: 800;
-  background: linear-gradient(90deg, #8B5A2B, #FF8C00); /* castanho escuro para laranja */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #8B5A2B; /* castanho escuro sólido */
   margin-bottom: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .portfolio-content h2 {
+    color: var(--text-light);
+  }
 }
 
 .portfolio-content .lead {
   font-size: 1.2rem;
   line-height: 1.7;
-  color: #3d3d3d; /* texto escuro para light mode */
+  color: #3d3d3d;
   opacity: 0.9;
 }
 
@@ -121,12 +111,11 @@
   }
 }
 
-/* Cards de Info (Cliente / Conclusão) */
+/* Cards de Info */
 .info-card {
-  background: rgba(205, 127, 50, 0.08); /* castanho muito claro para light mode */
+  background: rgba(205, 127, 50, 0.08);
   backdrop-filter: blur(10px);
-  border-left: 5px solid #CD7F32; /* castanho bronze */
-  border-radius: 0 12px 12px 0;
+  border-left: 5px solid #CD7F32;
   padding: 20px;
   transition: all 0.3s ease;
 }
@@ -140,11 +129,11 @@
 
 .info-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(205, 127, 50, 0.25);
+  box-shadow: 0 10px 30px rgba(205, 127, 50, 0.2);
 }
 
 .info-card small {
-  color: #8B5A2B; /* castanho escuro */
+  color: #8B5A2B;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -155,12 +144,12 @@
   }
 }
 
-/* Botões */
+/* Botões - Cores sólidas */
 .portfolio-content .btn-primary-custom {
-  background: linear-gradient(135deg, #CD7F32, #FF8C00); /* castanho para laranja */
+  background-color: #CD7F32;
   border: none;
+  color: white;
   padding: 14px 32px;
-  border-radius: 50px;
   font-weight: 600;
   box-shadow: 0 8px 25px rgba(205, 127, 50, 0.4);
   transition: all 0.3s ease;
@@ -168,14 +157,14 @@
 
 .portfolio-content .btn-primary-custom:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(255, 140, 0, 0.5);
+  box-shadow: 0 12px 35px rgba(205, 127, 50, 0.5);
+  background-color: #b36b2a; /* ligeiramente mais escuro no hover */
 }
 
 .portfolio-content .btn-outline-custom {
-  border: 2px solid #CD7F32; /* castanho bronze */
-  color: #8B5A2B; /* castanho escuro */
+  border: 2px solid #CD7F32;
+  color: #8B5A2B;
   padding: 14px 32px;
-  border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s ease;
 }
@@ -189,15 +178,15 @@
 
 .portfolio-content .btn-outline-custom:hover {
   background: rgba(205, 127, 50, 0.15);
-  border-color: #FF8C00; /* laranja */
-  color: #FF8C00;
+  color: #CD7F32;
+  border-color: #CD7F32;
 }
 
 @media (prefers-color-scheme: dark) {
   .portfolio-content .btn-outline-custom:hover {
     background: rgba(255, 255, 255, 0.1);
-    border-color: var(--color-primary);
     color: var(--color-primary);
+    border-color: var(--color-primary);
   }
 }
 
@@ -205,14 +194,13 @@
 #portfolioCarousel .carousel-indicators button {
   width: 40px;
   height: 4px;
-  border-radius: 2px;
-  background-color: rgba(205, 127, 50, 0.3); /* castanho claro */
+  background-color: rgba(205, 127, 50, 0.3);
   opacity: 0.6;
   transition: all 0.3s ease;
 }
 
 #portfolioCarousel .carousel-indicators button.active {
-  background-color: #FF8C00; /* laranja */
+  background-color: #CD7F32;
   opacity: 1;
   width: 60px;
 }
@@ -234,7 +222,6 @@
   background-color: rgba(0, 0, 0, 0.4);
   width: 60px;
   height: 60px;
-  border-radius: 50%;
   background-size: 50%;
 }
 
@@ -266,11 +253,11 @@
 }
 </style>
 
+<!-- HTML mantido igual, apenas com classes existentes -->
 <section class="py-5" id="portfolioSlider">
   <div class="container-fluid px-0 px-lg-5">
     <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000">
       
-      <!-- Indicadores -->
       <div class="carousel-indicators mb-0">
         <?php foreach ($portfolio_data as $index => $project): ?>
           <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="<?php echo $index; ?>"
@@ -278,7 +265,6 @@
         <?php endforeach; ?>
       </div>
 
-      <!-- Itens do Carousel -->
       <div class="carousel-inner">
         <?php foreach ($portfolio_data as $index => $project):
           $cat = $category_map[$project['category']];
@@ -286,7 +272,6 @@
           <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
             <div class="row g-0 align-items-center">
               
-              <!-- Imagem / Placeholder -->
               <div class="col-lg-6">
                 <div class="portfolio-img-placeholder">
                   <i class="<?php echo $cat['icon']; ?>"></i>
@@ -294,7 +279,6 @@
                 </div>
               </div>
               
-              <!-- Conteúdo -->
               <div class="col-lg-6">
                 <div class="portfolio-content">
                   <span class="badge px-4 py-2 mb-4">
@@ -311,7 +295,7 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <div class="info-card border-primary">
+                      <div class="info-card">
                         <small>Conclusão</small>
                         <div class="h5 mb-0 mt-1"><?php echo date('M Y', strtotime($project['date'])); ?></div>
                       </div>
@@ -334,7 +318,6 @@
         <?php endforeach; ?>
       </div>
       
-      <!-- Controles -->
       <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
