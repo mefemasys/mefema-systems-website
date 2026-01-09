@@ -27,8 +27,8 @@
 Soluções já desenvolvidas e testadas para implementar rapidamente no seu negócio. Escolha, personalize e comece a usar.        </p>
       </div>
     </div>
-  </div>
-           <div class="stat-item">
+
+     <div class="stat-item">
                         <i class="ri-boxing-line"></i>
                         <strong>4</strong>
                         <span>Categorias</span>
@@ -44,4 +44,7 @@ Soluções já desenvolvidas e testadas para implementar rapidamente no seu neg�
                         <span>Suporte</span>
                     </div>
                 </div>
+    
+  </div>
+          
 </section>
