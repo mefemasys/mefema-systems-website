@@ -54,7 +54,7 @@
         </div>
 
         <div class="row justify-content-center">
-            <div class="col-lg-10" data-aos="fade-up">
+            <div class="col-lg-12" data-aos="fade-up">
                 <div class="mefema-values-box">
                     <h3 class="text-center mb-4">
                         <i class="ri-star-line me-2"></i>
