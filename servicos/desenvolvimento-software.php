@@ -10,7 +10,6 @@ get_part('includes/header.php');
 <?php get_part('pages/servicos/desenvolvimento-software/lista_software.php'); ?>
 <?php get_part('pages/servicos/desenvolvimento-software/processo.php'); ?>
 <?php get_part('pages/servicos/desenvolvimento-software/filosofia.php'); ?>
-<?php get_part('pages/servicos/desenvolvimento-software/principios.php'); ?>
 <?php get_part('pages/servicos/desenvolvimento-software/stack_tecnologico.php'); ?>
 <?php get_part('pages/servicos/desenvolvimento-software/why_us.php'); ?>
 <?php get_part('pages/servicos/desenvolvimento-software/faq.php'); ?>
