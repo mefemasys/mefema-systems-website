@@ -828,24 +828,30 @@ get_part('includes/header.php');
     </div>
 </section>
 <style>
-    /* 
+   /* 
    MEFEMA Systems - Desenvolvimento de Software
-   Modified Original CSS with Brand Identity & Dark Mode Support
+   Final Refined CSS: Orange & Brown Palette
+   NO Purple, NO Violet, NO Wine colors.
 */
 
 :root {
     /* Brand Colors - Light Mode */
-    --primary-color: #d97638;
-    --primary-dark: #c66b3d;
-    --primary-light: #fef5ef;
-    --text-primary: #2c1810;
-    --text-secondary: #74523d;
+    --primary-color: #d97638;    /* Laranja Principal */
+    --primary-dark: #c66b3d;     /* Laranja Escuro */
+    --primary-light: #fef5ef;    /* Laranja Muito Claro */
+    --secondary-color: #74523d;  /* Castanho */
+    --secondary-dark: #2c1810;   /* Castanho Escuro / Texto */
+    
+    --text-primary: #2c1810;     /* Castanho Escuro */
+    --text-secondary: #74523d;   /* Castanho Médio */
     --bg-light: #fdfbf9;
     --bg-card: #ffffff;
     --border-color: #e8ddd4;
-    --shadow-sm: 0 2px 8px rgba(217, 118, 56, 0.08);
-    --shadow-md: 0 4px 16px rgba(217, 118, 56, 0.12);
-    --shadow-lg: 0 8px 32px rgba(217, 118, 56, 0.16);
+    
+    --shadow-sm: 0 2px 8px rgba(116, 82, 61, 0.08);
+    --shadow-md: 0 4px 16px rgba(116, 82, 61, 0.12);
+    --shadow-lg: 0 8px 32px rgba(116, 82, 61, 0.16);
+    
     --radius: 8px;
     --radius-lg: 11px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -856,14 +862,24 @@ get_part('includes/header.php');
     --primary-color: #ff8c4a;
     --primary-dark: #e07a3d;
     --primary-light: #2a1f1a;
+    --secondary-color: #c4b5aa;
+    --secondary-dark: #f5ebe3;
+    
     --text-primary: #f5ebe3;
     --text-secondary: #c4b5aa;
     --bg-light: #1a1410;
     --bg-card: #241a15;
-    --border-color: rgba(255, 140, 74, 0.15);
+    --border-color: rgba(217, 118, 56, 0.15);
+    
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Global Adjustments */
+body {
+    color: var(--text-primary);
+    background-color: transparent; /* Permite que o sistema controle o fundo principal */
 }
 
 /* Service Boxes */
@@ -945,7 +961,7 @@ get_part('includes/header.php');
     width: 3px;
     background: var(--primary-color);
     transform: translateX(-50%);
-    opacity: 0.3;
+    opacity: 0.2;
 }
 
 @media (max-width: 991px) {
@@ -1317,9 +1333,41 @@ get_part('includes/header.php');
     line-height: 1.8;
 }
 
-/* CTA Section */
+/* CTA Section & Buttons */
 .bg-gradient-primary {
     background: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: white !important;
+    border-radius: var(--radius);
+    padding: 12px 28px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    background: transparent !important;
+    border: 2px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    border-radius: var(--radius);
+    padding: 12px 28px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    transform: translateY(-2px);
 }
 
 /* Utility Classes */
