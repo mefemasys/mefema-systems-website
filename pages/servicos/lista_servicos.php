@@ -59,7 +59,7 @@
                         <li><span class="check-icon">✓</span> Gestão de servidores e bases de dados</li>
                         <li><span class="check-icon">✓</span> Monitorização e otimização de sistemas</li>
                     </ul>
-                    <a href="servicos" class="service-btn">
+                    <a href="servicos/infraestrutura-manutencao" class="service-btn">
                         <span>Saiba Mais</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -89,7 +89,7 @@
                         <li><span class="check-icon">✓</span> Análise de requisitos e viabilidade</li>
                         <li><span class="check-icon">✓</span> Otimização de processos com tecnologia</li>
                     </ul>
-                    <a href="servicos" class="service-btn">
+                    <a href="servicos/consultoria" class="service-btn">
                         <span>Saiba Mais</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -119,7 +119,7 @@
                         <li><span class="check-icon">✓</span> Workshops de novas tecnologias</li>
                         <li><span class="check-icon">✓</span> Treinamento em software de gestão</li>
                     </ul>
-                    <a href="servicos" class="service-btn">
+                    <a href="servicos/formacao-corporativa" class="service-btn">
                         <span>Saiba Mais</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
