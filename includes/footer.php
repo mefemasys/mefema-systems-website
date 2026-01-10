@@ -172,16 +172,16 @@
           <h6 class="footer-title mb-4 mb-lg-6">Serviços</h6>
           <ul class="list-unstyled mb-0">
             <li class="mb-4">
-              <a class="footer-link" href="<?php echo BASE_URL; ?>servicos">Desenvolvimento de Software</a>
+              <a class="footer-link" href="<?php echo BASE_URL; ?>servicos/desenvolvimento-software">Desenvolvimento de Software</a>
             </li>
             <li class="mb-4">
-              <a class="footer-link" href="<?php echo BASE_URL; ?>servicos">Infraestrutura TI</a>
+              <a class="footer-link" href="<?php echo BASE_URL; ?>servicos/infraestrutura-manutencao">Infraestrutura TI</a>
             </li>
             <li class="mb-4">
-              <a class="footer-link" href="<?php echo BASE_URL; ?>servicos">Consultoria Digital</a>
+              <a class="footer-link" href="<?php echo BASE_URL; ?>servicos/consultoria">Consultoria Digital</a>
             </li>
             <li class="mb-4">
-              <a class="footer-link" href="<?php echo BASE_URL; ?>servicos">Formação Corporativa</a>
+              <a class="footer-link" href="<?php echo BASE_URL; ?>servicos/formacao-corporativa">Formação Corporativa</a>
             </li>
           </ul>
         </div>
@@ -212,6 +212,13 @@
                 <i class="ri-mail-line me-2"></i>comercial@mefemasys.co.mz
               </a>
             </li>
+
+<li class="mb-4">
+              <a class="footer-link" href="mailto:info@mefemasys.co.mz">
+                <i class="ri-mail-line me-2"></i>info@mefemasys.co.mz
+              </a>
+            </li>
+
             <li class="mb-4">
               <a class="footer-link" href="tel:+258861924050">
                 <i class="ri-phone-line me-2"></i>+258 86 192 4050
