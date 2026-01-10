@@ -1,0 +1,237 @@
+/* 
+   MEFEMA Systems - Infraestrutura e Manutenção
+   Orange & Brown Palette | Dark Mode Support
+*/
+
+:root {
+    --primary-color: #d97638;
+    --primary-dark: #c66b3d;
+    --primary-light: #fef5ef;
+    --text-primary: #2c1810;
+    --text-secondary: #74523d;
+    --bg-light: #fdfbf9;
+    --bg-card: #ffffff;
+    --border-color: #e8ddd4;
+    --shadow-sm: 0 2px 8px rgba(116, 82, 61, 0.08);
+    --shadow-md: 0 4px 16px rgba(116, 82, 61, 0.12);
+    --radius: 8px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-bs-theme="dark"] {
+    --primary-color: #ff8c4a;
+    --primary-dark: #e07a3d;
+    --primary-light: #2a1f1a;
+    --text-primary: #f5ebe3;
+    --text-secondary: #c4b5aa;
+    --bg-light: #1a1410;
+    --bg-card: #241a15;
+    --border-color: rgba(217, 118, 56, 0.15);
+}
+
+/* Hero Section */
+.landing-hero-websites {
+    padding: 120px 0 80px;
+    background: linear-gradient(165deg, var(--bg-light) 0%, var(--primary-light) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    gap: 10px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.text-gradient {
+    color: var(--primary-color);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.stat-item strong {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+/* Service Boxes */
+.service-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 40px;
+    transition: var(--transition);
+}
+
+.service-box:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-light);
+    color: var(--primary-color);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+}
+
+.service-title {
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.service-description {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+}
+
+.service-features li {
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.service-features li i {
+    color: var(--primary-color);
+}
+
+/* Process Timeline */
+.process-timeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--primary-color);
+    transform: translateX(-50%);
+    opacity: 0.2;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.timeline-marker {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.timeline-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 30px;
+    flex-grow: 1;
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    box-shadow: var(--shadow-sm);
+    border-color: var(--primary-color);
+}
+
+.timeline-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.timeline-title {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.timeline-description {
+    color: var(--text-secondary);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: white !important;
+    border-radius: var(--radius);
+    padding: 12px 28px;
+    font-weight: 600;
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    border-radius: var(--radius);
+    padding: 12px 28px;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .hero-title { font-size: 2.5rem; }
+    .timeline-item { flex-direction: column; }
+    .process-timeline::before { left: 25px; }
+}
