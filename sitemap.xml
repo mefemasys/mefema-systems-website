@@ -42,15 +42,13 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Caso exista formação (muito comum em sites assim) -->
-  <!-- 
+
   <url>
     <loc>https://mefemasys.co.mz/servicos/formacao-corporativa</loc>
     <lastmod>2026-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  -->
 
   <url>
     <loc>https://mefemasys.co.mz/produtos</loc>
