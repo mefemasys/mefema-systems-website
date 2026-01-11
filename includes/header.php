@@ -118,6 +118,72 @@ function asset($path) {
   <link href="<?php echo asset('assets/vendor/libs/swiper/swiper.css'); ?>" rel="stylesheet" />
   <link href="<?php echo asset('assets/vendor/css/landing.css'); ?>" rel="stylesheet" />
   
+  <style>
+    /* Customização de Cores MEFEMA Systems */
+    :root {
+      --mefema-orange: #D97638; /* Laranja do site oficial */
+      --mefema-brown: #5A3A28;  /* Castanho do site oficial */
+      --mefema-orange-hover: #FF6B35;
+    }
+
+    .layout-navbar {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(90, 58, 40, 0.1);
+    }
+
+    .nav-link {
+      color: var(--mefema-brown) !important;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--mefema-orange) !important;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 1rem;
+      right: 1rem;
+      height: 2px;
+      background-color: var(--mefema-orange);
+      border-radius: 2px;
+    }
+
+    .navbar-toggler i {
+      color: var(--mefema-brown) !important;
+    }
+
+    #themeToggleBtn i {
+      color: var(--mefema-brown) !important;
+    }
+
+    #themeToggleBtn:hover i {
+      color: var(--mefema-orange) !important;
+    }
+
+    /* Ajuste do Logo */
+    .app-brand-link img {
+      max-height: 45px;
+      width: auto;
+    }
+
+    @media (max-width: 991.98px) {
+      .landing-nav-menu {
+        background-color: #fff;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+      }
+      .nav-link.active::after {
+        display: none;
+      }
+    }
+  </style>
+
   <script src="<?php echo asset('assets/vendor/js/helpers.js'); ?>"></script>
   <script src="<?php echo asset('assets/js/config.js'); ?>"></script>
 
@@ -139,16 +205,14 @@ function asset($path) {
           data-bs-target="#navbarSupportedContent"
           data-bs-toggle="collapse"
           type="button">
-          <i class="icon-base ri ri-menu-fill icon-lg align-middle text-heading fw-medium"></i>
+          <i class="icon-base ri ri-menu-fill icon-lg align-middle fw-medium"></i>
         </button>
         <a class="app-brand-link" href="<?php echo BASE_URL; ?>">
               <span class="app-brand-logo demo">
                 <img
                   alt="Mefema Systems Logo"
                   class="navbar-logo-svg"
-                  height="50"
                   src="<?php echo asset('assets/img/logos/logo.svg'); ?>"
-                  width="auto"
                 >
                 </span>
         </a>
