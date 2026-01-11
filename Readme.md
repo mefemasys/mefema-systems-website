@@ -1,121 +1,98 @@
-# Repositório do Website da MEFEMA Systems
+# MEFEMA Systems - Website Oficial
 
-## Acelere a sua Transformação Digital
+## Soluções Tecnológicas Inteligentes para Empresas Inteligentes
 
-Bem-vindo ao repositório oficial do website da **MEFEMA Systems** [1], uma empresa moçambicana dedicada a fornecer **Soluções Tecnológicas Inteligentes para Empresas Inteligentes** [2].
+Bem-vindo ao repositório oficial do website da **MEFEMA Systems**, uma empresa moçambicana líder em transformação digital, dedicada a fornecer soluções tecnológicas sob medida para PMEs e instituições públicas.
 
-Este repositório contém o código-fonte completo do website público da empresa, que serve como a principal plataforma de comunicação para apresentar a nossa missão, serviços, produtos e portfólio.
-
----
-
-##  Website em Produção
-
-O website está atualmente em produção e acessível através do seguinte endereço:
-
-[**mefemasys.co.mz**](https://mefemasys.co.mz) [1]
+Este repositório contém o código-fonte do portal institucional, desenvolvido para apresentar nossa missão, serviços, produtos e portfólio de forma moderna e eficiente.
 
 ---
 
-## Sobre a MEFEMA Systems
+## 🌐 Website em Produção
 
-A MEFEMA Systems é uma força motriz na **transformação digital** em Moçambique. A nossa estratégia foca-se em sistemas especializados, multifuncionais e flexíveis, garantindo que a tecnologia de ponta seja acessível e eficiente para Pequenas e Médias Empresas (PMEs) e instituições públicas [2].
+O website está acessível através do endereço oficial:
+[**mefemasys.co.mz**](https://mefemasys.co.mz)
+
+---
+
+## 🚀 Sobre a MEFEMA Systems
+
+A MEFEMA Systems foca-se em seis pilares essenciais (**M.E.F.E.M.A**): **M**oderno, **E**specializado, **F**lexível, **E**ficiente, **M**ultifuncional e **A**cessível. Nossa missão é democratizar o acesso à tecnologia de ponta em Moçambique.
 
 ### Nossos Serviços
+Oferecemos um ecossistema completo para a jornada digital do seu negócio:
 
-A empresa oferece um conjunto abrangente de serviços, incluindo [2]:
-
-| Categoria | Descrição |
+| Serviço | Descrição |
 | :--- | :--- |
-| **Desenvolvimento de Software** | Aplicações web e móveis personalizadas, sistemas ERP simplificados, plataformas de e-commerce e modernização de software. |
-| **Infraestrutura e Manutenção** | Implementação de redes, serviços em nuvem (IaaS), suporte técnico e gestão de servidores e bases de dados. |
-| **Consultoria Digital** | Estratégia de transformação digital, auditoria de sistemas, planeamento de TI e otimização de processos. |
-| **Formação Corporativa** | Literacia digital, ferramentas de produtividade, cibersegurança e treinamento em software de gestão. |
+| **Desenvolvimento de Software** | Aplicações web/móveis, ERPs simplificados e modernização de sistemas legados. |
+| **Infraestrutura e Manutenção** | Redes, serviços em nuvem (IaaS), suporte técnico e gestão de servidores. |
+| **Consultoria Digital** | Estratégia de transformação, auditoria de sistemas e planeamento de TI. |
+| **Formação Corporativa** | Literacia digital, cibersegurança e treinamento em ferramentas de produtividade. |
 
-### Nossos Valores
-
-Os valores fundamentais que guiam a MEFEMA Systems são [2]:
-
-*   **Inovação:** Busca contínua por soluções criativas e eficientes.
-*   **Acessibilidade:** Tecnologia ao alcance de todos.
-*   **Flexibilidade:** Adaptação às necessidades específicas de cada cliente.
-*   **Qualidade:** Excelência técnica em todas as entregas.
-*   **Parceria:** Relacionamento colaborativo e de longo prazo.
-*   **Impacto Social:** Contribuição para o desenvolvimento regional.
+### Nossos Produtos
+Soluções prontas para implementação rápida:
+*   **Websites Prontos:** Presença digital profissional com SEO e painel administrativo.
+*   **Sistemas de Gestão:** Facturação, Stock e CRM com integração de pagamentos (M-Pesa/e-Mola).
+*   **Apps Móveis:** Aplicações nativas para iOS e Android com foco em UI/UX.
+*   **Soluções IA + IoT:** Chatbots inteligentes, automação e análise preditiva de dados.
 
 ---
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias e Estrutura
 
-O website é construído com uma arquitetura tradicional e robusta, focada em performance e estabilidade.
+O projeto utiliza uma arquitetura robusta baseada em PHP, focada em performance e SEO.
 
-| Tecnologia | Percentagem | Descrição |
-| :--- | :--- | :--- |
-| **Hack/PHP** | 80.4% | Linguagem de *backend* principal, responsável pela lógica do servidor e renderização das páginas. |
-| **JavaScript** | 17.8% | Utilizado para interatividade e funcionalidades do lado do cliente. |
-| **CSS** | 1.8% | Estilização e apresentação visual do website. |
+### Stack Tecnológica
+*   **Backend:** Hack/PHP (80.4%)
+*   **Frontend:** JavaScript (17.8%), CSS (1.8%)
+*   **Servidor:** Apache (.htaccess configurado para URLs amigáveis)
 
----
-
-## Estrutura do Repositório
-
-A estrutura de pastas e ficheiros segue uma organização modular para facilitar a manutenção e o desenvolvimento:
-
-```
+### Organização do Projeto
+```text
 .
-├── assets/             # Ficheiros estáticos (imagens, CSS, JS, etc.)
-├── documents/          # Documentos diversos (e.g., termos de serviço, políticas)
-├── fonts/              # Ficheiros de fontes personalizadas
-├── includes/           # Componentes PHP reutilizáveis (cabeçalhos, rodapés, navegação)
-├── pages/              # Módulos de conteúdo para páginas específicas
-├── .gitignore          # Ficheiros e pastas a ignorar pelo Git
-├── .htaccess           # Configurações do servidor Apache
-├── index.php           # Página inicial principal
-├── contacto.php        # Página de contacto
-├── eula.php            # Acordo de Licença de Utilizador Final
-├── legal.php           # Informações legais
-├── portfolio.php       # Página de portfólio
-├── privacidade.php     # Política de privacidade
-├── produtos.php        # Página de produtos
-├── robots.txt          # Regras para rastreadores de motores de busca
-├── servicos.php        # Página de serviços
-├── sitemap.xml         # Mapa do site para motores de busca
-├── sobre.php           # Página "Sobre Nós"
-└── termos-uso.php      # Termos de uso
+├── assets/          # Recursos estáticos (Imagens, CSS, JS)
+├── documents/       # Documentação legal e institucional
+├── fonts/           # Tipografia personalizada
+├── includes/        # Componentes reutilizáveis (Header, Footer, Nav)
+├── pages/           # Módulos de conteúdo das páginas
+├── index.php        # Ponto de entrada principal
+├── servicos.php     # Catálogo de serviços
+├── produtos.php     # Montra de produtos e pacotes
+└── ...              # Outras páginas institucionais e legais
 ```
 
 ---
 
-## Como Contribuir (Desenvolvimento Local)
-
-Para configurar o projeto localmente, siga os passos abaixo.
+## 💻 Desenvolvimento Local
 
 ### Pré-requisitos
-
-É necessário ter um ambiente de servidor web com suporte a PHP, como **XAMPP**, **WAMP**, **MAMP** ou um ambiente **LAMP/LEMP** configurado.
+*   Servidor Web (Apache/Nginx)
+*   PHP 7.4 ou superior
+*   Git
 
 ### Instalação
-
-1.  **Clonar o Repositório:**
+1.  **Clonar o repositório:**
     ```bash
-    git clone https://github.com/mmaunze/mefema-systems-website.git
-    cd mefema-systems-website
+    git clone https://github.com/mefemasys/mefema-systems-website.git
     ```
-
-2.  **Configurar o Servidor Web:**
-    Mova ou configure o diretório `mefema-systems-website` para ser servido pelo seu servidor web (e.g., dentro da pasta `htdocs` ou `www`).
-
-3.  **Aceder ao Website:**
-    Abra o seu navegador e aceda ao endereço configurado (e.g., `http://localhost/mefema-systems-website/` ou o seu domínio local).
-
-### Estrutura de Desenvolvimento
-
-*   As páginas principais são ficheiros `.php` na raiz do projeto.
-*   Os componentes de interface (cabeçalho, rodapé) estão em `includes/`.
-*   O conteúdo dinâmico ou modular pode ser encontrado em `pages/`.
+2.  **Configuração:**
+    Mova os ficheiros para o diretório raiz do seu servidor (ex: `htdocs` ou `var/www/html`).
+3.  **Acesso:**
+    Navegue para `http://localhost/mefema-systems-website`.
 
 ---
 
-## 🔗 Referências
+## 📄 Licença e Propriedade
 
-[1] Repositório GitHub: mmaunze/mefema-systems-website
-[2] Website Oficial: mefemasys.co.mz
+Este repositório é **proprietário**. Embora o código esteja visível publicamente para fins de transparência e portfólio, todos os direitos são reservados à **MEFEMA Systems**. A reprodução ou uso comercial sem autorização prévia é estritamente proibida.
+
+---
+
+## 📞 Contacto
+
+*   **Email:** [comercial@mefemasys.co.mz](mailto:comercial@mefemasys.co.mz)
+*   **Telefone:** +258 86 192 4050
+*   **LinkedIn:** [MEFEMA Systems](https://www.linkedin.com/company/mefemasys)
+
+---
+*Desenvolvido com ❤️ pela MEFEMA Systems - Soluções Inteligentes para Empresas Inteligentes.*
