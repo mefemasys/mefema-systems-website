@@ -122,134 +122,176 @@ function asset($path) {
   <script src="<?php echo asset('assets/js/config.js'); ?>"></script>
 
   <style>
-    /* Cores MEFEMA Systems */
     :root {
-      --mefema-orange: #FF6B00;
-      --mefema-brown: #6B4423;
-      --mefema-light-orange: #FF8533;
-      --mefema-dark-brown: #4A2F18;
+      --mefema-brown: #5D4037;
+      --mefema-brown-dark: #3E2723;
+      --mefema-brown-light: #8D6E63;
+      --mefema-orange: #FF6F00;
+      --mefema-orange-light: #FF9800;
+      --mefema-orange-dark: #E65100;
     }
 
-    /* Navbar personalizada */
-    .layout-navbar {
-      background: linear-gradient(135deg, var(--mefema-brown) 0%, var(--mefema-dark-brown) 100%);
-      box-shadow: 0 2px 20px rgba(107, 68, 35, 0.15);
+    .navbar-mefema {
+      background: linear-gradient(135deg, var(--mefema-brown) 0%, var(--mefema-brown-dark) 100%);
       border-bottom: 3px solid var(--mefema-orange);
+      box-shadow: 0 2px 12px rgba(93, 64, 55, 0.15);
+      transition: all 0.3s ease;
     }
 
-    .navbar-brand .navbar-logo-svg {
+    .navbar-mefema.scrolled {
+      background: rgba(93, 64, 55, 0.98);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(93, 64, 55, 0.25);
+    }
+
+    .navbar-mefema .navbar-brand img {
       filter: brightness(0) invert(1);
       transition: all 0.3s ease;
     }
 
-    .navbar-brand:hover .navbar-logo-svg {
+    .navbar-mefema .navbar-brand:hover img {
       filter: brightness(0) invert(1) drop-shadow(0 0 8px var(--mefema-orange));
     }
 
-    .navbar-nav .nav-link {
-      color: #ffffff !important;
+    .navbar-mefema .nav-link {
+      color: rgba(255, 255, 255, 0.9) !important;
       font-weight: 500;
+      padding: 0.75rem 1.25rem !important;
       position: relative;
-      padding: 0.5rem 1rem;
       transition: all 0.3s ease;
     }
 
-    .navbar-nav .nav-link::before {
+    .navbar-mefema .nav-link::before {
       content: '';
       position: absolute;
       bottom: 0;
       left: 50%;
-      width: 0;
-      height: 2px;
-      background: var(--mefema-orange);
       transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--mefema-orange), var(--mefema-orange-light));
       transition: width 0.3s ease;
+      border-radius: 3px 3px 0 0;
     }
 
-    .navbar-nav .nav-link:hover {
-      color: var(--mefema-light-orange) !important;
+    .navbar-mefema .nav-link:hover {
+      color: var(--mefema-orange-light) !important;
+      transform: translateY(-2px);
     }
 
-    .navbar-nav .nav-link:hover::before,
-    .navbar-nav .nav-link.active::before {
-      width: 80%;
+    .navbar-mefema .nav-link:hover::before {
+      width: 100%;
     }
 
-    .navbar-nav .nav-link.active {
+    .navbar-mefema .nav-link.active {
       color: var(--mefema-orange) !important;
       font-weight: 600;
     }
 
-    .navbar-toggler {
-      color: #ffffff !important;
-      border-color: var(--mefema-orange) !important;
-    }
-
-    .navbar-toggler:focus {
-      box-shadow: 0 0 0 0.25rem rgba(255, 107, 0, 0.25);
+    .navbar-mefema .nav-link.active::before {
+      width: 100%;
+      background: var(--mefema-orange);
     }
 
     #themeToggleBtn {
       background: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      padding: 0.5rem;
+      border: 2px solid var(--mefema-orange);
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: all 0.3s ease;
     }
 
     #themeToggleBtn:hover {
       background: var(--mefema-orange);
-      transform: scale(1.1);
+      transform: rotate(180deg) scale(1.1);
+      box-shadow: 0 4px 12px rgba(255, 111, 0, 0.4);
     }
 
-    #themeIcon {
-      color: #ffffff;
+    #themeToggleBtn i {
+      color: white !important;
+      font-size: 20px;
     }
 
-    /* Mobile menu */
+    .navbar-toggler {
+      border-color: var(--mefema-orange) !important;
+      background: rgba(255, 111, 0, 0.1);
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 0.25rem rgba(255, 111, 0, 0.25);
+    }
+
+    .navbar-toggler i {
+      color: var(--mefema-orange) !important;
+    }
+
     @media (max-width: 991px) {
       .landing-nav-menu {
-        background: linear-gradient(135deg, var(--mefema-brown) 0%, var(--mefema-dark-brown) 100%);
-        border-top: 2px solid var(--mefema-orange);
+        background: linear-gradient(135deg, var(--mefema-brown-dark) 0%, var(--mefema-brown) 100%);
+        border-radius: 0 0 12px 12px;
+        padding: 1rem;
+        margin-top: 1rem;
+        box-shadow: 0 8px 24px rgba(93, 64, 55, 0.3);
       }
 
-      .navbar-nav {
-        padding: 1rem 0;
+      .navbar-mefema .nav-link {
+        padding: 0.875rem 1rem !important;
+        border-radius: 8px;
+        margin: 0.25rem 0;
       }
 
-      .navbar-nav .nav-link {
-        padding: 0.75rem 1.5rem;
-        border-left: 3px solid transparent;
-        transition: all 0.3s ease;
+      .navbar-mefema .nav-link:hover {
+        background: rgba(255, 111, 0, 0.15);
+        transform: translateX(8px);
       }
 
-      .navbar-nav .nav-link:hover,
-      .navbar-nav .nav-link.active {
-        border-left-color: var(--mefema-orange);
-        background: rgba(255, 107, 0, 0.1);
+      .navbar-mefema .nav-link::before {
+        left: 0;
+        transform: translateX(0);
+        width: 4px;
+        height: 0;
+        bottom: 50%;
+        transform: translateY(50%);
       }
 
-      .navbar-nav .nav-link::before {
-        display: none;
+      .navbar-mefema .nav-link:hover::before,
+      .navbar-mefema .nav-link.active::before {
+        width: 4px;
+        height: 70%;
       }
     }
 
-    /* Animação suave no scroll */
-    .layout-navbar {
-      transition: all 0.3s ease;
+    .landing-menu-overlay {
+      background: rgba(93, 64, 55, 0.85) !important;
     }
 
-    .layout-navbar.scrolled {
-      box-shadow: 0 4px 30px rgba(107, 68, 35, 0.25);
+    /* Animação de entrada */
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .navbar-mefema {
+      animation: slideDown 0.5s ease-out;
     }
   </style>
-
 </head>
 
 <body>
 <script src="<?php echo asset('assets/vendor/js/dropdown-hover.js'); ?>"></script>
 <script src="<?php echo asset('assets/vendor/js/mega-dropdown.js'); ?>"></script>
 
-<nav class="layout-navbar shadow-none py-0">
+<nav class="layout-navbar navbar-mefema shadow-none py-0">
   <div class="container">
     <div class="navbar navbar-expand-lg landing-navbar px-3 px-md-8">
       <div class="navbar-brand app-brand demo d-flex py-0 me-4 me-xl-8">
@@ -261,18 +303,18 @@ function asset($path) {
           data-bs-target="#navbarSupportedContent"
           data-bs-toggle="collapse"
           type="button">
-          <i class="icon-base ri ri-menu-fill icon-lg align-middle text-heading fw-medium"></i>
+          <i class="icon-base ri ri-menu-fill icon-lg align-middle fw-medium"></i>
         </button>
         <a class="app-brand-link" href="<?php echo BASE_URL; ?>">
-              <span class="app-brand-logo demo">
-                <img
-                  alt="Mefema Systems Logo"
-                  class="navbar-logo-svg"
-                  height="50"
-                  src="<?php echo asset('assets/img/logos/logo.svg'); ?>"
-                  width="auto"
-                >
-                </span>
+          <span class="app-brand-logo demo">
+            <img
+              alt="Mefema Systems Logo"
+              class="navbar-logo-svg"
+              height="50"
+              src="<?php echo asset('assets/img/logos/logo.svg'); ?>"
+              width="auto"
+            >
+          </span>
         </a>
       </div>
       <div class="collapse navbar-collapse landing-nav-menu" id="navbarSupportedContent">
@@ -280,7 +322,7 @@ function asset($path) {
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
-          class="navbar-toggler border-0 text-heading position-absolute end-0 top-0 p-2"
+          class="navbar-toggler border-0 position-absolute end-0 top-0 p-2"
           data-bs-target="#navbarSupportedContent"
           data-bs-toggle="collapse"
           type="button">
@@ -314,7 +356,6 @@ function asset($path) {
               class="nav-link fw-medium <?php echo $currentPage == 'portfolio.php' ? 'active' : ''; ?>" 
               href="<?php echo BASE_URL; ?>portfolio">Portfolio</a>
           </li>
-
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'contacto.php' ? 'active' : ''; ?>" 
@@ -330,18 +371,18 @@ function asset($path) {
             class="nav-link hide-arrow"
             id="themeToggleBtn"
             type="button">
-            <i class="icon-base ri ri-computer-line icon-24px" id="themeIcon"></i>
+            <i class="icon-base ri ri-computer-line" id="themeIcon"></i>
           </button>
         </li>
       </ul>
-      </div>
+    </div>
   </div>
 </nav>
 
 <script>
-  // Adicionar classe ao fazer scroll
+  // Efeito de scroll no navbar
   window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.layout-navbar');
+    const navbar = document.querySelector('.navbar-mefema');
     if (window.scrollY > 50) {
       navbar.classList.add('scrolled');
     } else {
@@ -349,39 +390,11 @@ function asset($path) {
     }
   });
 
-  // Theme toggle functionality
-  const themeToggleBtn = document.getElementById('themeToggleBtn');
-  const themeIcon = document.getElementById('themeIcon');
-  
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', function() {
-      const html = document.documentElement;
-      const currentTheme = html.getAttribute('data-bs-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      html.setAttribute('data-bs-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      
-      // Actualizar ícone
-      if (newTheme === 'dark') {
-        themeIcon.classList.remove('ri-computer-line');
-        themeIcon.classList.add('ri-moon-line');
-      } else {
-        themeIcon.classList.remove('ri-moon-line');
-        themeIcon.classList.add('ri-computer-line');
-      }
-    });
-  }
-
-  // Carregar tema guardado
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    document.documentElement.setAttribute('data-bs-theme', savedTheme);
-    if (savedTheme === 'dark' && themeIcon) {
-      themeIcon.classList.remove('ri-computer-line');
-      themeIcon.classList.add('ri-moon-line');
-    }
-  }
+  // Toggle do tema
+  document.getElementById('themeToggleBtn').addEventListener('click', function() {
+    // Adicione aqui a lógica do tema se necessário
+    console.log('Theme toggle clicked');
+  });
 </script>
 
 <div class="scrollspy-example" data-bs-spy="scroll">
