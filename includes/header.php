@@ -118,74 +118,130 @@ function asset($path) {
   <link href="<?php echo asset('assets/vendor/libs/swiper/swiper.css'); ?>" rel="stylesheet" />
   <link href="<?php echo asset('assets/vendor/css/landing.css'); ?>" rel="stylesheet" />
   
+  <script src="<?php echo asset('assets/vendor/js/helpers.js'); ?>"></script>
+  <script src="<?php echo asset('assets/js/config.js'); ?>"></script>
+
   <style>
-    /* Customização de Cores MEFEMA Systems */
+    /* Cores MEFEMA Systems */
     :root {
-      --mefema-orange: #D97638; /* Laranja do site oficial */
-      --mefema-brown: #5A3A28;  /* Castanho do site oficial */
-      --mefema-orange-hover: #FF6B35;
+      --mefema-orange: #FF6B00;
+      --mefema-brown: #6B4423;
+      --mefema-light-orange: #FF8533;
+      --mefema-dark-brown: #4A2F18;
     }
 
+    /* Navbar personalizada */
     .layout-navbar {
-      background-color: rgba(255, 255, 255, 0.95) !important;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(90, 58, 40, 0.1);
+      background: linear-gradient(135deg, var(--mefema-brown) 0%, var(--mefema-dark-brown) 100%);
+      box-shadow: 0 2px 20px rgba(107, 68, 35, 0.15);
+      border-bottom: 3px solid var(--mefema-orange);
     }
 
-    .nav-link {
-      color: var(--mefema-brown) !important;
+    .navbar-brand .navbar-logo-svg {
+      filter: brightness(0) invert(1);
       transition: all 0.3s ease;
+    }
+
+    .navbar-brand:hover .navbar-logo-svg {
+      filter: brightness(0) invert(1) drop-shadow(0 0 8px var(--mefema-orange));
+    }
+
+    .navbar-nav .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
       position: relative;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
     }
 
-    .nav-link:hover, .nav-link.active {
-      color: var(--mefema-orange) !important;
-    }
-
-    .nav-link.active::after {
+    .navbar-nav .nav-link::before {
       content: '';
       position: absolute;
       bottom: 0;
-      left: 1rem;
-      right: 1rem;
+      left: 50%;
+      width: 0;
       height: 2px;
-      background-color: var(--mefema-orange);
-      border-radius: 2px;
+      background: var(--mefema-orange);
+      transform: translateX(-50%);
+      transition: width 0.3s ease;
     }
 
-    .navbar-toggler i {
-      color: var(--mefema-brown) !important;
+    .navbar-nav .nav-link:hover {
+      color: var(--mefema-light-orange) !important;
     }
 
-    #themeToggleBtn i {
-      color: var(--mefema-brown) !important;
+    .navbar-nav .nav-link:hover::before,
+    .navbar-nav .nav-link.active::before {
+      width: 80%;
     }
 
-    #themeToggleBtn:hover i {
+    .navbar-nav .nav-link.active {
       color: var(--mefema-orange) !important;
+      font-weight: 600;
     }
 
-    /* Ajuste do Logo */
-    .app-brand-link img {
-      max-height: 45px;
-      width: auto;
+    .navbar-toggler {
+      color: #ffffff !important;
+      border-color: var(--mefema-orange) !important;
     }
 
-    @media (max-width: 991.98px) {
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 0.25rem rgba(255, 107, 0, 0.25);
+    }
+
+    #themeToggleBtn {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    #themeToggleBtn:hover {
+      background: var(--mefema-orange);
+      transform: scale(1.1);
+    }
+
+    #themeIcon {
+      color: #ffffff;
+    }
+
+    /* Mobile menu */
+    @media (max-width: 991px) {
       .landing-nav-menu {
-        background-color: #fff;
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+        background: linear-gradient(135deg, var(--mefema-brown) 0%, var(--mefema-dark-brown) 100%);
+        border-top: 2px solid var(--mefema-orange);
       }
-      .nav-link.active::after {
+
+      .navbar-nav {
+        padding: 1rem 0;
+      }
+
+      .navbar-nav .nav-link {
+        padding: 0.75rem 1.5rem;
+        border-left: 3px solid transparent;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link.active {
+        border-left-color: var(--mefema-orange);
+        background: rgba(255, 107, 0, 0.1);
+      }
+
+      .navbar-nav .nav-link::before {
         display: none;
       }
     }
-  </style>
 
-  <script src="<?php echo asset('assets/vendor/js/helpers.js'); ?>"></script>
-  <script src="<?php echo asset('assets/js/config.js'); ?>"></script>
+    /* Animação suave no scroll */
+    .layout-navbar {
+      transition: all 0.3s ease;
+    }
+
+    .layout-navbar.scrolled {
+      box-shadow: 0 4px 30px rgba(107, 68, 35, 0.25);
+    }
+  </style>
 
 </head>
 
@@ -205,14 +261,16 @@ function asset($path) {
           data-bs-target="#navbarSupportedContent"
           data-bs-toggle="collapse"
           type="button">
-          <i class="icon-base ri ri-menu-fill icon-lg align-middle fw-medium"></i>
+          <i class="icon-base ri ri-menu-fill icon-lg align-middle text-heading fw-medium"></i>
         </button>
         <a class="app-brand-link" href="<?php echo BASE_URL; ?>">
               <span class="app-brand-logo demo">
                 <img
                   alt="Mefema Systems Logo"
                   class="navbar-logo-svg"
+                  height="50"
                   src="<?php echo asset('assets/img/logos/logo.svg'); ?>"
+                  width="auto"
                 >
                 </span>
         </a>
@@ -279,5 +337,51 @@ function asset($path) {
       </div>
   </div>
 </nav>
+
+<script>
+  // Adicionar classe ao fazer scroll
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.layout-navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  // Theme toggle functionality
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const themeIcon = document.getElementById('themeIcon');
+  
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-bs-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      html.setAttribute('data-bs-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      // Actualizar ícone
+      if (newTheme === 'dark') {
+        themeIcon.classList.remove('ri-computer-line');
+        themeIcon.classList.add('ri-moon-line');
+      } else {
+        themeIcon.classList.remove('ri-moon-line');
+        themeIcon.classList.add('ri-computer-line');
+      }
+    });
+  }
+
+  // Carregar tema guardado
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    if (savedTheme === 'dark' && themeIcon) {
+      themeIcon.classList.remove('ri-computer-line');
+      themeIcon.classList.add('ri-moon-line');
+    }
+  }
+</script>
 
 <div class="scrollspy-example" data-bs-spy="scroll">
