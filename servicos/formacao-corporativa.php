@@ -493,55 +493,60 @@ get_part('includes/header.php');
             </div>
         </div>
 
-        <div class="row justify-content-center">
-            <div class="col-lg-10" data-aos="fade-up">
-                <div class="mefema-values-box">
-                    <h3 class="text-center mb-4">
-                        <i class="ri-star-line me-2"></i>
-                        Os Princípios MEFEMA de Formação
-                    </h3>
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="value-item">
-                                <div class="value-letter">M</div>
-                                <div class="value-content">
-                                    <h5>Metodologia</h5>
-                                    <p>Abordagens pedagógicas comprovadas e adaptadas ao adulto</p>
-                                </div>
-                            </div>
+       <div class="row justify-content-center">
+    <div class="col-lg-12" data-aos="fade-up">
+        <div class="mefema-values-box">
+            <h3 class="text-center mb-4">
+                <i class="ri-star-line me-2"></i>
+                Os Princípios MEFEMA de Formação
+            </h3>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="value-item">
+                        <div class="value-letter">M</div>
+                        <div class="value-content">
+                            <h5>Metodologia</h5>
+                            <p>Abordagens pedagógicas comprovadas e adaptadas ao adulto</p>
                         </div>
-                        <div class="col-md-6">
-                            <div class="value-item">
-                                <div class="value-letter">E</div>
-                                <div class="value-content">
-                                    <h5>Eficácia</h5>
-                                    <p>Foco em resultados práticos e aplicação imediata</p>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="value-item">
+                        <div class="value-letter">E</div>
+                        <div class="value-content">
+                            <h5>Eficácia</h5>
+                            <p>Foco em resultados práticos e aplicação imediata</p>
                         </div>
-                        <div class="col-md-6">
-                            <div class="value-item">
-                                <div class="value-letter">M</div>
-                                <div class="value-content">
-                                    <h5>Motivação</h5>
-                                    <p>Ambientes de aprendizagem envolventes e estimulantes</p>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="value-item">
+                        <div class="value-letter">M</div>
+                        <div class="value-content">
+                            <h5>Motivação</h5>
+                            <p>Ambientes de aprendizagem envolventes e estimulantes</p>
                         </div>
-                        <div class="col-md-6">
-                            <div class="value-item">
-                                <div class="value-letter">A</div>
-                                <div class="value-content">
-                                    <h5>Acompanhamento</h5>
-                                    <p>Suporte contínuo mesmo após conclusão da formação</p>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="value-item">
+                        <div class="value-letter">A</div>
+                        <div class="value-content">
+                            <h5>Acompanhamento</h5>
+                            <p>Suporte contínuo mesmo após conclusão da formação</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Adição opcional: pequena nota explicativa -->
+            <div class="text-center mt-5 small text-muted">
+                <p>Princípios MEFEMA de Formação da <strong>MEFEMA Systems</strong> — Soluções Tecnológicas Inteligentes<br>
+                (Metodologia • Eficácia • Motivação • Acompanhamento)</p>
+            </div>
         </div>
     </div>
+</div>
 </section>
 
 <!-- Formatos de Formação -->
