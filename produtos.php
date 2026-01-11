@@ -1,6 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config/path_config.php';
-$pageTitle = "Produtos - MEFEMA Systems - Soluções Tecnológicas Inteligentes";
+$pageTitle = "Nossos Produtos - MEFEMA Systems - Soluções Tecnológicas Inteligentes Para Empresas Inteligentes";
 get_part('includes/header.php');
 ?>
 
