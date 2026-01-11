@@ -493,58 +493,76 @@ get_part('includes/header.php');
             </div>
         </div>
 
-       <div class="row justify-content-center">
+     <div class="row justify-content-center">
     <div class="col-lg-12" data-aos="fade-up">
         <div class="mefema-values-box">
             <h3 class="text-center mb-4">
                 <i class="ri-star-line me-2"></i>
-                Os Princípios MEFEMA de Formação
+                Os Princípios MEFEMA de Formação e Soluções Tecnológicas
             </h3>
+            <p class="text-center mb-5">A Metodologia MEFEMA da MEFEMA Systems foca em resultados práticos, com suporte contínuo e ambientes motivadores.</p>
             <div class="row g-4">
-                <div class="col-md-6">
+                <div class="col-md-6 col-lg-4">
                     <div class="value-item">
                         <div class="value-letter">M</div>
                         <div class="value-content">
-                            <h5>Metodologia</h5>
-                            <p>Abordagens pedagógicas comprovadas e adaptadas ao adulto</p>
+                            <h5>Metodologia / Moderno</h5>
+                            <p>Abordagens pedagógicas comprovadas e tecnologias actualizadas</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-lg-4">
                     <div class="value-item">
                         <div class="value-letter">E</div>
                         <div class="value-content">
-                            <h5>Eficácia</h5>
-                            <p>Foco em resultados práticos e aplicação imediata</p>
+                            <h5>Eficácia / Eficiente</h5>
+                            <p>Foco em resultados práticos, aplicação imediata e optimização de recursos</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-lg-4">
+                    <div class="value-item">
+                        <div class="value-letter">F</div>
+                        <div class="value-content">
+                            <h5>Flexível</h5>
+                            <p>Adaptação às mudanças, necessidades do cliente e diferentes orçamentos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
                     <div class="value-item">
                         <div class="value-letter">M</div>
                         <div class="value-content">
-                            <h5>Motivação</h5>
-                            <p>Ambientes de aprendizagem envolventes e estimulantes</p>
+                            <h5>Motivação / Multifuncional</h5>
+                            <p>Ambientes envolventes + soluções versáteis e completas</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-lg-4">
+                    <div class="value-item">
+                        <div class="value-letter">E</div>
+                        <div class="value-content">
+                            <h5>Especializado</h5>
+                            <p>Soluções personalizadas e sob medida para cada realidade</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
                     <div class="value-item">
                         <div class="value-letter">A</div>
                         <div class="value-content">
-                            <h5>Acompanhamento</h5>
-                            <p>Suporte contínuo mesmo após conclusão da formação</p>
+                            <h5>Acompanhamento / Acessível</h5>
+                            <p>Suporte contínuo pós-formação + tecnologia acessível para todos</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Adição opcional: pequena nota explicativa -->
-            <div class="text-center mt-5 small text-muted">
-                <p>Princípios MEFEMA de Formação da <strong>MEFEMA Systems</strong> — Soluções Tecnológicas Inteligentes<br>
-                (Metodologia • Eficácia • Motivação • Acompanhamento)</p>
+            <div class="text-center mt-5">
+                <p>Conheça mais em <a href="https://mefemasys.co.mz" target="_blank">mefemasys.co.mz</a></p>
             </div>
         </div>
+    </div>
+</div>
     </div>
 </div>
 </section>
