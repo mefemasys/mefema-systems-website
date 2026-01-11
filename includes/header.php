@@ -1,4 +1,5 @@
 <?php
+
 // Configuração da URL base
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
 $baseUrl = $protocol . "://" . $_SERVER['HTTP_HOST'] . "/";
@@ -12,34 +13,34 @@ function asset($path) {
 // Configuração SEO por página
 $seoConfig = [
     'index.php' => [
-        'title' => 'Empresa de Desenvolvimento Software e Transformação Digital Moçambique',
-        'description' => 'MEFEMA Systems: empresa de soluções tecnológicas em Moçambique. Desenvolvimento de software personalizado, sistemas ERP para PMEs, integração M-Pesa, consultoria digital. Maputo, Nampula, Beira, Pemba.',
-        'keywords' => 'empresa de soluções tecnológicas Moçambique, empresa de desenvolvimento software Moçambique, empresa de transformação digital Moçambique, empresa de consultoria TI Moçambique, empresa de infraestrutura TI Moçambique, serviços TI Moçambique'
+        'title' => 'MEFEMA Systems - Soluções Tecnológicas Inteligentes para Empresas em Moçambique',
+        'description' => 'Acelere a sua transformação digital com a MEFEMA Systems. Soluções tecnológicas personalizadas em desenvolvimento de software, infraestrutura TI, consultoria digital e formação corporativa em Moçambique.',
+        'keywords' => 'soluções tecnológicas Moçambique, desenvolvimento software Moçambique, transformação digital Moçambique, consultoria TI Moçambique, infraestrutura TI Moçambique, formação corporativa Moçambique, sistemas ERP Moçambique, e-commerce Moçambique, aplicações web e móveis Moçambique'
     ],
     'sobre.php' => [
-        'title' => 'Empresa de Tecnologia Moçambique - Quem Somos',
-        'description' => 'Conheça a MEFEMA Systems: empresa de tecnologia em Moçambique presente em Maputo, Nampula, Beira, Sofala e Zambézia. Especializada em desenvolvimento software e transformação digital empresarial.',
-        'keywords' => 'empresa de tecnologia Moçambique, empresa TI Moçambique, empresa desenvolvimento software, empresa consultoria digital Moçambique, TI Maputo Nampula Beira'
+        'title' => 'Sobre a MEFEMA Systems - Empresa de Tecnologia e Transformação Digital em Moçambique',
+        'description' => 'Conheça a MEFEMA Systems: empresa de tecnologia em Moçambique com pilares Moderno, Especializado, Flexível, Eficiente, Multifuncional e Acessível. Presente em Maputo, Nampula, Beira, Sofala e Zambézia.',
+        'keywords' => 'empresa de tecnologia Moçambique, MEFEMA Systems, transformação digital, desenvolvimento software, consultoria digital, infraestrutura TI, Maputo, Nampula, Beira, Sofala, Zambézia'
     ],
     'servicos.php' => [
-        'title' => 'Empresa de Serviços TI - Consultoria Digital e Infraestrutura Moçambique',
-        'description' => 'Empresa de desenvolvimento de software personalizado, sistemas ERP, plataformas e-commerce M-Pesa, consultoria transformação digital, formação cibersegurança. Serviços em todo Moçambique.',
-        'keywords' => 'empresa de desenvolvimento software personalizado, empresa de sistemas ERP Moçambique, empresa de integração M-Pesa, empresa de consultoria transformação digital, empresa de formação cibersegurança, empresa de suporte técnico Moçambique'
+        'title' => 'Serviços de TI - Desenvolvimento Software, Infraestrutura e Consultoria Digital Moçambique',
+        'description' => 'Descubra os serviços completos da MEFEMA Systems: desenvolvimento de software personalizado, infraestrutura e manutenção, consultoria digital e formação corporativa para empresas em Moçambique.',
+        'keywords' => 'serviços TI Moçambique, desenvolvimento software personalizado, infraestrutura TI, consultoria digital, formação corporativa, sistemas ERP, e-commerce, aplicações móveis, suporte técnico Moçambique'
     ],
     'produtos.php' => [
-        'title' => 'Empresa de Produtos TI - Websites Prontos e Sistemas Gestão',
-        'description' => 'Empresa de websites prontos desde 25000 MT, sistemas gestão empresarial certificação AT, apps móveis, soluções IA chatbots WhatsApp, hospedagem SSL. Produtos para todo Moçambique.',
-        'keywords' => 'empresa de websites prontos Moçambique, empresa de sistemas gestão empresarial, empresa de apps móveis Moçambique, empresa de soluções IA chatbots, empresa de hospedagem SSL domínio co.mz'
+        'title' => 'Produtos de TI - Websites, Sistemas ERP e Soluções de IA para Empresas Moçambique',
+        'description' => 'Explore os produtos da MEFEMA Systems: websites prontos, sistemas de gestão empresarial (ERP), aplicações móveis e soluções de Inteligência Artificial (IA) para otimizar o seu negócio em Moçambique.',
+        'keywords' => 'produtos TI Moçambique, websites prontos, sistemas gestão empresarial, ERP para PMEs, aplicações móveis, soluções IA, chatbots WhatsApp, hospedagem SSL Moçambique'
     ],
     'portfolio.php' => [
-        'title' => 'Portfolio - Empresa de Projectos TI e Software Moçambique',
-        'description' => 'Portfolio de projectos: empresa de desenvolvimento software, sistemas gestão empresarial, plataformas e-commerce implementados pela MEFEMA Systems em Maputo, Nampula, Beira e todo Moçambique.',
-        'keywords' => 'empresa de projectos TI Moçambique, empresa desenvolvimento software Maputo Nampula, empresa sistemas gestão, portfolio empresa tecnologia Moçambique'
+        'title' => 'Portfólio MEFEMA Systems - Projetos de Sucesso em Desenvolvimento de Software e TI Moçambique',
+        'description' => 'Veja os projetos de sucesso da MEFEMA Systems em desenvolvimento de software, sistemas de gestão e soluções tecnológicas implementadas em Maputo, Nampula, Beira e todo Moçambique.',
+        'keywords' => 'portfólio TI Moçambique, projetos desenvolvimento software, sistemas gestão empresarial, e-commerce, aplicações web, Maputo, Nampula, Beira, Moçambique'
     ],
     'contacto.php' => [
-        'title' => 'Contacto - Empresa de Consultoria TI e Software Moçambique',
-        'description' => 'Contacte a MEFEMA Systems: empresa de soluções tecnológicas, desenvolvimento software, consultoria digital e infraestrutura TI em Moçambique. Maputo, Nampula, Beira. Tel: +258 87 999 0090',
-        'keywords' => 'contacto empresa TI Moçambique, empresa consultoria TI, orçamento desenvolvimento software, empresa serviços TI Moçambique'
+        'title' => 'Contacto MEFEMA Systems - Solicite Orçamento para Soluções de TI em Moçambique',
+        'description' => 'Entre em contacto com a MEFEMA Systems para soluções tecnológicas, desenvolvimento de software, consultoria digital e infraestrutura TI em Moçambique. Peça um orçamento. Tel: +258 87 999 0090.',
+        'keywords' => 'contacto empresa TI Moçambique, orçamento desenvolvimento software, consultoria digital, infraestrutura TI, suporte técnico, Maputo, Nampula, Beira'
     ]
 ];
 
@@ -51,6 +52,7 @@ $seo = $seoConfig[$currentPageFile] ?? $seoConfig['index.php'];
 $pageTitle = $pageTitle ?? $seo['title'];
 $pageDescription = $pageDescription ?? $seo['description'];
 $pageKeywords = $pageKeywords ?? $seo['keywords'];
+
 ?>
 <!doctype html>
 
@@ -246,7 +248,6 @@ $pageKeywords = $pageKeywords ?? $seo['keywords'];
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "MEFEMA Systems - Empresa de Tecnologia Moçambique",
-    "image": "<?php echo asset('assets/img/logos/logo.png'); ?>",
     "telephone": "+258 87 999 0090",
     "address": {
       "@type": "PostalAddress",
@@ -314,7 +315,7 @@ $pageKeywords = $pageKeywords ?? $seo['keywords'];
           type="button">
           <i class="icon-base ri ri-menu-fill icon-lg align-middle text-heading fw-medium"></i>
         </button>
-        <a class="app-brand-link" href="<?php echo BASE_URL; ?>" title="MEFEMA Systems - Empresa de Soluções Tecnológicas Moçambique">
+        <a class="app-brand-link" href="<?php echo BASE_URL; ?>" aria-label="MEFEMA Systems - Empresa de Soluções Tecnológicas Moçambique">
               <span class="app-brand-logo demo">
                 <img
                   alt="MEFEMA Systems - Empresa de Desenvolvimento Software e Transformação Digital Moçambique"
@@ -344,38 +345,38 @@ $pageKeywords = $pageKeywords ?? $seo['keywords'];
               aria-current="page" 
               class="nav-link fw-medium <?php echo $currentPage == 'index.php' || $currentPage == '' ? 'active' : ''; ?>" 
               href="<?php echo BASE_URL; ?>"
-              title="Início - Empresa de Soluções Tecnológicas Moçambique">Início</a>
+              aria-label="Início - Empresa de Soluções Tecnológicas Moçambique">Início</a>
           </li>
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'sobre.php' ? 'active' : ''; ?>" 
               href="<?php echo BASE_URL; ?>sobre"
-              title="Quem Somos - Empresa de Tecnologia Moçambique">Quem somos</a>
+              aria-label="Quem Somos - Empresa de Tecnologia Moçambique">Quem somos</a>
           </li>
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'servicos.php' ? 'active' : ''; ?>" 
               href="<?php echo BASE_URL; ?>servicos"
-              title="Empresa de Serviços TI - Desenvolvimento Software e Consultoria Digital">Serviços</a>
+              aria-label="Empresa de Serviços TI - Desenvolvimento Software e Consultoria Digital">Serviços</a>
           </li>
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'produtos.php' ? 'active' : ''; ?>" 
               href="<?php echo BASE_URL; ?>produtos"
-              title="Empresa de Produtos TI - Websites Prontos e Sistemas Gestão">Produtos</a>
+              aria-label="Empresa de Produtos TI - Websites Prontos e Sistemas Gestão">Produtos</a>
           </li>
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'portfolio.php' ? 'active' : ''; ?>" 
               href="<?php echo BASE_URL; ?>portfolio"
-              title="Portfolio - Empresa de Projectos TI Moçambique">Portfolio</a>
+              aria-label="Portfolio - Empresa de Projectos TI Moçambique">Portfolio</a>
           </li>
 
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'contacto.php' ? 'active' : ''; ?>" 
               href="<?php echo BASE_URL; ?>contacto"
-              title="Contacto - Empresa de Consultoria TI Moçambique">Contacto</a>
+              aria-label="Contacto - Empresa de Consultoria TI Moçambique">Contacto</a>
           </li>
         </ul>
       </div>
