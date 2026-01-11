@@ -106,8 +106,8 @@ nav.layout-navbar::before {
 }
 
 nav.layout-navbar .navbar.landing-navbar {
-    --bs-front-navbar-bg: rgba(var(--bs-paper-bg-rgb), 1);
-    background-color: var(--bs-front-navbar-bg);
+    /* --bs-front-navbar-bg: rgba(var(--bs-paper-bg-rgb), 1);
+    background-color: var(--bs-front-navbar-bg); */
     padding-block: 0.75rem;
     transform: unset;
     transition: all 0.2s ease-in-out;
