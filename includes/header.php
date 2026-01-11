@@ -8,6 +8,49 @@ define('BASE_URL', $baseUrl);
 function asset($path) {
     return BASE_URL . ltrim($path, '/');
 }
+
+// Configuração SEO por página
+$seoConfig = [
+    'index.php' => [
+        'title' => 'Empresa de Desenvolvimento Software e Transformação Digital Moçambique',
+        'description' => 'MEFEMA Systems: empresa de soluções tecnológicas em Moçambique. Desenvolvimento de software personalizado, sistemas ERP para PMEs, integração M-Pesa, consultoria digital. Maputo, Nampula, Beira, Pemba.',
+        'keywords' => 'empresa de soluções tecnológicas Moçambique, empresa de desenvolvimento software Moçambique, empresa de transformação digital Moçambique, empresa de consultoria TI Moçambique, empresa de infraestrutura TI Moçambique, serviços TI Moçambique'
+    ],
+    'sobre.php' => [
+        'title' => 'Empresa de Tecnologia Moçambique - Quem Somos',
+        'description' => 'Conheça a MEFEMA Systems: empresa de tecnologia em Moçambique presente em Maputo, Nampula, Beira, Sofala e Zambézia. Especializada em desenvolvimento software e transformação digital empresarial.',
+        'keywords' => 'empresa de tecnologia Moçambique, empresa TI Moçambique, empresa desenvolvimento software, empresa consultoria digital Moçambique, TI Maputo Nampula Beira'
+    ],
+    'servicos.php' => [
+        'title' => 'Empresa de Serviços TI - Consultoria Digital e Infraestrutura Moçambique',
+        'description' => 'Empresa de desenvolvimento de software personalizado, sistemas ERP, plataformas e-commerce M-Pesa, consultoria transformação digital, formação cibersegurança. Serviços em todo Moçambique.',
+        'keywords' => 'empresa de desenvolvimento software personalizado, empresa de sistemas ERP Moçambique, empresa de integração M-Pesa, empresa de consultoria transformação digital, empresa de formação cibersegurança, empresa de suporte técnico Moçambique'
+    ],
+    'produtos.php' => [
+        'title' => 'Empresa de Produtos TI - Websites Prontos e Sistemas Gestão',
+        'description' => 'Empresa de websites prontos desde 25000 MT, sistemas gestão empresarial certificação AT, apps móveis, soluções IA chatbots WhatsApp, hospedagem SSL. Produtos para todo Moçambique.',
+        'keywords' => 'empresa de websites prontos Moçambique, empresa de sistemas gestão empresarial, empresa de apps móveis Moçambique, empresa de soluções IA chatbots, empresa de hospedagem SSL domínio co.mz'
+    ],
+    'portfolio.php' => [
+        'title' => 'Portfolio - Empresa de Projectos TI e Software Moçambique',
+        'description' => 'Portfolio de projectos: empresa de desenvolvimento software, sistemas gestão empresarial, plataformas e-commerce implementados pela MEFEMA Systems em Maputo, Nampula, Beira e todo Moçambique.',
+        'keywords' => 'empresa de projectos TI Moçambique, empresa desenvolvimento software Maputo Nampula, empresa sistemas gestão, portfolio empresa tecnologia Moçambique'
+    ],
+    'contacto.php' => [
+        'title' => 'Contacto - Empresa de Consultoria TI e Software Moçambique',
+        'description' => 'Contacte a MEFEMA Systems: empresa de soluções tecnológicas, desenvolvimento software, consultoria digital e infraestrutura TI em Moçambique. Maputo, Nampula, Beira. Tel: +258 87 999 0090',
+        'keywords' => 'contacto empresa TI Moçambique, empresa consultoria TI, orçamento desenvolvimento software, empresa serviços TI Moçambique'
+    ]
+];
+
+// Obter página actual
+$currentPageFile = basename($_SERVER['PHP_SELF']);
+$seo = $seoConfig[$currentPageFile] ?? $seoConfig['index.php'];
+
+// Permitir override por variáveis de página
+$pageTitle = $pageTitle ?? $seo['title'];
+$pageDescription = $pageDescription ?? $seo['description'];
+$pageKeywords = $pageKeywords ?? $seo['keywords'];
 ?>
 <!doctype html>
 
@@ -26,50 +69,34 @@ function asset($path) {
     name="viewport" />
     
   <meta name="robots" content="index, follow" /> 
+  <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords); ?>" />
+  <meta name="author" content="MEFEMA Systems" />
+  <meta name="geo.region" content="MZ" />
+  <meta name="geo.placename" content="Moçambique" />
+  <meta name="coverage" content="Moçambique" />
 
   <link rel="canonical" href="<?php echo BASE_URL . (basename($_SERVER['PHP_SELF']) == 'index.php' ? '' : basename($_SERVER['PHP_SELF'], '.php')); ?>" />
     
-  <title>MEFEMA Systems - <?php echo isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Soluções Tecnológicas Inteligentes'; ?></title>
+  <title><?php echo htmlspecialchars($pageTitle); ?> | MEFEMA Systems</title>
 
-  <meta
-    content="MEFEMA Systems: Soluções Tecnológicas Inteligentes para Empresas Inteligentes. Desenvolvimento de Software, Infraestrutura TI, Consultoria Digital e Formação Corporativa em Moçambique."
-    name="description" />
+  <meta name="description" content="<?php echo htmlspecialchars($pageDescription); ?>" />
 
-  <meta name="description"
-    content="<?php
-      echo isset($pageDescription)
-        ? htmlspecialchars($pageDescription)
-        : 'MEFEMA Systems: Soluções Tecnológicas Inteligentes. Desenvolvimento de Software, Infraestrutura TI, Consultoria Digital e Formação Corporativa em Moçambique.';
-    ?>"
-  />
-
-  <meta property="og:title"
-    content="MEFEMA Systems - <?php echo isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Soluções Tecnológicas Inteligentes'; ?>" />
-
-  <meta property="og:description"
-    content="<?php
-      echo isset($pageDescription)
-        ? htmlspecialchars($pageDescription)
-        : 'MEFEMA Systems: Soluções Tecnológicas Inteligentes. Serviços Digitais, TI, Consultoria e Software em Moçambique.';
-    ?>" />
-
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?> | MEFEMA Systems" />
+  <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>" />
   <meta property="og:url" content="<?php echo BASE_URL . (basename($_SERVER['PHP_SELF']) == 'index.php' ? '' : basename($_SERVER['PHP_SELF'], '.php')); ?>" />
-  <meta property="og:site_name" content="MEFEMA Systems" />
+  <meta property="og:site_name" content="MEFEMA Systems - Soluções Tecnológicas Moçambique" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="<?php echo asset('assets/img/logos/logo.png'); ?>" />
+  <meta property="og:image:alt" content="MEFEMA Systems - Desenvolvimento Software e Transformação Digital Moçambique" />
   <meta property="og:locale" content="pt_MZ" />
 
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@SeuHandleTwitter" />
-  <meta name="twitter:creator" content="@SeuHandleTwitter" />
-  <meta name="twitter:title"
-    content="MEFEMA Systems - <?php echo isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Soluções Tecnológicas Inteligentes'; ?>" />
-  <meta name="twitter:description"
-    content="<?php
-      echo isset($pageDescription)
-        ? htmlspecialchars($pageDescription)
-        : 'MEFEMA Systems: Soluções Tecnológicas Inteligentes e Desenvolvimento de Sistemas em Moçambique.';
-    ?>" />
+  <meta name="twitter:site" content="@MEFEMASystems" />
+  <meta name="twitter:creator" content="@MEFEMASystems" />
+  <meta name="twitter:title" content="<?php echo htmlspecialchars($pageTitle); ?> | MEFEMA Systems" />
+  <meta name="twitter:description" content="<?php echo htmlspecialchars($pageDescription); ?>" />
   <meta name="twitter:image" content="<?php echo asset('assets/img/logos/logo.png'); ?>" />
 
 <!-- Google tag (gtag.js) -->
@@ -78,18 +105,54 @@ function asset($path) {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-KNBJHNCCN1');
 </script>
   
+  <!-- Schema.org Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "MEFEMA Systems",
+    "alternateName": "MEFEMA - Empresa de Soluções Tecnológicas Moçambique",
     "url": "<?php echo rtrim(BASE_URL, '/'); ?>",
     "logo": "<?php echo asset('assets/img/logos/logo.png'); ?>",
-    "description": "MEFEMA Systems oferece soluções tecnológicas inteligentes: software, redes, consultoria e infraestrutura TI em Moçambique.",
+    "description": "Empresa de tecnologia em Moçambique especializada em desenvolvimento de software personalizado, sistemas ERP para PMEs, transformação digital, consultoria TI, infraestrutura tecnológica e formação corporativa. Serviços em Maputo, Nampula, Beira, Sofala, Zambézia e todo território nacional.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Moçambique",
+      "addressCountry": "MZ"
+    },
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Moçambique"
+      },
+      {
+        "@type": "City",
+        "name": "Maputo"
+      },
+      {
+        "@type": "City",
+        "name": "Nampula"
+      },
+      {
+        "@type": "City",
+        "name": "Beira"
+      },
+      {
+        "@type": "City",
+        "name": "Pemba"
+      },
+      {
+        "@type": "State",
+        "name": "Sofala"
+      },
+      {
+        "@type": "State",
+        "name": "Zambézia"
+      }
+    ],
     "contactPoint": [
       {
         "@type": "ContactPoint",
@@ -98,11 +161,121 @@ function asset($path) {
         "areaServed": "MZ",
         "availableLanguage": ["pt", "en"]
       }
-    ]
+    ],
+    "sameAs": [
+      "https://www.facebook.com/MEFEMASystems",
+      "https://www.linkedin.com/company/mefema-systems"
+    ],
+    "priceRange": "25000 MT - 500000 MT",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços e Produtos TI MEFEMA Systems",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Empresa de Desenvolvimento de Software Personalizado",
+            "description": "Empresa de aplicações web e móveis personalizadas, integração APIs M-Pesa, e-Mola e sistemas bancários em todo Moçambique"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Empresa de Sistemas ERP Simplificados PMEs",
+            "description": "Empresa de sistemas gestão empresarial com certificação AT, módulos facturação, stock, CRM, RH e integração M-Pesa"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Empresa de Consultoria Transformação Digital",
+            "description": "Empresa de auditoria sistemas TI, planeamento estratégico e modernização tecnológica empresas em Moçambique"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Empresa de Infraestrutura TI e Cloud",
+            "description": "Empresa de implementação serviços nuvem IaaS, gestão servidores, backup dados e monitorização em Moçambique"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Empresa de Formação Corporativa TI",
+            "description": "Empresa de workshops cibersegurança, literacia digital e capacitação técnica instituições públicas Moçambique"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Empresa de Websites Prontos",
+            "description": "Empresa de pacotes websites prontos desde 25000 MT com domínio .co.mz, hospedagem e SSL"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Empresa de Apps Móveis",
+            "description": "Empresa de aplicações móveis com notificações push, geolocalização e integração M-Pesa"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Empresa de Soluções IA e Chatbots",
+            "description": "Empresa de chatbots WhatsApp, visão computacional e automação inteligente para empresas"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "MEFEMA Systems - Empresa de Tecnologia Moçambique",
+    "image": "<?php echo asset('assets/img/logos/logo.png'); ?>",
+    "telephone": "+258 87 999 0090",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "MZ"
+    },
+    "url": "<?php echo rtrim(BASE_URL, '/'); ?>",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Moçambique"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    "priceRange": "25000 MT - 500000 MT",
+    "slogan": "Empresa de Soluções Tecnológicas Inteligentes para Empresas Inteligentes"
   }
   </script>
 
   <link href="<?php echo asset('assets/img/logos/logo.png'); ?>" rel="icon" type="image/x-icon" />
+  <link href="<?php echo asset('assets/img/logos/logo.png'); ?>" rel="apple-touch-icon" />
 
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
@@ -120,149 +293,6 @@ function asset($path) {
   
   <script src="<?php echo asset('assets/vendor/js/helpers.js'); ?>"></script>
   <script src="<?php echo asset('assets/js/config.js'); ?>"></script>
-
-  <style>
-    :root {
-      --mefema-brown: #5D4037;
-      --mefema-brown-dark: #4E342E;
-      --mefema-brown-light: #6D4C41;
-      --mefema-orange: #FF6F00;
-      --mefema-orange-dark: #E65100;
-      --mefema-orange-light: #FF8F00;
-      --mefema-white: #FFFFFF;
-      --mefema-gray: #F5F5F5;
-    }
-
-    /* Header styling */
-    .layout-navbar {
-      background-color: var(--mefema-white);
-      border-bottom: 3px solid var(--mefema-orange);
-      box-shadow: 0 2px 8px rgba(93, 64, 55, 0.08);
-    }
-
-    /* Logo styling */
-    .navbar-logo-svg {
-      filter: brightness(0.9);
-      transition: transform 0.3s ease;
-    }
-
-    .app-brand-link:hover .navbar-logo-svg {
-      transform: scale(1.05);
-    }
-
-    /* Navigation links */
-    .navbar-nav .nav-link {
-      color: var(--mefema-brown);
-      font-weight: 500;
-      padding: 0.75rem 1rem;
-      margin: 0 0.25rem;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: var(--mefema-orange);
-      background-color: rgba(255, 111, 0, 0.05);
-    }
-
-    .navbar-nav .nav-link.active {
-      color: var(--mefema-orange);
-      font-weight: 600;
-    }
-
-    .navbar-nav .nav-link.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60%;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--mefema-orange), transparent);
-      border-radius: 2px;
-    }
-
-    /* Theme toggle button */
-    #themeToggleBtn {
-      color: var(--mefema-brown);
-      background-color: var(--mefema-gray);
-      border: 2px solid transparent;
-      border-radius: 50%;
-      width: 42px;
-      height: 42px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    #themeToggleBtn:hover {
-      background-color: var(--mefema-orange);
-      color: var(--mefema-white);
-      border-color: var(--mefema-orange-dark);
-      transform: rotate(15deg);
-    }
-
-    /* Mobile menu button */
-    .navbar-toggler {
-      border: 2px solid var(--mefema-orange);
-      border-radius: 8px;
-      padding: 0.5rem;
-      color: var(--mefema-brown);
-      transition: all 0.3s ease;
-    }
-
-    .navbar-toggler:hover {
-      background-color: var(--mefema-orange);
-      color: var(--mefema-white);
-    }
-
-    .navbar-toggler i {
-      color: currentColor;
-    }
-
-    /* Mobile menu overlay */
-    .landing-menu-overlay {
-      background-color: rgba(93, 64, 55, 0.7);
-    }
-
-    /* Mobile menu styling */
-    @media (max-width: 991px) {
-      .landing-nav-menu {
-        background-color: var(--mefema-white);
-        border-left: 4px solid var(--mefema-orange);
-      }
-
-      .navbar-nav .nav-link {
-        border-left: 3px solid transparent;
-        border-radius: 0;
-        padding: 1rem 1.5rem;
-        margin: 0;
-      }
-
-      .navbar-nav .nav-link.active {
-        border-left-color: var(--mefema-orange);
-        background-color: rgba(255, 111, 0, 0.05);
-      }
-
-      .navbar-nav .nav-link.active::after {
-        display: none;
-      }
-    }
-
-    /* Responsive container */
-    @media (min-width: 1200px) {
-      .navbar-expand-lg .navbar-nav {
-        gap: 0.5rem;
-      }
-    }
-
-    /* Smooth scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
 
 </head>
 
@@ -282,18 +312,18 @@ function asset($path) {
           data-bs-target="#navbarSupportedContent"
           data-bs-toggle="collapse"
           type="button">
-          <i class="icon-base ri ri-menu-fill icon-lg align-middle fw-medium"></i>
+          <i class="icon-base ri ri-menu-fill icon-lg align-middle text-heading fw-medium"></i>
         </button>
-        <a class="app-brand-link" href="<?php echo BASE_URL; ?>">
-          <span class="app-brand-logo demo">
-            <img
-              alt="Mefema Systems Logo"
-              class="navbar-logo-svg"
-              height="50"
-              src="<?php echo asset('assets/img/logos/logo.svg'); ?>"
-              width="auto"
-            >
-          </span>
+        <a class="app-brand-link" href="<?php echo BASE_URL; ?>" title="MEFEMA Systems - Empresa de Soluções Tecnológicas Moçambique">
+              <span class="app-brand-logo demo">
+                <img
+                  alt="MEFEMA Systems - Empresa de Desenvolvimento Software e Transformação Digital Moçambique"
+                  class="navbar-logo-svg"
+                  height="50"
+                  src="<?php echo asset('assets/img/logos/logo.svg'); ?>"
+                  width="auto"
+                >
+                </span>
         </a>
       </div>
       <div class="collapse navbar-collapse landing-nav-menu" id="navbarSupportedContent">
@@ -301,7 +331,7 @@ function asset($path) {
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
-          class="navbar-toggler border-0 position-absolute end-0 top-0 p-2"
+          class="navbar-toggler border-0 text-heading position-absolute end-0 top-0 p-2"
           data-bs-target="#navbarSupportedContent"
           data-bs-toggle="collapse"
           type="button">
@@ -313,32 +343,39 @@ function asset($path) {
             <a 
               aria-current="page" 
               class="nav-link fw-medium <?php echo $currentPage == 'index.php' || $currentPage == '' ? 'active' : ''; ?>" 
-              href="<?php echo BASE_URL; ?>">Início</a>
+              href="<?php echo BASE_URL; ?>"
+              title="Início - Empresa de Soluções Tecnológicas Moçambique">Início</a>
           </li>
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'sobre.php' ? 'active' : ''; ?>" 
-              href="<?php echo BASE_URL; ?>sobre">Quem somos</a>
+              href="<?php echo BASE_URL; ?>sobre"
+              title="Quem Somos - Empresa de Tecnologia Moçambique">Quem somos</a>
           </li>
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'servicos.php' ? 'active' : ''; ?>" 
-              href="<?php echo BASE_URL; ?>servicos">Serviços</a>
+              href="<?php echo BASE_URL; ?>servicos"
+              title="Empresa de Serviços TI - Desenvolvimento Software e Consultoria Digital">Serviços</a>
           </li>
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'produtos.php' ? 'active' : ''; ?>" 
-              href="<?php echo BASE_URL; ?>produtos">Produtos</a>
+              href="<?php echo BASE_URL; ?>produtos"
+              title="Empresa de Produtos TI - Websites Prontos e Sistemas Gestão">Produtos</a>
           </li>
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'portfolio.php' ? 'active' : ''; ?>" 
-              href="<?php echo BASE_URL; ?>portfolio">Portfolio</a>
+              href="<?php echo BASE_URL; ?>portfolio"
+              title="Portfolio - Empresa de Projectos TI Moçambique">Portfolio</a>
           </li>
+
           <li class="nav-item">
             <a 
               class="nav-link fw-medium <?php echo $currentPage == 'contacto.php' ? 'active' : ''; ?>" 
-              href="<?php echo BASE_URL; ?>contacto">Contacto</a>
+              href="<?php echo BASE_URL; ?>contacto"
+              title="Contacto - Empresa de Consultoria TI Moçambique">Contacto</a>
           </li>
         </ul>
       </div>
@@ -346,7 +383,7 @@ function asset($path) {
       <ul class="navbar-nav flex-row align-items-center ms-auto">
         <li class="nav-item me-2 me-xl-0">
           <button
-            aria-label="Toggle theme"
+            aria-label="Alternar tema claro/escuro"
             class="nav-link hide-arrow"
             id="themeToggleBtn"
             type="button">
@@ -354,7 +391,7 @@ function asset($path) {
           </button>
         </li>
       </ul>
-    </div>
+      </div>
   </div>
 </nav>
 
