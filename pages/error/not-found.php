@@ -5,7 +5,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/config/path_config.php';
 get_part('includes/header.php'); 
 ?>
 
-<section class="landing-hero-websites position-relative overflow-hidden" id="error404">
+<section class="section-py error-hero position-relative overflow-hidden" id="error404">
+  <!-- Camadas de Animação de Fundo -->
+  <div class="error-animated-bg"></div>
+  
   <!-- Traços Decorativos -->
   <div class="error-decorative-lines">
     <div class="error-line"></div>
@@ -21,7 +24,7 @@ get_part('includes/header.php');
 
   <!-- Conteúdo Principal -->
   <div class="container py-5 position-relative" style="z-index: 5;">
-    <div class="row align-items-center min-vh-60">
+    <div class="row align-items-center min-vh-50">
       <div class="col-lg-6 text-center mb-5 mb-lg-0">
         <div class="error-illustration">
           <div class="error-number-wrapper">
@@ -42,8 +45,8 @@ get_part('includes/header.php');
       </div>
       
       <div class="col-lg-6 text-lg-start text-center">
-        <div class="hero-badge mb-4">
-          <i class="ri-alert-line" style="color: var(--primary-color); font-size: 1.2rem;"></i>
+        <div class="hero-badge mb-3">
+          <i class="ri-alert-line"></i>
           <span class="badge-text">Erro 404</span>
         </div>
         
@@ -56,35 +59,29 @@ get_part('includes/header.php');
         </p>
         
         <div class="error-suggestions mb-5">
-          <p class="fw-bold mb-3" style="color: var(--text-primary);">Talvez esteja à procura de:</p>
+          <p class="fw-semibold mb-3" style="color: var(--text-primary);">Talvez esteja à procura de:</p>
           <div class="filters-buttons">
             <a href="<?php echo BASE_URL; ?>" class="filter-btn">
-              <i class="ri-home-line"></i>
-              <span>Início</span>
+              <i class="ri-home-line"></i> Início
             </a>
             <a href="<?php echo BASE_URL; ?>servicos" class="filter-btn">
-              <i class="ri-service-line"></i>
-              <span>Serviços</span>
+              <i class="ri-service-line"></i> Serviços
             </a>
             <a href="<?php echo BASE_URL; ?>produtos" class="filter-btn">
-              <i class="ri-stack-line"></i>
-              <span>Produtos</span>
+              <i class="ri-stack-line"></i> Produtos
             </a>
             <a href="<?php echo BASE_URL; ?>contacto" class="filter-btn">
-              <i class="ri-phone-line"></i>
-              <span>Contacto</span>
+              <i class="ri-phone-line"></i> Contacto
             </a>
           </div>
         </div>
         
         <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
           <a class="btn-action btn-order" href="<?php echo BASE_URL; ?>">
-            <i class="ri-home-line"></i>
-            <span>Voltar ao Início</span>
+            <i class="ri-home-line"></i> Voltar ao Início
           </a>
-          <a class="btn-action btn-demo" href="javascript:history.back()">
-            <i class="ri-arrow-left-line"></i>
-            <span>Página Anterior</span>
+          <a class="btn-action btn-details" href="javascript:history.back()">
+            <i class="ri-arrow-left-line"></i> Página Anterior
           </a>
         </div>
       </div>
@@ -93,54 +90,45 @@ get_part('includes/header.php');
 </section>
 
 <!-- Seção de Ajuda -->
-<section class="landing-websites-list py-5">
+<section class="py-5" style="background: var(--bg-light);">
   <div class="container">
     <div class="row g-4">
       <div class="col-lg-4 col-md-6">
-        <div class="website-card">
-          <div class="card-content text-center">
-            <div class="help-icon-wrapper mb-3">
-              <i class="ri-search-line"></i>
-            </div>
-            <h5 class="website-name mb-2">Procure o que Precisa</h5>
-            <p class="card-description mb-4">Use a navegação principal para encontrar serviços, produtos e informações sobre as nossas soluções.</p>
-            <a href="<?php echo BASE_URL; ?>servicos" class="btn-action btn-details w-100">
-              <span>Ver Serviços</span>
-              <i class="ri-arrow-right-line"></i>
-            </a>
+        <div class="help-card text-center h-100">
+          <div class="help-icon mb-3">
+            <i class="ri-search-line"></i>
           </div>
+          <h5 class="fw-bold mb-2" style="color: var(--text-primary);">Procure o que Precisa</h5>
+          <p class="card-description mb-3">Use a navegação principal para encontrar serviços, produtos e informações.</p>
+          <a href="<?php echo BASE_URL; ?>servicos" class="help-link">
+            Ver Serviços <i class="ri-arrow-right-line ms-1"></i>
+          </a>
         </div>
       </div>
       
       <div class="col-lg-4 col-md-6">
-        <div class="website-card">
-          <div class="card-content text-center">
-            <div class="help-icon-wrapper mb-3">
-              <i class="ri-customer-service-2-line"></i>
-            </div>
-            <h5 class="website-name mb-2">Precisa de Ajuda?</h5>
-            <p class="card-description mb-4">A nossa equipa está pronta para responder às suas questões e ajudá-lo a encontrar a solução ideal.</p>
-            <a href="<?php echo BASE_URL; ?>contacto" class="btn-action btn-details w-100">
-              <span>Contactar-nos</span>
-              <i class="ri-arrow-right-line"></i>
-            </a>
+        <div class="help-card text-center h-100">
+          <div class="help-icon mb-3">
+            <i class="ri-customer-service-2-line"></i>
           </div>
+          <h5 class="fw-bold mb-2" style="color: var(--text-primary);">Precisa de Ajuda?</h5>
+          <p class="card-description mb-3">A nossa equipa está pronta para responder às suas questões.</p>
+          <a href="<?php echo BASE_URL; ?>contacto" class="help-link">
+            Contactar-nos <i class="ri-arrow-right-line ms-1"></i>
+          </a>
         </div>
       </div>
       
       <div class="col-lg-4 col-md-6">
-        <div class="website-card">
-          <div class="card-content text-center">
-            <div class="help-icon-wrapper mb-3">
-              <i class="ri-lightbulb-line"></i>
-            </div>
-            <h5 class="website-name mb-2">Conheça as Soluções</h5>
-            <p class="card-description mb-4">Descubra como podemos transformar o seu negócio digitalmente com as nossas tecnologias.</p>
-            <a href="<?php echo BASE_URL; ?>sobre" class="btn-action btn-details w-100">
-              <span>Saber Mais</span>
-              <i class="ri-arrow-right-line"></i>
-            </a>
+        <div class="help-card text-center h-100">
+          <div class="help-icon mb-3">
+            <i class="ri-lightbulb-line"></i>
           </div>
+          <h5 class="fw-bold mb-2" style="color: var(--text-primary);">Conheça as Soluções</h5>
+          <p class="card-description mb-3">Descubra como podemos transformar o seu negócio digitalmente.</p>
+          <a href="<?php echo BASE_URL; ?>sobre" class="help-link">
+            Saber Mais <i class="ri-arrow-right-line ms-1"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -148,9 +136,32 @@ get_part('includes/header.php');
 </section>
 
 <style>
-  /* Usar variáveis CSS já definidas no sistema */
-  .min-vh-60 {
-    min-height: 60vh;
+  /* Error Hero Section */
+  .error-hero {
+    min-height: 80vh;
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--primary-light) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .min-vh-50 {
+    min-height: 50vh;
+  }
+
+  /* Animated Background */
+  .error-animated-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(217, 118, 56, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(217, 118, 56, 0.08) 0%, transparent 50%);
+    animation: bgPulse 8s ease-in-out infinite;
+  }
+
+  @keyframes bgPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
   }
 
   /* Decorative Lines */
@@ -159,7 +170,6 @@ get_part('includes/header.php');
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: 1;
   }
 
   .error-line {
@@ -189,7 +199,6 @@ get_part('includes/header.php');
     border-radius: 50%;
     opacity: 0.4;
     animation: nodePulse 3s ease-in-out infinite;
-    z-index: 1;
   }
 
   .error-tech-node::before {
@@ -213,19 +222,19 @@ get_part('includes/header.php');
   /* Error Number Illustration */
   .error-illustration {
     position: relative;
-    padding: 2rem 0;
+    padding: 3rem 0;
   }
 
   .error-number-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
     position: relative;
   }
 
   .error-number {
-    font-size: 8rem;
+    font-size: 10rem;
     font-weight: 900;
     color: var(--text-secondary);
     opacity: 0.2;
@@ -254,7 +263,7 @@ get_part('includes/header.php');
   }
 
   .error-icon {
-    font-size: 6rem;
+    font-size: 8rem;
     color: var(--primary-color);
     animation: iconRotate 4s ease-in-out infinite;
   }
@@ -271,7 +280,6 @@ get_part('includes/header.php');
     height: 100%;
     top: 0;
     left: 0;
-    pointer-events: none;
   }
 
   .particle {
@@ -296,38 +304,56 @@ get_part('includes/header.php');
   }
 
   /* Error Suggestions */
-  .error-suggestions .filters-buttons {
-    gap: 0.75rem;
+  .error-suggestions {
+    margin-top: 2rem;
   }
 
-  .error-suggestions .filter-btn {
-    padding: 0.65rem 1.25rem;
-    font-size: 0.85rem;
+  /* Help Cards */
+  .help-card {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 2px solid var(--border-color);
+    height: 100%;
   }
 
-  /* Help Icon Wrapper */
-  .help-icon-wrapper {
-    width: 80px;
-    height: 80px;
+  .help-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+  }
+
+  .help-icon {
+    width: 64px;
+    height: 64px;
     background-color: rgba(217, 118, 56, 0.1);
     border-radius: var(--radius-lg);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     color: var(--primary-color);
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 0 auto;
-    transition: var(--transition);
   }
 
-  .website-card:hover .help-icon-wrapper {
-    transform: scale(1.1) rotate(5deg);
-    background-color: var(--primary-color);
-    color: white;
+  .help-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .help-link:hover {
+    color: var(--primary-dark);
+    transform: translateX(3px);
   }
 
   /* Responsive */
-  @media (max-width: 992px) {
+  @media (max-width: 768px) {
     .error-number {
       font-size: 6rem;
     }
@@ -339,27 +365,22 @@ get_part('includes/header.php');
     .error-number-wrapper {
       gap: 1rem;
     }
-  }
 
-  @media (max-width: 768px) {
     .hero-title {
       font-size: 2.5rem;
     }
 
-    .error-number {
-      font-size: 4rem;
-    }
-    
-    .error-icon {
-      font-size: 3rem;
-    }
-
-    .error-suggestions .filters-buttons {
+    .filters-buttons {
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.75rem;
     }
 
-    .error-suggestions .filter-btn {
+    .filter-btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .btn-action {
       width: 100%;
       justify-content: center;
     }
@@ -370,16 +391,12 @@ get_part('includes/header.php');
       font-size: 2rem;
     }
 
-    .hero-subtitle {
-      font-size: 1rem;
+    .error-number {
+      font-size: 4rem;
     }
 
-    .error-number {
-      font-size: 3rem;
-    }
-    
     .error-icon {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
   }
 </style>
