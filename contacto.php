@@ -334,9 +334,8 @@
 
   /* Contact Cards */
   .contact-card {
-    background: white;
     padding: 2rem;
-    border-radius: 1rem;
+    border-radius: 3px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
     text-align: center;
@@ -412,9 +411,8 @@
 
   /* Form */
   .contact-form-wrapper {
-    background: white;
     padding: 2.5rem;
-    border-radius: 1rem;
+    border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     border-left: 4px solid var(--mefema-orange);
   }
@@ -427,7 +425,7 @@
   .form-control,
   .form-select {
     border: 1px solid #e5e7eb;
-    border-radius: 0.5rem;
+    border-radius: 3px;
     padding: 0.75rem 1rem;
     transition: all 0.2s ease;
   }
@@ -464,7 +462,6 @@
 
   /* Info Cards */
   .info-card {
-    background: white;
     border-radius: 1rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     overflow: hidden;
@@ -567,7 +564,7 @@
   .info-banner {
     background-color: var(--mefema-light-gray);
     padding: 1.5rem;
-    border-radius: 1rem;
+    border-radius: 5px;
     display: flex;
     align-items: flex-start;
     gap: 1rem;
