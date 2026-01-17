@@ -27,13 +27,8 @@ get_part('includes/header.php');
   <div class="container position-relative" style="z-index: 5;">
     <div class="row justify-content-center">
       <div class="col-lg-8 col-xl-6 text-center">
-        <!-- Número 404 Grande -->
-        <div class="error-code mb-4">
-          <h1 class="display-1 fw-bold text-primary hero-title-glow" style="font-size: 8rem; line-height: 1;">404</h1>
-        </div>
-        
         <!-- Badge -->
-        <div class="badge bg-label-primary rounded-pill mb-3 px-3 py-2">
+        <div class="badge bg-label-primar rounded-pill mb-3 px-3 py-2">
           <i class="ri ri-error-warning-line me-1"></i> Página Não Encontrada
         </div>
         
