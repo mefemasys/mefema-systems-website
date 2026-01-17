@@ -54,8 +54,10 @@ get_part('includes/header.php');
         <div class="mt-5 pt-4">
           <p class="text-muted mb-3">Ou explore:</p>
           <div class="d-flex gap-4 justify-content-center flex-wrap">
-            <a href="servicos" class="text-decoration-none">Serviços</a>
             <a href="sobre" class="text-decoration-none">Sobre Nós</a>
+             <a href="servicos" class="text-decoration-none">Nossos Serviços</a>
+             <a href="produtos" class="text-decoration-none">Nossos Produtos</a>
+             <a href="portfolio" class="text-decoration-none">Nosso Portfolio</a>
             <a href="contacto" class="text-decoration-none">Contacto</a>
           </div>
         </div>
