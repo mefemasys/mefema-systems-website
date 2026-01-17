@@ -37,3 +37,17 @@ RewriteRule ^$ index.php [L]
 <Files .htaccess>
     Require all denied
 </Files>
+
+
+# ------------------------------
+# Páginas de Erro Personalizadas
+# ------------------------------
+
+# 404 - Não Encontrado (URL incorreta)
+ErrorDocument 404 /pages/error/not-found.php
+
+# 403 - Acesso Negado (Permissão insuficiente)
+ErrorDocument 403 /pages/error/access-denied.php
+
+# 500 - Erro Interno do Servidor
+ErrorDocument 500 /pages/error/internal-server-error.php
