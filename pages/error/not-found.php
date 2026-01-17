@@ -28,7 +28,7 @@ get_part('includes/header.php');
   <div class="container py-5 position-relative" style="z-index: 5;">
     <div class="row align-items-center">
 
-      <div class="col-lg-6 text-lg-start text-center mb-5 mb-lg-0">
+      <div class="col-lg-12 text-lg-start text-center mb-5 mb-lg-0">
         <div class="badge bg-label-primary rounded-pill mb-3 px-3 py-2">
           <i class="ri ri-sparkling-fill me-1"></i> Mefema Systems
         </div>
@@ -49,15 +49,6 @@ get_part('includes/header.php');
             Saiba Mais
           </a>
         </div>
-      </div>
-
-      <div class="col-lg-6 text-center">
-        <img
-          alt="Mefema Systems"
-          class="img-fluid hero-image-float"
-          data-speed="2"
-          src="assets/img/landing-page/hero.webp"
-        />
       </div>
 
     </div>
