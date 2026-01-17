@@ -48,10 +48,6 @@ get_part('includes/header.php');
             <i class="ri ri-home-line me-2"></i>
             Voltar à Página Inicial
           </a>
-          <a class="btn btn-lg btn-outline-dark hero-btn-outline" href="javascript:history.back()">
-            <i class="ri ri-arrow-left-line me-2"></i>
-            Voltar Atrás
-          </a>
         </div>
         
         <!-- Links Úteis -->
