@@ -58,6 +58,17 @@ $canonical  = BASE_URL . ($currentPageFile == 'index.php' ? '' : str_replace('.p
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     
     <title><?php echo htmlspecialchars($finalTitle); ?></title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MEFEMA Systems",
+  "alternateName": ["MEFEMA Systems", "MEFEMA","MEFEMA Systems Moçambique"],
+  "url": "https://mefemasys.co.mz/"
+}
+</script>
+    
     <meta name="description" content="<?php echo htmlspecialchars($finalDesc); ?>" />
     <meta name="keywords" content="<?php echo htmlspecialchars($finalKeys); ?>" />
     <meta name="author" content="MEFEMA Systems" />
