@@ -7,97 +7,62 @@ get_part('includes/header.php');
 
 <style>
   :root {
-    --brand-orange: #FF9800; /* Laranja vibrante para destaque */
-    --brand-white: #FFFFFF;  /* Branco puro para contraste */
+    --brand-brown: #5D4037; /* Castanho */
+    --brand-orange: #FF8F00; /* Laranja */
   }
-  
-  #error404 {
-    /* Garante que o fundo não abafe o conteúdo */
-    background-color: #2b1a16; /* Tom de castanho bem escuro/café se o hero-bg falhar */
-  }
-
-  /* Título e Textos em Branco Puro */
-  #error404 h2, 
-  #error404 .display-1,
-  #error404 .hero-text-fade { 
-    color: var(--brand-white) !important; 
-    text-shadow: 0px 2px 10px rgba(0,0,0,0.3);
-  }
-
-  /* Badge com fundo branco semi-transparente e texto laranja */
-  #error404 .badge-error { 
-    background-color: rgba(255, 255, 255, 0.9) !important; 
-    color: var(--brand-orange) !important; 
-    font-weight: 700;
-  }
-
-  /* Botão Laranja Vibrante */
-  #error404 .hero-btn-primary { 
-    background-color: var(--brand-orange) !important; 
-    border-color: var(--brand-orange) !important; 
-    color: #fff !important; 
-    font-weight: 600;
-    padding: 12px 30px;
-  }
-  
-  #error404 .hero-btn-primary:hover { 
-    background-color: #fff !important; 
-    color: var(--brand-orange) !important;
-    transform: translateY(-2px);
-  }
-
-  /* Links Úteis em Branco */
-  #error404 .explore-link { 
-    color: rgba(255, 255, 255, 0.8) !important; 
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    transition: 0.3s;
-  }
-  
-  #error404 .explore-link:hover { 
-    color: var(--brand-orange) !important; 
-    border-bottom-color: var(--brand-orange);
-  }
-
-  /* Forçar os nós de tecnologia a brilharem em branco/laranja */
-  .hero-tech-node { background: var(--brand-white); box-shadow: 0 0 15px var(--brand-orange); }
+  #error404 h2 { color: var(--brand-brown); }
+  #error404 .badge { background-color: rgba(255, 143, 0, 0.1) !important; color: var(--brand-orange) !important; }
+  #error404 .hero-btn-primary { background-color: var(--brand-orange) !important; border-color: var(--brand-orange) !important; color: #fff !important; }
+  #error404 .hero-btn-primary:hover { background-color: var(--brand-brown) !important; border-color: var(--brand-brown) !important; }
+  #error404 .text-decoration-none { color: var(--brand-brown); transition: 0.3s; }
+  #error404 .text-decoration-none:hover { color: var(--brand-orange); }
+  /* Remove brilhos roxos das animações se existirem no CSS global */
+  .hero-animated-bg { filter: hue-rotate(250deg) saturate(0.5); } /* Ajuste de matiz para tons quentes */
 </style>
 
 <section class="section-py landing-hero position-relative d-flex align-items-center" id="error404" style="min-height: 80vh;">
   <div class="hero-animated-bg"></div>
   
+  <div class="hero-decorative-lines">
+    <div class="hero-diamond-line"></div>
+    <div class="hero-diamond-line"></div>
+    <div class="hero-diamond-line"></div>
+    <div class="hero-diamond-line"></div>
+  </div>
+  
+  <div class="hero-tech-node" style="top: 10%; left: 8%; background: var(--brand-orange);"></div>
+  <div class="hero-tech-node" style="top: 25%; right: 12%; background: var(--brand-brown);"></div>
+  
   <div class="container position-relative" style="z-index: 5;">
     <div class="row justify-content-center">
       <div class="col-lg-8 col-xl-6 text-center">
-        
-        <h1 class="display-1 fw-bold mb-0" style="opacity: 0.2; font-size: 8rem;">404</h1>
-
-        <div class="badge badge-error rounded-pill mb-4 px-4 py-2 shadow">
-          <i class="ri ri-error-warning-line me-1"></i> OPS! PÁGINA NÃO ENCONTRADA
+        <div class="badge rounded-pill mb-3 px-3 py-2">
+          <i class="ri ri-error-warning-line me-1"></i> Página Não Encontrada
         </div>
         
-        <h2 class="h2 fw-bold mb-4">
-          Lamentamos, mas a página que procura não existe.
+        <h2 class="h1 fw-bold mb-4">
+          Ups! Esta página não existe.
         </h2>
         
-        <p class="lead mb-5 hero-text-fade" style="font-size: 1.25rem; opacity: 0.9;">
-          Pode ter sido movida ou o endereço digitado está incorreto.
+        <p class="lead mb-5 text-muted hero-text-fade">
+          A página que procura pode ter sido removida, ter o nome alterado ou estar temporariamente indisponível.
         </p>
         
-        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-5">
+        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
           <a class="btn btn-lg shadow-lg hero-btn-primary" href="/">
             <i class="ri ri-home-line me-2"></i>
-            Voltar ao Início
+            Voltar à Página Inicial
           </a>
         </div>
         
-        <div class="mt-5">
-          <p style="color: rgba(255,255,255,0.6);" class="mb-3 text-uppercase small fw-bold">Navegação rápida</p>
+        <div class="mt-5 pt-4">
+          <p class="text-muted mb-3">Ou explore:</p>
           <div class="d-flex gap-4 justify-content-center flex-wrap">
-            <a href="/sobre" class="explore-link">Sobre</a>
-            <a href="/servicos" class="explore-link">Serviços</a>
-            <a href="/produtos" class="explore-link">Produtos</a>
-            <a href="/contacto" class="explore-link">Contacto</a>
+            <a href="/sobre" class="text-decoration-none fw-medium">Sobre Nós</a>
+            <a href="/servicos" class="text-decoration-none fw-medium">Serviços</a>
+            <a href="/produtos" class="text-decoration-none fw-medium">Produtos</a>
+            <a href="/portfolio" class="text-decoration-none fw-medium">Portfolio</a>
+            <a href="/contacto" class="text-decoration-none fw-medium">Contacto</a>
           </div>
         </div>
       </div>
