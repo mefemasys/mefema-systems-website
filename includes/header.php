@@ -163,7 +163,7 @@ $canonical  = BASE_URL . ($currentPageFile == 'index.php' ? '' : str_replace('.p
         <button class="nav-link me-3 border-0 bg-transparent" id="themeToggleBtn">
           <i class="icon-base ri ri-computer-line" id="themeIcon"></i>
         </button>
-        <a href="<?php echo BASE_URL; ?>contacto" class="btn btn-primary d-none d-md-block">Pedir Orçamento</a>
+        <!-- <a href="<?php echo BASE_URL; ?>contacto" class="btn btn-primary d-none d-md-block">Pedir Orçamento</a> -->
       </div>
     </div>
   </div>
