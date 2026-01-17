@@ -5,10 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/config/path_config.php';
 get_part('includes/header.php'); 
 ?>
 
-<section class="section-py error-hero position-relative overflow-hidden" id="error404">
-  <!-- Camadas de Animação de Fundo -->
-  <div class="error-animated-bg"></div>
-  
+<section class="landing-hero-websites position-relative overflow-hidden" id="error404">
   <!-- Traços Decorativos -->
   <div class="error-decorative-lines">
     <div class="error-line"></div>
@@ -24,7 +21,7 @@ get_part('includes/header.php');
 
   <!-- Conteúdo Principal -->
   <div class="container py-5 position-relative" style="z-index: 5;">
-    <div class="row align-items-center min-vh-50">
+    <div class="row align-items-center min-vh-60">
       <div class="col-lg-6 text-center mb-5 mb-lg-0">
         <div class="error-illustration">
           <div class="error-number-wrapper">
@@ -45,42 +42,49 @@ get_part('includes/header.php');
       </div>
       
       <div class="col-lg-6 text-lg-start text-center">
-        <div class="badge bg-label-primary rounded-pill mb-3 px-3 py-2">
-          <i class="ri-alert-line me-1"></i> Erro 404
+        <div class="hero-badge mb-4">
+          <i class="ri-alert-line" style="color: var(--primary-color); font-size: 1.2rem;"></i>
+          <span class="badge-text">Erro 404</span>
         </div>
         
-        <h1 class="display-4 fw-bold mb-4 lh-sm">
-          Página Não Encontrada
+        <h1 class="hero-title mb-4">
+          Página <span class="text-gradient">Não Encontrada</span>
         </h1>
         
-        <p class="lead mb-4 text-muted">
+        <p class="hero-subtitle mb-4">
           Desculpe, a página que procura não existe ou foi movida. Mas não se preocupe, temos muitas outras soluções tecnológicas para explorar!
         </p>
         
         <div class="error-suggestions mb-5">
-          <p class="fw-semibold mb-3">Talvez esteja à procura de:</p>
-          <div class="d-flex flex-wrap gap-2">
-            <a href="<?php echo BASE_URL; ?>" class="badge bg-light text-dark px-3 py-2 text-decoration-none">
-              <i class="ri-home-line me-1"></i> Início
+          <p class="fw-bold mb-3" style="color: var(--text-primary);">Talvez esteja à procura de:</p>
+          <div class="filters-buttons">
+            <a href="<?php echo BASE_URL; ?>" class="filter-btn">
+              <i class="ri-home-line"></i>
+              <span>Início</span>
             </a>
-            <a href="<?php echo BASE_URL; ?>servicos" class="badge bg-light text-dark px-3 py-2 text-decoration-none">
-              <i class="ri-service-line me-1"></i> Serviços
+            <a href="<?php echo BASE_URL; ?>servicos" class="filter-btn">
+              <i class="ri-service-line"></i>
+              <span>Serviços</span>
             </a>
-            <a href="<?php echo BASE_URL; ?>produtos" class="badge bg-light text-dark px-3 py-2 text-decoration-none">
-              <i class="ri-stack-line me-1"></i> Produtos
+            <a href="<?php echo BASE_URL; ?>produtos" class="filter-btn">
+              <i class="ri-stack-line"></i>
+              <span>Produtos</span>
             </a>
-            <a href="<?php echo BASE_URL; ?>contacto" class="badge bg-light text-dark px-3 py-2 text-decoration-none">
-              <i class="ri-phone-line me-1"></i> Contacto
+            <a href="<?php echo BASE_URL; ?>contacto" class="filter-btn">
+              <i class="ri-phone-line"></i>
+              <span>Contacto</span>
             </a>
           </div>
         </div>
         
         <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
-          <a class="btn btn-lg btn-primary shadow" href="<?php echo BASE_URL; ?>">
-            <i class="ri-home-line me-2"></i> Voltar ao Início
+          <a class="btn-action btn-order" href="<?php echo BASE_URL; ?>">
+            <i class="ri-home-line"></i>
+            <span>Voltar ao Início</span>
           </a>
-          <a class="btn btn-lg btn-outline-secondary" href="javascript:history.back()">
-            <i class="ri-arrow-left-line me-2"></i> Página Anterior
+          <a class="btn-action btn-demo" href="javascript:history.back()">
+            <i class="ri-arrow-left-line"></i>
+            <span>Página Anterior</span>
           </a>
         </div>
       </div>
@@ -89,45 +93,54 @@ get_part('includes/header.php');
 </section>
 
 <!-- Seção de Ajuda -->
-<section class="py-5 bg-light">
+<section class="landing-websites-list py-5">
   <div class="container">
     <div class="row g-4">
       <div class="col-lg-4 col-md-6">
-        <div class="help-card text-center h-100">
-          <div class="help-icon mb-3">
-            <i class="ri-search-line"></i>
+        <div class="website-card">
+          <div class="card-content text-center">
+            <div class="help-icon-wrapper mb-3">
+              <i class="ri-search-line"></i>
+            </div>
+            <h5 class="website-name mb-2">Procure o que Precisa</h5>
+            <p class="card-description mb-4">Use a navegação principal para encontrar serviços, produtos e informações sobre as nossas soluções.</p>
+            <a href="<?php echo BASE_URL; ?>servicos" class="btn-action btn-details w-100">
+              <span>Ver Serviços</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
           </div>
-          <h5 class="fw-bold mb-2">Procure o que Precisa</h5>
-          <p class="text-muted mb-3">Use a navegação principal para encontrar serviços, produtos e informações.</p>
-          <a href="<?php echo BASE_URL; ?>servicos" class="text-decoration-none fw-semibold">
-            Ver Serviços <i class="ri-arrow-right-line ms-1"></i>
-          </a>
         </div>
       </div>
       
       <div class="col-lg-4 col-md-6">
-        <div class="help-card text-center h-100">
-          <div class="help-icon mb-3">
-            <i class="ri-customer-service-2-line"></i>
+        <div class="website-card">
+          <div class="card-content text-center">
+            <div class="help-icon-wrapper mb-3">
+              <i class="ri-customer-service-2-line"></i>
+            </div>
+            <h5 class="website-name mb-2">Precisa de Ajuda?</h5>
+            <p class="card-description mb-4">A nossa equipa está pronta para responder às suas questões e ajudá-lo a encontrar a solução ideal.</p>
+            <a href="<?php echo BASE_URL; ?>contacto" class="btn-action btn-details w-100">
+              <span>Contactar-nos</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
           </div>
-          <h5 class="fw-bold mb-2">Precisa de Ajuda?</h5>
-          <p class="text-muted mb-3">A nossa equipa está pronta para responder às suas questões.</p>
-          <a href="<?php echo BASE_URL; ?>contacto" class="text-decoration-none fw-semibold">
-            Contactar-nos <i class="ri-arrow-right-line ms-1"></i>
-          </a>
         </div>
       </div>
       
       <div class="col-lg-4 col-md-6">
-        <div class="help-card text-center h-100">
-          <div class="help-icon mb-3">
-            <i class="ri-lightbulb-line"></i>
+        <div class="website-card">
+          <div class="card-content text-center">
+            <div class="help-icon-wrapper mb-3">
+              <i class="ri-lightbulb-line"></i>
+            </div>
+            <h5 class="website-name mb-2">Conheça as Soluções</h5>
+            <p class="card-description mb-4">Descubra como podemos transformar o seu negócio digitalmente com as nossas tecnologias.</p>
+            <a href="<?php echo BASE_URL; ?>sobre" class="btn-action btn-details w-100">
+              <span>Saber Mais</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
           </div>
-          <h5 class="fw-bold mb-2">Conheça as Soluções</h5>
-          <p class="text-muted mb-3">Descubra como podemos transformar o seu negócio digitalmente.</p>
-          <a href="<?php echo BASE_URL; ?>sobre" class="text-decoration-none fw-semibold">
-            Saber Mais <i class="ri-arrow-right-line ms-1"></i>
-          </a>
         </div>
       </div>
     </div>
@@ -135,40 +148,9 @@ get_part('includes/header.php');
 </section>
 
 <style>
-  /* MEFEMA Colors */
-  :root {
-    --mefema-orange: #FF6B35;
-    --mefema-brown: #5D4037;
-    --mefema-light-brown: #8D6E63;
-    --mefema-dark-brown: #3E2723;
-  }
-
-  /* Error Hero Section */
-  .error-hero {
-    min-height: 80vh;
-    background-color: #FAFAFA;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .min-vh-50 {
-    min-height: 50vh;
-  }
-
-  /* Animated Background */
-  .error-animated-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: 
-      radial-gradient(circle at 20% 30%, rgba(255, 107, 53, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, rgba(93, 64, 55, 0.05) 0%, transparent 50%);
-    animation: bgPulse 8s ease-in-out infinite;
-  }
-
-  @keyframes bgPulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
+  /* Usar variáveis CSS já definidas no sistema */
+  .min-vh-60 {
+    min-height: 60vh;
   }
 
   /* Decorative Lines */
@@ -177,13 +159,14 @@ get_part('includes/header.php');
     width: 100%;
     height: 100%;
     overflow: hidden;
+    z-index: 1;
   }
 
   .error-line {
     position: absolute;
     width: 2px;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, var(--mefema-orange), transparent);
+    background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
     opacity: 0.1;
     animation: lineMove 15s linear infinite;
   }
@@ -202,10 +185,11 @@ get_part('includes/header.php');
     position: absolute;
     width: 8px;
     height: 8px;
-    background-color: var(--mefema-orange);
+    background-color: var(--primary-color);
     border-radius: 50%;
     opacity: 0.4;
     animation: nodePulse 3s ease-in-out infinite;
+    z-index: 1;
   }
 
   .error-tech-node::before {
@@ -213,7 +197,7 @@ get_part('includes/header.php');
     position: absolute;
     width: 20px;
     height: 20px;
-    border: 2px solid var(--mefema-orange);
+    border: 2px solid var(--primary-color);
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -229,22 +213,22 @@ get_part('includes/header.php');
   /* Error Number Illustration */
   .error-illustration {
     position: relative;
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
 
   .error-number-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
     position: relative;
   }
 
   .error-number {
-    font-size: 10rem;
+    font-size: 8rem;
     font-weight: 900;
-    color: var(--mefema-brown);
-    opacity: 0.15;
+    color: var(--text-secondary);
+    opacity: 0.2;
     line-height: 1;
     animation: numberFloat 3s ease-in-out infinite;
   }
@@ -270,8 +254,8 @@ get_part('includes/header.php');
   }
 
   .error-icon {
-    font-size: 8rem;
-    color: var(--mefema-orange);
+    font-size: 6rem;
+    color: var(--primary-color);
     animation: iconRotate 4s ease-in-out infinite;
   }
 
@@ -287,13 +271,14 @@ get_part('includes/header.php');
     height: 100%;
     top: 0;
     left: 0;
+    pointer-events: none;
   }
 
   .particle {
     position: absolute;
     width: 4px;
     height: 4px;
-    background-color: var(--mefema-orange);
+    background-color: var(--primary-color);
     border-radius: 50%;
     opacity: 0.6;
     animation: particleFloat 4s ease-in-out infinite;
@@ -310,90 +295,39 @@ get_part('includes/header.php');
     50% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
   }
 
-  /* Badge */
-  .bg-label-primary {
-    background-color: rgba(255, 107, 53, 0.1) !important;
-    color: var(--mefema-orange) !important;
+  /* Error Suggestions */
+  .error-suggestions .filters-buttons {
+    gap: 0.75rem;
   }
 
-  /* Suggestions */
-  .error-suggestions .badge {
-    transition: all 0.3s ease;
-    border: 1px solid #E0E0E0;
+  .error-suggestions .filter-btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.85rem;
   }
 
-  .error-suggestions .badge:hover {
-    background-color: var(--mefema-orange) !important;
-    color: white !important;
-    border-color: var(--mefema-orange);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
-  }
-
-  /* Buttons */
-  .btn-primary {
-    background-color: var(--mefema-orange);
-    border-color: var(--mefema-orange);
-    transition: all 0.3s ease;
-  }
-
-  .btn-primary:hover {
-    background-color: var(--mefema-brown);
-    border-color: var(--mefema-brown);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
-  }
-
-  .btn-outline-secondary {
-    border-color: var(--mefema-brown);
-    color: var(--mefema-brown);
-    transition: all 0.3s ease;
-  }
-
-  .btn-outline-secondary:hover {
-    background-color: var(--mefema-brown);
-    border-color: var(--mefema-brown);
-    color: white;
-  }
-
-  /* Help Cards */
-  .help-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    border-top: 3px solid var(--mefema-orange);
-  }
-
-  .help-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  }
-
-  .help-icon {
-    width: 64px;
-    height: 64px;
-    background-color: rgba(255, 107, 53, 0.1);
-    border-radius: 1rem;
+  /* Help Icon Wrapper */
+  .help-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(217, 118, 56, 0.1);
+    border-radius: var(--radius-lg);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--mefema-orange);
-    font-size: 2rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin: 0 auto;
+    transition: var(--transition);
   }
 
-  .help-card a {
-    color: var(--mefema-orange);
-    transition: all 0.2s ease;
-  }
-
-  .help-card a:hover {
-    color: var(--mefema-brown);
+  .website-card:hover .help-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    background-color: var(--primary-color);
+    color: white;
   }
 
   /* Responsive */
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .error-number {
       font-size: 6rem;
     }
@@ -406,6 +340,48 @@ get_part('includes/header.php');
       gap: 1rem;
     }
   }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .error-number {
+      font-size: 4rem;
+    }
+    
+    .error-icon {
+      font-size: 3rem;
+    }
+
+    .error-suggestions .filters-buttons {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .error-suggestions .filter-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .error-number {
+      font-size: 3rem;
+    }
+    
+    .error-icon {
+      font-size: 2.5rem;
+    }
+  }
 </style>
 
-<?php get_part('includes/footer.php');  ?>
+<?php get_part('includes/footer.php'); ?>
