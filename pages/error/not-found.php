@@ -1,8 +1,9 @@
 <?php 
 http_response_code(404);
 $pageTitle = "Página Não Encontrada - 404"; 
+require_once $_SERVER['DOCUMENT_ROOT'] . '/config/path_config.php';
+get_part('includes/header.php'); 
 ?>
-<?php include 'includes/header.php'; ?>
 
 <section class="section-py error-hero position-relative overflow-hidden" id="error404">
   <!-- Camadas de Animação de Fundo -->
@@ -407,4 +408,4 @@ $pageTitle = "Página Não Encontrada - 404";
   }
 </style>
 
-<?php include 'includes/footer.php'; ?>
+<?php get_part('includes/footer.php');  ?>
