@@ -4,8 +4,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/config/path_config.php';
 
 $pageTitle = "Websites - MEFEMA Systems";
 
-
-
 /**
  * Função para simular busca de dados da API de Websites
  */
@@ -215,31 +213,12 @@ function buscarDadosWebsites() {
     return $dados && $dados['sucesso'] === true ? $dados : null;
 }
 
-// Configuração de paginação - AGORA 4 ITENS POR PÁGINA
-$items_por_pagina = 4;
-$pagina_actual = isset($_GET['pagina']) ? max(1, intval($_GET['pagina'])) : 1;
-$filtro_categoria = isset($_GET['categoria']) ? $_GET['categoria'] : 'all';
-
-// Buscar dados
 $dados_websites = buscarDadosWebsites();
-
-if ($dados_websites) {
-    // Filtrar por categoria
-    $websites_filtrados = $filtro_categoria === 'all' 
-        ? $dados_websites['data']
-        : array_filter($dados_websites['data'], function($w) use ($filtro_categoria) {
-            return $w['categoria'] === $filtro_categoria;
-        });
-    
-    $total_items = count($websites_filtrados);
-    $total_paginas = ceil($total_items / $items_por_pagina);
-    $offset = ($pagina_actual - 1) * $items_por_pagina;
-    $websites_pagina = array_slice($websites_filtrados, $offset, $items_por_pagina);
-}
 
 get_part('includes/header.php'); 
 ?>
 <link rel="stylesheet" href="/assets/css/produtos.css">
+
 <!-- Hero Section -->
 <section class="landing-hero-websites">
     <div class="container">
@@ -291,212 +270,45 @@ get_part('includes/header.php');
                 </h6>
             </div>
             <div class="filters-buttons">
-                <a href="?categoria=all&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'all' ? 'active' : ''; ?>">
+                <button class="filter-btn active" data-categoria="all">
                     <i class="ri-layout-grid-line"></i>
                     <span>Todos</span>
-                </a>
-                <a href="?categoria=Básico&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Básico' ? 'active' : ''; ?>">
+                </button>
+                <button class="filter-btn" data-categoria="Básico">
                     <i class="ri-file-text-line"></i>
                     <span>Básico</span>
-                </a>
-                <a href="?categoria=Profissional&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Profissional' ? 'active' : ''; ?>">
+                </button>
+                <button class="filter-btn" data-categoria="Profissional">
                     <i class="ri-briefcase-line"></i>
                     <span>Profissional</span>
-                </a>
-                <a href="?categoria=Especializado&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Especializado' ? 'active' : ''; ?>">
+                </button>
+                <button class="filter-btn" data-categoria="Especializado">
                     <i class="ri-star-line"></i>
                     <span>Especializado</span>
-                </a>
-                <a href="?categoria=Loja Online&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Loja Online' ? 'active' : ''; ?>">
+                </button>
+                <button class="filter-btn" data-categoria="Loja Online">
                     <i class="ri-shopping-cart-line"></i>
                     <span>E-commerce</span>
-                </a>
-                <a href="?categoria=Corporativo&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Corporativo' ? 'active' : ''; ?>">
+                </button>
+                <button class="filter-btn" data-categoria="Corporativo">
                     <i class="ri-building-line"></i>
                     <span>Corporativo</span>
-                </a>
+                </button>
             </div>
         </div>
 
         <!-- Grid de Websites -->
         <div class="row g-4 mb-5" id="websitesGrid">
-            <?php foreach ($websites_pagina as $index => $website): ?>
-                <div class="col-xl-12 col-lg-12 col-md-12" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
-                    <div class="website-card <?php echo $website['destaque'] ? 'featured' : ''; ?>">
-                        
-                        <?php if ($website['destaque']): ?>
-                            <div class="featured-badge">
-                                <i class="ri-vip-crown-fill"></i>
-                                <span>Mais Popular</span>
-                            </div>
-                        <?php endif; ?>
-                        
-                        <div class="card-layout">
-                            <!-- Screenshots Carousel -->
-                            <div class="screenshots-section">
-                                <div id="carousel<?php echo $website['id']; ?>" class="carousel slide" data-bs-ride="carousel">
-                                    <div class="carousel-indicators">
-                                        <?php foreach ($website['screenshots'] as $i => $screenshot): ?>
-                                            <button type="button" 
-                                                    data-bs-target="#carousel<?php echo $website['id']; ?>" 
-                                                    data-bs-slide-to="<?php echo $i; ?>" 
-                                                    class="<?php echo $i === 0 ? 'active' : ''; ?>">
-                                            </button>
-                                        <?php endforeach; ?>
-                                    </div>
-                                    <div class="carousel-inner">
-                                        <?php foreach ($website['screenshots'] as $i => $screenshot): ?>
-                                            <div class="carousel-item <?php echo $i === 0 ? 'active' : ''; ?>">
-                                                <img src="<?php echo htmlspecialchars($screenshot); ?>" 
-                                                     class="d-block w-100" 
-                                                     alt="<?php echo htmlspecialchars($website['nome']); ?>">
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel<?php echo $website['id']; ?>" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon"></span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#carousel<?php echo $website['id']; ?>" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon"></span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Card Content -->
-                            <div class="card-content">
-                                <div class="card-header-section">
-                                    <div class="category-badge badge-<?php echo htmlspecialchars($website['cor']); ?>">
-                                        <?php echo htmlspecialchars($website['categoria']); ?>
-                                    </div>
-                                    <h3 class="website-name"><?php echo htmlspecialchars($website['nome']); ?></h3>
-                                    <p class="website-nicho">
-                                        <i class="ri-focus-3-line"></i>
-                                        <?php echo htmlspecialchars($website['nicho']); ?>
-                                    </p>
-                                </div>
-
-                                <div class="card-pricing">
-                                    <div class="pricing-main">
-                                        <span class="price-label">A partir de</span>
-                                        <div class="price-amount">
-                                            <span class="price-value"><?php echo number_format($website['preco'], 0, ',', '.'); ?></span>
-                                            <span class="price-currency">MT</span>
-                                        </div>
-                                    </div>
-                                    <div class="pricing-detail">
-                                        <i class="ri-file-list-3-line"></i>
-                                        <span><?php echo $website['paginas']; ?> página<?php echo $website['paginas'] > 1 ? 's' : ''; ?></span>
-                                    </div>
-                                </div>
-
-                                <p class="card-description"><?php echo htmlspecialchars($website['descricao']); ?></p>
-
-                                <div class="card-features">
-                                    <h6 class="features-title">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        Características principais
-                                    </h6>
-                                    <ul class="features-list">
-                                        <?php 
-                                        $features_show = array_slice($website['caracteristicas'], 0, 5);
-                                        foreach ($features_show as $feature): 
-                                        ?>
-                                            <li>
-                                                <i class="ri-check-line"></i>
-                                                <span><?php echo htmlspecialchars($feature); ?></span>
-                                            </li>
-                                        <?php endforeach; ?>
-                                        <?php if (count($website['caracteristicas']) > 5): ?>
-                                            <li class="more-features">
-                                                <i class="ri-add-circle-line"></i>
-                                                <span>Mais <?php echo count($website['caracteristicas']) - 5; ?> funcionalidades</span>
-                                            </li>
-                                        <?php endif; ?>
-                                    </ul>
-                                </div>
-
-                                <div class="card-actions">
-                                    <a href="<?php echo htmlspecialchars($website['demo_url']); ?>" target="_blank" class="btn-action btn-demo">
-    <i class="ri-external-link-line"></i>
-    <span>Ver Demo</span>
-</a>
-                                    <button class="btn-action btn-details" onclick="showWebsiteDetails(<?php echo $website['id']; ?>)">
-                                        <i class="ri-information-line"></i>
-                                        <span>Detalhes</span>
-                                    </button>
-                                    <a href="#landingContact" class="btn-action btn-order">
-                                        <i class="ri-shopping-bag-line"></i>
-                                        <span>Encomendar</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+            <!-- Conteúdo será carregado via JavaScript -->
         </div>
 
-        <!-- Paginação Melhorada -->
-        <?php if ($total_paginas > 1): ?>
-        <nav class="pagination-wrapper" data-aos="fade-up">
+        <!-- Paginação -->
+        <nav class="pagination-wrapper" id="paginationWrapper" style="display: none;">
             <div class="pagination-info">
-                <span class="pagination-text">
-                    Página <strong><?php echo $pagina_actual; ?></strong> de <strong><?php echo $total_paginas; ?></strong>
-                    <span class="separator">•</span>
-                    <strong><?php echo $total_items; ?></strong> <?php echo $total_items === 1 ? 'resultado' : 'resultados'; ?>
-                </span>
+                <span class="pagination-text" id="paginationInfo"></span>
             </div>
-            <ul class="pagination">
-                <?php if ($pagina_actual > 1): ?>
-                    <li class="page-item">
-                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $pagina_actual - 1; ?>">
-                            <i class="ri-arrow-left-s-line"></i>
-                            <span class="d-none d-sm-inline">Anterior</span>
-                        </a>
-                    </li>
-                <?php endif; ?>
-
-                <?php
-                $start = max(1, $pagina_actual - 2);
-                $end = min($total_paginas, $pagina_actual + 2);
-                
-                if ($start > 1): ?>
-                    <li class="page-item">
-                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=1">1</a>
-                    </li>
-                    <?php if ($start > 2): ?>
-                        <li class="page-item disabled"><span class="page-link">...</span></li>
-                    <?php endif; ?>
-                <?php endif; ?>
-
-                <?php for ($i = $start; $i <= $end; $i++): ?>
-                    <li class="page-item <?php echo $i === $pagina_actual ? 'active' : ''; ?>">
-                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $i; ?>">
-                            <?php echo $i; ?>
-                        </a>
-                    </li>
-                <?php endfor; ?>
-
-                <?php if ($end < $total_paginas): ?>
-                    <?php if ($end < $total_paginas - 1): ?>
-                        <li class="page-item disabled"><span class="page-link">...</span></li>
-                    <?php endif; ?>
-                    <li class="page-item">
-                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $total_paginas; ?>"><?php echo $total_paginas; ?></a>
-                    </li>
-                <?php endif; ?>
-
-                <?php if ($pagina_actual < $total_paginas): ?>
-                    <li class="page-item">
-                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $pagina_actual + 1; ?>">
-                            <span class="d-none d-sm-inline">Próxima</span>
-                            <i class="ri-arrow-right-s-line"></i>
-                        </a>
-                    </li>
-                <?php endif; ?>
-            </ul>
+            <ul class="pagination" id="paginationButtons"></ul>
         </nav>
-        <?php endif; ?>
 
     </div>
 </section>
@@ -521,8 +333,266 @@ get_part('includes/header.php');
 </div>
 
 <script>
+// Dados dos websites
 const websitesData = <?php echo json_encode($dados_websites['data']); ?>;
 
+// Configuração
+const ITEMS_POR_PAGINA = 4;
+let paginaActual = 1;
+let categoriaActual = 'all';
+
+// Inicializar
+document.addEventListener('DOMContentLoaded', function() {
+    renderizarWebsites();
+    configurarFiltros();
+});
+
+// Filtrar websites
+function filtrarWebsites() {
+    if (categoriaActual === 'all') {
+        return websitesData;
+    }
+    return websitesData.filter(w => w.categoria === categoriaActual);
+}
+
+// Renderizar websites
+function renderizarWebsites() {
+    const websitesFiltrados = filtrarWebsites();
+    const totalItems = websitesFiltrados.length;
+    const totalPaginas = Math.ceil(totalItems / ITEMS_POR_PAGINA);
+    const offset = (paginaActual - 1) * ITEMS_POR_PAGINA;
+    const websitesPagina = websitesFiltrados.slice(offset, offset + ITEMS_POR_PAGINA);
+    
+    // Renderizar grid
+    const grid = document.getElementById('websitesGrid');
+    grid.innerHTML = websitesPagina.map((website, index) => criarCardWebsite(website, index)).join('');
+    
+    // Renderizar paginação
+    if (totalPaginas > 1) {
+        renderizarPaginacao(totalItems, totalPaginas);
+    } else {
+        document.getElementById('paginationWrapper').style.display = 'none';
+    }
+    
+    // Scroll suave para o topo da lista
+    if (paginaActual > 1) {
+        document.getElementById('websitesList').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+// Criar card de website
+function criarCardWebsite(website, index) {
+    const featuresShow = website.caracteristicas.slice(0, 5);
+    const maisFeatures = website.caracteristicas.length - 5;
+    
+    return `
+        <div class="col-xl-12 col-lg-12 col-md-12" data-aos="fade-up" data-aos-delay="${index * 100}">
+            <div class="website-card ${website.destaque ? 'featured' : ''}">
+                ${website.destaque ? `
+                    <div class="featured-badge">
+                        <i class="ri-vip-crown-fill"></i>
+                        <span>Mais Popular</span>
+                    </div>
+                ` : ''}
+                
+                <div class="card-layout">
+                    <div class="screenshots-section">
+                        <div id="carousel${website.id}" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                ${website.screenshots.map((_, i) => `
+                                    <button type="button" 
+                                            data-bs-target="#carousel${website.id}" 
+                                            data-bs-slide-to="${i}" 
+                                            class="${i === 0 ? 'active' : ''}">
+                                    </button>
+                                `).join('')}
+                            </div>
+                            <div class="carousel-inner">
+                                ${website.screenshots.map((screenshot, i) => `
+                                    <div class="carousel-item ${i === 0 ? 'active' : ''}">
+                                        <img src="${screenshot}" class="d-block w-100" alt="${website.nome}">
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel${website.id}" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel${website.id}" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <div class="card-header-section">
+                            <div class="category-badge badge-${website.cor}">
+                                ${website.categoria}
+                            </div>
+                            <h3 class="website-name">${website.nome}</h3>
+                            <p class="website-nicho">
+                                <i class="ri-focus-3-line"></i>
+                                ${website.nicho}
+                            </p>
+                        </div>
+
+                        <div class="card-pricing">
+                            <div class="pricing-main">
+                                <span class="price-label">A partir de</span>
+                                <div class="price-amount">
+                                    <span class="price-value">${website.preco.toLocaleString('pt-MZ')}</span>
+                                    <span class="price-currency">MT</span>
+                                </div>
+                            </div>
+                            <div class="pricing-detail">
+                                <i class="ri-file-list-3-line"></i>
+                                <span>${website.paginas} página${website.paginas > 1 ? 's' : ''}</span>
+                            </div>
+                        </div>
+
+                        <p class="card-description">${website.descricao}</p>
+
+                        <div class="card-features">
+                            <h6 class="features-title">
+                                <i class="ri-checkbox-circle-line"></i>
+                                Características principais
+                            </h6>
+                            <ul class="features-list">
+                                ${featuresShow.map(feature => `
+                                    <li>
+                                        <i class="ri-check-line"></i>
+                                        <span>${feature}</span>
+                                    </li>
+                                `).join('')}
+                                ${maisFeatures > 0 ? `
+                                    <li class="more-features">
+                                        <i class="ri-add-circle-line"></i>
+                                        <span>Mais ${maisFeatures} funcionalidades</span>
+                                    </li>
+                                ` : ''}
+                            </ul>
+                        </div>
+
+                        <div class="card-actions">
+                            <a href="${website.demo_url}" target="_blank" class="btn-action btn-demo">
+                                <i class="ri-external-link-line"></i>
+                                <span>Ver Demo</span>
+                            </a>
+                            <button class="btn-action btn-details" onclick="showWebsiteDetails(${website.id})">
+                                <i class="ri-information-line"></i>
+                                <span>Detalhes</span>
+                            </button>
+                            <a href="#landingContact" class="btn-action btn-order">
+                                <i class="ri-shopping-bag-line"></i>
+                                <span>Encomendar</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// Renderizar paginação
+function renderizarPaginacao(totalItems, totalPaginas) {
+    const wrapper = document.getElementById('paginationWrapper');
+    const info = document.getElementById('paginationInfo');
+    const buttons = document.getElementById('paginationButtons');
+    
+    wrapper.style.display = 'block';
+    
+    info.innerHTML = `
+        Página <strong>${paginaActual}</strong> de <strong>${totalPaginas}</strong>
+        <span class="separator">•</span>
+        <strong>${totalItems}</strong> ${totalItems === 1 ? 'resultado' : 'resultados'}
+    `;
+    
+    let html = '';
+    
+    // Botão anterior
+    if (paginaActual > 1) {
+        html += `
+            <li class="page-item">
+                <a class="page-link" href="#" onclick="mudarPagina(${paginaActual - 1}); return false;">
+                    <i class="ri-arrow-left-s-line"></i>
+                    <span class="d-none d-sm-inline">Anterior</span>
+                </a>
+            </li>
+        `;
+    }
+    
+    // Páginas
+    const start = Math.max(1, paginaActual - 2);
+    const end = Math.min(totalPaginas, paginaActual + 2);
+    
+    if (start > 1) {
+        html += `<li class="page-item"><a class="page-link" href="#" onclick="mudarPagina(1); return false;">1</a></li>`;
+        if (start > 2) {
+            html += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+        }
+    }
+    
+    for (let i = start; i <= end; i++) {
+        html += `
+            <li class="page-item ${i === paginaActual ? 'active' : ''}">
+                <a class="page-link" href="#" onclick="mudarPagina(${i}); return false;">${i}</a>
+            </li>
+        `;
+    }
+    
+    if (end < totalPaginas) {
+        if (end < totalPaginas - 1) {
+            html += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+        }
+        html += `<li class="page-item"><a class="page-link" href="#" onclick="mudarPagina(${totalPaginas}); return false;">${totalPaginas}</a></li>`;
+    }
+    
+    // Botão próxima
+    if (paginaActual < totalPaginas) {
+        html += `
+            <li class="page-item">
+                <a class="page-link" href="#" onclick="mudarPagina(${paginaActual + 1}); return false;">
+                    <span class="d-none d-sm-inline">Próxima</span>
+                    <i class="ri-arrow-right-s-line"></i>
+                </a>
+            </li>
+        `;
+    }
+    
+    buttons.innerHTML = html;
+}
+
+// Mudar página
+function mudarPagina(pagina) {
+    paginaActual = pagina;
+    renderizarWebsites();
+}
+
+// Configurar filtros
+function configurarFiltros() {
+    const botoesFiltro = document.querySelectorAll('.filter-btn');
+    
+    botoesFiltro.forEach(botao => {
+        botao.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Remover active de todos
+            botoesFiltro.forEach(b => b.classList.remove('active'));
+            
+            // Adicionar active ao clicado
+            this.classList.add('active');
+            
+            // Actualizar categoria e resetar página
+            categoriaActual = this.dataset.categoria;
+            paginaActual = 1;
+            
+            // Renderizar
+            renderizarWebsites();
+        });
+    });
+}
+
+// Mostrar detalhes do website (função global)
 function showWebsiteDetails(id) {
     const website = websitesData.find(w => w.id === id);
     if (!website) return;
