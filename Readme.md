@@ -8,14 +8,14 @@ Este repositório contém o código-fonte do portal institucional, desenvolvido 
 
 ---
 
-## 🌐 Website em Produção
+## Website em Produção
 
 O website está acessível através do endereço oficial:
 [**mefemasys.co.mz**](https://mefemasys.co.mz)
 
 ---
 
-## 🚀 Sobre a MEFEMA Systems
+## Sobre a MEFEMA Systems
 
 A MEFEMA Systems foca-se em seis pilares essenciais (**M.E.F.E.M.A**): **M**oderno, **E**specializado, **F**lexível, **E**ficiente, **M**ultifuncional e **A**cessível. Nossa missão é democratizar o acesso à tecnologia de ponta em Moçambique.
 
@@ -38,7 +38,7 @@ Soluções prontas para implementação rápida:
 
 ---
 
-## 🛠️ Tecnologias e Estrutura
+## Tecnologias e Estrutura
 
 O projeto utiliza uma arquitetura robusta baseada em PHP, focada em performance e SEO.
 
@@ -63,7 +63,7 @@ O projeto utiliza uma arquitetura robusta baseada em PHP, focada em performance 
 
 ---
 
-## 💻 Desenvolvimento Local
+## Desenvolvimento Local
 
 ### Pré-requisitos
 *   Servidor Web (Apache/Nginx)
@@ -82,13 +82,13 @@ O projeto utiliza uma arquitetura robusta baseada em PHP, focada em performance 
 
 ---
 
-## 📄 Licença e Propriedade
+## Licença e Propriedade
 
 Este repositório é **proprietário**. Embora o código esteja visível publicamente para fins de transparência e portfólio, todos os direitos são reservados à **MEFEMA Systems**. A reprodução ou uso comercial sem autorização prévia é estritamente proibida.
 
 ---
 
-## 📞 Contacto
+## Contacto
 
 *   **Email:** [comercial@mefemasys.co.mz](mailto:comercial@mefemasys.co.mz)
 *   **Telefone:** +258 86 192 4050
