@@ -829,5 +829,5 @@ function showAppDetails(id) {
     </div>
 </div>
 <?php endif; ?>
-
+<?php include '../pages/produtos/cta.php'; ?>
 <?php get_part('includes/footer.php'); ?>
