@@ -243,6 +243,8 @@
   white-space: nowrap;
 }
 
+  
+
 @media (max-width: 576px) {
   .modal-body {
     padding: 1.5rem !important;
@@ -255,5 +257,48 @@
     font-size: 0.95rem;
   }
 }
+
+    .btn-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.1rem 2.8rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #d97638, #c66b3d);
+    color: white !important;
+    border: none;
+    border-radius: 4px !important;
+    box-shadow: 0 8px 25px rgba(217, 118, 56, 0.35);
+    transition: all 0.4s ease;
+    text-decoration: none;
+  }
+  .btn-cta-primary:hover {
+    background: linear-gradient(135deg, #c66b3d, #b85f30);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(217, 118, 56, 0.45);
+  }
+  .btn-cta-outline-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.1rem 2.8rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    background: transparent;
+    color: #f5ede6 !important;
+    border: 2.5px solid #f5ede6;
+    border-radius: 4px !important;
+    transition: all 0.4s ease;
+    text-decoration: none;
+  }
+  .btn-cta-outline-light:hover {
+    background: #f5ede6;
+    color: #1f1814 !important;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(245, 237, 230, 0.2);
+  }
   
 </style>
