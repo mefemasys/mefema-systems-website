@@ -178,55 +178,237 @@
 </div>
 
 <style>
-  /* Removidas as cores fixas de background nos inputs / selects */
+/* ========================================
+   ESTILOS DO CTA (FUNDO ESCURO - mantido)
+   ======================================== */
+#produtosCTA {
+  padding: 100px 0 120px;
+  text-align: center;
+}
+
+.btn-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.15rem 2.8rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #d97638, #c66b3d);
+  color: white !important;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(217, 118, 56, 0.3);
+  transition: all 0.35s ease;
+}
+
+.btn-cta-primary:hover {
+  background: linear-gradient(135deg, #c66b3d, #b85f30);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(217, 118, 56, 0.45);
+}
+
+.btn-cta-outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.15rem 2.8rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  background: transparent;
+  color: #f5ede6 !important;
+  border: 2px solid #f5ede6;
+  border-radius: 8px;
+  transition: all 0.35s ease;
+}
+
+.btn-cta-outline-light:hover {
+  background: #f5ede6;
+  color: #1f1814 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(245, 237, 230, 0.25);
+}
+
+/* ========================================
+   ESTILOS DO MODAL E FORMULÁRIO
+   ======================================== */
+
+/* Tema base (light) */
+.custom-modal-theme {
+  background-color: var(--bs-modal-bg, #ffffff);
+  color: var(--bs-body-color, #2d3436);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.custom-modal-header {
+  background-color: var(--bs-modal-header-bg, #f8f9fa);
+  border-bottom: 1px solid var(--bs-border-color, #e9ecef);
+  padding: 1.5rem 2rem;
+}
+
+.custom-modal-footer {
+  background-color: var(--bs-modal-footer-bg, #f8f9fa);
+  border-top: 1px solid var(--bs-border-color, #e9ecef);
+  padding: 1.25rem 2rem;
+}
+
+/* Botão de submit */
+.btn-submit-modal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 2.4rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  background: #d97638;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(217, 118, 56, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn-submit-modal:hover {
+  background: #c66b3d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 118, 56, 0.35);
+}
+
+.btn-submit-modal:disabled {
+  background: #b8a08a;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Inputs, selects e textareas – sem cores fixas, respeita tema */
 .custom-input,
 .form-select.custom-input,
 .form-control.custom-input {
-  background-color: var(--bs-body-bg, #fff) !important;       /* fallback light */
-  color: var(--bs-body-color, #212529) !important;
-  border: 1px solid var(--bs-border-color, #dee2e6) !important;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--bs-body-bg, #ffffff);
+  color: var(--bs-body-color, #212529);
+  border: 1px solid var(--bs-border-color, #ced4da);
+  border-radius: 8px;
+  padding: 0.75rem 1.1rem;
+  font-size: 1rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .custom-input:focus,
 .form-select.custom-input:focus,
 .form-control.custom-input:focus {
-  border-color: #d97638 !important;
-  box-shadow: 0 0 0 0.25rem rgba(217, 118, 56, 0.15) !important;
-  background-color: var(--bs-body-bg, #fff) !important;
+  border-color: #d97638;
+  box-shadow: 0 0 0 0.25rem rgba(217, 118, 56, 0.15);
+  background-color: var(--bs-body-bg, #ffffff);
 }
 
-/* Dark mode – usa media query + tenta respeitar variáveis do sistema */
+.custom-input::placeholder {
+  color: #adb5bd;
+}
+
+/* Mais espaçamento no formulário */
+.form-section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title-modal {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  color: var(--bs-heading-color, #1f1814);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.8px;
+  margin-bottom: 1.5rem;
+}
+
+.step-number {
+  background: #d97638;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Checkbox customizado */
+.custom-option-check label {
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--bs-border-color, #dee2e6);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  color: var(--bs-body-color, #495057);
+  background-color: transparent;
+}
+
+.custom-option-check input:checked + label {
+  border-color: #d97638;
+  background-color: rgba(217, 118, 56, 0.08);
+  color: #d97638;
+}
+
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
+  .custom-modal-theme {
+    background-color: #1f1814;
+    color: #f5ede6;
+  }
+  .custom-modal-header,
+  .custom-modal-footer {
+    background-color: #140f0c;
+    border-color: #3d3028;
+  }
+  .section-title-modal {
+    color: #f5ede6;
+  }
   .custom-input,
   .form-select.custom-input,
   .form-control.custom-input {
-    background-color: var(--bs-body-bg, #2d241e) !important;
-    color: var(--bs-body-color, #f5ede6) !important;
-    border-color: var(--bs-border-color, #3d3028) !important;
+    background-color: #2d241e;
+    border-color: #3d3028;
+    color: #f5ede6;
   }
-
-  .custom-input::placeholder,
-  .form-control.custom-input::placeholder {
-    color: #8a7a6e !important;
+  .custom-input::placeholder {
+    color: #8a7a6e;
   }
-
-  .form-check-label {
-    color: var(--bs-body-color, #d4c5b8) !important;
+  .custom-option-check label {
+    border-color: #3d3028;
+    color: #d4c5b8;
+    background-color: transparent;
+  }
+  .custom-option-check input:checked + label {
+    background-color: rgba(217, 118, 56, 0.12);
+  }
+  .text-muted-custom {
+    color: #d4c5b8 !important;
   }
 }
 
-/* Melhoria responsiva */
-.form-section {
-  font-size: clamp(0.95rem, 2.8vw, 1rem);
-}
-
+/* Responsividade extra */
 @media (max-width: 576px) {
   .modal-body {
-    padding: 1.5rem !important;
+    padding: 1.5rem 1.25rem !important;
   }
-  .row.g-4 > * {
-    margin-bottom: 1rem;
+  .btn-cta-primary,
+  .btn-cta-outline-light,
+  .btn-submit-modal {
+    padding: 0.95rem 2rem;
+    font-size: 1rem;
+  }
+  .form-section {
+    margin-bottom: 2rem;
   }
 }
 </style>
