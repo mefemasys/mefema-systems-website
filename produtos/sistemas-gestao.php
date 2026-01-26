@@ -276,58 +276,6 @@ function buscarDadosSistemas() {
           ],
           "destaque": false,
           "cor": "info"
-        },
-        {
-          "id": 11,
-          "nome": "Gestão de RH",
-          "categoria": "Recursos Humanos",
-          "nicho": "Departamentos RH",
-          "paginas": "Colaboradores + Folha",
-          "preco": 70000,
-          "descricao": "Gestão de colaboradores, folha de salários e contratos",
-          "screenshots": [
-            "/assets/img/sistemas/rh-colaboradores.jpg",
-            "/assets/img/sistemas/rh-folha.jpg",
-            "/assets/img/sistemas/rh-relatorios.jpg"
-          ],
-          "demo_url": "https://demo.mefemasystems.co.mz/rh",
-          "caracteristicas": [
-            "Cadastro de colaboradores",
-            "Processamento de salários",
-            "Contratos e documentos",
-            "Faltas e férias",
-            "Recrutamento",
-            "Relatórios INSS/IRPS",
-            "Suporte (5 meses)"
-          ],
-          "destaque": false,
-          "cor": "primary"
-        },
-        {
-          "id": 12,
-          "nome": "Gestão de Projectos",
-          "categoria": "Produtividade",
-          "nicho": "Equipas e Agências",
-          "paginas": "Kanban + Gantt",
-          "preco": 50000,
-          "descricao": "Ferramenta para planeamento e acompanhamento de projectos",
-          "screenshots": [
-            "/assets/img/sistemas/projectos-kanban.jpg",
-            "/assets/img/sistemas/projectos-gantt.jpg",
-            "/assets/img/sistemas/projectos-tarefas.jpg"
-          ],
-          "demo_url": "https://demo.mefemasystems.co.mz/projectos",
-          "caracteristicas": [
-            "Quadro Kanban e Gantt",
-            "Atribuição de tarefas",
-            "Controlo de tempo",
-            "Comentários e ficheiros",
-            "Relatórios de progresso",
-            "Integração calendar",
-            "Suporte (4 meses)"
-          ],
-          "destaque": false,
-          "cor": "success"
         }
       ]
     }';
@@ -336,25 +284,7 @@ function buscarDadosSistemas() {
     return $dados && $dados['sucesso'] === true ? $dados : null;
 }
 
-// Paginação: 4 itens por página
-$items_por_pagina = 4;
-$pagina_actual = isset($_GET['pagina']) ? max(1, intval($_GET['pagina'])) : 1;
-$filtro_categoria = isset($_GET['categoria']) ? $_GET['categoria'] : 'all';
-
 $dados_sistemas = buscarDadosSistemas();
-
-if ($dados_sistemas) {
-    $sistemas_filtrados = $filtro_categoria === 'all' 
-        ? $dados_sistemas['data']
-        : array_filter($dados_sistemas['data'], function($s) use ($filtro_categoria) {
-            return $s['categoria'] === $filtro_categoria;
-        });
-    
-    $total_items = count($sistemas_filtrados);
-    $total_paginas = ceil($total_items / $items_por_pagina);
-    $offset = ($pagina_actual - 1) * $items_por_pagina;
-    $sistemas_pagina = array_slice($sistemas_filtrados, $offset, $items_por_pagina);
-}
 
 get_part('includes/header.php'); 
 ?>
@@ -366,32 +296,15 @@ get_part('includes/header.php');
         <div class="row justify-content-center text-center">
             <div class="col-lg-10">
                 <div class="hero-badge mb-4" data-aos="fade-up">
-                    <i class="ri-database-2-fill text-primary"></i>
-                    <span class="badge-text">Soluções de Gestão Empresarial</span>
+                    <i class="ri-database-2-line text-primary"></i>
+                    <span class="badge-text">Sistemas de Gestão Inteligentes</span>
                 </div>
                 <h1 class="hero-title mb-4" data-aos="fade-up" data-aos-delay="100">
-                    Sistemas de <span class="text-gradient">Gestão</span>
+                    Soluções de <span class="text-gradient">Software</span>
                 </h1>
                 <p class="hero-subtitle mx-auto mb-4" data-aos="fade-up" data-aos-delay="200">
-                    Automatize os processos do seu negócio com sistemas robustos, seguros e adaptados ao mercado moçambicano.
+                    Optimize os seus processos com sistemas robustos, escaláveis e fáceis de usar.
                 </p>
-                <div class="hero-stats" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-item">
-                        <i class="ri-shield-check-line"></i>
-                        <strong>12+</strong>
-                        <span>Sistemas</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="ri-speed-line"></i>
-                        <strong>100%</strong>
-                        <span>Cloud & Seguro</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="ri-customer-service-2-line"></i>
-                        <strong>24/7</strong>
-                        <span>Suporte Local</span>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -399,7 +312,7 @@ get_part('includes/header.php');
 
 <!-- Sistemas List -->
 <?php if ($dados_sistemas): ?>
-<section class="section-py landing-websites-list" id="websitesList">
+<section class="section-py landing-websites-list" id="sistemasSection">
     <div class="container">
         
         <!-- Filtros -->
@@ -411,227 +324,52 @@ get_part('includes/header.php');
                 </h6>
             </div>
             <div class="filters-buttons">
-                <a href="?categoria=all&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'all' ? 'active' : ''; ?>">
+                <button class="filter-btn active" data-categoria="all">
                     <i class="ri-layout-grid-line"></i>
                     <span>Todos</span>
-                </a>
-                <a href="?categoria=Empresarial&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Empresarial' ? 'active' : ''; ?>">
+                </button>
+                <button class="filter-btn" data-categoria="Empresarial">
                     <i class="ri-building-line"></i>
                     <span>Empresarial</span>
-                </a>
-                <a href="?categoria=Vendas e Clientes&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Vendas e Clientes' ? 'active' : ''; ?>">
-                    <i class="ri-handshake-line"></i>
-                    <span>CRM/Vendas</span>
-                </a>
-                <a href="?categoria=Logística&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Logística' ? 'active' : ''; ?>">
-                    <i class="ri-truck-line"></i>
-                    <span>Stock/Logística</span>
-                </a>
-                <a href="?categoria=Educação&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Educação' ? 'active' : ''; ?>">
+                </button>
+                <button class="filter-btn" data-categoria="Vendas">
+                    <i class="ri-shopping-cart-line"></i>
+                    <span>Vendas</span>
+                </button>
+                <button class="filter-btn" data-categoria="Saúde">
+                    <i class="ri-hospital-line"></i>
+                    <span>Saúde</span>
+                </button>
+                <button class="filter-btn" data-categoria="Educação">
                     <i class="ri-graduation-cap-line"></i>
                     <span>Educação</span>
-                </a>
-                <a href="?categoria=Saúde&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Saúde' ? 'active' : ''; ?>">
-                    <i class="ri-heart-pulse-line"></i>
-                    <span>Saúde</span>
-                </a>
-                <a href="?categoria=Restauração&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Restauração' ? 'active' : ''; ?>">
-                    <i class="ri-restaurant-line"></i>
-                    <span>Restauração</span>
-                </a>
-                <a href="?categoria=Hotelaria&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Hotelaria' ? 'active' : ''; ?>">
-                    <i class="ri-hotel-line"></i>
-                    <span>Hotelaria</span>
-                </a>
-                <a href="?categoria=Financeiro&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Financeiro' ? 'active' : ''; ?>">
-                    <i class="ri-money-dollar-circle-line"></i>
-                    <span>Financeiro</span>
-                </a>
-                <a href="?categoria=Recursos Humanos&pagina=1" class="filter-btn <?php echo $filtro_categoria === 'Recursos Humanos' ? 'active' : ''; ?>">
-                    <i class="ri-team-line"></i>
-                    <span>RH</span>
-                </a>
+                </button>
+                <button class="filter-btn" data-categoria="Logística">
+                    <i class="ri-truck-line"></i>
+                    <span>Logística</span>
+                </button>
             </div>
         </div>
 
         <!-- Grid de Sistemas -->
-        <div class="row g-4 mb-5" id="websitesGrid">
-            <?php foreach ($sistemas_pagina as $index => $sistema): ?>
-                <div class="col-xl-12 col-lg-12 col-md-12" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
-                    <div class="website-card <?php echo $sistema['destaque'] ? 'featured' : ''; ?>">
-                        
-                        <?php if ($sistema['destaque']): ?>
-                            <div class="featured-badge">
-                                <i class="ri-vip-crown-fill"></i>
-                                <span>Mais Completo</span>
-                            </div>
-                        <?php endif; ?>
-                        
-                        <div class="card-layout flex-row-reverse">
-                            <!-- Screenshots Carousel (à direita em desktop) -->
-                            <div class="screenshots-section">
-                                <div id="carousel<?php echo $sistema['id']; ?>" class="carousel slide" data-bs-ride="carousel">
-                                    <div class="carousel-indicators">
-                                        <?php foreach ($sistema['screenshots'] as $i => $screenshot): ?>
-                                            <button type="button" data-bs-target="#carousel<?php echo $sistema['id']; ?>" data-bs-slide-to="<?php echo $i; ?>" class="<?php echo $i === 0 ? 'active' : ''; ?>"></button>
-                                        <?php endforeach; ?>
-                                    </div>
-                                    <div class="carousel-inner">
-                                        <?php foreach ($sistema['screenshots'] as $i => $screenshot): ?>
-                                            <div class="carousel-item <?php echo $i === 0 ? 'active' : ''; ?>">
-                                                <img src="<?php echo htmlspecialchars($screenshot); ?>" class="d-block w-100" alt="<?php echo htmlspecialchars($sistema['nome']); ?>">
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel<?php echo $sistema['id']; ?>" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon"></span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#carousel<?php echo $sistema['id']; ?>" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon"></span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Card Content -->
-                            <div class="card-content">
-                                <div class="card-header-section">
-                                    <div class="category-badge badge-<?php echo htmlspecialchars($sistema['cor']); ?>">
-                                        <?php echo htmlspecialchars($sistema['categoria']); ?>
-                                    </div>
-                                    <h3 class="website-name"><?php echo htmlspecialchars($sistema['nome']); ?></h3>
-                                    <p class="website-nicho">
-                                        <i class="ri-focus-3-line"></i>
-                                        <?php echo htmlspecialchars($sistema['nicho']); ?>
-                                    </p>
-                                </div>
-
-                                <div class="card-pricing">
-                                    <div class="pricing-main">
-                                        <span class="price-label">A partir de</span>
-                                        <div class="price-amount">
-                                            <span class="price-value"><?php echo number_format($sistema['preco'], 0, ',', '.'); ?></span>
-                                            <span class="price-currency">MT</span>
-                                        </div>
-                                    </div>
-                                    <div class="pricing-detail">
-                                        <i class="ri-apps-2-line"></i>
-                                        <span><?php echo $sistema['paginas']; ?></span>
-                                    </div>
-                                </div>
-
-                                <p class="card-description"><?php echo htmlspecialchars($sistema['descricao']); ?></p>
-
-                                <div class="card-features">
-                                    <h6 class="features-title">
-                                        <i class="ri-checkbox-circle-line"></i>
-                                        Principais Módulos
-                                    </h6>
-                                    <ul class="features-list">
-                                        <?php 
-                                        $features_show = array_slice($sistema['caracteristicas'], 0, 5);
-                                        foreach ($features_show as $feature): 
-                                        ?>
-                                            <li>
-                                                <i class="ri-check-line"></i>
-                                                <span><?php echo htmlspecialchars($feature); ?></span>
-                                            </li>
-                                        <?php endforeach; ?>
-                                        <?php if (count($sistema['caracteristicas']) > 5): ?>
-                                            <li class="more-features">
-                                                <i class="ri-add-circle-line"></i>
-                                                <span>Mais <?php echo count($sistema['caracteristicas']) - 5; ?> módulos</span>
-                                            </li>
-                                        <?php endif; ?>
-                                    </ul>
-                                </div>
-
-                                <div class="card-actions">
-                                    <a href="<?php echo htmlspecialchars($sistema['demo_url']); ?>" target="_blank" class="btn-action btn-demo">
-                                        <i class="ri-external-link-line"></i>
-                                        <span>Ver Demo</span>
-                                    </a>
-                                    <button class="btn-action btn-details" onclick="showSistemaDetails(<?php echo $sistema['id']; ?>)">
-                                        <i class="ri-information-line"></i>
-                                        <span>Detalhes</span>
-                                    </button>
-                                    <a href="#landingContact" class="btn-action btn-order">
-                                        <i class="ri-shopping-bag-line"></i>
-                                        <span>Orçamento</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+        <div class="row g-4 mb-5" id="sistemasGrid">
+            <!-- Conteúdo carregado via JS para URLs limpas -->
         </div>
 
-        <!-- Paginação Completa -->
-        <?php if ($total_paginas > 1): ?>
-        <nav class="pagination-wrapper" data-aos="fade-up">
-            <div class="pagination-info">
-                <span class="pagination-text">
-                    Página <strong><?php echo $pagina_actual; ?></strong> de <strong><?php echo $total_paginas; ?></strong>
-                    <span class="separator">•</span>
-                    <strong><?php echo $total_items; ?></strong> <?php echo $total_items === 1 ? 'resultado' : 'resultados'; ?>
-                </span>
+        <!-- Paginação -->
+        <nav class="pagination-wrapper" id="paginationWrapper" style="display: none;">
+            <div class="d-flex flex-column align-items-center">
+                <div class="pagination-info mb-3">
+                    <span class="pagination-text" id="paginationInfo"></span>
+                </div>
+                <ul class="pagination justify-content-center" id="paginationButtons"></ul>
             </div>
-            <ul class="pagination">
-                <?php if ($pagina_actual > 1): ?>
-                    <li class="page-item">
-                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $pagina_actual - 1; ?>">
-                            <i class="ri-arrow-left-s-line"></i>
-                            <span class="d-none d-sm-inline">Anterior</span>
-                        </a>
-                    </li>
-                <?php endif; ?>
-
-                <?php
-                $start = max(1, $pagina_actual - 2);
-                $end = min($total_paginas, $pagina_actual + 2);
-                
-                if ($start > 1): ?>
-                    <li class="page-item">
-                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=1">1</a>
-                    </li>
-                    <?php if ($start > 2): ?>
-                        <li class="page-item disabled"><span class="page-link">...</span></li>
-                    <?php endif; ?>
-                <?php endif; ?>
-
-                <?php for ($i = $start; $i <= $end; $i++): ?>
-                    <li class="page-item <?php echo $i === $pagina_actual ? 'active' : ''; ?>">
-                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $i; ?>">
-                            <?php echo $i; ?>
-                        </a>
-                    </li>
-                <?php endfor; ?>
-
-                <?php if ($end < $total_paginas): ?>
-                    <?php if ($end < $total_paginas - 1): ?>
-                        <li class="page-item disabled"><span class="page-link">...</span></li>
-                    <?php endif; ?>
-                    <li class="page-item">
-                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $total_paginas; ?>"><?php echo $total_paginas; ?></a>
-                    </li>
-                <?php endif; ?>
-
-                <?php if ($pagina_actual < $total_paginas): ?>
-                    <li class="page-item">
-                        <a class="page-link" href="?categoria=<?php echo urlencode($filtro_categoria); ?>&pagina=<?php echo $pagina_actual + 1; ?>">
-                            <span class="d-none d-sm-inline">Próxima</span>
-                            <i class="ri-arrow-right-s-line"></i>
-                        </a>
-                    </li>
-                <?php endif; ?>
-            </ul>
         </nav>
-        <?php endif; ?>
 
     </div>
 </section>
 
-<!-- Modal de Detalhes do Sistema -->
+<!-- Modal de Detalhes -->
 <div class="modal fade" id="sistemaDetailsModal" tabindex="-1">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
@@ -642,131 +380,403 @@ get_part('includes/header.php');
             <div class="modal-body" id="modalSistemaContent"></div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                <a href="#landingContact" class="btn btn-primary" data-bs-dismiss="modal">
-                    <i class="ri-mail-send-line me-2"></i>Solicitar Orçamento
-                </a>
+                <button type="button" class="btn btn-primary" id="btnModalAcquire">
+                    <i class="ri-shopping-bag-line me-2"></i>Adquirir Sistema
+                </button>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Modal de Aquisição (Complexo) -->
+<div class="modal fade" id="acquireModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Configurar Aquisição do Sistema</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form id="acquireForm">
+                <div class="modal-body">
+                    <input type="hidden" id="acquireSistemaId" name="sistema_id">
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <div class="p-3 bg-light rounded border">
+                                <h6 class="mb-1 fw-bold">Sistema Seleccionado:</h6>
+                                <p id="acquireSistemaName" class="mb-0 text-primary fw-bold"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tipo de Aquisição -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Modelo de Aquisição</label>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="acquisition-option">
+                                    <input type="radio" name="tipo_aquisicao" id="typeSubscription" value="subscricao" checked>
+                                    <label for="typeSubscription" class="option-card">
+                                        <i class="ri-calendar-check-line"></i>
+                                        <div class="option-info">
+                                            <span class="option-title">Subscrição Mensal</span>
+                                            <span class="option-desc">Pagamento recorrente com suporte e updates incluídos.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="acquisition-option">
+                                    <input type="radio" name="tipo_aquisicao" id="typeDedicated" value="dedicado">
+                                    <label for="typeDedicated" class="option-card">
+                                        <i class="ri-server-line"></i>
+                                        <div class="option-info">
+                                            <span class="option-title">Servidor Dedicado</span>
+                                            <span class="option-desc">Licença vitalícia instalada na sua infraestrutura.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personalizações -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Personalizações e Extras</label>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-check custom-check">
+                                    <input class="form-check-input" type="checkbox" name="extras[]" value="treinamento" id="extra1">
+                                    <label class="form-check-label" for="extra1">Treinamento de Equipa</label>
+                                </div>
+                                <div class="form-check custom-check">
+                                    <input class="form-check-input" type="checkbox" name="extras[]" value="migracao" id="extra2">
+                                    <label class="form-check-label" for="extra2">Migração de Dados</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check custom-check">
+                                    <input class="form-check-input" type="checkbox" name="extras[]" value="suporte_247" id="extra3">
+                                    <label class="form-check-label" for="extra3">Suporte 24/7 Prioritário</label>
+                                </div>
+                                <div class="form-check custom-check">
+                                    <input class="form-check-input" type="checkbox" name="extras[]" value="api_custom" id="extra4">
+                                    <label class="form-check-label" for="extra4">Integração API Customizada</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dados do Cliente -->
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Nome da Empresa/Cliente</label>
+                            <input type="text" class="form-control" name="cliente_nome" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Email Profissional</label>
+                            <input type="email" class="form-control" name="cliente_email" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" name="cliente_telefone" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Número de Utilizadores Estimado</label>
+                            <select class="form-select" name="utilizadores">
+                                <option value="1-5">1 a 5 utilizadores</option>
+                                <option value="6-20">6 a 20 utilizadores</option>
+                                <option value="21-50">21 a 50 utilizadores</option>
+                                <option value="50+">Mais de 50 utilizadores</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success" id="btnSubmitAcquire">
+                        <span class="spinner-border spinner-border-sm d-none" role="status"></span>
+                        Solicitar Proposta de Aquisição
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script>
+// Dados dos sistemas
 const sistemasData = <?php echo json_encode($dados_sistemas['data']); ?>;
+
+// Estado da Aplicação (URLs Limpas)
+let state = {
+    pagina: 1,
+    categoria: 'all',
+    itemsPorPagina: 4
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    renderizarSistemas();
+    configurarFiltros();
+    configurarFormularioAquisicao();
+});
+
+function filtrarSistemas() {
+    if (state.categoria === 'all') return sistemasData;
+    return sistemasData.filter(s => s.categoria === state.categoria);
+}
+
+function renderizarSistemas() {
+    const filtrados = filtrarSistemas();
+    const totalItems = filtrados.length;
+    const totalPaginas = Math.ceil(totalItems / state.itemsPorPagina);
+    const offset = (state.pagina - 1) * state.itemsPorPagina;
+    const paginaItems = filtrados.slice(offset, offset + state.itemsPorPagina);
+    
+    const grid = document.getElementById('sistemasGrid');
+    if (filtrados.length === 0) {
+        grid.innerHTML = '<div class="col-12 text-center my-5"><p class="text-muted">Nenhum sistema encontrado nesta categoria.</p></div>';
+    } else {
+        grid.innerHTML = paginaItems.map((sistema, index) => criarCardSistema(sistema, index)).join('');
+    }
+    
+    renderizarPaginacao(totalItems, totalPaginas);
+}
+
+function criarCardSistema(sistema, index) {
+    return `
+        <div class="col-xl-12" data-aos="fade-up" data-aos-delay="${index * 100}">
+            <div class="website-card ${sistema.destaque ? 'featured' : ''}">
+                ${sistema.destaque ? '<div class="featured-badge"><i class="ri-vip-crown-fill"></i><span>Destaque</span></div>' : ''}
+                <div class="card-layout">
+                    <div class="screenshots-section">
+                        <div id="carousel${sistema.id}" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                ${sistema.screenshots.map((img, i) => `
+                                    <div class="carousel-item ${i === 0 ? 'active' : ''}">
+                                        <img src="${img}" class="d-block w-100" alt="${sistema.nome}">
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel${sistema.id}" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel${sistema.id}" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header-section">
+                            <div class="category-badge badge-${sistema.cor}">${sistema.categoria}</div>
+                            <h3 class="website-name">${sistema.nome}</h3>
+                            <p class="website-nicho"><i class="ri-focus-3-line"></i>${sistema.nicho}</p>
+                        </div>
+                        <div class="card-pricing">
+                            <div class="pricing-main">
+                                <span class="price-label">A partir de</span>
+                                <div class="price-amount">
+                                    <span class="price-value">${sistema.preco.toLocaleString('pt-MZ')}</span>
+                                    <span class="price-currency">MT</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="card-description">${sistema.descricao}</p>
+                        <div class="card-actions">
+                            <a href="${sistema.demo_url}" target="_blank" class="btn-action btn-demo"><i class="ri-external-link-line"></i><span>Demo</span></a>
+                            <button class="btn-action btn-details" onclick="showSistemaDetails(${sistema.id})"><i class="ri-information-line"></i><span>Detalhes</span></button>
+                            <button class="btn-action btn-order" onclick="abrirModalAquisicao(${sistema.id})"><i class="ri-shopping-bag-line"></i><span>Adquirir</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function renderizarPaginacao(totalItems, totalPaginas) {
+    const wrapper = document.getElementById('paginationWrapper');
+    const info = document.getElementById('paginationInfo');
+    const buttons = document.getElementById('paginationButtons');
+    
+    if (totalPaginas <= 1) {
+        wrapper.style.display = 'none';
+        return;
+    }
+    
+    wrapper.style.display = 'block';
+    info.innerHTML = `Página <strong>${state.pagina}</strong> de <strong>${totalPaginas}</strong> • <strong>${totalItems}</strong> resultados`;
+    
+    let html = '';
+    if (state.pagina > 1) {
+        html += `<li class="page-item"><a class="page-link" href="javascript:void(0)" onclick="mudarPagina(${state.pagina - 1})"><i class="ri-arrow-left-s-line"></i></a></li>`;
+    }
+    
+    for (let i = 1; i <= totalPaginas; i++) {
+        html += `<li class="page-item ${i === state.pagina ? 'active' : ''}"><a class="page-link" href="javascript:void(0)" onclick="mudarPagina(${i})">${i}</a></li>`;
+    }
+    
+    if (state.pagina < totalPaginas) {
+        html += `<li class="page-item"><a class="page-link" href="javascript:void(0)" onclick="mudarPagina(${state.pagina + 1})"><i class="ri-arrow-right-s-line"></i></a></li>`;
+    }
+    buttons.innerHTML = html;
+}
+
+function mudarPagina(p) {
+    state.pagina = p;
+    renderizarSistemas();
+    document.getElementById('sistemasSection').scrollIntoView({ behavior: 'smooth' });
+}
+
+function configurarFiltros() {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            state.categoria = this.dataset.categoria;
+            state.pagina = 1;
+            renderizarSistemas();
+        });
+    });
+}
 
 function showSistemaDetails(id) {
     const sistema = sistemasData.find(s => s.id === id);
     if (!sistema) return;
     
-    document.getElementById('modalSistemaName').innerHTML = `
-        <i class="ri-database-line me-2"></i>${sistema.nome}
-    `;
-    
-    let screenshotsHTML = '<div class="modal-screenshots mb-4"><div class="row g-3">';
-    sistema.screenshots.forEach((screenshot, index) => {
-        screenshotsHTML += `
-            <div class="col-md-6">
-                <img src="${screenshot}" class="img-fluid rounded shadow-sm" alt="Screenshot ${index + 1}">
-            </div>
-        `;
-    });
-    screenshotsHTML += '</div></div>';
-    
-    let featuresHTML = '<ul class="list-unstyled row g-2">';
-    sistema.caracteristicas.forEach(feature => {
-        featuresHTML += `
-            <li class="col-md-6 mb-2">
-                <i class="ri-checkbox-circle-fill text-success me-2"></i>${feature}
-            </li>
-        `;
-    });
-    featuresHTML += '</ul>';
-    
+    document.getElementById('modalSistemaName').innerText = sistema.nome;
     document.getElementById('modalSistemaContent').innerHTML = `
-        ${screenshotsHTML}
-        <div class="row mb-4">
-            <div class="col-md-6">
-                <div class="info-box">
-                    <h6 class="fw-bold mb-3"><i class="ri-information-line me-2"></i>Informações Gerais</h6>
-                    <div class="info-item">
-                        <span class="info-label">Categoria:</span>
-                        <span class="info-value">${sistema.categoria}</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Nicho:</span>
-                        <span class="info-value">${sistema.nicho}</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Módulos:</span>
-                        <span class="info-value">${sistema.paginas}</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Preço:</span>
-                        <span class="info-value text-primary fw-bold">${sistema.preco.toLocaleString('pt-MZ')} MT</span>
-                    </div>
-                    <a href="${sistema.demo_url}" target="_blank" class="btn btn-outline-primary mt-3 w-100">
-                        <i class="ri-external-link-line me-2"></i>Ver Demo ao Vivo
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="info-box">
-                    <h6 class="fw-bold mb-3"><i class="ri-file-text-line me-2"></i>Descrição</h6>
-                    <p>${sistema.descricao}</p>
-                </div>
-            </div>
-        </div>
         <div class="row">
-            <div class="col-12">
-                <div class="info-box">
-                    <h6 class="fw-bold mb-3"><i class="ri-list-check-2 me-2"></i>Todos os Módulos</h6>
-                    ${featuresHTML}
+            <div class="col-md-12 mb-4">
+                <img src="${sistema.screenshots[0]}" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6">
+                <h6><i class="ri-list-check-2 me-2"></i>Módulos Incluídos</h6>
+                <ul class="list-unstyled">
+                    ${sistema.caracteristicas.map(f => `<li><i class="ri-check-line text-success me-2"></i>${f}</li>`).join('')}
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 bg-light rounded">
+                    <h6>Descrição</h6>
+                    <p>${sistema.descricao}</p>
+                    <hr>
+                    <p class="mb-0"><strong>Preço Base:</strong> ${sistema.preco.toLocaleString('pt-MZ')} MT</p>
                 </div>
             </div>
         </div>
     `;
     
-    const modal = new bootstrap.Modal(document.getElementById('sistemaDetailsModal'));
-    modal.show();
+    document.getElementById('btnModalAcquire').onclick = function() {
+        bootstrap.Modal.getInstance(document.getElementById('sistemaDetailsModal')).hide();
+        abrirModalAquisicao(sistema.id);
+    };
+    
+    new bootstrap.Modal(document.getElementById('sistemaDetailsModal')).show();
+}
+
+function abrirModalAquisicao(id) {
+    const sistema = sistemasData.find(s => s.id === id);
+    if (!sistema) return;
+    
+    document.getElementById('acquireSistemaId').value = sistema.id;
+    document.getElementById('acquireSistemaName').innerText = sistema.nome;
+    
+    new bootstrap.Modal(document.getElementById('acquireModal')).show();
+}
+
+function configurarFormularioAquisicao() {
+    const form = document.getElementById('acquireForm');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('btnSubmitAcquire');
+        const spinner = btn.querySelector('.spinner-border');
+        
+        btn.disabled = true;
+        spinner.classList.remove('d-none');
+        
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        data.extras = formData.getAll('extras[]');
+
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: { 'Content-type': 'application/json' }
+        })
+        .then(res => res.json())
+        .then(json => {
+            console.log('Proposta enviada:', json);
+            btn.disabled = false;
+            spinner.classList.add('d-none');
+            bootstrap.Modal.getInstance(document.getElementById('acquireModal')).hide();
+            alert('Solicitação de aquisição enviada com sucesso! A nossa equipa comercial entrará em contacto para apresentar a proposta detalhada.');
+            form.reset();
+        })
+        .catch(err => {
+            btn.disabled = false;
+            spinner.classList.add('d-none');
+            alert('Erro ao enviar solicitação. Tente novamente.');
+        });
+    });
 }
 </script>
 
 <style>
-    
-/* Badge de destaque com cor azul para diferenciar da página de websites */
+/* Estilos para o Formulário de Aquisição */
+.acquisition-option input[type="radio"] {
+    display: none;
+}
+.option-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+.option-card i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #666;
+}
+.option-title {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.option-desc {
+    font-size: 0.85rem;
+    color: #777;
+}
+.acquisition-option input[type="radio"]:checked + .option-card {
+    border-color: var(--primary-color);
+    background-color: rgba(var(--primary-rgb), 0.05);
+}
+.acquisition-option input[type="radio"]:checked + .option-card i {
+    color: var(--primary-color);
+}
+.custom-check {
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+.custom-check:hover {
+    background: #f8f9fa;
+}
 .featured-badge {
     background: linear-gradient(135deg, #4a90e2, #007aff);
     color: white;
-    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.4);
-}
-
-/* Inverte o layout em telas grandes (screenshots à direita) */
-@media (min-width: 1200px) {
-    .card-layout.flex-row-reverse {
-        flex-direction: row-reverse;
-    }
-    .screenshots-section {
-        flex: 0 0 45%;
-    }
-}
-
-/* Pequeno ajuste no botão de demo */
-.btn-demo {
-    background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-}
-.btn-demo:hover {
-    background: var(--primary-color);
-    color: white;
+    padding: 5px 15px;
+    border-radius: 0 0 0 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
 }
 </style>
 
 <?php else: ?>
-<div class="container my-5 py-5">
-    <div class="alert alert-danger text-center">
-        <i class="ri-error-warning-line me-2"></i>
-        Erro ao carregar os sistemas de gestão.
-    </div>
+<div class="container my-5 py-5 text-center">
+    <div class="alert alert-danger">Erro ao carregar sistemas.</div>
 </div>
 <?php endif; ?>
 
