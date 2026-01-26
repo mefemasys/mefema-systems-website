@@ -1,11 +1,11 @@
-<section class="section-py" id="produtosCTA" style="background: var(--products-bg);">
+<section class="section-py" id="produtosCTA" style="background: #1f1814;">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
-        <h2 class="fw-bold mb-4" style="color: var(--products-text); font-size: 2.4rem;">
+        <h2 class="fw-bold mb-4" style="color: #f5ede6; font-size: 2.4rem;">
           Não Encontrou o Produto Ideal?
         </h2>
-        <p class="mb-5" style="font-size: 1.15rem; color: var(--products-text-secondary); line-height: 1.7;">
+        <p class="mb-5" style="font-size: 1.15rem; color: #d4c5b8; line-height: 1.7;">
           Podemos desenvolver uma solução à medida das suas necessidades.<br>
           Diga-nos o que precisa e a nossa equipa criará o sistema perfeito para si.
         </p>
@@ -13,7 +13,7 @@
           <button type="button" class="btn-cta-primary" data-bs-toggle="modal" data-bs-target="#customProjectModal">
             <i class="ri-rocket-2-line me-2"></i>Criar Projeto Personalizado
           </button>
-          <a href="tel:+258840000000" class="btn-cta-outline">
+          <a href="tel:+258840000000" class="btn-cta-outline-light">
             <i class="ri-phone-line me-2"></i>Ligar Agora
           </a>
         </div>
@@ -25,18 +25,18 @@
 <!-- Modal de Projeto Personalizado (Recolha de Requisitos) -->
 <div class="modal fade" id="customProjectModal" tabindex="-1" aria-labelledby="customProjectModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content border-0 shadow-lg">
-      <div class="modal-header bg-dark text-white py-4">
+    <div class="modal-content border-0 shadow-lg" style="background: #ffffff; color: #2d3436;">
+      <div class="modal-header py-4" style="background: #f8f9fa; border-bottom: 1px solid #eee;">
         <div class="d-flex align-items-center">
-          <div class="icon-box-modal me-3">
+          <div class="icon-box-modal me-3" style="background: #d97638; color: white;">
             <i class="ri-lightbulb-flash-line"></i>
           </div>
           <div>
-            <h5 class="modal-title fw-bold mb-0" id="customProjectModalLabel">Recolha de Requisitos</h5>
-            <small class="text-white-50">Descreva a sua ideia e nós tornamo-la realidade</small>
+            <h5 class="modal-title fw-bold mb-0" id="customProjectModalLabel" style="color: #1f1814;">Recolha de Requisitos</h5>
+            <small class="text-muted">Descreva a sua ideia e nós tornamo-la realidade</small>
           </div>
         </div>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
       <form id="customProjectForm">
@@ -116,14 +116,14 @@
             </div>
           </div>
 
-          <!-- Passo 3: Funcionalidades e Requisitos -->
+          <!-- Passo 3: Funcionalidades e Cenário de Uso -->
           <div class="form-section mb-5">
             <h6 class="section-title-modal mb-4">
               <span class="step-number">03</span>
-              Funcionalidades & Requisitos
+              Funcionalidades & Cenário de Uso
             </h6>
             <div class="mb-4">
-              <label class="form-label fw-semibold">Funcionalidades Essenciais</label>
+              <label class="form-label fw-semibold">Funcionalidades Comuns Necessárias</label>
               <div class="row g-2">
                 <div class="col-sm-6 col-md-4">
                   <div class="form-check">
@@ -163,9 +163,17 @@
                 </div>
               </div>
             </div>
+            
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Cenário de Uso e Fluxo do Sistema</label>
+              <p class="text-muted small mb-2">Descreva como o sistema será usado no dia-a-dia, quem são os utilizadores principais e qual o problema central que o software deve resolver.</p>
+              <textarea class="form-control custom-input" name="cenario_uso" rows="4" placeholder="Ex: O gestor entra no sistema, aprova o pedido do cliente e o estafeta recebe uma notificação..." required></textarea>
+            </div>
+
             <div class="mb-0">
-              <label class="form-label fw-semibold">Descrição Detalhada do Projeto</label>
-              <textarea class="form-control custom-input" name="descricao_projeto" rows="4" placeholder="Descreva o fluxo do sistema, o problema que pretende resolver e quaisquer outros detalhes importantes..." required></textarea>
+              <label class="form-label fw-semibold">Funcionalidades Específicas & Personalizadas</label>
+              <p class="text-muted small mb-2">Liste funcionalidades únicas que não foram mencionadas acima.</p>
+              <textarea class="form-control custom-input" name="funcionalidades_custom" rows="3" placeholder="Ex: Integração com balanças industriais, cálculo automático de taxas aduaneiras específicas..."></textarea>
             </div>
           </div>
 
@@ -192,7 +200,7 @@
           </div>
 
         </div>
-        <div class="modal-footer bg-light p-4 border-0">
+        <div class="modal-footer p-4 border-0" style="background: #f8f9fa;">
           <button type="button" class="btn btn-link text-muted text-decoration-none fw-semibold" data-bs-dismiss="modal">Cancelar</button>
           <button type="submit" class="btn-submit-modal" id="btnSubmitCustomProject">
             <span class="spinner-border spinner-border-sm d-none me-2" role="status"></span>
@@ -206,123 +214,8 @@
 
 <style>
   /* ========================================
-     ESTILOS DO MODAL DE REQUISITOS
+     ESTILOS DO CTA (FUNDO ESCURO)
      ======================================== */
-  
-  .icon-box-modal {
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-  }
-
-  .section-title-modal {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #2d3436;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-  }
-
-  .step-number {
-    background: #d97638;
-    color: white;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-  }
-
-  .custom-input {
-    border: 2px solid #eee !important;
-    border-radius: 6px !important;
-    padding: 0.75rem 1rem !important;
-    transition: all 0.3s ease !important;
-  }
-
-  .custom-input:focus {
-    border-color: #d97638 !important;
-    box-shadow: 0 0 0 4px rgba(217, 118, 56, 0.1) !important;
-  }
-
-  /* Opções de Plataforma Estilizadas */
-  .custom-option-check label {
-    padding: 10px 20px;
-    border: 2px solid #eee;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    color: #636e72;
-  }
-
-  .custom-option-check input:checked + label {
-    border-color: #d97638;
-    background: rgba(217, 118, 56, 0.05);
-    color: #d97638;
-  }
-
-  .btn-submit-modal {
-    background: #d97638;
-    color: white;
-    border: none;
-    padding: 0.9rem 2.5rem;
-    border-radius: 6px;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-  }
-
-  .btn-submit-modal:hover {
-    background: #c66b3d;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(217, 118, 56, 0.3);
-  }
-
-  /* MODO ESCURO PARA O MODAL */
-  @media (prefers-color-scheme: dark) {
-    .modal-content {
-      background: #1f1814;
-      color: #f5ede6;
-    }
-    .modal-header {
-      background: #140f0c !important;
-    }
-    .section-title-modal {
-      color: #f5ede6;
-    }
-    .custom-input {
-      background: #2d241e !important;
-      border-color: #3d3028 !important;
-      color: #f5ede6 !important;
-    }
-    .custom-option-check label {
-      border-color: #3d3028;
-      color: #d4c5b8;
-    }
-    .bg-light {
-      background-color: #140f0c !important;
-    }
-    .text-muted {
-      color: #d4c5b8 !important;
-    }
-  }
-
-  /* Estilos do CTA Original (Mantidos e Ajustados) */
   #produtosCTA {
     padding: 120px 0;
     text-align: center;
@@ -351,7 +244,7 @@
     box-shadow: 0 12px 30px rgba(217, 118, 56, 0.45);
   }
 
-  .btn-cta-outline {
+  .btn-cta-outline-light {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -360,18 +253,110 @@
     font-size: 1.15rem;
     font-weight: 700;
     background: transparent;
-    color: #d97638 !important;
-    border: 2.5px solid #d97638;
+    color: #f5ede6 !important;
+    border: 2.5px solid #f5ede6;
     border-radius: 4px !important;
     transition: all 0.4s ease;
     text-decoration: none;
   }
 
-  .btn-cta-outline:hover {
-    background: #d97638;
-    color: white !important;
+  .btn-cta-outline-light:hover {
+    background: #f5ede6;
+    color: #1f1814 !important;
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(217, 118, 56, 0.3);
+    box-shadow: 0 12px 30px rgba(245, 237, 230, 0.2);
+  }
+
+  /* ========================================
+     ESTILOS DO MODAL (FUNDO CLARO)
+     ======================================== */
+  .icon-box-modal {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+
+  .section-title-modal {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #1f1814;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .step-number {
+    background: #d97638;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+  }
+
+  .custom-input {
+    border: 1px solid #dee2e6 !important;
+    border-radius: 6px !important;
+    padding: 0.75rem 1rem !important;
+    background-color: #fff !important;
+    color: #212529 !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .custom-input:focus {
+    border-color: #d97638 !important;
+    box-shadow: 0 0 0 4px rgba(217, 118, 56, 0.1) !important;
+  }
+
+  .custom-option-check label {
+    padding: 10px 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #495057;
+  }
+
+  .custom-option-check input:checked + label {
+    border-color: #d97638;
+    background: rgba(217, 118, 56, 0.05);
+    color: #d97638;
+  }
+
+  .btn-submit-modal {
+    background: #d97638;
+    color: white;
+    border: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-submit-modal:hover {
+    background: #c66b3d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(217, 118, 56, 0.3);
+  }
+
+  /* Ajuste para labels no modal claro */
+  .modal-body label {
+    color: #1f1814;
   }
 </style>
 
@@ -385,19 +370,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const btn = document.getElementById('btnSubmitCustomProject');
             const spinner = btn.querySelector('.spinner-border');
             
-            // Estado de carregamento
             btn.disabled = true;
             spinner.classList.remove('d-none');
             
-            // Colectar dados
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
-            
-            // Tratar arrays (checkboxes)
             data.plataformas = formData.getAll('plataformas[]');
             data.funcionalidades = formData.getAll('funcionalidades[]');
             
-            // Simular envio para API
             fetch('https://jsonplaceholder.typicode.com/posts', {
                 method: 'POST',
                 body: JSON.stringify({
@@ -412,24 +392,17 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(json => {
                 console.log('Requisitos enviados:', json);
-                
-                // Feedback de sucesso
                 btn.disabled = false;
                 spinner.classList.add('d-none');
-                
-                // Fechar modal
                 const modal = bootstrap.Modal.getInstance(document.getElementById('customProjectModal'));
                 modal.hide();
-                
-                // Alerta de sucesso
-                alert('Requisitos enviados com sucesso! A nossa equipa técnica irá analisar o seu projeto e entraremos em contacto em breve para agendar uma reunião de alinhamento.');
+                alert('Requisitos enviados com sucesso! A nossa equipa técnica irá analisar o seu projeto e entraremos em contacto em breve.');
                 form.reset();
             })
             .catch(error => {
-                console.error('Erro:', error);
                 btn.disabled = false;
                 spinner.classList.add('d-none');
-                alert('Ocorreu um erro ao enviar os requisitos. Por favor, tente novamente ou contacte-nos directamente.');
+                alert('Erro ao enviar requisitos. Tente novamente.');
             });
         });
     }
