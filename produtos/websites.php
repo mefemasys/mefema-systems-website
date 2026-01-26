@@ -672,30 +672,79 @@ get_part('includes/header.php');
                     <i class="ri-layout-grid-line"></i>
                     <span>Todos</span>
                 </button>
-                <button class="filter-btn" data-categoria="Especializado">
-                    <i class="ri-hotel-bed-line"></i>
-                    <span>Especializado</span>
+                <button class="filter-btn" data-categoria="PMEs Gerais">
+                    <i class="ri-store-2-line"></i>
+                    <span>PMEs</span>
                 </button>
-                <button class="filter-btn" data-categoria="Profissional">
-                    <i class="ri-briefcase-line"></i>
-                    <span>Profissional</span>
+                <button class="filter-btn" data-categoria="Empresas Estabelecidas">
+                    <i class="ri-building-line"></i>
+                    <span>Empresas</span>
                 </button>
-                <button class="filter-btn" data-categoria="Básico">
-                    <i class="ri-file-text-line"></i>
-                    <span>Básico</span>
-                </button>
-                <button class="filter-btn" data-categoria="Marketing">
+                <button class="filter-btn" data-categoria="Campanhas Marketing">
                     <i class="ri-megaphone-line"></i>
                     <span>Marketing</span>
                 </button>
-                <button class="filter-btn" data-categoria="Corporativo">
-                    <i class="ri-building-line"></i>
-                    <span>Corporativo</span>
+                <button class="filter-btn" data-categoria="Instituições Públicas">
+                    <i class="ri-government-line"></i>
+                    <span>Instituições</span>
                 </button>
-                <button class="filter-btn" data-categoria="Loja Online">
+                <button class="filter-btn" data-categoria="Comércio Electrónico">
                     <i class="ri-shopping-cart-line"></i>
                     <span>E-commerce</span>
                 </button>
+                <button class="filter-btn" data-categoria="Restauração">
+                    <i class="ri-restaurant-2-line"></i>
+                    <span>Restaurante</span>
+                </button>
+                <button class="filter-btn" data-categoria="Hotel">
+                    <i class="ri-hotel-bed-line"></i>
+                    <span>Hotel</span>
+                </button>
+                <button class="filter-btn" data-categoria="Clínica">
+                    <i class="ri-hospital-line"></i>
+                    <span>Clínica</span>
+                </button>
+                <button class="filter-btn" data-categoria="Catering">
+                    <i class="ri-restaurant-line"></i>
+                    <span>Catering</span>
+                </button>
+                <button class="filter-btn" data-categoria="Construção">
+                    <i class="ri-hammer-line"></i>
+                    <span>Construção</span>
+                </button>
+                <button class="filter-btn" data-categoria="Escola">
+                    <i class="ri-graduation-cap-line"></i>
+                    <span>Escola</span>
+                </button>
+                <button class="filter-btn" data-categoria="Academia">
+                    <i class="ri-run-line"></i>
+                    <span>Academia</span>
+                </button>
+                <button class="filter-btn" data-categoria="Salão Beleza">
+                    <i class="ri-scissors-line"></i>
+                    <span>Beleza</span>
+                </button>
+                <button class="filter-btn" data-categoria="Oficina">
+                    <i class="ri-tools-line"></i>
+                    <span>Oficina</span>
+                </button>
+                <button class="filter-btn" data-categoria="Imobiliária">
+                    <i class="ri-home-4-line"></i>
+                    <span>Imobiliária</span>
+                </button>
+                <button class="filter-btn" data-categoria="Escritório Advocacia">
+                    <i class="ri-scales-3-line"></i>
+                    <span>Advocacia</span>
+                </button>
+                <button class="filter-btn" data-categoria="Consultoria">
+                    <i class="ri-briefcase-line"></i>
+                    <span>Consultoria</span>
+                </button>
+                <button class="filter-btn" data-categoria="Agência Viagens">
+                    <i class="ri-plane-line"></i>
+                    <span>Viagens</span>
+                </button>
+           
             </div>
         </div>
 
