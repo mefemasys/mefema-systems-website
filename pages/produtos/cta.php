@@ -1,11 +1,11 @@
-<section class="section-py" id="produtosCTA" style="background: #1f1814;">
+<section class="section-py border-top border-bottom" id="produtosCTA">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
-        <h2 class="fw-bold mb-4" style="color: #f5ede6; font-size: 2.4rem;">
+        <h2 class="fw-bold mb-4" style="font-size: 2.4rem;">
           Não Encontrou o Produto Ideal?
         </h2>
-        <p class="mb-5" style="font-size: 1.15rem; color: #d4c5b8; line-height: 1.7;">
+        <p class="mb-5 opacity-75" style="font-size: 1.15rem; line-height: 1.7;">
           Podemos desenvolver uma solução à medida das suas necessidades.<br>
           Diga-nos o que precisa e a nossa equipa criará o sistema perfeito para si.
         </p>
@@ -13,7 +13,7 @@
           <button type="button" class="btn-cta-primary" data-bs-toggle="modal" data-bs-target="#customProjectModal">
             <i class="ri-rocket-2-line me-2"></i>Criar Projeto Personalizado
           </button>
-          <a href="tel:+258840000000" class="btn-cta-outline-light">
+          <a href="tel:+258840000000" class="btn btn-outline-secondary px-5 py-3 fw-bold">
             <i class="ri-phone-line me-2"></i>Ligar Agora
           </a>
         </div>
@@ -22,17 +22,16 @@
   </div>
 </section>
 
-<!-- Modal de Projeto Personalizado (Recolha de Requisitos) -->
 <div class="modal fade" id="customProjectModal" tabindex="-1" aria-labelledby="customProjectModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content border-0 shadow-lg" style="background: #ffffff; color: #2d3436;">
-      <div class="modal-header py-4" style="background: #f8f9fa; border-bottom: 1px solid #eee;">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header py-4 border-bottom">
         <div class="d-flex align-items-center">
-          <div class="icon-box-modal me-3" style="background: #d97638; color: white;">
+          <div class="icon-box-modal me-3">
             <i class="ri-lightbulb-flash-line"></i>
           </div>
           <div>
-            <h5 class="modal-title fw-bold mb-0" id="customProjectModalLabel" style="color: #1f1814;">Recolha de Requisitos</h5>
+            <h5 class="modal-title fw-bold mb-0" id="customProjectModalLabel">Recolha de Requisitos</h5>
             <small class="text-muted">Descreva a sua ideia e nós tornamo-la realidade</small>
           </div>
         </div>
@@ -42,7 +41,6 @@
       <form id="customProjectForm">
         <div class="modal-body p-4 p-md-5">
           
-          <!-- Passo 1: Tipo e Plataforma -->
           <div class="form-section mb-5">
             <h6 class="section-title-modal mb-4">
               <span class="step-number">01</span>
@@ -87,101 +85,33 @@
             </div>
           </div>
 
-          <!-- Passo 2: Escala e Utilizadores -->
           <div class="form-section mb-5">
             <h6 class="section-title-modal mb-4">
               <span class="step-number">02</span>
-              Escala & Utilizadores
+              Cenário de Uso & Detalhes
             </h6>
-            <div class="row g-4">
-              <div class="col-md-6">
-                <label class="form-label fw-semibold">Número Estimado de Utilizadores</label>
-                <select class="form-select custom-input" name="estimativa_users" required>
-                  <option value="1-10">Até 10 utilizadores</option>
-                  <option value="11-50">11 a 50 utilizadores</option>
-                  <option value="51-200">51 a 200 utilizadores</option>
-                  <option value="201-1000">201 a 1000 utilizadores</option>
-                  <option value="1000+">Mais de 1000 utilizadores</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label fw-semibold">Prazo Desejado</label>
-                <select class="form-select custom-input" name="prazo_estimado">
-                  <option value="urgente">Urgente (Menos de 1 mês)</option>
-                  <option value="1-3_meses">1 a 3 meses</option>
-                  <option value="3-6_meses">3 a 6 meses</option>
-                  <option value="flexivel">Flexível</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <!-- Passo 3: Funcionalidades e Cenário de Uso -->
-          <div class="form-section mb-5">
-            <h6 class="section-title-modal mb-4">
-              <span class="step-number">03</span>
-              Funcionalidades & Cenário de Uso
-            </h6>
-            <div class="mb-4">
-              <label class="form-label fw-semibold">Funcionalidades Comuns Necessárias</label>
-              <div class="row g-2">
-                <div class="col-sm-6 col-md-4">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="funcionalidades[]" value="auth" id="func1">
-                    <label class="form-check-label" for="func1">Login/Autenticação</label>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="funcionalidades[]" value="payments" id="func2">
-                    <label class="form-check-label" for="func2">Pagamentos Online</label>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="funcionalidades[]" value="reports" id="func3">
-                    <label class="form-check-label" for="func3">Relatórios/Dashboards</label>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="funcionalidades[]" value="api_integration" id="func4">
-                    <label class="form-check-label" for="func4">Integração com APIs</label>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="funcionalidades[]" value="notifications" id="func5">
-                    <label class="form-check-label" for="func5">Notificações Push/Email</label>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="funcionalidades[]" value="offline" id="func6">
-                    <label class="form-check-label" for="func6">Modo Offline</label>
-                  </div>
-                </div>
-              </div>
-            </div>
             
             <div class="mb-4">
-              <label class="form-label fw-semibold">Cenário de Uso e Fluxo do Sistema</label>
-              <p class="text-muted small mb-2">Descreva como o sistema será usado no dia-a-dia, quem são os utilizadores principais e qual o problema central que o software deve resolver.</p>
-              <textarea class="form-control custom-input" name="cenario_uso" rows="4" placeholder="Ex: O gestor entra no sistema, aprova o pedido do cliente e o estafeta recebe uma notificação..." required></textarea>
+              <label class="form-label fw-semibold">Descreva o seu Cenário de Uso</label>
+              <p class="text-muted small mb-2">Este campo é fundamental para entendermos como o sistema funcionará no seu dia-a-dia.</p>
+              <textarea 
+                class="form-control custom-input" 
+                name="cenario_uso" 
+                rows="5" 
+                placeholder="Ex: No meu negócio, o cliente faz um pedido via tablet, a cozinha recebe um alerta sonoro e o gestor visualiza o lucro em tempo real no dashboard..." 
+                required></textarea>
             </div>
 
             <div class="mb-0">
-              <label class="form-label fw-semibold">Funcionalidades Específicas & Personalizadas</label>
-              <p class="text-muted small mb-2">Liste funcionalidades únicas que não foram mencionadas acima.</p>
-              <textarea class="form-control custom-input" name="funcionalidades_custom" rows="3" placeholder="Ex: Integração com balanças industriais, cálculo automático de taxas aduaneiras específicas..."></textarea>
+              <label class="form-label fw-semibold">Funcionalidades Específicas</label>
+              <textarea class="form-control custom-input" name="funcionalidades_custom" rows="3" placeholder="Ex: Integração com balanças industriais, API de logística..."></textarea>
             </div>
           </div>
 
-          <!-- Passo 4: Contacto -->
           <div class="form-section">
             <h6 class="section-title-modal mb-4">
-              <span class="step-number">04</span>
-              Informações de Contacto
+              <span class="step-number">03</span>
+              Contacto
             </h6>
             <div class="row g-4">
               <div class="col-md-6">
@@ -192,19 +122,15 @@
                 <label class="form-label fw-semibold">Email Profissional</label>
                 <input type="email" class="form-control custom-input" name="email_contacto" required>
               </div>
-              <div class="col-md-12">
-                <label class="form-label fw-semibold">Telefone / WhatsApp</label>
-                <input type="tel" class="form-control custom-input" name="telefone_contacto" required>
-              </div>
             </div>
           </div>
 
         </div>
-        <div class="modal-footer p-4 border-0" style="background: #f8f9fa;">
-          <button type="button" class="btn btn-link text-muted text-decoration-none fw-semibold" data-bs-dismiss="modal">Cancelar</button>
+        <div class="modal-footer p-4 border-top">
+          <button type="button" class="btn btn-link text-decoration-none fw-semibold" data-bs-dismiss="modal">Cancelar</button>
           <button type="submit" class="btn-submit-modal" id="btnSubmitCustomProject">
             <span class="spinner-border spinner-border-sm d-none me-2" role="status"></span>
-            <i class="ri-send-plane-fill me-2"></i>Enviar Requisitos
+            <i class="ri-send-plane-fill me-2"></i>Enviar Proposta
           </button>
         </div>
       </form>
@@ -214,81 +140,85 @@
 
 <style>
   /* ========================================
-     ESTILOS DO CTA (FUNDO ESCURO)
+     AJUSTES DE CORES DINÂMICAS (LIGHT/DARK)
      ======================================== */
-  #produtosCTA {
-    padding: 120px 0;
-    text-align: center;
+  
+  /* Faz o modal e inputs herdarem as cores do tema do Bootstrap/Sistema */
+  .modal-content {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
   }
 
-  .btn-cta-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    padding: 1.1rem 2.8rem;
-    font-size: 1.15rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #d97638, #c66b3d);
+  .modal-header, .modal-footer {
+    background-color: rgba(0,0,0,0.03); /* Leve destaque independente da cor */
+  }
+
+  /* Estilização dos Inputs sem cores fixas */
+  .custom-input {
+    background-color: var(--bs-tertiary-bg) !important;
+    color: var(--bs-body-color) !important;
+    border: 1px solid var(--bs-border-color) !important;
+    border-radius: 6px !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  .custom-input:focus {
+    border-color: #d97638 !important;
+    box-shadow: 0 0 0 4px rgba(217, 118, 56, 0.1) !important;
+    background-color: var(--bs-body-bg) !important;
+  }
+
+  /* Botão Principal mantém a identidade visual */
+  .btn-cta-primary, .btn-submit-modal {
+    background: #d97638;
     color: white !important;
     border: none;
-    border-radius: 4px !important;
-    box-shadow: 0 8px 25px rgba(217, 118, 56, 0.35);
-    transition: all 0.4s ease;
-    text-decoration: none;
-  }
-
-  .btn-cta-primary:hover {
-    background: linear-gradient(135deg, #c66b3d, #b85f30);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(217, 118, 56, 0.45);
-  }
-
-  .btn-cta-outline-light {
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.8rem;
-    padding: 1.1rem 2.8rem;
-    font-size: 1.15rem;
-    font-weight: 700;
-    background: transparent;
-    color: #f5ede6 !important;
-    border: 2.5px solid #f5ede6;
-    border-radius: 4px !important;
-    transition: all 0.4s ease;
     text-decoration: none;
   }
 
-  .btn-cta-outline-light:hover {
-    background: #f5ede6;
-    color: #1f1814 !important;
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(245, 237, 230, 0.2);
+  .btn-cta-primary:hover, .btn-submit-modal:hover {
+    background: #c66b3d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(217, 118, 56, 0.3);
   }
 
-  /* ========================================
-     ESTILOS DO MODAL (FUNDO CLARO)
-     ======================================== */
+  /* Checkboxes estilizados que se adaptam */
+  .custom-option-check label {
+    padding: 10px 20px;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--bs-body-color);
+  }
+
+  .custom-option-check input:checked + label {
+    border-color: #d97638;
+    background: rgba(217, 118, 56, 0.1);
+    color: #d97638;
+  }
+
   .icon-box-modal {
     width: 45px;
     height: 45px;
     border-radius: 8px;
+    background: #d97638;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-  }
-
-  .section-title-modal {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #1f1814;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
   }
 
   .step-number {
@@ -303,108 +233,14 @@
     font-size: 0.75rem;
   }
 
-  .custom-input {
-    border: 1px solid #dee2e6 !important;
-    border-radius: 6px !important;
-    padding: 0.75rem 1rem !important;
-    background-color: #fff !important;
-    color: #212529 !important;
-    transition: all 0.3s ease !important;
-  }
-
-  .custom-input:focus {
-    border-color: #d97638 !important;
-    box-shadow: 0 0 0 4px rgba(217, 118, 56, 0.1) !important;
-  }
-
-  .custom-option-check label {
-    padding: 10px 20px;
-    border: 1px solid #dee2e6;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  .section-title-modal {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    color: #495057;
-  }
-
-  .custom-option-check input:checked + label {
-    border-color: #d97638;
-    background: rgba(217, 118, 56, 0.05);
+    gap: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
     color: #d97638;
   }
-
-  .btn-submit-modal {
-    background: #d97638;
-    color: white;
-    border: none;
-    padding: 0.9rem 2.5rem;
-    border-radius: 6px;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-  }
-
-  .btn-submit-modal:hover {
-    background: #c66b3d;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(217, 118, 56, 0.3);
-  }
-
-  /* Ajuste para labels no modal claro */
-  .modal-body label {
-    color: #1f1814;
-  }
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('customProjectForm');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const btn = document.getElementById('btnSubmitCustomProject');
-            const spinner = btn.querySelector('.spinner-border');
-            
-            btn.disabled = true;
-            spinner.classList.remove('d-none');
-            
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-            data.plataformas = formData.getAll('plataformas[]');
-            data.funcionalidades = formData.getAll('funcionalidades[]');
-            
-            fetch('https://jsonplaceholder.typicode.com/posts', {
-                method: 'POST',
-                body: JSON.stringify({
-                    title: 'Novo Projeto Personalizado: ' + data.tipo_aplicacao,
-                    body: JSON.stringify(data),
-                    userId: 1,
-                }),
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                },
-            })
-            .then(response => response.json())
-            .then(json => {
-                console.log('Requisitos enviados:', json);
-                btn.disabled = false;
-                spinner.classList.add('d-none');
-                const modal = bootstrap.Modal.getInstance(document.getElementById('customProjectModal'));
-                modal.hide();
-                alert('Requisitos enviados com sucesso! A nossa equipa técnica irá analisar o seu projeto e entraremos em contacto em breve.');
-                form.reset();
-            })
-            .catch(error => {
-                btn.disabled = false;
-                spinner.classList.add('d-none');
-                alert('Erro ao enviar requisitos. Tente novamente.');
-            });
-        });
-    }
-});
-</script>
