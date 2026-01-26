@@ -162,14 +162,16 @@
                 <input type="tel" class="form-control custom-input" name="telefone_contacto" required>
               </div>
             </div>
-            <div class="modal-footer p-4 border-0 custom-modal-footer">
+            
+          </div>
+<div class="modal-footer p-4 border-0 custom-modal-footer">
           <button type="button" class="btn btn-link text-muted-custom text-decoration-none fw-semibold" data-bs-dismiss="modal">Cancelar</button>
           <button type="submit" class="btn-submit-modal" id="btnSubmitCustomProject">
             <span class="spinner-border spinner-border-sm d-none me-2" role="status" aria-hidden="true"></span>
             <i class="ri-send-plane-fill me-2"></i>Enviar Requisitos
           </button>
         </div>
-          </div>
+          
         </div>
       </form>
     </div>
