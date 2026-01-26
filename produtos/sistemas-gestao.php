@@ -779,5 +779,5 @@ function configurarFormularioAquisicao() {
     <div class="alert alert-danger">Erro ao carregar sistemas.</div>
 </div>
 <?php endif; ?>
-
+<?php get_part('pages/produtos/cta.php'); ?>
 <?php get_part('includes/footer.php'); ?>
