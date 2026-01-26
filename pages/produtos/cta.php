@@ -176,45 +176,40 @@
     </div>
   </div>
 </div>
-
 <style>
-/* ========================================
-   ESTILOS DO CTA (FUNDO ESCURO - mantido)
+  /* ========================================
+   BOTÕES - CTA PRINCIPAL (mantém tema escuro)
    ======================================== */
-#produtosCTA {
-  padding: 100px 0 120px;
-  text-align: center;
-}
-
 .btn-cta-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
-  padding: 1.15rem 2.8rem;
-  font-size: 1.15rem;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #d97638, #c66b3d);
+  background: linear-gradient(135deg, #e08544, #c66b3d);
   color: white !important;
   border: none;
   border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(217, 118, 56, 0.3);
+  box-shadow: 0 6px 20px rgba(224, 133, 68, 0.3);
   transition: all 0.35s ease;
 }
 
 .btn-cta-primary:hover {
   background: linear-gradient(135deg, #c66b3d, #b85f30);
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(217, 118, 56, 0.45);
+  box-shadow: 0 12px 28px rgba(224, 133, 68, 0.4);
+  color: white !important;
 }
 
 .btn-cta-outline-light {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
-  padding: 1.15rem 2.8rem;
-  font-size: 1.15rem;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
   font-weight: 700;
   background: transparent;
   color: #f5ede6 !important;
@@ -224,191 +219,101 @@
 }
 
 .btn-cta-outline-light:hover {
-  background: #f5ede6;
-  color: #1f1814 !important;
+  background: rgba(245, 237, 230, 0.12);
+  color: #f5ede6 !important;
+  border-color: #f5ede6;
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(245, 237, 230, 0.25);
 }
 
 /* ========================================
-   ESTILOS DO MODAL E FORMULÁRIO
+   BOTÃO DE SUBMIT DO MODAL
    ======================================== */
-
-/* Tema base (light) */
-.custom-modal-theme {
-  background-color: var(--bs-modal-bg, #ffffff);
-  color: var(--bs-body-color, #2d3436);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.custom-modal-header {
-  background-color: var(--bs-modal-header-bg, #f8f9fa);
-  border-bottom: 1px solid var(--bs-border-color, #e9ecef);
-  padding: 1.5rem 2rem;
-}
-
-.custom-modal-footer {
-  background-color: var(--bs-modal-footer-bg, #f8f9fa);
-  border-top: 1px solid var(--bs-border-color, #e9ecef);
-  padding: 1.25rem 2rem;
-}
-
-/* Botão de submit */
 .btn-submit-modal {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
   padding: 0.95rem 2.4rem;
   font-size: 1.05rem;
   font-weight: 700;
-  background: #d97638;
+  background: linear-gradient(135deg, #e08544, #d97638);
   color: white;
   border: none;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(217, 118, 56, 0.25);
+  box-shadow: 0 5px 18px rgba(224, 133, 68, 0.25);
   transition: all 0.3s ease;
 }
 
 .btn-submit-modal:hover {
-  background: #c66b3d;
+  background: linear-gradient(135deg, #d97638, #c66b3d);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(217, 118, 56, 0.35);
+  box-shadow: 0 10px 25px rgba(224, 133, 68, 0.35);
 }
 
 .btn-submit-modal:disabled {
-  background: #b8a08a;
-  cursor: not-allowed;
+  opacity: 0.7;
   transform: none;
   box-shadow: none;
+  cursor: not-allowed;
 }
 
-/* Inputs, selects e textareas – sem cores fixas, respeita tema */
-.custom-input,
-.form-select.custom-input,
-.form-control.custom-input {
-  background-color: var(--bs-body-bg, #ffffff);
-  color: var(--bs-body-color, #212529);
-  border: 1px solid var(--bs-border-color, #ced4da);
-  border-radius: 8px;
-  padding: 0.75rem 1.1rem;
-  font-size: 1rem;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+/* ========================================
+   MELHORIAS NO FORMULÁRIO - espaçamento
+   ======================================== */
+.modal-body {
+  padding: 2.5rem 2rem !important;   /* mais ar respirável */
 }
 
-.custom-input:focus,
-.form-select.custom-input:focus,
-.form-control.custom-input:focus {
-  border-color: #d97638;
-  box-shadow: 0 0 0 0.25rem rgba(217, 118, 56, 0.15);
-  background-color: var(--bs-body-bg, #ffffff);
-}
-
-.custom-input::placeholder {
-  color: #adb5bd;
-}
-
-/* Mais espaçamento no formulário */
-.form-section {
-  margin-bottom: 2.5rem;
-}
-
-.section-title-modal {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  color: var(--bs-heading-color, #1f1814);
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-  letter-spacing: 0.8px;
-  margin-bottom: 1.5rem;
-}
-
-.step-number {
-  background: #d97638;
-  color: white;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-/* Checkbox customizado */
-.custom-option-check label {
-  padding: 0.75rem 1.25rem;
-  border: 1px solid var(--bs-border-color, #dee2e6);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-weight: 600;
-  color: var(--bs-body-color, #495057);
-  background-color: transparent;
-}
-
-.custom-option-check input:checked + label {
-  border-color: #d97638;
-  background-color: rgba(217, 118, 56, 0.08);
-  color: #d97638;
-}
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .custom-modal-theme {
-    background-color: #1f1814;
-    color: #f5ede6;
-  }
-  .custom-modal-header,
-  .custom-modal-footer {
-    background-color: #140f0c;
-    border-color: #3d3028;
-  }
-  .section-title-modal {
-    color: #f5ede6;
-  }
-  .custom-input,
-  .form-select.custom-input,
-  .form-control.custom-input {
-    background-color: #2d241e;
-    border-color: #3d3028;
-    color: #f5ede6;
-  }
-  .custom-input::placeholder {
-    color: #8a7a6e;
-  }
-  .custom-option-check label {
-    border-color: #3d3028;
-    color: #d4c5b8;
-    background-color: transparent;
-  }
-  .custom-option-check input:checked + label {
-    background-color: rgba(217, 118, 56, 0.12);
-  }
-  .text-muted-custom {
-    color: #d4c5b8 !important;
-  }
-}
-
-/* Responsividade extra */
 @media (max-width: 576px) {
   .modal-body {
-    padding: 1.5rem 1.25rem !important;
+    padding: 1.8rem 1.25rem !important;
   }
-  .btn-cta-primary,
-  .btn-cta-outline-light,
-  .btn-submit-modal {
-    padding: 0.95rem 2rem;
-    font-size: 1rem;
-  }
-  .form-section {
-    margin-bottom: 2rem;
-  }
+}
+
+.form-section {
+  margin-bottom: 2.75rem !important;  /* mais espaço entre seções */
+}
+
+.form-section:last-child {
+  margin-bottom: 1.5rem !important;
+}
+
+.form-label {
+  margin-bottom: 0.65rem !important;
+  font-size: 0.98rem;
+}
+
+.form-control.custom-input,
+.form-select.custom-input {
+  padding: 0.8rem 1.1rem !important;
+  font-size: 1rem;
+  border-radius: 8px !important;
+  margin-bottom: 1.1rem !important;
+}
+
+.custom-option-check label {
+  padding: 0.8rem 1.3rem;
+  border-radius: 8px;
+  font-size: 0.97rem;
+}
+
+/* Espaçamento extra nos grupos de checkboxes */
+.row.g-3 > div {
+  margin-bottom: 0.6rem;
+}
+
+/* Footer do modal com mais equilíbrio */
+.modal-footer {
+  padding: 1.5rem 2rem !important;
+  gap: 1.2rem;
+}
+
+.modal-footer .btn {
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+}
+
+/* Garantir que o botão submit fique bem destacado */
+.modal-footer .btn-submit-modal {
+  min-width: 220px;
 }
 </style>
