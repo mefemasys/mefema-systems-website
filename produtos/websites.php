@@ -668,43 +668,31 @@ get_part('includes/header.php');
                 </h6>
             </div>
             <div class="filters-buttons">
-                <button class="filter-btn active" data-tipo="all">
+    <button class="filter-btn active" data-categoria="all">
                     <i class="ri-layout-grid-line"></i>
                     <span>Todos</span>
                 </button>
-                <button class="filter-btn" data-tipo="Hotel">
+                <button class="filter-btn" data-categoria="Especializado">
                     <i class="ri-hotel-bed-line"></i>
-                    <span>Hotel</span>
+                    <span>Especializado</span>
                 </button>
-                <button class="filter-btn" data-tipo="Clínica">
-                    <i class="ri-hospital-line"></i>
-                    <span>Clínica</span>
+                <button class="filter-btn" data-categoria="Profissional">
+                    <i class="ri-briefcase-line"></i>
+                    <span>Profissional</span>
                 </button>
-                <button class="filter-btn" data-tipo="Catering">
-                    <i class="ri-restaurant-line"></i>
-                    <span>Catering</span>
+                <button class="filter-btn" data-categoria="Básico">
+                    <i class="ri-file-text-line"></i>
+                    <span>Básico</span>
                 </button>
-                <button class="filter-btn" data-tipo="Construção">
-                    <i class="ri-hammer-line"></i>
-                    <span>Construção</span>
+                <button class="filter-btn" data-categoria="Marketing">
+                    <i class="ri-megaphone-line"></i>
+                    <span>Marketing</span>
                 </button>
-                <button class="filter-btn" data-tipo="Escola">
-                    <i class="ri-graduation-cap-line"></i>
-                    <span>Escola</span>
+                <button class="filter-btn" data-categoria="Corporativo">
+                    <i class="ri-building-line"></i>
+                    <span>Corporativo</span>
                 </button>
-                <button class="filter-btn" data-tipo="Restauração">
-                    <i class="ri-restaurant-2-line"></i>
-                    <span>Restaurante</span>
-                </button>
-                <button class="filter-btn" data-tipo="Academia">
-                    <i class="ri-run-line"></i>
-                    <span>Academia</span>
-                </button>
-                <button class="filter-btn" data-tipo="Imobiliária">
-                    <i class="ri-home-4-line"></i>
-                    <span>Imobiliária</span>
-                </button>
-                <button class="filter-btn" data-tipo="Comércio Electrónico">
+                <button class="filter-btn" data-categoria="Loja Online">
                     <i class="ri-shopping-cart-line"></i>
                     <span>E-commerce</span>
                 </button>
