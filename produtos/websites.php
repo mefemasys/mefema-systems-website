@@ -127,7 +127,7 @@ function buscarDadosWebsites() {
           "caracteristicas": [
             "Design institucional profissional",
             "20 páginas incluídas",
-            "Domínio .gov.mz ou .org.mz",
+            "Domínio .gov.mz or .org.mz",
             "Email profissional ilimitado",
             "Certificado SSL avançado",
             "Painel administrativo multi-utilizador",
@@ -277,234 +277,6 @@ function buscarDadosWebsites() {
           ],
           "destaque": false,
           "cor": "danger"
-        },
-        {
-          "id": 9,
-          "nome": "Website Catering & Eventos",
-          "categoria": "Especializado",
-          "tipo_empresa": "Catering",
-          "nicho": "Catering e Eventos",
-          "paginas": 8,
-          "preco": 62000,
-          "descricao": "Plataforma ideal para empresas de catering e organização de eventos",
-          "screenshots": [
-            "/assets/img/websites/catering-home.jpg",
-            "/assets/img/websites/catering-menu.jpg",
-            "/assets/img/websites/catering-portfolio.jpg"
-          ],
-          "demo_url": "https://demo-catering.mefemasys.co.mz",
-          "caracteristicas": [
-            "Design elegante e visual",
-            "8 páginas incluídas",
-            "Portfólio de eventos",
-            "Catálogo de menus",
-            "Calculadora de orçamentos",
-            "Galeria de fotos de eventos",
-            "Formulário de pedidos",
-            "Testemunhos de clientes",
-            "Integração redes sociais",
-            "Sistema de reservas",
-            "Email profissional (10 contas)",
-            "Suporte (4 meses)"
-          ],
-          "destaque": false,
-          "cor": "warning"
-        },
-        {
-          "id": 10,
-          "nome": "Website Construção Civil",
-          "categoria": "Especializado",
-          "tipo_empresa": "Construção",
-          "nicho": "Construção e Engenharia",
-          "paginas": 10,
-          "preco": 72000,
-          "descricao": "Website robusto para empresas de construção e engenharia civil",
-          "screenshots": [
-            "/assets/img/websites/construcao-home.jpg",
-            "/assets/img/websites/construcao-projetos.jpg",
-            "/assets/img/websites/construcao-servicos.jpg"
-          ],
-          "demo_url": "https://demo-construcoes.mefemasys.co.mz",
-          "caracteristicas": [
-            "Design profissional e corporativo",
-            "10 páginas incluídas",
-            "Portfólio de projetos",
-            "Galeria antes/depois",
-            "Área de serviços",
-            "Calculadora de orçamentos",
-            "Formulário de pedido de orçamento",
-            "Certificações e licenças",
-            "Blog técnico",
-            "Depoimentos de clientes",
-            "Email profissional (12 contas)",
-            "Integração WhatsApp",
-            "Suporte (5 meses)"
-          ],
-          "destaque": false,
-          "cor": "secondary"
-        },
-        {
-          "id": 11,
-          "nome": "Website Escola & Educação",
-          "categoria": "Especializado",
-          "tipo_empresa": "Escola",
-          "nicho": "Educação",
-          "paginas": 15,
-          "preco": 95000,
-          "descricao": "Portal completo para escolas, colégios e centros de formação",
-          "screenshots": [
-            "/assets/img/websites/escola-home.jpg",
-            "/assets/img/websites/escola-cursos.jpg",
-            "/assets/img/websites/escola-noticias.jpg"
-          ],
-          "demo_url": "https://demo-escolar.mefemasys.co.mz",
-          "caracteristicas": [
-            "Design educacional moderno",
-            "15 páginas incluídas",
-            "Sistema de notícias e avisos",
-            "Calendário escolar",
-            "Área de cursos e programas",
-            "Galeria de eventos",
-            "Formulário de inscrições",
-            "Área de downloads (documentos)",
-            "Portal do aluno (básico)",
-            "Blog educacional",
-            "Sistema de eventos",
-            "Email profissional (25 contas)",
-            "Integração com plataformas LMS",
-            "Suporte (6 meses)"
-          ],
-          "destaque": false,
-          "cor": "primary"
-        },
-        {
-          "id": 12,
-          "nome": "Website Academia & Ginásio",
-          "categoria": "Especializado",
-          "tipo_empresa": "Academia",
-          "nicho": "Fitness e Bem-estar",
-          "paginas": 9,
-          "preco": 68000,
-          "descricao": "Website dinâmico para academias, ginásios e centros de fitness",
-          "screenshots": [
-            "/assets/img/websites/academia-home.jpg",
-            "/assets/img/websites/academia-aulas.jpg",
-            "/assets/img/websites/academia-planos.jpg"
-          ],
-          "demo_url": "https://demo.mefemasystems.co.mz/academia",
-          "caracteristicas": [
-            "Design energético e motivador",
-            "9 páginas incluídas",
-            "Horário de aulas",
-            "Planos e preços",
-            "Perfis de instrutores",
-            "Sistema de agendamento",
-            "Calculadora de IMC",
-            "Blog de fitness",
-            "Galeria de transformações",
-            "Integração redes sociais",
-            "Email profissional (10 contas)",
-            "Suporte (4 meses)"
-          ],
-          "destaque": false,
-          "cor": "success"
-        },
-        {
-          "id": 13,
-          "nome": "Website Salão de Beleza",
-          "categoria": "Especializado",
-          "tipo_empresa": "Salão Beleza",
-          "nicho": "Beleza e Estética",
-          "paginas": 7,
-          "preco": 58000,
-          "descricao": "Website elegante para salões de beleza e centros estéticos",
-          "screenshots": [
-            "/assets/img/websites/salao-home.jpg",
-            "/assets/img/websites/salao-servicos.jpg",
-            "/assets/img/websites/salao-galeria.jpg"
-          ],
-          "demo_url": "https://demo.mefemasystems.co.mz/salao",
-          "caracteristicas": [
-            "Design sofisticado e feminino",
-            "7 páginas incluídas",
-            "Catálogo de serviços",
-            "Sistema de marcações online",
-            "Galeria de trabalhos",
-            "Perfis de profissionais",
-            "Lista de preços",
-            "Blog de beleza",
-            "Integração Instagram",
-            "WhatsApp Business",
-            "Email profissional (8 contas)",
-            "Suporte (4 meses)"
-          ],
-          "destaque": false,
-          "cor": "danger"
-        },
-        {
-          "id": 14,
-          "nome": "Website Oficina Mecânica",
-          "categoria": "Especializado",
-          "tipo_empresa": "Oficina",
-          "nicho": "Automóveis e Mecânica",
-          "paginas": 8,
-          "preco": 60000,
-          "descricao": "Website profissional para oficinas mecânicas e auto centros",
-          "screenshots": [
-            "/assets/img/websites/oficina-home.jpg",
-            "/assets/img/websites/oficina-servicos.jpg",
-            "/assets/img/websites/oficina-portfolio.jpg"
-          ],
-          "demo_url": "https://demo.mefemasystems.co.mz/oficina",
-          "caracteristicas": [
-            "Design industrial e técnico",
-            "8 páginas incluídas",
-            "Lista de serviços",
-            "Sistema de orçamentos",
-            "Agendamento de reparações",
-            "Galeria de trabalhos",
-            "Blog técnico automotivo",
-            "Formulário de contacto",
-            "Integração WhatsApp",
-            "Localização e horários",
-            "Email profissional (8 contas)",
-            "Suporte (4 meses)"
-          ],
-          "destaque": false,
-          "cor": "dark"
-        },
-        {
-          "id": 15,
-          "nome": "Website Imobiliária",
-          "categoria": "Especializado",
-          "tipo_empresa": "Imobiliária",
-          "nicho": "Imóveis e Propriedades",
-          "paginas": 12,
-          "preco": 88000,
-          "descricao": "Plataforma completa para agências imobiliárias e gestão de propriedades",
-          "screenshots": [
-            "/assets/img/websites/imobiliaria-home.jpg",
-            "/assets/img/websites/imobiliaria-imoveis.jpg",
-            "/assets/img/websites/imobiliaria-detalhes.jpg"
-          ],
-          "demo_url": "https://demo.mefemasystems.co.mz/imobiliaria",
-          "caracteristicas": [
-            "Design premium imobiliário",
-            "12 páginas incluídas",
-            "Sistema de listagem de imóveis",
-            "Filtros avançados de busca",
-            "Tours virtuais 360°",
-            "Galeria de fotos HD",
-            "Calculadora de financiamento",
-            "Formulário de contacto por imóvel",
-            "Mapa interativo",
-            "Blog imobiliário",
-            "Email profissional (15 contas)",
-            "CRM básico integrado",
-            "Suporte (6 meses)"
-          ],
-          "destaque": false,
-          "cor": "info"
         },
         {
           "id": 16,
@@ -668,83 +440,34 @@ get_part('includes/header.php');
                 </h6>
             </div>
             <div class="filters-buttons">
-    <button class="filter-btn active" data-categoria="all">
+                <button class="filter-btn active" data-categoria="all">
                     <i class="ri-layout-grid-line"></i>
                     <span>Todos</span>
                 </button>
-                <button class="filter-btn" data-categoria="PMEs Gerais">
+                <button class="filter-btn" data-categoria="Básico">
                     <i class="ri-store-2-line"></i>
-                    <span>PMEs</span>
+                    <span>Básico</span>
                 </button>
-                <button class="filter-btn" data-categoria="Empresas Estabelecidas">
+                <button class="filter-btn" data-categoria="Profissional">
                     <i class="ri-building-line"></i>
-                    <span>Empresas</span>
+                    <span>Profissional</span>
                 </button>
-                <button class="filter-btn" data-categoria="Campanhas Marketing">
+                <button class="filter-btn" data-categoria="Marketing">
                     <i class="ri-megaphone-line"></i>
                     <span>Marketing</span>
                 </button>
-                <button class="filter-btn" data-categoria="Instituições Públicas">
+                <button class="filter-btn" data-categoria="Corporativo">
                     <i class="ri-government-line"></i>
-                    <span>Instituições</span>
+                    <span>Corporativo</span>
                 </button>
-                <button class="filter-btn" data-categoria="Comércio Electrónico">
+                <button class="filter-btn" data-categoria="Loja Online">
                     <i class="ri-shopping-cart-line"></i>
                     <span>E-commerce</span>
                 </button>
-                <button class="filter-btn" data-categoria="Restauração">
-                    <i class="ri-restaurant-2-line"></i>
-                    <span>Restaurante</span>
+                <button class="filter-btn" data-categoria="Especializado">
+                    <i class="ri-star-line"></i>
+                    <span>Especializado</span>
                 </button>
-                <button class="filter-btn" data-categoria="Hotel">
-                    <i class="ri-hotel-bed-line"></i>
-                    <span>Hotel</span>
-                </button>
-                <button class="filter-btn" data-categoria="Clínica">
-                    <i class="ri-hospital-line"></i>
-                    <span>Clínica</span>
-                </button>
-                <button class="filter-btn" data-categoria="Catering">
-                    <i class="ri-restaurant-line"></i>
-                    <span>Catering</span>
-                </button>
-                <button class="filter-btn" data-categoria="Construção">
-                    <i class="ri-hammer-line"></i>
-                    <span>Construção</span>
-                </button>
-                <button class="filter-btn" data-categoria="Escola">
-                    <i class="ri-graduation-cap-line"></i>
-                    <span>Escola</span>
-                </button>
-                <button class="filter-btn" data-categoria="Academia">
-                    <i class="ri-run-line"></i>
-                    <span>Academia</span>
-                </button>
-                <button class="filter-btn" data-categoria="Salão Beleza">
-                    <i class="ri-scissors-line"></i>
-                    <span>Beleza</span>
-                </button>
-                <button class="filter-btn" data-categoria="Oficina">
-                    <i class="ri-tools-line"></i>
-                    <span>Oficina</span>
-                </button>
-                <button class="filter-btn" data-categoria="Imobiliária">
-                    <i class="ri-home-4-line"></i>
-                    <span>Imobiliária</span>
-                </button>
-                <button class="filter-btn" data-categoria="Escritório Advocacia">
-                    <i class="ri-scales-3-line"></i>
-                    <span>Advocacia</span>
-                </button>
-                <button class="filter-btn" data-categoria="Consultoria">
-                    <i class="ri-briefcase-line"></i>
-                    <span>Consultoria</span>
-                </button>
-                <button class="filter-btn" data-categoria="Agência Viagens">
-                    <i class="ri-plane-line"></i>
-                    <span>Viagens</span>
-                </button>
-           
             </div>
         </div>
 
@@ -777,10 +500,54 @@ get_part('includes/header.php');
             <div class="modal-body" id="modalWebsiteContent"></div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                <a href="#landingContact" class="btn btn-primary" data-bs-dismiss="modal">
-                    <i class="ri-mail-send-line me-2"></i>Solicitar Orçamento
-                </a>
+                <button type="button" class="btn btn-primary" id="btnModalOrder">
+                    <i class="ri-shopping-bag-line me-2"></i>Encomendar Agora
+                </button>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Encomenda -->
+<div class="modal fade" id="orderModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Formulário de Encomenda</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form id="orderForm">
+                <div class="modal-body">
+                    <input type="hidden" id="orderWebsiteId" name="website_id">
+                    <div class="mb-3">
+                        <label class="form-label">Pacote Seleccionado</label>
+                        <input type="text" class="form-control" id="orderWebsiteName" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="clientName" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" id="clientName" name="nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="clientEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="clientEmail" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="clientPhone" class="form-label">Telefone</label>
+                        <input type="tel" class="form-control" id="clientPhone" name="telefone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="orderNotes" class="form-label">Notas Adicionais</label>
+                        <textarea class="form-control" id="orderNotes" name="notas" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success" id="btnSubmitOrder">
+                        <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                        Confirmar Encomenda
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -798,6 +565,7 @@ let categoriaActual = 'all';
 document.addEventListener('DOMContentLoaded', function() {
     renderizarWebsites();
     configurarFiltros();
+    configurarFormularioEncomenda();
 });
 
 // Filtrar websites
@@ -818,7 +586,11 @@ function renderizarWebsites() {
     
     // Renderizar grid
     const grid = document.getElementById('websitesGrid');
-    grid.innerHTML = websitesPagina.map((website, index) => criarCardWebsite(website, index)).join('');
+    if (websitesFiltrados.length === 0) {
+        grid.innerHTML = '<div class="col-12 text-center my-5"><p class="text-muted">Nenhum pacote encontrado nesta categoria.</p></div>';
+    } else {
+        grid.innerHTML = websitesPagina.map((website, index) => criarCardWebsite(website, index)).join('');
+    }
     
     // Renderizar paginação
     if (totalPaginas > 1) {
@@ -934,10 +706,10 @@ function criarCardWebsite(website, index) {
                                 <i class="ri-information-line"></i>
                                 <span>Detalhes</span>
                             </button>
-                            <a href="#landingContact" class="btn-action btn-order">
+                            <button class="btn-action btn-order" onclick="abrirModalEncomenda(${website.id})">
                                 <i class="ri-shopping-bag-line"></i>
                                 <span>Encomendar</span>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1118,8 +890,82 @@ function showWebsiteDetails(id) {
         </div>
     `;
     
+    // Configurar botão de encomenda no modal
+    const btnModalOrder = document.getElementById('btnModalOrder');
+    btnModalOrder.onclick = function() {
+        const modalDetails = bootstrap.Modal.getInstance(document.getElementById('websiteDetailsModal'));
+        modalDetails.hide();
+        abrirModalEncomenda(website.id);
+    };
+    
     const modal = new bootstrap.Modal(document.getElementById('websiteDetailsModal'));
     modal.show();
+}
+
+// Função para abrir o modal de encomenda
+function abrirModalEncomenda(id) {
+    const website = websitesData.find(w => w.id === id);
+    if (!website) return;
+    
+    document.getElementById('orderWebsiteId').value = website.id;
+    document.getElementById('orderWebsiteName').value = website.nome;
+    
+    const modal = new bootstrap.Modal(document.getElementById('orderModal'));
+    modal.show();
+}
+
+// Configurar o envio do formulário
+function configurarFormularioEncomenda() {
+    const form = document.getElementById('orderForm');
+    const btnSubmit = document.getElementById('btnSubmitOrder');
+    const spinner = btnSubmit.querySelector('.spinner-border');
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Mostrar loading
+        btnSubmit.disabled = true;
+        spinner.classList.remove('d-none');
+        
+        // Colectar dados
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        
+        // Simular envio para API (Fake API usando JSONPlaceholder ou similar)
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+                title: 'Nova Encomenda: ' + data.website_id,
+                body: JSON.stringify(data),
+                userId: 1,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then(response => response.json())
+        .then(json => {
+            console.log('Sucesso:', json);
+            
+            // Esconder loading
+            btnSubmit.disabled = false;
+            spinner.classList.add('d-none');
+            
+            // Fechar modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('orderModal'));
+            modal.hide();
+            
+            // Mostrar feedback (usando alert simples por enquanto)
+            alert('Encomenda enviada com sucesso! Entraremos em contacto em breve.');
+            form.reset();
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            btnSubmit.disabled = false;
+            spinner.classList.add('d-none');
+            alert('Ocorreu um erro ao enviar a encomenda. Por favor, tente novamente.');
+        });
+    });
 }
 </script>
 
