@@ -41,7 +41,7 @@
       </div>
 
       <form id="customProjectForm">
-        <div class="modal-body p-4 p-md-5" style="max-height: 75vh; overflow-y: auto;">
+        <div class="modal-body p-4 p-md-5" overflow-y: auto;">
           <!-- Passo 1 -->
           <div class="form-section mb-5">
             <h6 class="section-title-modal mb-4">
