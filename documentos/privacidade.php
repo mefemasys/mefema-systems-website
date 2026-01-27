@@ -1,5 +1,5 @@
 <?php $pageTitle = "Política de Privacidade - MEFEMA Systems"; ?>
-<?php include 'includes/header.php'; ?>
+<?php include '../includes/header.php'; ?>
 
 <!-- Hero Section -->
 <section class="section-py bg-body-secondary">
@@ -470,10 +470,10 @@
                   </p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                  <a href="eula.php" class="btn btn-outline-primary btn-sm me-2">
+                  <a href="eula" class="btn btn-outline-primary btn-sm me-2">
                     <i class="ri-file-list-line me-1"></i>Ver EULA
                   </a>
-                  <a href="termos-uso.php" class="btn btn-outline-primary btn-sm">
+                  <a href="termos-uso" class="btn btn-outline-primary btn-sm">
                     <i class="ri-file-text-line me-1"></i>Termos de Uso
                   </a>
                 </div>
@@ -487,4 +487,4 @@
   </div>
 </section>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

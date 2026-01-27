@@ -8,7 +8,7 @@ RewriteBase /
 # Impede que o Apache force a barra / em pastas físicas
 DirectorySlash Off
 
-# 1. Remover "index.php" da URL (Redirecionamento Limpo)
+# 1. Remover "index" da URL (Redirecionamento Limpo)
 RewriteCond %{THE_REQUEST} \s/+index\.php[\s?]
 RewriteRule ^index\.php$ / [L,R=301]
 

@@ -94,7 +94,7 @@
             <p class="text-muted">Preencha o formulário abaixo e a nossa equipa entrará em contacto consigo brevemente.</p>
           </div>
           
-          <form id="contactFormElement" method="POST" action="pages/contacto/process_contact.php">
+          <form id="contactFormElement" method="POST" action="pages/contacto/process_contact">
             <div class="row g-4 mb-4">
               <div class="col-md-6">
                 <label for="name" class="form-label fw-semibold mb-2">

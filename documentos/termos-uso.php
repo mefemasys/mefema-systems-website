@@ -1,5 +1,5 @@
 <?php $pageTitle = "Termos de Uso do Website - MEFEMA Systems"; ?>
-<?php include 'includes/header.php'; ?>
+<?php include '../includes/header.php'; ?>
 
 <!-- Hero Section -->
 <section class="section-py bg-body-secondary">
@@ -452,13 +452,13 @@
                   </p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                  <a href="privacidade.php" class="btn btn-outline-primary btn-sm me-2">
+                  <a href="privacidade" class="btn btn-outline-primary btn-sm me-2">
                     <i class="ri-shield-keyhole-line me-1"></i>Política de Privacidade
                   </a>
-                  <a href="termos-saas.php" class="btn btn-outline-success btn-sm me-2">
+                  <a href="termos-saas" class="btn btn-outline-success btn-sm me-2">
                     <i class="ri-cloud-line me-1"></i>Termos SaaS
                   </a>
-                  <a href="eula.php" class="btn btn-outline-info btn-sm">
+                  <a href="eula" class="btn btn-outline-info btn-sm">
                     <i class="ri-smartphone-line me-1"></i>EULA Mobile
                   </a>
                 </div>
@@ -472,4 +472,4 @@
   </div>
 </section>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
