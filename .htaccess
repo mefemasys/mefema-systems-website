@@ -47,7 +47,8 @@ RewriteRule ^$ index.php [L]
 ErrorDocument 404 /pages/error/not-found.php
 
 # 403 - Acesso Negado (Permissão insuficiente)
-ErrorDocument 403 /pages/error/access-denied.php
+ErrorDocument 403 /pages/error/unauthorized.php
+ErrorDocument 401 /pages/error/unauthorized.php
 
 # 500 - Erro Interno do Servidor
 ErrorDocument 500 /pages/error/internal-server-error.php
