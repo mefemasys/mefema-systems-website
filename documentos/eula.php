@@ -56,7 +56,7 @@ get_part('includes/header.php');
   }
 
   .sidebar-nav {
-    background: white;
+   /* background: white;*/
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(93, 64, 55, 0.1);
     border: 1px solid var(--border-color);
@@ -86,7 +86,7 @@ get_part('includes/header.php');
 
   /* Content Card */
   .content-card {
-    background: white;
+   /* background: white;*/
     border-radius: 12px;
     box-shadow: 0 2px 12px rgba(93, 64, 55, 0.1);
     border: 1px solid var(--border-color);
@@ -212,7 +212,7 @@ get_part('includes/header.php');
   }
 
   .restriction-card {
-    background: white;
+   /* background: white;*/
     border: 1px solid var(--border-color);
     border-left: 4px solid #B71C1C;
     border-radius: 8px;
@@ -246,7 +246,7 @@ get_part('includes/header.php');
 
   /* Property Cards */
   .property-card {
-    background: white;
+   /* background: white;*/
     border: 2px solid var(--brand-orange);
     border-radius: 12px;
     padding: 2rem;
@@ -274,7 +274,7 @@ get_part('includes/header.php');
 
   /* Responsibility Cards */
   .responsibility-card {
-    background: white;
+   /* background: white;*/
     border: 1px solid var(--border-color);
     border-left: 4px solid var(--brand-orange);
     border-radius: 8px;
@@ -325,7 +325,7 @@ get_part('includes/header.php');
 
   /* Final Provisions */
   .provision-card {
-    background: white;
+   /* background: white;*/
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 1.5rem;

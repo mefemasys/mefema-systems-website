@@ -299,7 +299,7 @@
     position: absolute;
     border-radius: 50%;
     opacity: 0.08;
-    background: white;
+   /* background: white;*/
   }
 
   .shape-1 {

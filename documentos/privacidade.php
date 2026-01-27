@@ -56,7 +56,7 @@ get_part('includes/header.php');
   }
 
   .sidebar-nav {
-    background: white;
+   /* background: white;*/
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(93, 64, 55, 0.1);
     border: 1px solid var(--border-color);
@@ -86,7 +86,7 @@ get_part('includes/header.php');
 
   /* Content Card */
   .content-card {
-    background: white;
+   /* background: white;*/
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(93, 64, 55, 0.1);
     border: 1px solid var(--border-color);
@@ -130,7 +130,7 @@ get_part('includes/header.php');
 
   /* Info Cards */
   .info-card {
-    background: white;
+   /* background: white;*/
     border-radius: 8px;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
@@ -249,7 +249,7 @@ get_part('includes/header.php');
   }
 
   .right-card {
-    background: white;
+   /* background: white;*/
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 1.25rem;

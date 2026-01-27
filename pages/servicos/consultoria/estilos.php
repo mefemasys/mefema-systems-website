@@ -441,7 +441,7 @@ body {
 .case-icon {
     width: 60px;
     height: 60px;
-    background: white;
+   /* background: white;*/
     border-radius: 50%;
     display: flex;
     align-items: center;

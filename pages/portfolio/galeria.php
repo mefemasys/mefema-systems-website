@@ -77,7 +77,7 @@
 
 /* Cards de Projecto */
 .portfolio-card {
-  background: white;
+ /* background: white;*/
   border: 1px solid #e8e8e8;
   border-radius: 8px;
   overflow: hidden;
@@ -141,7 +141,7 @@
 }
 
 .badge-custom {
-  background: white;
+ /* background: white;*/
   color: #1a1a1a;
   padding: 6px 14px;
   border-radius: 4px;
@@ -288,7 +288,7 @@
 }
 
 .pagination-btn {
-  background: white;
+ /* background: white;*/
   border: 1px solid #e8e8e8;
   color: #666;
   padding: 10px 16px;

@@ -51,7 +51,7 @@ get_part('includes/header.php');
 
   /* Content Card */
   .content-card {
-    background: white;
+   /* background: white;*/
     border-radius: 12px;
     box-shadow: 0 2px 12px rgba(93, 64, 55, 0.1);
     border: 1px solid var(--border-color);
@@ -141,7 +141,7 @@ get_part('includes/header.php');
     display: flex;
     align-items: center;
     padding: 0.5rem;
-    background: white;
+   /* background: white;*/
     border-radius: 6px;
     border: 1px solid var(--border-color);
   }
@@ -153,7 +153,7 @@ get_part('includes/header.php');
 
   /* License Card */
   .license-card {
-    background: white;
+   /* background: white;*/
     border: 2px solid var(--brand-orange);
     border-radius: 12px;
     padding: 1.5rem;
@@ -182,7 +182,7 @@ get_part('includes/header.php');
   }
 
   .conduct-card {
-    background: white;
+   /* background: white;*/
     border: 1px solid var(--border-color);
     border-left: 4px solid #B71C1C;
     border-radius: 8px;
@@ -222,7 +222,7 @@ get_part('includes/header.php');
 
   /* Info Box */
   .info-box {
-    background: white;
+   /* background: white;*/
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 1.5rem;
@@ -236,7 +236,7 @@ get_part('includes/header.php');
 
   /* Disclaimer Cards */
   .disclaimer-card {
-    background: white;
+   /* background: white;*/
     border: 2px solid var(--brand-orange);
     border-radius: 12px;
     padding: 1.5rem;
@@ -269,7 +269,7 @@ get_part('includes/header.php');
 
   /* Final Provisions */
   .provision-card {
-    background: white;
+   /* background: white;*/
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 2rem;
