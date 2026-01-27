@@ -392,47 +392,62 @@
 
     <!-- Grid de Projectos -->
     <div class="row g-4" id="portfolioGrid">
-      <?php foreach ($portfolio_data as $project): 
+      <!-- -->
+<?php foreach ($portfolio_data as $project): 
         $cat = $category_map[$project['category']];
       ?>
-        <div class="col-lg-4 col-md-6 portfolio-item" data-category="<?php echo $project['category']; ?>">
+        <div class="col-lg-4 col-md-6 portfolio-item" data-category="<!-- -->
+<?php echo $project['category']; ?>">
           <div class="portfolio-card">
             <!-- Imagem -->
             <div class="portfolio-image">
-              <i class="<?php echo $cat['icon']; ?>"></i>
+              <i class="<!-- -->
+<?php echo $cat['icon']; ?>"></i>
               <div class="portfolio-badges">
-                <span class="badge-custom"><?php echo $project['type']; ?></span>
+                <span class="badge-custom"><!-- -->
+<?php echo $project['type']; ?></span>
                 <span class="badge-custom badge-rating">
-                  <i class="ri-star-fill"></i> <?php echo $project['rating']; ?>
+                  <i class="ri-star-fill"></i> <!-- -->
+<?php echo $project['rating']; ?>
                 </span>
               </div>
             </div>
 
             <!-- Conteúdo -->
             <div class="portfolio-body">
-              <h5><?php echo $project['title']; ?></h5>
-              <p class="description"><?php echo substr($project['description'], 0, 90) . '...'; ?></p>
+              <h5><!-- -->
+<?php echo $project['title']; ?></h5>
+              <p class="description"><!-- -->
+<?php echo substr($project['description'], 0, 90) . '...'; ?></p>
 
               <!-- Informações -->
               <div class="portfolio-info">
                 <div class="info-item">
                   <i class="ri-building-line"></i>
-                  <span><strong><?php echo $project['client']; ?></strong></span>
+                  <span><strong><!-- -->
+<?php echo $project['client']; ?></strong></span>
                 </div>
                 <div class="info-item">
                   <i class="ri-calendar-line"></i>
-                  <span><?php echo date('d/m/Y', strtotime($project['date'])); ?></span>
+                  <span><!-- -->
+<?php echo date('d/m/Y', strtotime($project['date'])); ?></span>
                 </div>
               </div>
 
               <!-- Tags -->
               <div class="portfolio-tags">
-                <?php foreach (array_slice($project['tags'], 0, 3) as $tag): ?>
-                  <span class="tag-item"><?php echo $tag; ?></span>
-                <?php endforeach; ?>
-                <?php if (count($project['tags']) > 3): ?>
-                  <span class="tag-item">+<?php echo count($project['tags']) - 3; ?></span>
-                <?php endif; ?>
+                <!-- -->
+<?php foreach (array_slice($project['tags'], 0, 3) as $tag): ?>
+                  <span class="tag-item"><!-- -->
+<?php echo $tag; ?></span>
+                <!-- -->
+<?php endforeach; ?>
+                <!-- -->
+<?php if (count($project['tags']) > 3): ?>
+                  <span class="tag-item">+<!-- -->
+<?php echo count($project['tags']) - 3; ?></span>
+                <!-- -->
+<?php endif; ?>
               </div>
 
               <!-- Botão -->
@@ -442,7 +457,8 @@
             </div>
           </div>
         </div>
-      <?php endforeach; ?>
+      <!-- -->
+<?php endforeach; ?>
     </div>
 
     <!-- Paginação -->

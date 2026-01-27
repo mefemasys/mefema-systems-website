@@ -153,12 +153,14 @@
     <div class="container">
       <div class="row gx-0 gy-6 g-lg-10">
         <div class="col-lg-5">
-          <a class="app-brand-link mb-6" href="<?php echo BASE_URL; ?>">
+          <a class="app-brand-link mb-6" href="<!-- -->
+<?php echo BASE_URL; ?>">
             <img
               alt="Mefema Systems Logo"
               class="navbar-logo-svg"
               height="40"
-              src="<?php echo asset('assets/img/logos/logo.svg'); ?>"
+              src="<!-- -->
+<?php echo asset('assets/img/logos/logo.svg'); ?>"
               width="auto"
             > <span class="app-brand-text demo fw-semibold ms-2 ps-1">Mefema Systems</span>
           </a>
@@ -172,16 +174,20 @@
           <h6 class="footer-title mb-4 mb-lg-6">Serviços</h6>
           <ul class="list-unstyled mb-0">
             <li class="mb-4">
-              <a class="footer-link" href="<?php echo BASE_URL; ?>servicos/desenvolvimento-software">Desenvolvimento de Software</a>
+              <a class="footer-link" href="<!-- -->
+<?php echo BASE_URL; ?>servicos/desenvolvimento-software">Desenvolvimento de Software</a>
             </li>
             <li class="mb-4">
-              <a class="footer-link" href="<?php echo BASE_URL; ?>servicos/infraestrutura-manutencao">Infraestrutura TI</a>
+              <a class="footer-link" href="<!-- -->
+<?php echo BASE_URL; ?>servicos/infraestrutura-manutencao">Infraestrutura TI</a>
             </li>
             <li class="mb-4">
-              <a class="footer-link" href="<?php echo BASE_URL; ?>servicos/consultoria">Consultoria Digital</a>
+              <a class="footer-link" href="<!-- -->
+<?php echo BASE_URL; ?>servicos/consultoria">Consultoria Digital</a>
             </li>
             <li class="mb-4">
-              <a class="footer-link" href="<?php echo BASE_URL; ?>servicos/formacao-corporativa">Formação Corporativa</a>
+              <a class="footer-link" href="<!-- -->
+<?php echo BASE_URL; ?>servicos/formacao-corporativa">Formação Corporativa</a>
             </li>
           </ul>
         </div>
@@ -190,16 +196,20 @@
           <h6 class="footer-title mb-4 mb-lg-6">Empresa</h6>
           <ul class="list-unstyled mb-0">
             <li class="mb-4">
-              <a class="footer-link" href="<?php echo BASE_URL; ?>sobre">Sobre Nós</a>
+              <a class="footer-link" href="<!-- -->
+<?php echo BASE_URL; ?>sobre">Sobre Nós</a>
             </li>
             <li class="mb-4">
-              <a class="footer-link" href="<?php echo BASE_URL; ?>portfolio">Projectos</a>
+              <a class="footer-link" href="<!-- -->
+<?php echo BASE_URL; ?>portfolio">Projectos</a>
             </li>
             <li class="mb-4">
-              <a class="footer-link" href="<?php echo BASE_URL; ?>servicos">Serviços</a>
+              <a class="footer-link" href="<!-- -->
+<?php echo BASE_URL; ?>servicos">Serviços</a>
             </li>
             <li class="mb-4">
-              <a class="footer-link" href="<?php echo BASE_URL; ?>contacto">Contacto</a>
+              <a class="footer-link" href="<!-- -->
+<?php echo BASE_URL; ?>contacto">Contacto</a>
             </li>
           </ul>
         </div>
@@ -242,6 +252,16 @@
           © 2025 — <script>document.write(new Date().getFullYear());</script> Mefema Systems. Todos os direitos reservados.
         </span>
       </div>
+      <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4 mb-3 mb-md-0">
+          <a class="footer-link small" href="<!-- -->
+<?php echo BASE_URL; ?>privacidade.php">Política de Privacidade</a>
+          <a class="footer-link small" href="<!-- -->
+<?php echo BASE_URL; ?>termos-uso.php">Termos de Uso</a>
+          <a class="footer-link small" href="<!-- -->
+<?php echo BASE_URL; ?>eula.php">EULA</a>
+          <a class="footer-link small" href="<!-- -->
+<?php echo BASE_URL; ?>legal.php">Aviso Legal</a>
+        </div>
       <div>
         <a class="footer-link me-4" href="https://github.com/mefemasys" target="_blank">
           <i class="icon-base ri ri-github-fill"></i>
@@ -265,14 +285,23 @@
 
 </div>
 
-<script src="<?php echo asset('assets/vendor/libs/popper/popper.js'); ?>"></script>
-<script src="<?php echo asset('assets/vendor/js/bootstrap.js'); ?>"></script>
-<script src="<?php echo asset('assets/vendor/libs/node-waves/node-waves.js'); ?>"></script>
-<script src="<?php echo asset('assets/vendor/libs/@algolia/autocomplete-js.js'); ?>"></script>
-<script src="<?php echo asset('assets/vendor/libs/pickr/pickr.js'); ?>"></script>
-<script src="<?php echo asset('assets/vendor/libs/nouislider/nouislider.js'); ?>"></script>
-<script src="<?php echo asset('assets/vendor/libs/swiper/swiper.js'); ?>"></script>
-<script src="<?php echo asset('assets/js/front-main.js'); ?>"></script>
-<script src="<?php echo asset('assets/js/page-landing.js'); ?>"></script>
+<script src="<!-- -->
+<?php echo asset('assets/vendor/libs/popper/popper.js'); ?>"></script>
+<script src="<!-- -->
+<?php echo asset('assets/vendor/js/bootstrap.js'); ?>"></script>
+<script src="<!-- -->
+<?php echo asset('assets/vendor/libs/node-waves/node-waves.js'); ?>"></script>
+<script src="<!-- -->
+<?php echo asset('assets/vendor/libs/@algolia/autocomplete-js.js'); ?>"></script>
+<script src="<!-- -->
+<?php echo asset('assets/vendor/libs/pickr/pickr.js'); ?>"></script>
+<script src="<!-- -->
+<?php echo asset('assets/vendor/libs/nouislider/nouislider.js'); ?>"></script>
+<script src="<!-- -->
+<?php echo asset('assets/vendor/libs/swiper/swiper.js'); ?>"></script>
+<script src="<!-- -->
+<?php echo asset('assets/js/front-main.js'); ?>"></script>
+<script src="<!-- -->
+<?php echo asset('assets/js/page-landing.js'); ?>"></script>
 </body>
 </html>

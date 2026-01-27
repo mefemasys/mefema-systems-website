@@ -6,52 +6,8 @@ get_part('includes/header.php');
 ?>
 <link rel="stylesheet" href="/assets/css/infraestrutura.css">
 
-<!-- Hero Section -->
-<section class="landing-hero-websites">
-    <div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-lg-10">
-                <div class="hero-badge mb-4" data-aos="fade-up">
-                    <i class="ri-server-line text-primary"></i>
-                    <span class="badge-text">Infraestrutura Tecnológica de Alta Performance</span>
-                </div>
-                <h1 class="hero-title mb-4" data-aos="fade-up" data-aos-delay="100">
-                    Infraestrutura e <span class="text-gradient">Manutenção</span>
-                </h1>
-                <p class="hero-subtitle mx-auto mb-4" data-aos="fade-up" data-aos-delay="200">
-                    Soluções robustas de redes, cloud e suporte técnico para garantir a continuidade e segurança das operações do seu negócio.
-                </p>
-                <div class="hero-stats" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-item">
-                        <i class="ri-shield-check-line"></i>
-                        <strong>99.9%</strong>
-                        <span>Disponibilidade</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="ri-customer-service-2-line"></i>
-                        <strong>24/7</strong>
-                        <span>Suporte Técnico</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="ri-radar-line"></i>
-                        <strong>100%</strong>
-                        <span>Monitorização</span>
-                    </div>
-                </div>
-                <div class="mt-5" data-aos="fade-up" data-aos-delay="400">
-                    <a href="#landingContact" class="btn btn-primary btn-lg me-3">
-                        <i class="ri-mail-send-line me-2"></i>
-                        Solicitar Orçamento
-                    </a>
-                    <a href="#nossos-servicos" class="btn btn-outline-primary btn-lg">
-                        <i class="ri-arrow-down-line me-2"></i>
-                        Ver Serviços
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- -->
+<?php get_part('pages/servicos/infraestrutura/hero.php'); ?>
 
 <!-- Nossos Serviços -->
 <section class="section-py bg-light" id="nossos-servicos">
@@ -263,4 +219,5 @@ get_part('includes/header.php');
     </div>
 </section>
 
+<!-- -->
 <?php get_part('includes/footer.php'); ?>

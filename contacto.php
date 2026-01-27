@@ -1,5 +1,8 @@
+<!-- -->
 <?php $pageTitle = "Contacto - MEFEMA Systems - Entre em Contacto Connosco"; ?>
+<!-- -->
 <?php include 'includes/header.php'; ?>
+<!-- -->
 <?php include 'pages/contacto/contact_data.php'; ?>
 
 <section class="section-py landing-hero position-relative overflow-hidden" id="contactHero">
@@ -33,8 +36,10 @@
           </div>
           <h5 class="fw-bold mb-2">Email Principal</h5>
           <p class="text-muted mb-3">Resposta em 24 horas</p>
-          <a href="mailto:<?php echo $contact_info['main_email']; ?>" class="contact-link">
-            <?php echo $contact_info['main_email']; ?>
+          <a href="mailto:<!-- -->
+<?php echo $contact_info['main_email']; ?>" class="contact-link">
+            <!-- -->
+<?php echo $contact_info['main_email']; ?>
             <i class="ri-arrow-right-up-line ms-1"></i>
           </a>
         </div>
@@ -47,8 +52,10 @@
           </div>
           <h5 class="fw-bold mb-2">Telefone</h5>
           <p class="text-muted mb-3">Seg-Sex: 09h-16h</p>
-          <a href="tel:<?php echo str_replace(' ', '', $contact_info['phone']); ?>" class="contact-link">
-            <?php echo $contact_info['phone']; ?>
+          <a href="tel:<!-- -->
+<?php echo str_replace(' ', '', $contact_info['phone']); ?>" class="contact-link">
+            <!-- -->
+<?php echo $contact_info['phone']; ?>
             <i class="ri-arrow-right-up-line ms-1"></i>
           </a>
         </div>
@@ -62,7 +69,8 @@
           <h5 class="fw-bold mb-2">Localização</h5>
           <p class="text-muted mb-3">Visite-nos</p>
           <p class="contact-text">
-            <?php echo $contact_info['address']; ?>
+            <!-- -->
+<?php echo $contact_info['address']; ?>
           </p>
         </div>
       </div>
@@ -192,15 +200,20 @@
             <h5 class="mb-0">Emails por Departamento</h5>
           </div>
           <div class="info-card-body">
-            <?php foreach ($contact_info['emails'] as $dept => $email): ?>
+            <!-- -->
+<?php foreach ($contact_info['emails'] as $dept => $email): ?>
               <div class="info-item">
-                <div class="info-item-label"><?php echo $dept; ?></div>
-                <a href="mailto:<?php echo $email; ?>" class="info-item-value">
-                  <?php echo $email; ?>
+                <div class="info-item-label"><!-- -->
+<?php echo $dept; ?></div>
+                <a href="mailto:<!-- -->
+<?php echo $email; ?>" class="info-item-value">
+                  <!-- -->
+<?php echo $email; ?>
                   <i class="ri-arrow-right-up-line ms-1"></i>
                 </a>
               </div>
-            <?php endforeach; ?>
+            <!-- -->
+<?php endforeach; ?>
           </div>
         </div>
 
@@ -211,15 +224,18 @@
           </div>
           <div class="info-card-body">
             <div class="social-links">
-              <a href="<?php echo $contact_info['social']['facebook']; ?>" target="_blank" class="social-link social-facebook">
+              <a href="<!-- -->
+<?php echo $contact_info['social']['facebook']; ?>" target="_blank" class="social-link social-facebook">
                 <i class="ri-facebook-fill"></i>
                 <span>Facebook</span>
               </a>
-              <a href="<?php echo $contact_info['social']['linkedin']; ?>" target="_blank" class="social-link social-linkedin">
+              <a href="<!-- -->
+<?php echo $contact_info['social']['linkedin']; ?>" target="_blank" class="social-link social-linkedin">
                 <i class="ri-linkedin-fill"></i>
                 <span>LinkedIn</span>
               </a>
-              <a href="<?php echo $contact_info['social']['instagram']; ?>" target="_blank" class="social-link social-instagram">
+              <a href="<!-- -->
+<?php echo $contact_info['social']['instagram']; ?>" target="_blank" class="social-link social-instagram">
                 <i class="ri-instagram-fill"></i>
                 <span>Instagram</span>
               </a>
@@ -234,7 +250,8 @@
           <div>
             <h6 class="fw-bold mb-1">Precisa de Ajuda Rápida?</h6>
             <p class="mb-2 small">A nossa equipa está pronta para responder às suas questões.</p>
-            <a href="tel:<?php echo str_replace(' ', '', $contact_info['phone']); ?>" class="btn btn-sm btn-outline-primary">
+            <a href="tel:<!-- -->
+<?php echo str_replace(' ', '', $contact_info['phone']); ?>" class="btn btn-sm btn-outline-primary">
               <i class="ri-phone-line me-1"></i>Ligar Agora
             </a>
           </div>
@@ -716,4 +733,5 @@
   });
 </script>
 
+<!-- -->
 <?php include 'includes/footer.php'; ?>

@@ -1,4 +1,6 @@
+<!-- -->
 <?php $pageTitle = "Política de Privacidade - MEFEMA Systems"; ?>
+<!-- -->
 <?php include 'includes/header.php'; ?>
 
 <!-- Hero Section -->
@@ -487,4 +489,5 @@
   </div>
 </section>
 
+<!-- -->
 <?php include 'includes/footer.php'; ?>

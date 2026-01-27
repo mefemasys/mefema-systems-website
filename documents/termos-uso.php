@@ -1,4 +1,6 @@
+<!-- -->
 <?php $pageTitle = "Termos de Uso do Website - MEFEMA Systems"; ?>
+<!-- -->
 <?php include 'includes/header.php'; ?>
 
 <!-- Hero Section -->
@@ -472,4 +474,5 @@
   </div>
 </section>
 
+<!-- -->
 <?php include 'includes/footer.php'; ?>

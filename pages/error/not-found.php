@@ -1,3 +1,4 @@
+<!-- -->
 <?php 
 http_response_code(404);
 $pageTitle = "Página Não Encontrada - 404"; 
@@ -70,4 +71,5 @@ get_part('includes/header.php');
   </div>
 </section>
 
+<!-- -->
 <?php get_part('includes/footer.php'); ?>
