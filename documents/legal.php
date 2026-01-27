@@ -1,6 +1,4 @@
-<!-- -->
 <?php $pageTitle = "Documentos Legais - MEFEMA Systems"; ?>
-<!-- -->
 <?php include 'includes/header.php'; ?>
 
 <section id="legal" style="padding: 80px 5%; max-width: 1400px; margin: 0 auto;">
@@ -37,5 +35,4 @@
     </div>
 </section>
 
-<!-- -->
 <?php include 'includes/footer.php'; ?>

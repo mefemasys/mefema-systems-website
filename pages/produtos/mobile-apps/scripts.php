@@ -1,8 +1,7 @@
 
 <script>
 // Dados dos apps
-const appsData = <!-- -->
-<?php echo json_encode($dados_apps['data']); ?>;
+const appsData = <?php echo json_encode($dados_apps['data']); ?>;
 
 // Configuração
 const ITEMS_POR_PAGINA = 4;

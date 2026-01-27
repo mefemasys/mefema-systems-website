@@ -1,7 +1,6 @@
 <script>
 // Dados dos websites
-const websitesData = <!-- -->
-<?php echo json_encode($dados_websites['data']); ?>;
+const websitesData = <?php echo json_encode($dados_websites['data']); ?>;
 
 // Configuração
 const ITEMS_POR_PAGINA = 4;

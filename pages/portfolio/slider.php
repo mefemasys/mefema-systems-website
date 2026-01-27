@@ -259,30 +259,22 @@
     <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000">
       
       <div class="carousel-indicators mb-0">
-        <!-- -->
-<?php foreach ($portfolio_data as $index => $project): ?>
-          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="<!-- -->
-<?php echo $index; ?>"
-                  class="<!-- -->
-<?php echo $index === 0 ? 'active' : ''; ?>" aria-label="Slide <!-- -->
-<?php echo $index + 1; ?>"></button>
-        <!-- -->
-<?php endforeach; ?>
+        <?php foreach ($portfolio_data as $index => $project): ?>
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="<?php echo $index; ?>"
+                  class="<?php echo $index === 0 ? 'active' : ''; ?>" aria-label="Slide <?php echo $index + 1; ?>"></button>
+        <?php endforeach; ?>
       </div>
 
       <div class="carousel-inner">
-        <!-- -->
-<?php foreach ($portfolio_data as $index => $project):
+        <?php foreach ($portfolio_data as $index => $project):
           $cat = $category_map[$project['category']];
         ?>
-          <div class="carousel-item <!-- -->
-<?php echo $index === 0 ? 'active' : ''; ?>">
+          <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
             <div class="row g-0 align-items-center">
               
               <div class="col-lg-6">
                 <div class="portfolio-img-placeholder">
-                  <i class="<!-- -->
-<?php echo $cat['icon']; ?>"></i>
+                  <i class="<?php echo $cat['icon']; ?>"></i>
                   <p>Project Preview</p>
                 </div>
               </div>
@@ -290,28 +282,22 @@
               <div class="col-lg-6">
                 <div class="portfolio-content">
                   <span class="badge px-4 py-2 mb-4">
-                    <i class="<!-- -->
-<?php echo $cat['icon']; ?> me-2"></i><!-- -->
-<?php echo $project['type']; ?>
+                    <i class="<?php echo $cat['icon']; ?> me-2"></i><?php echo $project['type']; ?>
                   </span>
-                  <h2><!-- -->
-<?php echo $project['title']; ?></h2>
-                  <p class="lead"><!-- -->
-<?php echo $project['description']; ?></p>
+                  <h2><?php echo $project['title']; ?></h2>
+                  <p class="lead"><?php echo $project['description']; ?></p>
                   
                   <div class="row g-4 mb-5">
                     <div class="col-md-6">
                       <div class="info-card">
                         <small>Cliente</small>
-                        <div class="h5 mb-0 mt-1"><!-- -->
-<?php echo $project['client']; ?></div>
+                        <div class="h5 mb-0 mt-1"><?php echo $project['client']; ?></div>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="info-card">
                         <small>Conclusão</small>
-                        <div class="h5 mb-0 mt-1"><!-- -->
-<?php echo date('M Y', strtotime($project['date'])); ?></div>
+                        <div class="h5 mb-0 mt-1"><?php echo date('M Y', strtotime($project['date'])); ?></div>
                       </div>
                     </div>
                   </div>
@@ -329,8 +315,7 @@
               
             </div>
           </div>
-        <!-- -->
-<?php endforeach; ?>
+        <?php endforeach; ?>
       </div>
       
       <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">

@@ -53,7 +53,6 @@ function buscarDadosNumeros() {
 $dados_api = buscarDadosNumeros();
 ?>
 
-<!-- -->
 <?php if ($dados_api): ?>
 <!-- Secção de Estatísticas - Design Moderno -->
 <section class="section-py landing-stats" id="landingFunFacts">
@@ -63,8 +62,7 @@ $dados_api = buscarDadosNumeros();
         <div class="text-center mb-5 pb-3">
             <div class="stats-badge mx-auto mb-4">
                 <span class="badge-icon">★</span>
-                <span class="badge-text"><!-- -->
-<?php echo strtoupper(htmlspecialchars($dados_api['titulo_secao'])); ?></span>
+                <span class="badge-text"><?php echo strtoupper(htmlspecialchars($dados_api['titulo_secao'])); ?></span>
             </div>
             <h2 class="stats-title mb-4">
                 Resultados que<br>
@@ -77,32 +75,25 @@ $dados_api = buscarDadosNumeros();
 
         <!-- Grid de Estatísticas -->
         <div class="row g-4 justify-content-center">
-            <!-- -->
-<?php foreach ($dados_api['data'] as $index => $item): ?>
+            <?php foreach ($dados_api['data'] as $index => $item): ?>
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="stat-card stat-<!-- -->
-<?php echo htmlspecialchars($item['cor_badge']); ?>">
+                    <div class="stat-card stat-<?php echo htmlspecialchars($item['cor_badge']); ?>">
                         <div class="stat-icon-wrapper">
                             <div class="stat-icon">
-                                <i class="ri <!-- -->
-<?php echo htmlspecialchars($item['icone']); ?>"></i>
+                                <i class="ri <?php echo htmlspecialchars($item['icone']); ?>"></i>
                             </div>
                             <div class="stat-circle"></div>
                         </div>
                         <div class="stat-content">
-                            <h3 class="stat-number" data-target="<!-- -->
-<?php echo htmlspecialchars($item['valor']); ?>">
-                                <!-- -->
-<?php echo htmlspecialchars($item['valor']); ?>
+                            <h3 class="stat-number" data-target="<?php echo htmlspecialchars($item['valor']); ?>">
+                                <?php echo htmlspecialchars($item['valor']); ?>
                             </h3>
-                            <p class="stat-label"><!-- -->
-<?php echo htmlspecialchars($item['descricao']); ?></p>
+                            <p class="stat-label"><?php echo htmlspecialchars($item['descricao']); ?></p>
                         </div>
                         <div class="stat-glow"></div>
                     </div>
                 </div>
-            <!-- -->
-<?php endforeach; ?>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
@@ -576,7 +567,6 @@ $dados_api = buscarDadosNumeros();
 }
 </style>
 
-<!-- -->
 <?php else: ?>
     <div class="container my-5 py-5">
         <div class="alert alert-danger text-center" role="alert">
@@ -584,5 +574,4 @@ $dados_api = buscarDadosNumeros();
             Erro ao carregar os números da API.
         </div>
     </div>
-<!-- -->
 <?php endif; ?>

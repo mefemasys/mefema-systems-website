@@ -6,7 +6,6 @@ get_part('includes/header.php');
 ?>
 <link rel="stylesheet" href="/assets/css/infraestrutura.css">
 
-<!-- -->
 <?php get_part('pages/servicos/infraestrutura/hero.php'); ?>
 
 <!-- Nossos Serviços -->
@@ -219,5 +218,4 @@ get_part('includes/header.php');
     </div>
 </section>
 
-<!-- -->
 <?php get_part('includes/footer.php'); ?>

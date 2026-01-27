@@ -52,14 +52,12 @@ $finalKeys  = $pageKeywords ?? $seo['keywords'];
 $canonical  = BASE_URL . ($currentPageFile == 'index.php' ? '' : str_replace('.php', '', $currentPageFile));
 ?>
 <!doctype html>
-<html class="layout-navbar-fixed layout-wide" data-assets-path="<!-- -->
-<?php echo asset('assets/'); ?>" lang="pt-MZ">
+<html class="layout-navbar-fixed layout-wide" data-assets-path="<?php echo asset('assets/'); ?>" lang="pt-MZ">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     
-    <title><!-- -->
-<?php echo htmlspecialchars($finalTitle); ?></title>
+    <title><?php echo htmlspecialchars($finalTitle); ?></title>
 
 <script type="application/ld+json">
 {
@@ -71,49 +69,35 @@ $canonical  = BASE_URL . ($currentPageFile == 'index.php' ? '' : str_replace('.p
 }
 </script>
     
-    <meta name="description" content="<!-- -->
-<?php echo htmlspecialchars($finalDesc); ?>" />
-    <meta name="keywords" content="<!-- -->
-<?php echo htmlspecialchars($finalKeys); ?>" />
+    <meta name="description" content="<?php echo htmlspecialchars($finalDesc); ?>" />
+    <meta name="keywords" content="<?php echo htmlspecialchars($finalKeys); ?>" />
     <meta name="author" content="MEFEMA Systems" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="<!-- -->
-<?php echo $canonical; ?>" />
+    <link rel="canonical" href="<?php echo $canonical; ?>" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="<!-- -->
-<?php echo htmlspecialchars($finalTitle); ?>" />
-    <meta property="og:description" content="<!-- -->
-<?php echo htmlspecialchars($finalDesc); ?>" />
-    <meta property="og:url" content="<!-- -->
-<?php echo $canonical; ?>" />
+    <meta property="og:title" content="<?php echo htmlspecialchars($finalTitle); ?>" />
+    <meta property="og:description" content="<?php echo htmlspecialchars($finalDesc); ?>" />
+    <meta property="og:url" content="<?php echo $canonical; ?>" />
     <meta property="og:site_name" content="MEFEMA Systems" />
-    <meta property="og:image" content="<!-- -->
-<?php echo asset('assets/img/logos/og-image.png'); ?>" />
+    <meta property="og:image" content="<?php echo asset('assets/img/logos/og-image.png'); ?>" />
     <meta property="og:locale" content="pt_MZ" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="<!-- -->
-<?php echo htmlspecialchars($finalTitle); ?>" />
-    <meta name="twitter:description" content="<!-- -->
-<?php echo htmlspecialchars($finalDesc); ?>" />
-    <meta name="twitter:image" content="<!-- -->
-<?php echo asset('assets/img/logos/og-image.png'); ?>" />
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($finalTitle); ?>" />
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($finalDesc); ?>" />
+    <meta name="twitter:image" content="<?php echo asset('assets/img/logos/og-image.png'); ?>" />
 
-    <link rel="icon" type="image/x-icon" href="<!-- -->
-<?php echo asset('assets/img/logos/logo.png'); ?>" />
-    <link rel="apple-touch-icon" href="<!-- -->
-<?php echo asset('assets/img/logos/logo.png'); ?>" />
+    <link rel="icon" type="image/x-icon" href="<?php echo asset('assets/img/logos/logo.png'); ?>" />
+    <link rel="apple-touch-icon" href="<?php echo asset('assets/img/logos/logo.png'); ?>" />
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "MEFEMA Systems",
-      "image": "<!-- -->
-<?php echo asset('assets/img/logos/logo.png'); ?>",
-      "url": "<!-- -->
-<?php echo BASE_URL; ?>",
+      "image": "<?php echo asset('assets/img/logos/logo.png'); ?>",
+      "url": "<?php echo BASE_URL; ?>",
       "telephone": "+258879990090",
       "priceRange": "25000MT-500000MT",
       "address": {
@@ -142,19 +126,13 @@ $canonical  = BASE_URL . ($currentPageFile == 'index.php' ? '' : str_replace('.p
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     
-    <link rel="stylesheet" href="<!-- -->
-<?php echo asset('assets/vendor/fonts/iconify-icons.css'); ?>" />
-    <link rel="stylesheet" href="<!-- -->
-<?php echo asset('assets/vendor/css/core.css'); ?>" />
-    <link rel="stylesheet" href="<!-- -->
-<?php echo asset('assets/css/style.css'); ?>" />
-    <link rel="stylesheet" href="<!-- -->
-<?php echo asset('assets/vendor/css/landing.css'); ?>" />
+    <link rel="stylesheet" href="<?php echo asset('assets/vendor/fonts/iconify-icons.css'); ?>" />
+    <link rel="stylesheet" href="<?php echo asset('assets/vendor/css/core.css'); ?>" />
+    <link rel="stylesheet" href="<?php echo asset('assets/css/style.css'); ?>" />
+    <link rel="stylesheet" href="<?php echo asset('assets/vendor/css/landing.css'); ?>" />
     
-    <script src="<!-- -->
-<?php echo asset('assets/vendor/js/helpers.js'); ?>"></script>
-    <script src="<!-- -->
-<?php echo asset('assets/js/config.js'); ?>"></script>
+    <script src="<?php echo asset('assets/vendor/js/helpers.js'); ?>"></script>
+    <script src="<?php echo asset('assets/js/config.js'); ?>"></script>
 </head>
 
 <body>
@@ -165,17 +143,14 @@ $canonical  = BASE_URL . ($currentPageFile == 'index.php' ? '' : str_replace('.p
         <button class="navbar-toggler border-0 px-0 me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
           <i class="icon-base ri ri-menu-fill icon-lg align-middle text-heading"></i>
         </button>
-        <a class="app-brand-link" href="<!-- -->
-<?php echo BASE_URL; ?>">
-          <img src="<!-- -->
-<?php echo asset('assets/img/logos/logo.svg'); ?>" alt="MEFEMA Systems" height="45">
+        <a class="app-brand-link" href="<?php echo BASE_URL; ?>">
+          <img src="<?php echo asset('assets/img/logos/logo.svg'); ?>" alt="MEFEMA Systems" height="45">
         </a>
       </div>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
-          <!-- -->
-<?php 
+          <?php 
             $menu = [
                 'index.php' => 'Início',
                 'sobre.php' => 'Quem somos',
@@ -189,13 +164,9 @@ $canonical  = BASE_URL . ($currentPageFile == 'index.php' ? '' : str_replace('.p
               $url = ($file == 'index.php') ? BASE_URL : BASE_URL . str_replace('.php', '', $file);
           ?>
           <li class="nav-item">
-            <a class="nav-link fw-medium <!-- -->
-<?php echo $isActive; ?>" href="<!-- -->
-<?php echo $url; ?>"><!-- -->
-<?php echo $label; ?></a>
+            <a class="nav-link fw-medium <?php echo $isActive; ?>" href="<?php echo $url; ?>"><?php echo $label; ?></a>
           </li>
-          <!-- -->
-<?php endforeach; ?>
+          <?php endforeach; ?>
         </ul>
       </div>
 
@@ -203,8 +174,7 @@ $canonical  = BASE_URL . ($currentPageFile == 'index.php' ? '' : str_replace('.p
         <button class="nav-link me-3 border-0 bg-transparent" id="themeToggleBtn">
           <i class="icon-base ri ri-computer-line" id="themeIcon"></i>
         </button>
-        <!-- <a href="<!-- -->
-<?php echo BASE_URL; ?>contacto" class="btn btn-primary d-none d-md-block">Pedir Orçamento</a> -->
+        <!-- <a href="<?php echo BASE_URL; ?>contacto" class="btn btn-primary d-none d-md-block">Pedir Orçamento</a> -->
       </div>
     </div>
   </div>

@@ -1,7 +1,6 @@
 <script>
 // Dados dos sistemas
-const sistemasData = <!-- -->
-<?php echo json_encode($dados_sistemas['data']); ?>;
+const sistemasData = <?php echo json_encode($dados_sistemas['data']); ?>;
 
 // Estado da Aplicação (URLs Limpas)
 let state = {

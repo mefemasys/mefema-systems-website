@@ -1,7 +1,6 @@
 <script>
 // Dados das soluções IA + IoT
-const iaIotData = <!-- -->
-<?php echo json_encode($dados_ia_iot['data']); ?>;
+const iaIotData = <?php echo json_encode($dados_ia_iot['data']); ?>;
 
 // Configuração
 const ITEMS_POR_PAGINA = 4;
