@@ -108,9 +108,15 @@
     color: var(--footer-accent-hover);
   }
 
+  .footer-middle {
+    background: rgba(15, 10, 8, 0.5);
+    border-top: 1px solid var(--footer-border);
+    border-bottom: 1px solid var(--footer-border);
+    padding: 1.5rem 0;
+  }
+
   .footer-bottom {
     background: var(--footer-bg-secondary);
-    border-top: 1px solid var(--footer-border);
     padding: 1.75rem 0 !important;
   }
 
@@ -124,10 +130,13 @@
     transition: all 0.3s ease;
   }
 
+  .footer-middle .footer-link,
   .footer-bottom .footer-link {
     color: var(--footer-text-dim);
+    transform: none;
   }
 
+  .footer-middle .footer-link:hover,
   .footer-bottom .footer-link:hover {
     color: var(--footer-accent-hover);
     transform: translateY(-3px);
@@ -149,6 +158,7 @@
 </style>
 
 <footer class="landing-footer">
+  <!-- Links Úteis -->
   <div class="footer-top position-relative overflow-hidden">
     <div class="container">
       <div class="row gx-0 gy-6 g-lg-10">
@@ -212,13 +222,11 @@
                 <i class="ri-mail-line me-2"></i>comercial@mefemasys.co.mz
               </a>
             </li>
-
-<li class="mb-4">
+            <li class="mb-4">
               <a class="footer-link" href="mailto:info@mefemasys.co.mz">
                 <i class="ri-mail-line me-2"></i>info@mefemasys.co.mz
               </a>
             </li>
-
             <li class="mb-4">
               <a class="footer-link" href="tel:+258861924050">
                 <i class="ri-phone-line me-2"></i>+258 86 192 4050
@@ -235,19 +243,26 @@
     </div>
   </div>
 
-  <div class="footer-bottom py-5">
-    <div class="container d-flex flex-wrap justify-content-between flex-md-row flex-column text-center text-md-start">
+  <!-- Documentos Legais -->
+  <div class="footer-middle">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
+        <a class="footer-link small" href="<?php echo BASE_URL; ?>documentos/privacidade">Política de Privacidade</a>
+        <a class="footer-link small" href="<?php echo BASE_URL; ?>documentos/termos-uso">Termos de Uso</a>
+        <a class="footer-link small" href="<?php echo BASE_URL; ?>documentos/eula">EULA</a>
+        <a class="footer-link small" href="<?php echo BASE_URL; ?>documentos/legal">Aviso Legal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright e Redes Sociais -->
+  <div class="footer-bottom">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center flex-md-row flex-column text-center text-md-start">
       <div class="mb-2 mb-md-0">
         <span class="footer-bottom-text">
           © 2025 — <script>document.write(new Date().getFullYear());</script> Mefema Systems. Todos os direitos reservados.
         </span>
       </div>
-      <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4 mb-3 mb-md-0">
-          <a class="footer-link small" href="<?php echo BASE_URL; ?>privacidade.php">Política de Privacidade</a>
-          <a class="footer-link small" href="<?php echo BASE_URL; ?>termos-uso.php">Termos de Uso</a>
-          <a class="footer-link small" href="<?php echo BASE_URL; ?>eula.php">EULA</a>
-          <a class="footer-link small" href="<?php echo BASE_URL; ?>legal.php">Aviso Legal</a>
-        </div>
       <div>
         <a class="footer-link me-4" href="https://github.com/mefemasys" target="_blank">
           <i class="icon-base ri ri-github-fill"></i>
