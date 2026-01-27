@@ -21,7 +21,7 @@
 <section class="section-py">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-lg-10">
+      <div class="col-lg-12">
         <div class="card shadow-sm">
           <div class="card-body p-4 p-lg-5">
 

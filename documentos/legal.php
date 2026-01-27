@@ -9,28 +9,28 @@
             <div class="service-icon">Document</div>
             <h3>Política de Privacidade</h3>
             <p>Informações sobre como recolhemos, utilizamos e protegemos os seus dados pessoais em conformidade com as melhores práticas internacionais.</p>
-            <a href="#" onclick="alert('Política de Privacidade - Documento completo em breve.')" class="btn btn-outline" style="margin-top: 1rem;">Ler Documento</a>
+            <a href="privacidade" class="btn btn-outline" style="margin-top: 1rem;">Ler Documento</a>
         </div>
 
         <div class="service-card" id="termos">
             <div class="service-icon">Clipboard</div>
             <h3>Termos de Uso - Website</h3>
             <p>Condições que regem a utilização do website institucional da MEFEMA Systems.</p>
-            <a href="#" onclick="alert('Termos de Uso - Documento completo em breve.')" class="btn btn-outline" style="margin-top: 1rem;">Ler Documento</a>
+            <a href="termos-uso" class="btn btn-outline" style="margin-top: 1rem;">Ler Documento</a>
         </div>
 
         <div class="service-card" id="eula">
             <div class="service-icon">Mobile</div>
             <h3>EULA - Aplicação Móvel</h3>
             <p>Contrato de Licença de Utilizador Final para aplicações móveis desenvolvidas pela MEFEMA.</p>
-            <a href="#" onclick="alert('EULA - Documento completo em breve.')" class="btn btn-outline" style="margin-top: 1rem;">Ler Documento</a>
+            <a href="eula" class="btn btn-outline" style="margin-top: 1rem;">Ler Documento</a>
         </div>
 
         <div class="service-card" id="saas">
             <div class="service-icon">Cloud</div>
             <h3>Termos de Uso - SaaS</h3>
             <p>Termos e condições para utilização do Sistema de Gestão (SaaS) da MEFEMA.</p>
-            <a href="#" onclick="alert('Termos SaaS - Documento completo em breve.')" class="btn btn-outline" style="margin-top: 1rem;">Ler Documento</a>
+            <a href="termos-uso" class="btn btn-outline" style="margin-top: 1rem;">Ler Documento</a>
         </div>
     </div>
 </section>
