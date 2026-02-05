@@ -4,27 +4,52 @@
 Options -MultiViews -Indexes
 RewriteEngine On
 RewriteBase /
-
-# Impede que o Apache force a barra / em pastas físicas
 DirectorySlash Off
 
-# 1. Remover "index" da URL (Redirecionamento Limpo)
+# ------------------------------
+# 1. REDIRECIONAMENTOS ESPECÍFICOS
+# ------------------------------
+
+# Redirecionar /index.html para /
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?]
+RewriteRule ^index\.html$ / [L,R=301]
+
+# Redirecionar URLs de PRODUTOS para /produtos/...
+RewriteRule ^websites$ /produtos/websites [L,R=301]
+RewriteRule ^sistemas-gestao$ /produtos/sistemas-gestao [L,R=301]
+RewriteRule ^mobile-apps$ /produtos/mobile-apps [L,R=301]
+RewriteRule ^iot-ia$ /produtos/iot-ia [L,R=301]
+
+# Redirecionar URLs de SERVIÇOS para /servicos/... (case insensitive)
+RewriteRule ^[Ss][Ee][Rr][Vv][Ii][Cc][Oo][Ss]?$ /servicos [L,R=301]
+RewriteRule ^infraestrutura-manutencao$ /servicos/infraestrutura-manutencao [L,R=301]
+RewriteRule ^desenvolvimento-software$ /servicos/desenvolvimento-software [L,R=301]
+RewriteRule ^formacao-corporativa$ /servicos/formacao-corporativa [L,R=301]
+RewriteRule ^consultoria$ /servicos/consultoria [L,R=301]
+
+# ------------------------------
+# 2. Remover "index.php" da URL
+# ------------------------------
 RewriteCond %{THE_REQUEST} \s/+index\.php[\s?]
 RewriteRule ^index\.php$ / [L,R=301]
 
-# 2. Remover barra final de qualquer URL (Ex: /produtos/ -> /produtos)
-# Isso evita duplicidade de conteúdo e conflitos com pastas
+# ------------------------------
+# 3. Remover barra final
+# ------------------------------
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} (.+)/$
 RewriteRule ^ %1 [L,R=301]
 
-# 3. REGRA MÁGICA: Mapear qualquer URL para arquivo .php correspondente
-# Funciona para /produtos, /produtos/websites, /empresa/historia, etc.
+# ------------------------------
+# 4. Mapear URLs para arquivos .php
+# ------------------------------
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.+)$ $1.php [L,QSA]
 
-# 4. Redirecionar raiz para index.php (interno)
+# ------------------------------
+# 5. Redirecionar raiz para index.php
+# ------------------------------
 RewriteRule ^$ index.php [L]
 
 # ------------------------------
@@ -38,17 +63,10 @@ RewriteRule ^$ index.php [L]
     Require all denied
 </Files>
 
-
 # ------------------------------
 # Páginas de Erro Personalizadas
 # ------------------------------
-
-# 404 - Não Encontrado (URL incorreta)
 ErrorDocument 404 /pages/error/not-found.php
-
-# 403 - Acesso Negado (Permissão insuficiente)
 ErrorDocument 403 /pages/error/unauthorized.php
 ErrorDocument 401 /pages/error/unauthorized.php
-
-# 500 - Erro Interno do Servidor
 ErrorDocument 500 /pages/error/internal-server-error.php
