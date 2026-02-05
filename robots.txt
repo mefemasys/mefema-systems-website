@@ -1,11 +1,36 @@
+# robots.txt para mefemasys.co.mz
+# Optimizado para SEO e crawling eficiente
+
 User-agent: *
-Allow: /*
+Allow: /
 
-Disallow: /pages/admin/*
-Disallow: /.git/       # Bloquear repositório Git
-Disallow: /.idea/      # Bloquear configurações de IDE
-Disallow: /assets/private/ # Bloquear ativos que são explicitamente privados
-Disallow: /*.sql$      # Bloquear arquivos de banco de dados
-Disallow: /*.log$      # Bloquear arquivos de log
+# Permitir acesso a recursos importantes
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /assets/
 
-Sitemap: https://www.mefemasys.co.mz/sitemap.xml
+# Bloquear áreas administrativas e sensíveis
+Disallow: /admin/
+Disallow: /private/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /pages/error/
+Disallow: /*.log$
+Disallow: /*.sql$
+Disallow: /*.env$
+
+# Evitar duplicação de conteúdo
+Disallow: /*?*
+Disallow: /index.php
+Disallow: /index.html
+
+# Sitemap
+Sitemap: https://mefemasys.co.mz/sitemap.xml
+
+# Crawl-delay para bots específicos (opcional)
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 1
