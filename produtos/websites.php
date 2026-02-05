@@ -9,13 +9,13 @@ $dados_websites = buscarDadosWebsites();
 ?>
 <?php get_part('includes/header.php'); ?>
 <link rel="stylesheet" href="/assets/css/produtos.css">
-<?php include 'pages/produtos/websites/hero.php'; ?>
+<?php get_part('pages/produtos/websites/hero.php'); ?>
 
 <?php if ($dados_websites): ?>
-<?php include 'pages/produtos/websites/filtros-websites.php'; ?>
-<?php include 'pages/produtos/websites/modal-detalhes.php'; ?>
-<?php include 'pages/produtos/websites/modal-encomenda.php'; ?>
-<?php include 'pages/produtos/websites/scripts.php'; ?>
+<?php get_part('pages/produtos/websites/filtros-websites.php'); ?>
+<?php get_part('pages/produtos/websites/modal-detalhes.php'); ?>
+<?php get_part('pages/produtos/websites/modal-encomenda.php'); ?>
+<?php get_part('pages/produtos/websites/scripts.php'); ?>
 
 <?php else: ?>
 <div class="container my-5 py-5">
