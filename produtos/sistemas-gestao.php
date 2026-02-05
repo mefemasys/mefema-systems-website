@@ -2,7 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config/path_config.php';
 $pageTitle = "Sistemas de Gestão - MEFEMA Systems";
 
-get_part9('pages/produtos/sistemas-gestao/fetch_data.php');
+get_part('pages/produtos/sistemas-gestao/fetch_data.php');
 $dados_sistemas = buscarDadosSistemas();
 ?>
 <?php get_part('includes/header.php'); ?>
