@@ -22,21 +22,90 @@ $seoConfig = [
         'description' => 'Conheça a MEFEMA Systems. Focamos em modernizar empresas moçambicanas com soluções tecnológicas de alta performance.',
         'keywords'    => 'equipa mefema, consultoria ti moçambique, empresa tecnologia'
     ],
+    
+    // ==========================================
+    // SERVIÇOS - Página Principal
+    // ==========================================
     'servicos.php' => [
         'title'       => 'Serviços de TI e Transformação Digital',
         'description' => 'Desenvolvimento de software, consultoria em cibersegurança, infraestrutura cloud e suporte técnico especializado.',
-        'keywords'    => 'serviços ti, redes LAN WAN , desenvolvimento web mz, cibersegurança moçambique'
+        'keywords'    => 'serviços ti, redes LAN WAN, desenvolvimento web mz, cibersegurança moçambique'
     ],
+    
+    // SERVIÇOS - Consultoria
+    'consultoria.php' => [
+        'title'       => 'Consultoria em Tecnologia e Transformação Digital',
+        'description' => 'Consultoria especializada em TI, estratégia digital, gestão de projectos e optimização de processos empresariais em Moçambique.',
+        'keywords'    => 'consultoria ti moçambique, consultoria digital, estratégia tecnológica, gestão projectos ti'
+    ],
+    
+    // SERVIÇOS - Desenvolvimento de Software
+    'desenvolvimento-software.php' => [
+        'title'       => 'Desenvolvimento de Software Personalizado',
+        'description' => 'Criamos software à medida das necessidades do seu negócio: aplicações web, mobile, sistemas de gestão e integrações API.',
+        'keywords'    => 'desenvolvimento software moçambique, programação java, aplicações web, sistemas personalizados'
+    ],
+    
+    // SERVIÇOS - Infraestrutura e Manutenção
+    'infraestrutura-manutencao.php' => [
+        'title'       => 'Infraestrutura de TI e Manutenção de Sistemas',
+        'description' => 'Gestão de redes LAN/WAN, servidores cloud, backup, segurança de dados e suporte técnico contínuo para empresas.',
+        'keywords'    => 'infraestrutura ti, redes lan wan moçambique, cloud computing, manutenção servidores, suporte técnico'
+    ],
+    
+    // SERVIÇOS - Formação Corporativa
+    'formacao-corporativa.php' => [
+        'title'       => 'Formação Corporativa em TI e Tecnologia',
+        'description' => 'Programas de formação especializada para equipas: programação, gestão de sistemas, cibersegurança e ferramentas digitais.',
+        'keywords'    => 'formação ti moçambique, cursos programação, capacitação tecnológica, training corporativo'
+    ],
+    
+    // ==========================================
+    // PRODUTOS - Página Principal
+    // ==========================================
     'produtos.php' => [
         'title'       => 'Sistemas ERP, Chatbots IA e Websites',
         'description' => 'Soluções prontas para o seu negócio: ERP com certificação AT, Chatbots WhatsApp e Websites profissionais.',
         'keywords'    => 'erp moçambique, faturação at, chatbot whatsapp, sites baratos'
     ],
+    
+    // PRODUTOS - Websites
+    'websites.php' => [
+        'title'       => 'Desenvolvimento de Websites Profissionais',
+        'description' => 'Criamos websites responsivos, rápidos e optimizados para SEO. Ideal para empresas, e-commerce e portfolios em Moçambique.',
+        'keywords'    => 'websites moçambique, criação sites maputo, web design, sites responsivos, e-commerce'
+    ],
+    
+    // PRODUTOS - Sistemas de Gestão
+    'sistemas-gestao.php' => [
+        'title'       => 'Sistemas ERP e Software de Gestão Empresarial',
+        'description' => 'ERP completo com faturação certificada pela AT, gestão de stock, vendas, compras e relatórios financeiros integrados.',
+        'keywords'    => 'erp moçambique, sistema gestão, faturação at, software empresarial, gestão stock'
+    ],
+    
+    // PRODUTOS - Mobile Apps
+    'mobile-apps.php' => [
+        'title'       => 'Desenvolvimento de Aplicações Mobile Android e iOS',
+        'description' => 'Aplicações mobile nativas e híbridas para Android e iOS. Integramos M-Pesa, notificações push e sistemas offline.',
+        'keywords'    => 'app móvel moçambique, aplicações android, apps ios, desenvolvimento mobile, integração mpesa'
+    ],
+    
+    // PRODUTOS - IoT e IA
+    'iot-ia.php' => [
+        'title'       => 'Soluções IoT e Inteligência Artificial',
+        'description' => 'Desenvolvemos sistemas IoT para automação industrial, sensores remotos, chatbots com IA e análise preditiva de dados.',
+        'keywords'    => 'iot moçambique, inteligência artificial, automação industrial, chatbot ia, machine learning'
+    ],
+    
+    // ==========================================
+    // OUTRAS PÁGINAS
+    // ==========================================
     'portfolio.php' => [
         'title'       => 'Portfólio de Projectos e Casos de Sucesso',
         'description' => 'Explore os projectos de transformação digital implementados pela MEFEMA Systems em todo o território nacional.',
         'keywords'    => 'projectos ti, software moçambique, cases tecnologia'
     ],
+    
     'contacto.php' => [
         'title'       => 'Contacte a MEFEMA | Suporte e Orçamentos',
         'description' => 'Entre em contacto com a nossa equipa em Maputo. Estamos prontos para digitalizar o seu negócio.',
