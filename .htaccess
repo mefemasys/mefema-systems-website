@@ -21,7 +21,7 @@ RewriteRule ^mobile-apps$ /produtos/mobile-apps [L,R=301]
 RewriteRule ^iot-ia$ /produtos/iot-ia [L,R=301]
 
 # Redirecionar URLs de SERVIÇOS para /servicos/... (case insensitive)
-RewriteRule ^[Ss][Ee][Rr][Vv][Ii][Cc][Oo][Ss]?$ /servicos [L,R=301]
+RewriteRule ^servico$ /servicos [L,R=301]
 RewriteRule ^infraestrutura-manutencao$ /servicos/infraestrutura-manutencao [L,R=301]
 RewriteRule ^desenvolvimento-software$ /servicos/desenvolvimento-software [L,R=301]
 RewriteRule ^formacao-corporativa$ /servicos/formacao-corporativa [L,R=301]
